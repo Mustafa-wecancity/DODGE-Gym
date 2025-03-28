@@ -1,0 +1,86 @@
+body {
+    // font-family: Arial, sans-serif;
+    line-height: 1.2;
+    margin: 20px;
+    padding: 20px;
+    color: #6b4e45    !important;
+}
+p{
+    padding-left: 35px !important;
+}
+h2.bold{
+font-family: 'LamaSansBold' !important;
+    
+    color: #912b38;
+    text-align: center;
+    font-size: calc(22px + 6*(100vw - 320px)/1600);
+
+
+}
+h2{
+    font-size: calc(15px + 6*(100vw - 320px)/1600);
+    line-height: 1.5;
+    text-transform: capitalize;
+    margin: 0;
+    color: #912b38;
+    font-family: 'LamaSansMedium' !important;
+
+}
+
+h3{
+font-size: calc(14px + 4*(100vw - 320px)/1600);
+ 
+line-height: 1.8;
+margin: 0;
+color: #912b38;
+// text-decoration: underline;
+padding-left: 35px !important;
+font-family: 'LamaSansMedium' !important;
+
+
+
+}
+
+
+ul {
+    margin: 0px 0;
+    padding-right: 55px !important;
+    display: block !important;
+
+
+}
+ul li {
+    margin: 3px 0;
+    // list-style-type: circle;
+    // padding-left: 8px;
+    padding-right: 8px; /* إضافة padding من الجهة اليمنى للأجهزة RTL */
+    list-style-type: none;
+    position: relative;
+    display: block !important;
+
+}
+
+p{
+
+    font-family: 'LamaSansRegular' !important;
+
+}
+
+
+/* دائرة للغة الإنجليزية (LTR) */
+ul li::before {
+    content: '';
+    display: inline-block;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: currentColor;
+    border-radius: 5%;
+    position: absolute;
+    right:  0; /* محاذاة الدائرة إلى اليسار */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: -20px;
+color: #912b38;
+
+  }
+  

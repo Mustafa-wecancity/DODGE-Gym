@@ -1,0 +1,41 @@
+<div>
+  <div class="row my-3">
+    <div class="col-12 col-lg-6">
+      <app-title [class]="'titleList'" [title]="title"> </app-title>
+    </div>
+    <div class="col-12 col-lg-6">
+      <app-collection-sort
+        [filter]="filter"
+        [gridCol]="gridCol"
+        (setGridClass)="setGridClass($event)"
+      ></app-collection-sort>
+    </div>
+  </div>
+
+  <div [class]="gridClass">
+    <!-- @if(SubServiceCategoryList.skeletonLoader){
+         @for(item of skeletonItems; track item){
+            <app-skeleton-product-box></app-skeleton-product-box>
+         }
+      }@else { -->
+    @for(service of SubServiceCategoryList;track service){
+    <app-services-box [service]="service"></app-services-box>
+
+    }
+    <!-- } -->
+  </div>
+
+  @if(!SubServiceCategoryList.length ){
+  <app-no-data
+    [class]="'no-data-added collection-no-data'"
+    [image]="'assets/svg/no-product.svg'"
+    [text]="'sorry_cant_find_products_looking'"
+    [description]="'please_check_misspelt_something_searching_other_way'"
+  >
+  </app-no-data>
+  }
+</div>
+
+@if(SubServiceCategoryList.length ){
+<app-category-paginate [filter]="filter"> </app-category-paginate>
+}

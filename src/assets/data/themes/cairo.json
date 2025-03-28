@@ -1,0 +1,121 @@
+{
+    "id": 9,
+    "content": {
+        "home_banner": {
+            "status": true,
+            "main_banner": {
+                "image_url": "/assets/images/data/themes/cairo/1.jpg",
+                "title": "Modern Themes & Website Template for any project",
+                "sub_title": "Discover thousands of digital product & downloads",
+                "search_enable": true,
+                "category_ids": [
+                    44,
+                    50,
+                    47,
+                    52,
+                    51,
+                    48,
+                    45,
+                    46,
+                    49,
+                    43
+                ]
+            }
+        },
+        "categories_icon_list": {
+            "status": true,
+            "category_ids": [
+                56,
+                55,
+                57,
+                54,
+                53,
+                58
+            ]
+        },
+        "products_list_1": {
+            "title": "Featured Templates",
+            "product_ids": [
+                198,
+                196,
+                205,
+                209
+            ],
+            "status": true
+        },
+        "categories_icon_list_2": {
+            "status": true,
+            "title": "Browse By Category",
+            "category_ids": [
+                44,
+                50,
+                47,
+                52,
+                51,
+                48,
+                45,
+                46,
+                49,
+                43
+            ]
+        },
+        "slider_product": {
+            "status": true,
+            "image_url": "/assets/images/data/themes/cairo/2.jpg",
+            "title": "Featured Templates",
+            "description": "Every week, our staff personally hand-pick some of the best new website themes from our collection.",
+            "product_ids": [
+                196,
+                195,
+                198
+            ]
+        },
+        "seller": {
+            "status": false,
+            "title": "Sellers Showcase",
+            "store_ids": [
+                16,
+                15,
+                14,
+                13,
+                12,
+                7
+            ]
+        },
+        "categories_products": {
+            "title": "Newest Items",
+            "status": true,
+            "category_ids": [
+                54,
+                58
+            ]
+        },
+        "featured_blogs": {
+            "status": true,
+            "title": "Tips, Tricks, And Trends",
+            "description": null,
+            "blog_ids": [
+                31,
+                30,
+                29,
+                28,
+                27
+            ]
+        },
+        "brands": {
+            "status": false,
+            "brand_ids": [
+                3,
+                1
+            ]
+        },
+        "products_ids": [
+            198,
+            196,
+            205,
+            209,
+            195
+        ]
+    },
+    "slug": "cairo"
+}

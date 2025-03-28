@@ -1,0 +1,295 @@
+{
+    "id": 1,
+    "content": {
+        "home_banner": {
+            "status": true,
+            "main_banner": {
+                "image_url": "/assets/images/data/themes/paris/1.jpg",
+                "redirect_link": {
+                    "link": "daily-breakfast",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            },
+            "sub_banner_1": {
+                "image_url": "/assets/images/data/themes/paris/2.jpg",
+                "redirect_link": {
+                    "link": "grocery-staples",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            },
+            "sub_banner_2": {
+                "image_url": "/assets/images/data/themes/paris/2.jpg",
+                "redirect_link": {
+                    "link": "vegetables-fruits",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            }
+        },
+        "featured_banners": {
+            "status": true,
+            "banners": [
+                {
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    },
+                    "status": true,
+                    "image_url": "/assets/images/data/themes/paris/3.jpg"
+                },
+                {
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    },
+                    "status": true,
+                    "image_url": "/assets/images/data/themes/paris/3.jpg"
+                },
+                {
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    },
+                    "status": true,
+                    "image_url": "/assets/images/data/themes/paris/3.jpg"
+                },
+                {
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    },
+                    "status": true,
+                    "image_url": "/assets/images/data/themes/paris/3.jpg"
+                }
+            ]
+        },
+        "main_content": {
+            "status": true,
+            "sidebar": {
+                "status": true,
+                "categories_icon_list": {
+                    "title": "Popular Categories",
+                    "category_ids": [
+                        2,
+                        5,
+                        3,
+                        4,
+                        6,
+                        39,
+                        10,
+                        8,
+                        9,
+                        1,
+                        7
+                    ],
+                    "status": true
+                },
+                "left_side_banners": {
+                    "status": true,
+                    "banner_1": {
+                        "image_url": "/assets/images/data/themes/paris/4.jpg",
+                        "redirect_link": {
+                            "link": "vegetables-fruits",
+                            "link_type": "collection",
+                            "product_ids": null
+                        }
+                    },
+                    "banner_2": {
+                        "image_url": "/assets/images/data/themes/paris/5.jpg",
+                        "redirect_link": {
+                            "link": "vegetables-fruits",
+                            "link_type": "collection",
+                            "product_ids": null
+                        }
+                    }
+                },
+                "sidebar_products": {
+                    "title": "Trending Products",
+                    "status": true,
+                    "product_ids": [
+                        1,
+                        2,
+                        4,
+                        6
+                    ]
+                }
+            },
+            "section1_products": {
+                "title": "Top Save Today",
+                "description": "Don't miss this opportunity at a special discount just for this week.",
+                "product_ids": [
+                    8,
+                    10,
+                    15,
+                    16,
+                    12
+                ],
+                "status": true
+            },
+            "section2_categories_list": {
+                "image_url": null,
+                "title": "Browse By Categories",
+                "description": "Uncover Hidden Gems and Culinary Delights",
+                "category_ids": [
+                    2,
+                    5,
+                    3,
+                    4,
+                    6,
+                    10,
+                    9,
+                    1,
+                    7
+                ],
+                "status": true
+            },
+            "section3_two_column_banners": {
+                "status": true,
+                "banner_1": {
+                    "image_url": "/assets/images/data/themes/paris/6.jpg",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                },
+                "banner_2": {
+                    "image_url": "/assets/images/data/themes/paris/6.jpg",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                }
+            },
+            "section4_products": {
+                "title": "Fresh Veggies and Fruits",
+                "description": "Unlocking the Pantry: A Journey into Essential Veggies Staples",
+                "status": true,
+                "product_ids": [
+                    19,
+                    17,
+                    7,
+                    9,
+                    11,
+                    13
+                ]
+            },
+            "seller": {
+                "status": true,
+                "title": "Sellers Showcase",
+                "description": "Explore our top-rated products loved by customers just like you. Find your new favorites today!",
+                "store_ids": [
+                    14,
+                    4,
+                    3,
+                    2,
+                    6,
+                    12
+                ]
+            },
+            "section5_coupons": {
+                "image_url": "/assets/images/data/themes/paris/7.jpg",
+                "redirect_link": {
+                    "link": "vegetables-fruits",
+                    "link_type": "collection"
+                },
+                "status": true
+            },
+            "section6_two_column_banners": {
+                "status": true,
+                "banner_1": {
+                    "image_url": "/assets/images/data/themes/paris/8.jpg",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                "banner_2": {
+                    "image_url": "/assets/images/data/themes/paris/9.jpg",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection",
+                        "product_ids": "collection"
+                    }
+                }
+            },
+            "section7_products": {
+                "title": "Our Best Seller",
+                "description": "A virtual assistant collects the products from your list.",
+                "status": true,
+                "product_ids": [
+                    6,
+                    10,
+                    2,
+                    3,
+                    8,
+                    1,
+                    4,
+                    7,
+                    12,
+                    11,
+                    9,
+                    19
+                ]
+            },
+            "section8_full_width_banner": {
+                "image_url": "/assets/images/data/themes/paris/10.jpg",
+                "redirect_link": {
+                    "link": "vegetables-fruits",
+                    "link_type": "collection",
+                    "product_ids": null
+                },
+                "status": true
+            },
+            "section9_featured_blogs": {
+                "title": "Featured Blog",
+                "description": "uncover_intriguing_highlights",
+                "status": true,
+                "blog_ids": [
+                    23,
+                    24,
+                    22
+                ]
+            }
+        },
+        "brands": {
+            "status": true,
+            "brand_ids": [
+                3,
+                11,
+                18,
+                34,
+                42,
+                1
+            ]
+        },
+        "news_letter": {
+            "title": "Join Our Newsletter And Get...",
+            "sub_title": "$20 discount for your first order",
+            "image_url": "/assets/images/data/newsletter.jpg",
+            "status": true
+        },
+        "products_ids": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            10,
+            15,
+            16,
+            12,
+            19,
+            17,
+            7,
+            9,
+            11,
+            13,
+            3
+        ]
+    },
+    "slug": "paris"
+}

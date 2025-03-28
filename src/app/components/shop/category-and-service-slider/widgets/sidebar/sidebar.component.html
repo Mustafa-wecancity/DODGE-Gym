@@ -1,0 +1,50 @@
+<div class="shop-left-sidebar" >
+   <!-- <div class="back-button" >
+      <h3>
+         <a href="javascript:vois(0)" class="text-title">
+            <i class="ri-close-fill"></i>
+         </a>
+      </h3>
+   </div> -->
+   <ng-content></ng-content>
+   <!-- @if(attributeService.skeletonLoader){
+      <app-skeleton-collection-sidebar></app-skeleton-collection-sidebar>
+   }@else { -->
+      <div class="accordion custome-accordion" ngbAccordion>
+ 
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+               <h2 class="accordion-header" ngbAccordionHeader>
+                  <button class="accordion-button" type="button" ngbAccordionButton>
+                     
+                     <span  >{{ 'ParentCategoryAndServices.form.Search' | translate }}</span>
+                     
+                     <i (click)="closeCanvasMenu()" class="ri-close-fill fw-bold m-auto d-block d-md-none" style="font-size: 20px;" ></i>
+                  </button>
+               </h2>
+        
+               <div class="accordion-collapse collapse" ngbAccordionCollapse>
+                  <div class="accordion-body" ngbAccordionBody>
+                     <app-filter-inputs-text  [filter]="filter"></app-filter-inputs-text> 
+                  </div>
+               </div>
+            </div>
+     
+
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+               <h2 class="accordion-header" ngbAccordionHeader>
+                  <button class="accordion-button not" type="button"  >
+                     <span>{{ 'ParentCategoryAndServices.header.Categories' | translate }}</span>
+                  </button>
+               </h2>
+               <div class="accordion-collapse collapse" ngbAccordionCollapse>
+                  <div class="accordion-body" ngbAccordionBody>
+                     <app-collection-category-filter  [mainCategoryId]="mainCategoryId" [filter]="filter"></app-collection-category-filter> 
+                  </div>
+               </div>
+            </div>
+ 
+ 
+      </div>
+   <!-- } -->
+</div>
+

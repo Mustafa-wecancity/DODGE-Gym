@@ -1,0 +1,16 @@
+<div class="accordion-body pt-0">
+   <div class="product-tags-box">
+      <ul>
+         @for(tag of tags; track tag){
+            <li [ngClass]="{'is-focus': tagId == tag.keywordId.toString()}">
+               <a [routerLink]="['/newsList']" (click)="tagId=tag.keywordId.toString()" [queryParams]="{tag: tag.keywordId}">{{ tag.title }}</a>
+            </li>
+         }
+      </ul>
+   </div>
+</div>
+<!-- No Data -->
+@if(!(tags && tags.length)){
+   <app-no-data [class]="'no-data-added bg-light'" [text]="'no_tag_found'" >
+   </app-no-data>
+}

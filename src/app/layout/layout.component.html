@@ -1,0 +1,44 @@
+<!-- Top Progress Loader -->
+@if(isBrowser){
+
+<ngx-loading-bar class="loader-bg" [includeSpinner]="true" [height]="'3px'"></ngx-loading-bar>
+
+<!-- Main Loader -->
+@if(themeOptionService.preloader){
+   <app-loader></app-loader>
+}
+
+<!-- Layout Partial -->
+<app-header [logo]="setLogo().header_logo"></app-header>
+}
+<div  class="mt -3 mt-lg-0">
+   
+   <router-outlet ></router-outlet>
+</div>
+
+ 
+@if(isBrowser){
+   <app-footer [footer]="setLogo().footer"></app-footer>
+
+<div class="theme-option">
+   <!-- <app-theme-customizer></app-theme-customizer> -->
+
+   <!-- @if((themeOption$ | async)?.general?.back_to_top_enable){ -->
+      <app-back-to-top></app-back-to-top>
+   <!-- } -->
+</div>
+<!-- @if((themeOption$ | async)?.popup?.news_letter?.is_enable){
+   <app-newsletter-modal></app-newsletter-modal>
+} -->
+   
+<!-- <app-newsletter-modal></app-newsletter-modal> -->
+   
+   <app-confirmation-error #Confirmation></app-confirmation-error>
+   
+   <app-add-sadd-success #Addsuccess></app-add-sadd-success>
+}
+
+
+<!-- @if(exit && (themeOption$ | async)?.popup?.exit?.is_enable){ -->
+   <!-- <app-exit-modal it-modal></app-exit-modal> -->
+<!-- } -->

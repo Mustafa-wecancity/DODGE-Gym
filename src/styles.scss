@@ -1,0 +1,363 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/app.scss";
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.ngx-mic-recorder__recording-time {
+  font-size: 11px !important;
+}
+.ngx-mic-recorder__start-stop {
+  padding: 12px !important;
+}
+.ngx-mic-recorder__toggle {
+  padding: 10px 29px !important;
+}
+canvas {
+  height: 40px !important;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+  height: 55px !important;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+.valid {
+  border: 1px solid green;
+}
+
+body ::selection {
+  color: #fff;
+  background-color: var(--theme-color);
+}
+
+body {
+  font-family: "LamaSansRegular", sans-serif;
+  color: #fff;
+}
+header .navbar.navbar-expand-xl .navbar-nav .nav-link {
+  font-weight: normal !important;
+  font-family: "LamaSansMedium" !important;
+}
+
+.bold {
+  font-family: "LamaSansBold" !important;
+}
+.SemiBold {
+  font-family: "LamaSemiBold" !important;
+}
+.Medium {
+  font-family: "LamaSansMedium" !important;
+}
+.Regular {
+  font-family: "LamaSansRegular" !important;
+}
+.Light {
+  font-family: "LamaSansLight" !important;
+}
+
+.nogap {
+  gap: 0px !important;
+  font-size: 14px !important;
+}
+.btn.nogap > div {
+  display: flex;
+  align-items: center;
+  gap: 0px !important;
+}
+
+#basic_deal_btn {
+  background-color: #d26a5826 !important;
+  // opacity: .3;
+  padding: 6px 12px !important;
+  i {
+    color: var(--theme-color) !important;
+
+    opacity: 1 !important;
+  }
+}
+
+.bg-gr {
+  background-color: #809c73 !important;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px !important;
+}
+
+@media (max-width: 992px) {
+  html {
+    touch-action: pan-x pan-y;
+    touch-callout: none; /* Prevent callout on long press */
+  }
+
+  body,
+  * {
+    touch-action: manipulation;
+    user-select: none; /* Disable text selection */
+  }
+  .cart_qty button,
+  .btn.qty-left-minus {
+    width: calc(29px + 0.00375 * (100vw - 320px)) !important;
+    height: calc(29px + 0.00375 * (100vw - 320px)) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #e3e0e0 !important;
+    border-radius: 4px !important;
+    padding: 0;
+    z-index: 0;
+  }
+}
+
+body.ltr {
+  .delete {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background-color: var(--theme-color);
+
+    margin-top: 4px;
+  }
+  .edit {
+    position: absolute;
+    top: 4px;
+    right: 95px;
+    background-color: var(--theme-color);
+    // padding: 2px 8px;
+    // border-radius: 4px;
+    // color: #fff;
+    // font-size: 12px;
+    // letter-spacing: .8px;
+    margin-top: 4px;
+  }
+}
+
+body.rtl {
+  .delete {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    background-color: var(--theme-color);
+
+    margin-top: 4px;
+  }
+  .edit {
+    position: absolute;
+    top: 4px;
+    left: 95px;
+    background-color: var(--theme-color);
+    // padding: 2px 8px;
+    // border-radius: 4px;
+    // color: #fff;
+    // font-size: 12px;
+    // letter-spacing: .8px;
+    margin-top: 4px;
+  }
+}
+
+.editforProvider {
+  user-select: none; /* Prevents text selection */
+  pointer-events: none; /* Disables all mouse interactions */
+  .ng-select .ng-select-container,
+  textarea {
+    background-color: #ddd !important;
+  }
+}
+.mtNot {
+  margin-top: -2px !important;
+}
+
+.label-tag {
+  font-family: "LamaSansRegular" !important;
+  font-size: 14px !important;
+}
+@media (max-width: 991px) {
+  .product-section {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 792px) {
+  .offer_h .notification-slider {
+    white-space: nowrap; /* يمنع النص من الانتقال إلى سطر جديد */
+    overflow: visible; /* يعرض النص بالكامل */
+    display: inline-block;
+    animation: ticker-scroll-ltr 40s linear infinite;
+  }
+
+  /* عندما يكون الاتجاه RTL */
+  .rtl .offer_h .notification-slider {
+    animation: ticker-scroll-rtl 40s linear infinite;
+  }
+
+  /* عندما يكون الاتجاه LTR */
+  .ltr .offer_h .notification-slider {
+    animation: ticker-scroll-ltr 40s linear infinite;
+  }
+
+  /* الحركة من اليمين إلى اليسار */
+  @keyframes ticker-scroll-ltr {
+    from {
+      transform: translateX(100%); /* البداية خارج الشاشة */
+    }
+    to {
+      transform: translateX(-100%); /* النهاية خارج الشاشة في الاتجاه الآخر */
+    }
+  }
+
+  /* الحركة من اليسار إلى اليمين */
+  @keyframes ticker-scroll-rtl {
+    from {
+      transform: translateX(-100%); /* البداية خارج الشاشة */
+    }
+    to {
+      transform: translateX(100%); /* النهاية خارج الشاشة في الاتجاه الآخر */
+    }
+  }
+
+  h6 {
+    overflow: visible !important; /* يمنع اقتصاص النص */
+  }
+
+  h6.cursor {
+    cursor: pointer !important; /* لتحديد المؤشر كيد */
+  }
+}
+
+/* iPad بورتريه (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  // body {
+  //   background-color: red !important;
+  // }
+  .container-fluid-lg {
+    padding: 0 calc(0px + 0.042 * (100vw - 320px));
+  }
+  .service {
+    .bottom-content {
+      display: block;
+    }
+  }
+  .pb-md-4 {
+    padding-bottom: 0px !important;
+  }
+  .product-theme-box .label-tag {
+    top: calc(28px + 11 * (100vw - 320px) / 1600) !important;
+  }
+}
+
+/* iPad لاندسكيب (Landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  // body {
+  //   background-color: rgb(0, 255, 136) !important;
+  // }
+  .container-fluid-lg {
+    padding: 0 calc(0px + 0.042 * (100vw - 320px));
+  }
+  .product-theme-box .label-tag {
+    top: calc(26px + 11 * (100vw - 320px) / 1600) !important;
+  }
+}
+
+/* شاشات أقل من 776px */
+@media (max-width: 776px) {
+  .mtNot {
+    margin-top: -3.3px !important;
+  }
+  .web-logo {
+    width: 150px;
+    // margin-left: 30px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .title {
+    p {
+      font-size: 12px !important;
+    }
+  }
+
+  .delete,
+  .edit {
+    top: -16px !important;
+  }
+
+  .newsletter-detail {
+    h2 {
+      font-size: 26px !important;
+    }
+  }
+  .sub-footer {
+    h6 {
+      font-size: 13px;
+    }
+  }
+
+  .no-section-b-space {
+    padding-bottom: 0px !important;
+  }
+
+  .quantity-w {
+    width: 100% !important;
+    .qty-right-plus {
+      width: 70px !important;
+      margin: 0 4px;
+    }
+  }
+}
+
+.rtl .checkbox-wrapper-35 .switch + label .switch-x-toggletext {
+  width: 120px !important;
+}
+
+.ltr .checkbox-wrapper-35 .switch + label .switch-x-toggletext {
+  width: 200px !important;
+}
+
+#sar {
+  font-size: 12px !important;
+  padding-right: 1px;
+  padding-left: 1px;
+  margin: 0 1px !important;
+  font-family: 'LamaSansLight' !important;
+}
+.cart_qty {
+  .btn {
+    background-color: var(--theme-color) !important;
+
+    i {
+      color: #fff !important;
+    }
+  }
+}
+
+// .bundel-details {
+
+.owl-dots .owl-dot.active span {
+  margin: 0 5px !important;
+  background-color: var(--theme-colorTwo) !important;
+  width: calc(30px + 10 * (100vw - 320px) / 1600) !important;
+  transition: all 0.5s ease !important;
+}
+// }
+
+.cursor {
+  cursor: pointer !important; /* لتحديد المؤشر كيد */
+}
+header .navbar-toggler-icon {
+  color: #fff !important;
+}
+
+
+
+.bundle-btn.btn-md{
+  padding-top:calc(10px + 3 * (100vw - 320px) / 1600)  !important;
+  padding-bottom:calc(10px + 3 * (100vw - 320px) / 1600)  !important;
+  font-size: 16px;
+}

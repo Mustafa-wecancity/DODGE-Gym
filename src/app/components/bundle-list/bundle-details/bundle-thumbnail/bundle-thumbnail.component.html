@@ -1,0 +1,125 @@
+
+@if(Bundle){
+
+<div class="container-fluid-lg bg-w hite">
+  <div class="row">
+    <div class="col-xxl-12 m- h mt-3">
+      <div class="row g-4">
+        <div class="col-xl-8 col-lg-7 xol-12">
+          <h2 class="name bold">{{ Bundle?.name }}</h2>
+          <div class="price-rating mt-1">
+            <h3 class="price-rating price theme-Subc olor ">
+              <span class="bold theme-color"
+                >{{ Bundle?.priceAfterDiscount }}
+              </span>
+              <b id="sar">{{ "SAR" | translate }}</b>
+              @if(Bundle.discountPercent&&Bundle.discountPercent>0){
+              <del class="text-content mx- 1 Regular">
+                <!-- <del  class=""> -->
+                {{ Bundle.price }} {{ "SAR" | translate }}
+              </del>
+              <!-- </del>  -->
+              <span class="offer theme-color"
+                >(<span class="bold theme-color">
+                  {{ Bundle?.discountPercent }}% </span
+                >{{ "Bundle.form.off" | translate }})
+              </span>
+              }
+            </h3>
+          </div>
+          <h5 class="mb-2">
+            <span class="time"><i data-feather="clock"></i> <span>{{'Bundle.form.Include' |translate}} <span  class="bold"> {{ Bundle.points}}</span> <span id="sar">{{'Bundle.form.Points' |translate}}</span>   ,{{'Bundle.form.validity' |translate}} <span  class="bold">{{ Bundle.validityDays}}</span> <span id="sar">{{'Bundle.form.Days' |translate}} </span> </span></span>
+
+            </h5>
+          @if(Bundle?.imagePath ){
+
+          <div class="left-box-contain">
+            <img
+              [src]="
+                Bundle.imagePath
+                  ? (Bundle.imagePath | customPipeForImages)
+                  : 'assets/images/data/themes/madrid/2.jpg'
+              "
+              class="h-100 bg-img w-100"
+              alt="banner"
+            />
+          </div>
+          }
+          <!-- <div class="product-contain">
+            <p class="w-100 Regular" [innerHTML]="Bundle?.description"></p>
+          </div> -->
+          <div >
+            <div class="product-section-box mt-md-4 mt-2">
+                <ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active bold" id="description-tab" data-bs-toggle="tab"
+                            data-bs-target="#description" type="button"
+                            style="color: #0e2268;">Bundle Benefits</button>
+                    </li>
+                </ul>
+  
+                <div class="tab-content custom-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="description" role="tabpanel">
+                        <div class="product-description">
+                            <div class="nav-desh" >
+                                <p class="w-100 Regular" [innerHTML]="Bundle?.description"></p>
+                            </div>
+                        </div>
+                    </div>
+  
+  
+  
+                </div>
+            </div>
+ 
+
+          
+        </div>
+        </div>
+        <div class="col-xl-4 col-lg-5 xol-12 mb-3" >
+ 
+          <div class="right-box-contain">
+            @if(Bundle) { 
+            <app-bundle-contain [Bundle]="Bundle"> </app-bundle-contain>
+         }
+            <section
+            class="mt-3"
+            id="bundles"
+          >
+          <!-- style="background-color: var(--theme-Subcolor)" -->
+          <div class="container-fluid mt-3" > 
+            <div class="row g-3" style="margin-top: 15px;">
+
+                <div class=" col-12">
+                  <div class="feature-title">
+                    <div>
+                      <h2  class="bold theme-colorTwo mb-2">
+                        {{ "Bundle.header.title" | translate }}
+                      </h2>
+                      <p  style="color: #5e5e5e" class="Medium">
+                        {{ "Bundle.header.description" | translate }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-12">
+                  <app-save-offer
+                    [home]="true"
+                    [ISliderFull]="false"
+                    [class]="'banner-slider bundel-details page pfor'"
+                  ></app-save-offer>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            <!-- <app-payment-option [option]="option"></app-payment-option> -->
+          </div>
+        </div>
+      </div>
+    </div>
+         
+  </div>
+</div>
+}

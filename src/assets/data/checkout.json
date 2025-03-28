@@ -1,0 +1,71 @@
+{
+    "items": [
+        {
+            "store": 4,
+            "products": [
+                {
+                    "store_id": 4,
+                    "product_id": 16,
+                    "product_type": "physical",
+                    "variation_id": null,
+                    "tax": 0.41211000000000003,
+                    "shipping_cost": 0,
+                    "single_price": 5.7,
+                    "quantity": 1,
+                    "subtotal": 5.7,
+                    "wholesale_price": 0
+                }
+            ],
+            "total": {
+                "tax_total": 0.41,
+                "shipping_total": 0,
+                "sub_total": 5.7,
+                "total": 6.11211,
+                "convert_point_amount": 0,
+                "convert_wallet_balance": 0,
+                "coupon_total_discount": 0,
+                "is_digital_only": 0
+            }
+        },
+        {
+            "store": 3,
+            "products": [
+                {
+                    "store_id": 3,
+                    "product_id": 11,
+                    "product_type": "physical",
+                    "variation_id": null,
+                    "tax": 0.4627200000000001,
+                    "shipping_cost": 0,
+                    "single_price": 3.2,
+                    "quantity": 2,
+                    "subtotal": 6.4,
+                    "wholesale_price": 0
+                }
+            ],
+            "total": {
+                "tax_total": 0.46,
+                "shipping_total": 0,
+                "sub_total": 6.4,
+                "total": 6.86272,
+                "convert_point_amount": 0,
+                "convert_wallet_balance": 0,
+                "coupon_total_discount": 0,
+                "is_digital_only": 0
+            }
+        }
+    ],
+    "total": {
+        "tax_total": 0.87,
+        "shipping_total": 0,
+        "points": 0,
+        "convert_point_amount": 0,
+        "points_amount": 0,
+        "wallet_balance": 101.96,
+        "convert_wallet_balance": 101.96,
+        "coupon_total_discount": 0,
+        "sub_total": 12.1,
+        "total": 12.97,
+        "is_digital_only": 0
+    }
+}

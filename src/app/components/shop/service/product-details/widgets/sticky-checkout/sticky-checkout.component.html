@@ -1,0 +1,77 @@
+
+@if(ServiceGetById){
+
+   <div class="sticky-bottom-cart">
+      <div class="container-fluid-lg">
+         <div class="row">
+            <div class="col-12">
+               <div class="cart-content">
+                  <div class="product-image">
+                 
+                     <div class="content">
+                        <h5 class="bold">{{ ServiceGetById.name }}</h5>
+                
+                        <h3 class="price theme-color"><span class="bold theme-colorTwo" >{{ ServiceGetById.pointsAfter }} </span> <b  id="sar">{{'servicesBox.Point' |translate}}</b>
+                           @if(ServiceGetById.discountPercent>0){
+                           <del class="text-content mx-1"
+                                   > 
+                                 <del  class="Regular">{{ServiceGetById.pointsBefore}} </del>   <b  id="sar">{{'servicesBox.Point' |translate}}</b>
+                                  
+                                  </del> 
+                                  <span class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
+                          }
+                          </h3>
+                     </div>
+                  </div>
+                  <div class="selection-section">
+                     <!-- <div class="form-group mb-0">
+                        <app-variant-attributes [product]="product" [attributes]="product.attributes || []" [isAllVariantStyleDropdown]="true" (selectVariation)="selectVariation($event!)">
+                        </app-variant-attributes>
+                     </div>
+                      -->
+                     @if(ServiceGetById){
+                        <div class="cart_qty qty-box product-qty m-0 d-flex">
+                           <div class="input-group h-100">
+                              <app-button [class]="'btn qty-left-minus'" [id]="'add-to-cart'+ServiceGetById.id" [spinner]="false" (click)="updateQuantity(-1)">
+                                 <i class="ri-subtract-fill"></i>
+                              </app-button>
+                              <input class="form-control input-number qty-input bold" type="text" name="quantity" value="{{productQty}}" readonly>
+                              <app-button [class]="'btn qty-left-minus'" [id]="'qty-left-minus'+ServiceGetById.id" [spinner]="false" (click)="updateQuantity(1)">
+                                 <i class="ri-add-line"></i>
+                              </app-button>
+                           
+                           </div>
+         
+                        
+                        </div>
+                     }
+                  </div>
+                  <div class="add-btn">
+                     @if(ServiceGetById){
+                           <!-- <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular'" (click)="addToCart(ServiceGetById, false)">
+                              <i class="ri-shopping-cart-line me-1"></i>
+                              &nbsp;{{'servicesBox.AddtoCart' |translate}}  [<span class="bold px-1"> 
+                              {{ ServiceGetById.priceAfter * productQty  }}  </span> {{'SAR' |translate}}]
+                           </app-button> -->
+
+                           
+                        <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById,false)">
+                           <i class="ri-shopping-cart-line me-1 "></i>{{ 'servicesBox.AddtoCart' | translate }}
+                           [<span class="bold me-1"> 
+                             {{ServiceGetById.pointsAfter * productQty}} </span> {{'SAR' |translate}}]
+                        </app-button>
+                     
+                        <app-button [id]="'externalBtn'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById , true)">
+                           <i class="ri-shopping-cart-line me-1"></i>&nbsp; {{'servicesBox.AddtoCart' |translate}} [<span class="bold px-1">    {{ ServiceGetById.points * productQty }} </span>   {{'servicesBox.Point' |translate}}] 
+                        </app-button>
+   
+   
+                    
+                     }
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   }

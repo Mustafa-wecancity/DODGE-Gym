@@ -1,0 +1,79 @@
+
+@if(isBrowser){
+
+<section class="blog-section section-b-space bg-w hite">
+   <div class="container-fluid-lg">
+      <div class="row  g-sm-4 g-3">
+         <div class="col-xxl-3 col-xl-4 col-lg-5 d-lg-block d-no ne" [class.order-lg-1]="sidebar === 'right_sidebar'" [ngClass]="sidebar === 'no_sidebar' ? 'd-none' : ''">
+            <app-blog-sidebar  [filter]="filter"></app-blog-sidebar>
+         </div>
+         @if(News ){
+
+         <div class="col-xxl-9 col-xl-8 col-lg-7 ratio_50">
+            <div class="blog-detail-image rounded-3 mb-4 bg-size" [ngStyle]="{'background-image': 'url('
+                    + (News.image
+                    ?(News.image|customPipeForImages)
+
+                    : 'assets/images/blog.png' ) + ')'}">
+                    <!-- <img [src]="News.image
+                    ?(News.image|customPipeForImages)
+
+                    : 'assets/images/blog.png'" alt="" srcset=""> -->
+               <!-- <div class="blog-image-contain">
+                  <h2 class="theme-colorTwo bold">{{ News.title }}</h2>
+                  <ul class="contain-comment-list">
+   
+                     <li>
+                        <div class="user-list">
+                           <i class="ri-time-line"></i>
+                           <span class="Medium">{{ News.date| date: 'dd MMM yyyy' }}</span>
+                        </div>
+                     </li>
+                  </ul>
+               </div> -->
+            </div>
+            <div class="blog-detail-contain ckeditor-content " >
+               <h2 class="theme-colorTwo bold">{{ News.title }}</h2>
+               <div class="user-list">
+                  <i class="ri-time-line"></i>
+                  <span class="Medium">{{ News.date| date: 'dd MMM yyyy' }}</span>
+               </div>
+            <p [innerHTML]="News.description" class="theme-Subcolor Regular">
+
+            </p>   
+            </div>
+
+            <div class="accordion-body pt-0 mb-3">
+               <div class="product-tags-box">
+                  <h5 class="theme-colorTwo  mb-2 bold">{{'NewsList.form.keyword' |translate }}</h5>
+
+                  <ul>
+                     @for(tag of News.newsKeywordsList; track tag){
+                        <li style="background-color: #f8f8f8;" class="py-2 px-3 m-2">
+                           <a [routerLink]="['/newsList']"  [queryParams]="{tag: tag.keywordId}" class="Medium">{{ tag.keywordTitle }}</a>
+                        </li>
+                     }
+                  </ul>
+               </div>
+            </div>
+            <div class="accordion-body pt-0">
+               <div class="product-tags-box  mb-2 ">
+                  <h5 class="theme-colorTwo bold">{{'NewsList.form.Categories' |translate }}</h5>
+
+                  <ul>
+                     @for(item of News.newsCategoryList; track item){
+                        <li style="background-color: #f8f8f8;" class="py-2 px-3">
+                           <a class="Medium" [routerLink]="['/newsList',item.id]">{{ item.title }}</a>
+                        </li>
+                     }
+                  </ul>
+               </div>
+            </div>
+         </div>
+      }
+
+      </div>
+   </div>
+</section>
+
+}

@@ -1,0 +1,66 @@
+ 
+@if(ads){
+   <!-- <a  target="_blank" class="banner-contain d-block h-100">
+      @if(bgImage){
+         <div class="h-100 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL_ + ads.adImage + ')'}"></div>
+      }@else {
+         <img [src]="storageURL_ + ads.adImage" class="h-100 bg-img w-100" alt="banner">
+      }
+   </a> -->
+   <a >
+      @if(bgImage){
+         <div class="h-1 00 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL_ + ads.adImage + ')'}"></div>
+      }@else {
+         <img [src]="storageURL_ + ads.adImage" class="h-1 00 bg-img w-100" alt="banner">
+      }
+   </a>
+}
+
+
+
+@if(image?.redirect_link?.link_type === 'external_url'){
+   <a href="{{ image?.redirect_link?.link }}" target="_blank" class="banner-contain d-block h-100">
+      @if(bgImage){
+         <div class="h-100 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL + image?.image_url + ')'}"></div>
+      }@else {
+         <img [src]="storageURL + image?.image_url" class="h-100 bg-img w-100" alt="banner">
+      }
+   </a>
+}
+
+@else if (image?.redirect_link?.link_type === 'collection') {
+   <a [routerLink]="['/category', image?.redirect_link?.link]">
+      @if(bgImage){
+         <div class="h-100 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL + image?.image_url + ')'}"></div>
+      }@else {
+         <img [src]="storageURL + image?.image_url" class="h-100 bg-img w-100" alt="banner">
+      }
+   </a>
+}
+
+ 
+
+@else {
+   @if(bgImage && image?.image_url  ){
+      <div class="h-100 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL + image?.image_url + ')'}"></div>
+   }@else {
+   @if(bgImage && image?.image_url  ){
+
+      <img [src]="storageURL + image?.image_url" class="h-100 bg-img w-100" alt="banner">
+   }
+   }
+}
+
+
+
+@if(image_){
+   <a href="{{image_ }}" target="_blank" class="banner-contain d-block h-100">
+      @if(bgImage){
+         <div class="h-100 bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + storageURL_ + image_ + ')'}"></div>
+      }@else {
+         <img [src]=" image_? storageURL_ + image_: imageDefault" class="h-100 bg-img w-100" alt="banner">
+      }
+   </a>
+}
+
+ 

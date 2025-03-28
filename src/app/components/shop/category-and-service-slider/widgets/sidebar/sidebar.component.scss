@@ -1,0 +1,19 @@
+h2 {
+ button{
+    span{
+        color: var(--theme-colorTwo) !important;
+        font-weight: normal !important;
+        font-family: 'LamaSansBold' !important;
+        font-size: 18px !important;
+    }
+ }
+}
+.not{
+    &::before {
+        display: none !important;
+      }
+}
+
+  @media (max-width: 991px) {
+    
+  }

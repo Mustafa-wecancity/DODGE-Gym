@@ -1,0 +1,154 @@
+<!-- <div class="container-fluid-lg">
+  <div class="row">
+    <div class="col-xxl-9 col-xl-8 col-lg-7">
+      <div class="row g-4">
+        <div class="col-xl-12">
+          <div class="right-box-contain">
+            <app-product-contain [ServiceGetById]="ServiceGetById">
+            </app-product-contain>
+            <app-payment-option></app-payment-option>
+          </div>
+        </div>
+
+        <section class="product-list-section section-b-space">
+          <div class="container pfor">
+            <app-save-offer [ISliderFull]="false"></app-save-offer>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block">
+      <app-product-details-sidebar></app-product-details-sidebar>
+    </div>
+  </div>
+</div> -->
+
+ 
+
+@if(ServiceGetById){
+
+  <div class="container-fluid-lg bg-white">
+    <div class="row">
+      <div class="col-xxl-12 m- h mt-3">
+        <div class="row g-4">
+          <div class="col-xl-8 col-lg-7 xol-12">
+            <h2 class="name bold theme-colorTwo">{{ ServiceGetById?.name }}</h2>
+            <div class="price-rating">
+  
+              <h3 class="price theme-color  mt-2"><span class="bold theme-color " >{{ ServiceGetById.pointsAfter }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Point' |translate}}</span>
+                @if(ServiceGetById.discountPercent>0){
+                <del class="text-content mx-1"
+                      > 
+                      
+                      <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ ServiceGetById.points }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Point' |translate}}</span>
+                      
+                      </del> 
+                      <span class="offer theme-colorTwo" >(<span class="bold theme-colorTwo"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
+
+                    
+             }
+             </h3>
+             
+            </div>
+        
+              @if(ServiceGetById.serviceCategories && ServiceGetById.serviceCategories){
+               <h6 class="mb-2 theme-colorTwo Medium"> {{'from' |translate}}  @for (item of ServiceGetById.serviceCategories; track $index) {
+               <a class="theme-color cursor text-decoration-underline"  (click)="redirect('/service-category/' + item.categoryId)" >  - {{item.categoryTitle}}</a>
+            }
+          </h6>}
+            @if(ServiceGetById?.imagePath ){
+  
+            <div class="left-box-contain" >
+              <img
+                [src]="
+                  ServiceGetById.imagePath
+                    ? (ServiceGetById.imagePath | customPipeForImages)
+                    : 'assets/images/data/themes/madrid/2.jpg'
+                "
+                class="h-100 bg-img w-100"
+                alt="banner"
+              />
+            </div>
+            }
+            <!-- <div class="product-contain">
+              <p class="w-100 Regular" [innerHTML]="Bundle?.description"></p>
+            </div> -->
+            <div >
+           
+   
+              <div class="profile-about dashboard-bg-box  mt-md-4 mt-2">
+  
+
+                <div class="product-section-box mt-0">
+                  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav nav-tabs custom-nav">
+                
+                 
+                     <li ngbNavItem="description">
+                      <a ngbNavLink class="bold theme-colorTwo">{{ "description"|translate }}</a>
+                      <ng-template ngbNavContent>
+                        <p class=" mt-2 w-100 Regular theme-colorTwo" [innerHTML]="ServiceGetById?.description"></p>
+                   
+                      </ng-template>
+                   </li>
+          
+                     <li ngbNavItem="serviceRequirement">
+                        <a ngbNavLink class="bold theme-colorTwo">{{ "serviceRequirement"|translate }}</a>
+                        <ng-template ngbNavContent>
+                          <p class=" mt-2 w-100 Regular theme-colorTwo" [innerHTML]="ServiceGetById?.serviceRequirement"></p>
+                        
+                        </ng-template>
+                     </li>
+                  </ul>
+                  <div [ngbNavOutlet]="nav" class="custom-t ab"></div>
+                </div>
+              </div>
+            
+          </div>
+          </div>
+          <div class="col-xl-4 col-lg-5 xol-12">
+   
+            <div class="right-box- contain">
+              @if(ServiceGetById) { 
+              <app-product-contain [ServiceGetById]="ServiceGetById"> </app-product-contain>
+           }
+              <section
+              class="mt-3"
+              id="bundles"
+            >
+           
+            <div class="container-fluid mt-3" >
+              <div class="row g-3" style="margin-top: 15px;">
+                  <div class=" col-12">
+                    <div class="feature-title">
+                      <div>
+                        <h2  class="bold theme-colorTwo mb-2">
+                          {{ "Bundle.header.title" | translate }}
+                        </h2>
+                        <p style="color: #5e5e5e" class="Medium">
+                          {{ "Bundle.header.description" | translate }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="col-12">
+                    <app-save-offer
+                      [home]="true"
+                      [ISliderFull]="false"
+                      [class]="'banner-slider bundel-details page pfor'"
+                    ></app-save-offer>
+                  </div>
+                </div>
+              </div>
+            </section>
+   
+            </div>
+          </div>
+        </div>
+      </div>
+           
+    </div>
+  </div>
+  }
+  
+  

@@ -1,0 +1,13 @@
+<div class="theme-logo">
+   <a [routerLink]="['/']">
+      @if(footer && footer.footer_logo){
+         <img [src]="footer.footer_logo" class="img-fluid" alt="logo">
+      }@else {
+         @if(data && data.general){
+            <h2 class="f-w-600">
+               {{ (setting$ | async)?.general ? (setting$ | async)?.general?.site_name : 'Logo Here' }}
+            </h2>
+         }
+      }
+   </a>
+</div>

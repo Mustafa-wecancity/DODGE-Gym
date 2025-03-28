@@ -1,0 +1,81 @@
+ 
+<div class="category-menu section-b-space d-no ne">
+   @if(Categories && Categories.length){
+   <ul>
+     @for(category of Categories; track category){
+     <li>
+       @if(category){
+       <div  >
+         <div  class="list">
+           <h5
+             [ngClass]="{ 'is-focus': selectedCategory === category.id }"
+           >
+             <h5 class="cursor"
+               (click)="
+                 selectCategory(category); changeId(category?.id?.toString())
+               "
+             >
+               <img
+                 [src]="
+                   category.imagePath
+                     ?   (category.imagePath |customPipeForImages)
+                     : 'assets/images/category.png'
+                 "
+                 [alt]="category?.title"
+               />
+               {{ category.title }}
+               <!-- <span>({{ category.productCount }})</span> -->
+             </h5>
+     
+           </h5>
+ 
+     
+         </div>
+       </div>
+       }
+     </li>
+     }
+   </ul>
+   } @if(!(Categories && Categories.length)){
+   <ul>
+     <li>
+       <div class="category-list">
+         <h5>
+           <a href="javascript:void(0)">{{ "no_category_found" | translate }}</a>
+         </h5>
+       </div>
+     </li>
+   </ul>
+   }
+ </div>
+ 
+
+
+ <!-- @if(Categories && Categories.length){
+  <ul class="category-list custom-padding custom-height">
+     <div *ngTemplateOutlet="recursiveCategories; context: { $implicit: Categories }"></div>
+     <ng-template #recursiveCategories let-categories>
+        @for(category of categories | filter: searchText:'subcategories'; track category){
+           <li>
+              <div class="form-check ps-0 m-0 category-list-box">
+                 <input class="checkbox_animated" type="checkbox" id="category-{{category?.id}}" [value]="category?.slug" [checked]="checked(category?.slug!)" (change)="changeId(category?.id?.toString())">
+                 <label class="form-check-label" for="category-{{category?.id}}">
+                    <span class="name">{{ category?.title }}</span>
+                 </label>
+              </div>
+
+              @if(category?.subcategories.length){
+                 <ul class="sub-category-list">
+                    <ng-container *ngTemplateOutlet="recursiveCategories; context: { $implicit: category.subcategories }"></ng-container>
+                 </ul>
+              }
+           </li>
+        }
+     </ng-template>
+  </ul>
+} -->
+
+@if(!(Categories && Categories.length)){
+<app-no-data [class]="'no-data-added bg-light'" [text]="'no_category_found'">
+</app-no-data>
+}

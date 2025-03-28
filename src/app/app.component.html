@@ -1,0 +1,22 @@
+@if(loder){
+<div class="container-fluid overflow-hidden">
+  
+<div class="loder_">
+  <span class="loader"></span>
+
+</div>
+</div>}
+@if(loading | async ){
+  <div class="container-fluid overflow-hidden">
+    
+  <div class="loder_">
+    <span class="loader"></span>
+  
+  </div>
+  </div>}
+@if(!loder){
+
+  <router-outlet></router-outlet>
+}
+<!-- @if(isBrowser){ -->
+<!-- } -->

@@ -1,0 +1,238 @@
+@if(isBrowser){
+<div class="titl e -header w-100">
+  <div class="title">
+    <h2 class="theme-colorTwo bold">
+      {{ "MyDashboard.MyBundle.MyBundles" | translate }}
+    </h2>
+
+    <span class="title-leaf title-leaf-gray">
+      <svg class="icon-width bg-gray">
+        <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+      </svg>
+    </span>
+  </div>
+
+  <div class="row align-items-center">
+    <form class="row" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-12 col-lg-6 col-md-6 my-2">
+        <div class="form-floating log-in-form">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            placeholder="{{ 'MyDashboard.MyBundle.form.title' | translate }}"
+          />
+          <label for="title">{{
+            "MyDashboard.MyBundle.form.title" | translate
+          }}</label>
+        </div>
+      </div>
+
+      <!-- start status  -->
+
+      <div class="col-12 col-lg-6 col-md-6 my-2">
+        <div>
+          <!-- <label class="form-label" for="status">{{
+          "Status" | translate
+        }}</label> -->
+          <ng-select
+            #Gender_
+            [selectOnTab]="true"
+            formControlName="statusId"
+            class="p-0 custom-select"
+            dropdownPosition="auto"
+            labelForId="validation02"
+          >
+            @for (item of StatusList; track item) {
+            <ng-option [value]="item.status"
+              >{{ item.title | translate }}
+            </ng-option>
+            }
+          </ng-select>
+        </div>
+      </div>
+
+      <!-- End status  -->
+      <div class="col-12 col-lg-12 col-md-12 my-4 d-flex justify-content-end">
+        <app-button
+          class="mx-2"
+          (click)="onSubmit()"
+          [class]="
+            'btn btn-animation w-100   Medium justify-content-center rounded-3  '
+          "
+          >{{ "MyDashboard.MyBundle.form.Filter" | translate }}</app-button
+        >
+
+        <app-button
+          class="mx-2"
+          (click)="clearFilter()"
+          [class]="
+            'btn btn-animation  w-100   Medium justify-content-center rounded-3 '
+          "
+          >{{ "MyDashboard.MyBundle.form.Clear" | translate }}</app-button
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="tab-pane fade show active" id="pills-order" role="tabpanel">
+  <div class="dashboard-order">
+    @for(bundle of bundles; track bundle){
+
+    <div class="order-contain">
+      <div class="order-box dashboard-bg-box w-100">
+        <div class="order-container">
+          <div class="order-icon order-icon-one d-lg-block d-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              class="main-grid-item-icon"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <rect height="18" rx="2" ry="2" width="18" x="3" y="4" />
+              <line x1="16" x2="16" y1="2" y2="6" />
+              <line x1="8" x2="8" y1="2" y2="6" />
+              <line x1="3" x2="21" y1="10" y2="10" />
+            </svg>
+          </div>
+          <div class="order-detail">
+            <h4 class="Medium">
+              <div class="order-icon order-icon-tow d-lg-none d-block mx-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  class="main-grid-item-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                >
+                  <rect height="18" rx="2" ry="2" width="18" x="3" y="4" />
+                  <line x1="16" x2="16" y1="2" y2="6" />
+                  <line x1="8" x2="8" y1="2" y2="6" />
+                  <line x1="3" x2="21" y1="10" y2="10" />
+                </svg>
+              </div>
+              {{ "MyDashboard.MyBundle.BundleStatus" | translate }}
+              <span  style="padding-top: 4px;" class="active-bg  mb-2">{{ bundle.status }}</span>
+            </h4>
+            @if(!bundle.isExpired){
+            <h5 class="BundleHas">
+              {{ "MyDashboard.MyBundle.BundleHas" | translate }}
+              <span class="bold theme-colorTwo">{{
+                bundle.remainingPoints
+              }}</span>
+              {{ "MyDashboard.MyBundle.pointsAnd" | translate }}
+              <span class="bold theme-colorTwo"
+                >{{ bundle.remainingDays }}
+                {{ "MyDashboard.MyBundle.days" | translate }}</span
+              >
+              {{ "MyDashboard.MyBundle.BundleremainingMesgHas" | translate }}
+            </h5>
+            } @if(bundle.isExpired){
+            <h5 class="isExpired">
+              {{ "MyDashboard.MyBundle.isExpired" | translate }}
+            </h5>
+
+            }
+          </div>
+        </div>
+        <div class="product-order-detail">
+          <a
+            [routerLink]="
+              !bundle.inactive
+                ? ['/BundleDetails/', bundle.bundleId   ,setPathDecodeURIComponent(bundle.bundleName)]
+                : null
+            "
+            class="order-image"
+          >
+            <img
+              [src]="bundle.imagePath | customPipeForImages"
+              alt="{{ bundle.bundleName }}"
+              class="blur-up lazyload"
+              alt=""
+              width="350px"
+            />
+          </a>
+
+          <div class="order-wrap">
+            <a
+              [routerLink]="
+                !bundle.inactive  
+                  ? ['/BundleDetails/', bundle.bundleId  ,setPathDecodeURIComponent(bundle.bundleName)]
+                  : null
+              "
+            >
+              <h3 class="Medium theme-color">{{ bundle.bundleName }}</h3>
+            </a>
+            <p
+              class="text-content description"
+              [innerHTML]="bundle.description"
+            ></p>
+            <ul class="product-size">
+              <li>
+                <div class="size-box">
+                  <h6 class="text-content Medium">
+                    {{ "MyDashboard.MyBundle.form.Price" | translate }} :
+                  </h6>
+                  <h5 class="bold theme-colorTwo">{{ bundle.price }} <span id="sar"> {{ "SAR" | translate }}</span></h5>
+                </div>
+              </li>
+              <li>
+                <div class="size-box">
+                  <h6 class="text-content Medium">
+                    {{ "MyDashboard.MyBundle.form.validity" | translate }} :
+                  </h6>
+                  <h5>
+                    <span class="bold theme-colorTwo">{{
+                      bundle.validityDays
+                    }}</span>
+                <span id="sar"  class="bold theme-colorTwo">       {{ "MyDashboard.MyBundle.form.Days" | translate }}
+                </span>
+                    
+                  </h5>
+                </div>
+              </li>
+              <li>
+                <div class="size-box">
+                  <h6 class="text-content Medium">
+                    {{ "MyDashboard.MyBundle.form.Points" | translate }} :
+                  </h6>
+                  <h5>
+                    <span class="bold theme-colorTwo">{{ bundle.points }} </span>
+                   
+                    <span id="sar"  class=" theme-colorTwo">  {{ "MyDashboard.MyBundle.form.Point" | translate }}</span>
+                  </h5>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+@if(bundles){
+<nav class="custome-pagination section-b-space">
+  <app-pagination
+    [total]="totalCount"
+    [currentPage]="filter['page']"
+    [pageSize]="filter['paginate']"
+    (setPage)="setPaginate($event)"
+  >
+  </app-pagination>
+</nav>
+} }

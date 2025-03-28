@@ -1,0 +1,105 @@
+<div class="service service-related">
+  <div class="product-theme-box">
+    @if(service.discountPercent> 0){
+
+    <div
+      class="label-tag"
+      style="top: 0 !important"
+      (click)="
+        redirect(
+          '/service/' +
+            service.id +
+            '/' +
+            setPathDecodeURIComponent(service.serviceName)
+        )
+      "
+    >
+      <span>{{ service.discountPercent }} %</span>
+      <i class="ri-flashlight-line"></i>
+    </div>
+    }
+    <div class="img-box ratio_50" style="margin-bottom: 10px">
+      <a
+        (click)="
+          redirect(
+            '/service/' +
+              service.id +
+              '/' +
+              setPathDecodeURIComponent(service.serviceName)
+          )
+        "
+      >
+        <!-- src="../assets/images/dwebsite/7.png" -->
+        <img
+          appLazyLoad
+          [dataSrc]="service.imagePath | customPipeForImages"
+          class="bg-img w-100"
+        />
+      </a>
+    </div>
+    <div class="content-box">
+      <div class="top-content theme-colorTwo bold">
+        <a
+          (click)="
+            redirect(
+              '/service/' +
+                service.id +
+                '/' +
+                setPathDecodeURIComponent(service.serviceName)
+            )
+          "
+        >
+          <h5
+            class="top-content theme-colorTwo"
+            style="font-family: 'LamaSemiBold' !important"
+          >
+            {{ service.serviceName | truncate : 78 }}
+          </h5>
+        </a>
+        <div class="d-flex align-items-center justify-content-between">
+          @if(service.categoryList && service.categoryList.length > 0){
+          <h6>
+            <a
+              (click)="
+                redirect('/service-category/' + service.categoryList[0].id)
+              "
+            >
+              {{ service.categoryList[0].name }}</a
+            >
+          </h6>
+          }
+
+          <div class="product-rating review-rating">
+            <span class="content-color">Great Chance!</span>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-content">
+        <h6 class="price theme-color "><span class="bold theme-color " >{{ service.pointsAfterDiscount }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Point' |translate}}</span>
+            @if(service.discountPercent>0){
+            <del class="text-content mx-1"
+                  > 
+                  
+                  <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ service.points }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Point' |translate}}</span>
+                  
+                  </del> 
+                
+         }
+         </h6>
+   
+    <div>
+       
+       </div>
+       
+    <div class="btn-grp">
+        <a class="btn"  
+    style="font-family: LamaSansRegular !important;"
+    (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.serviceName))" >{{'servicesBox.requestNow' |translate}}</a>
+    </div>
+
+
+    
+</div>
+    </div>
+  </div>
+</div>

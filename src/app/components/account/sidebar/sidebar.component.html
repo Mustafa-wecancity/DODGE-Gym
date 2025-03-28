@@ -1,0 +1,153 @@
+@if( this.isBrowser)
+
+{
+<div class="close-button d-flex d-lg-none">
+  <app-button
+    [class]="'close-sidebar'"
+    [style]="'button'"
+    [id]="'close_sidebar_btn'"
+    [spinner]="false"
+    (click)="openMenu(false)"
+  >
+    <i class="ri-close-fill"></i>
+  </app-button>
+</div>
+<div class="profile-box">
+  <div class="cover-image">
+    <img
+      src="assets/images/inner-page/cover-img.jpg"
+      class="img-fluid"
+      alt="cover-img"
+    />
+  </div>
+  <div class="profile-contain">
+    <div class="profile-image">
+      <div class="position-relative">
+        @if(localStorage.GetByName('imageCustomer')&&
+        localStorage.GetByName('imageCustomer')!="null"){
+
+        <img
+          [src]="customerData.image | customPipeForImages"
+          onerror="this.src='assets/images/logo/Asset 6.svg';"
+          class="img-fluid"
+          alt="profile"
+        />
+
+        }@else {
+        <div class="user-round">
+          <img
+            [src]="'assets/images/logo/Asset 6.svg'"
+            onerror="this.src='assets/images/logo/Asset 6.svg';"
+            class="img-fluid"
+            alt="profile"
+          />
+          <!-- <h4>{{ customerData.fullName.charAt(0)?.toString()?.toUpperCase() }}</h4> -->
+        </div>
+        }
+        <ng-template #placeholder> </ng-template>
+      </div>
+    </div>
+    <div class="profile-name">
+      @if(customerData.fullName){
+
+      <h3 class="bold">{{ customerData.fullName }}</h3>
+      } @if(customerData.email){
+
+      <h6 class="text-content Medium">{{ customerData.email }}</h6>
+      }
+    </div>
+  </div>
+</div>
+
+<app-confirmation-modal
+  #confirmationModal
+  (confirmed)="logout()"
+></app-confirmation-modal>
+
+<ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
+  <li class="nav-item mt-3" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/dashboard']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-home-line me-2"></i>
+      {{ "MyDashboard.Sidebar.dashboard" | translate }}
+    </a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/orders']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-file-text-line me-2"></i
+      >{{ "MyDashboard.Sidebar.myOrders" | translate }}
+    </a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/ServiceRequest']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-bank-line me-2"></i>
+      {{ "MyDashboard.Sidebar.services_requests" | translate }}
+    </a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/my-bundles']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-wallet-line me-2"></i>
+      {{ "MyDashboard.Sidebar.my_Bundles" | translate }}
+    </a>
+  </li>
+
+ 
+
+   <li class="nav-item" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/editProfile']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-edit-line me-2"></i>
+      {{ "MyDashboard.Sidebar.edit_Profile" | translate }}
+    </a>
+  </li>  
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link theme-colorTwo Medium"
+      [routerLinkActive]="['active']"
+      [routerLink]="['/account/changePassword']"
+      (click)="openMenu(false)"
+    >
+      <i class="ri-map-pin-line me-2"></i>
+      {{ "MyDashboard.Sidebar.Change_Password" | translate }}
+    </a>
+  </li>
+  <li class="nav-item logout-cls" role="presentation">
+    <a
+      href="javascript:void(0)"
+      class="btn Medium"
+      (click)="confirmationModal.openModal()"
+    >
+      <i class="ri-logout-box-r-line me-2"></i>
+      {{ "MyDashboard.Sidebar.logout" | translate }}
+    </a>
+  </li>
+</ul>
+
+
+}

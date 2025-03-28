@@ -1,0 +1,239 @@
+{
+    "values": {
+        "general": {
+            "light_logo_image_id": 3,
+            "dark_logo_image_id": 4,
+            "tiny_logo_image_id": 5,
+            "favicon_image_id": 2,
+            "site_url": "https://angular.pixelstrap.net/fastkart-rest-v2",
+            "site_title": " DODGE-Gym",
+            "site_name": " DODGE-Gym",
+            "site_tagline": "Sell Exceptional – FastKart's Multi-Vendor Universe.",
+            "default_timezone": "Asia/Kolkata",
+            "default_currency_id": 1,
+            "admin_site_language_direction": "ltr",
+            "min_order_amount": 0,
+            "min_order_free_shipping": 497,
+            "product_sku_prefix": "FS",
+            "mode": "light-only",
+            "copyright": "Copyright 2024 © Fastkart theme by pixelstrap",
+            "light_logo_image": {
+                "id": 3,
+                "name": "logo-white",
+                "file_name": "logo-white.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-08-24T08:16:03.000000Z",
+                "asset_url": "/storage/3/logo-white.png",
+                "original_url": "https://laravel.pixelstrap.net/fastkart/storage/3/logo-white.png"
+            },
+            "dark_logo_image": {
+                "id": 4,
+                "name": "logo-dark",
+                "file_name": "SaudiaServicesNewLogo.webp",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-08-24T08:16:03.000000Z",
+                "asset_url": "/storage/4/SaudiaServicesNewLogo.webp",
+                "original_url": "https://laravel.pixelstrap.net/fastkart/storage/4/SaudiaServicesNewLogo.webp"
+            },
+            "favicon_image": {
+                "id": 2,
+                "name": "favicon",
+                "file_name": "favicon.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-08-24T08:16:03.000000Z",
+                "asset_url": "/storage/2/favicon.png",
+                "original_url": "https://laravel.pixelstrap.net/fastkart/storage/2/favicon.png"
+            },
+            "tiny_logo_image": {
+                "id": 5,
+                "name": "tiny-logo",
+                "file_name": "tiny-logo.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-08-24T08:16:03.000000Z",
+                "asset_url": "/storage/5/tiny-logo.png",
+                "original_url": "https://laravel.pixelstrap.net/fastkart/storage/5/tiny-logo.png"
+            },
+            "default_currency": {
+                    "id": 1,
+                    "code": "USD",
+                    "symbol": "$",
+                    "no_of_decimal": 2,
+                    "exchange_rate": 1,
+                    "symbol_position": "before_price",
+                    "thousands_separator": "comma",
+                    "decimal_separator": "comma",
+                    "system_reserve": 0,
+                    "status": 1,
+                    "created_by_id": null,
+                    "created_at": "2023-08-24T08:16:03.000000Z",
+                    "updated_at": "2023-08-24T08:16:03.000000Z",
+                    "deleted_at": null
+            }
+        },
+        "activation": {
+            "multivendor": true,
+            "point_enable": true,
+            "coupon_enable": true,
+            "wallet_enable": true,
+            "stock_product_hide": false,
+            "store_auto_approve": true,
+            "product_auto_approve": true,
+            "guest_checkout": true,
+            "track_order": true,
+            "login_number": true,
+            "send_sms": true
+        },
+        "wallet_points": {
+            "signup_points": 100,
+            "min_per_order_amount": 100,
+            "point_currency_ratio": 30,
+            "reward_per_order_amount": 10
+        },
+        "google_reCaptcha": {
+            "status": false,
+            "secret": "ENTER_YOUR_SECRET_KEY",
+            "site_key": "ENTER_YOUR_SITE_KEY"
+        },
+        "delivery": {
+            "default_delivery": 1,
+            "default": {
+                "title": "Standard Delivery",
+                "description": "Approx 5 to 7 Days"
+            },
+            "same_day_delivery": true,
+            "same_day": {
+                "title": "Same Day Delivery",
+                "description": "Schedule"
+            },
+            "same_day_intervals": [
+                {
+                    "title": "Morning",
+                    "description": "8.00 AM - 12.00 AM"
+                },
+                {
+                    "title": "Noon",
+                    "description": "12.00 PM - 2.00 PM"
+                },
+                {
+                    "title": "Afternoon",
+                    "description": "02.00 PM - 05.00 PM"
+                },
+                {
+                    "title": "Evening",
+                    "description": "05.00 PM - 08.00 PM"
+                }
+            ]
+        },
+        "analytics": {
+            "facebook_pixel": {
+                "status": true,
+                "pixel_id": "ASASAS"
+            },
+            "google_analytics": {
+                "status": true,
+                "measurement_id": "ASAD"
+            }
+        },
+        "maintenance": {
+            "title": "We'll be back Soon..",
+            "maintenance_mode": false,
+            "maintenance_image_id": 6,
+            "description": "We are busy to updating our store for you.",
+            "start_date": null,
+            "end_date": "2024-5-16",
+            "maintenance_image": {
+                "id": 6,
+                "name": "maintainance",
+                "file_name": "maintainance.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-08-24T08:16:03.000000Z",
+                "asset_url": "/storage/6/maintainance.jpg",
+                "original_url": "https://laravel.pixelstrap.net/fastkart/storage/6/maintainance.jpg"
+            }
+        },
+        "payment_methods": [
+            {
+                "name": "cod",
+                "title": "Cash On Delivery",
+                "status": true
+            },
+            {
+                "name": "paypal",
+                "title": "PayPal",
+                "status": true
+            },
+            {
+                "name": "stripe",
+                "title": "Stripe",
+                "status": true
+            },
+            {
+                "name": "sslcommerz",
+                "title": "SSLCommerz",
+                "status": true
+            },
+            {
+                "name": "flutter_wave",
+                "title": "FlutterWave",
+                "status": true
+            },
+            {
+                "name": "paystack",
+                "title": "Paystack",
+                "status": true
+            },
+            {
+                "name": "mollie",
+                "title": "Mollie",
+                "status": true
+            },
+            {
+                "name": "bank_transfer",
+                "title": "Bank Transfer",
+                "status": true
+            },
+            {
+                "name": "bkash",
+                "title": "bKash",
+                "status": true
+            },
+            {
+                "name": "ccavenue",
+                "title": "CCAvenue",
+                "status": true
+            },
+            {
+                "name": "phonepe",
+                "title": "PhonePe",
+                "status": true
+            },
+            {
+                "name": "instamojo",
+                "title": "InstaMojo",
+                "status": true
+            },
+            {
+                "name": "razorpay",
+                "title": "RazorPay",
+                "status": true
+            }
+        ],
+        "sms_methods": [
+            {
+                "name": "twilio",
+                "title": "Twilio",
+                "status": true
+            }
+        ]
+    }
+}

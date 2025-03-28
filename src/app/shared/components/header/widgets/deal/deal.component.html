@@ -1,0 +1,19 @@
+<!-- Deal Basic Style -->
+<!-- @if(style == 'basic'){ -->
+   <app-button [routerLink]="['/DealToday']" routerLinkActive="router-link-active"  [class]="'btn deal-button'" [id]="'basic_deal_btn'" [spinner]="false"  >
+      <i class="ri-flashlight-line theme-color"></i>
+      <!-- <span>{{ 'deal_today' | translate }}</span> -->
+   </app-button>
+<!-- } -->
+<!-- Deal Standard Style -->
+<!-- @if(style == 'standard'){
+   <a class="btn theme-bg-color ms-3 fire-button" (click)="DealsModal.openModal()">
+      <div class="fire">
+         <img src="assets/images/icon/hot-sale.png" class="img-fluid" alt="hot-sale">
+      </div>
+      <span>{{ 'hot_deals' | translate }}</span>
+   </a>
+} -->
+
+<!-- Deal Modal -->
+<!-- <app-deals-modal #dealsModal [products]="dealProducts"></app-deals-modal> -->

@@ -1,0 +1,2389 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 24,
+            "title": "Supercharge Your Meals: Incorporating Colorful Vegetables and Fruits",
+            "slug": "supercharge-your-meals-incorporating-colorful-vegetables-and-fruits",
+            "description": "Step into a world of vibrant hues and tantalizing flavors as we embark on a journey through the realm of vegetables and fruits. From the lush orchards to the bountiful fields, these edible treasures hold the essence of nature's artistry.",
+            "meta_title": "Supercharge Your Meals: Incorporating Colorful Vegetables and Fruits",
+            "blog_thumbnail_id": 509,
+            "blog_meta_image_id": null,
+            "is_featured": 0,
+            "is_sticky": 1,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:20:09.000000Z",
+            "updated_at": "2023-10-14T02:57:27.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 509,
+                "name": "01-3",
+                "file_name": "01-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:52:53.000000Z",
+                "asset_url": "/storage/509/01-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": null,
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "24",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "24",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Mastering the Art of Efficient Grocery Shopping: Expert Tips and Tricks",
+            "slug": "mastering-the-art-of-efficient-grocery-shopping-expert-tips-and-tricks",
+            "description": "In this fast-paced world, grocery shopping has become a necessary yet time-consuming task. However, by implementing some expert tips and tricks, you can transform your grocery shopping experience into a well-planned and efficient endeavor. From making thorough lists to understanding store layouts, this blog post will provide you with valuable insights on how to navigate the aisles with confidence and optimize your time and money.",
+            "meta_title": "Mastering the Art of Efficient Grocery Shopping: Expert Tips and Tricks",
+            "blog_thumbnail_id": 523,
+            "blog_meta_image_id": null,
+            "is_featured": 0,
+            "is_sticky": 1,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:59:40.000000Z",
+            "updated_at": "2023-09-22T03:11:51.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 523,
+                "name": "03-2",
+                "file_name": "03-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:01:04.000000Z",
+                "asset_url": "/storage/523/03-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": null,
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "17",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "17",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "title": "Mastering the Art of Blogging",
+            "slug": "mastering-the-art-of-blogging",
+            "description": "Dive into the world of blogging and discover the power of your words. Learn how to craft compelling content that resonates with your audience and amplifies your message. Let your voice be heard and make a difference through the art of writing blogs.",
+            "meta_title": "Mastering the Art of Blogging",
+            "blog_thumbnail_id": 1650,
+            "blog_meta_image_id": 1650,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:44:04.000000Z",
+            "updated_at": "2024-03-08T06:06:30.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1650,
+                "name": "6",
+                "file_name": "6.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:06:20.000000Z",
+                "asset_url": "/storage/1650/6.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1650,
+                "name": "6",
+                "file_name": "6.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:06:20.000000Z",
+                "asset_url": "/storage/1650/6.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "31",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "31",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "title": "Monday Madness: Unlock Exclusive Savings Galore!",
+            "slug": "monday-madness-unlock-exclusive-savings-galore",
+            "description": "Immerse yourself in an array of unparalleled bargains during our Monday Sale spectacular! Transform your ordinary Mondays into a shopping adventure with amazing discounts on a diverse selection of products. Seize the opportunity for savings – shop swiftly and wisely to kickstart the enchantment of Mondays!",
+            "meta_title": "Monday Madness: Unlock Exclusive Savings Galore!",
+            "blog_thumbnail_id": 1648,
+            "blog_meta_image_id": 1648,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:43:37.000000Z",
+            "updated_at": "2024-03-08T06:05:59.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1648,
+                "name": "7",
+                "file_name": "7.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:05:46.000000Z",
+                "asset_url": "/storage/1648/7.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1648,
+                "name": "7",
+                "file_name": "7.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:05:46.000000Z",
+                "asset_url": "/storage/1648/7.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "30",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "30",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "title": "Vibrant Visions",
+            "slug": "vibrant-visions",
+            "description": "Dive into a kaleidoscope of creativity with our exploration of colorful designs. From vivid patterns to bold illustrations, discover how color can transform the ordinary into the extraordinary",
+            "meta_title": "Vibrant Visions",
+            "blog_thumbnail_id": 1652,
+            "blog_meta_image_id": 1652,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:37:06.000000Z",
+            "updated_at": "2024-03-08T06:07:44.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1652,
+                "name": "8",
+                "file_name": "8.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:07:36.000000Z",
+                "asset_url": "/storage/1652/8.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1652,
+                "name": "8",
+                "file_name": "8.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:07:36.000000Z",
+                "asset_url": "/storage/1652/8.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "29",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "29",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "title": "Unlocking the Creative Process: A Journey into Innovation",
+            "slug": "unlocking-the-creative-process-a-journey-into-innovation",
+            "description": "Dive into the depths of the creative mind! Discover insights, tips, and inspiration to fuel your own creative process in this engaging exploration of innovation.",
+            "meta_title": "Unlocking the Creative Process: A Journey into Innovation",
+            "blog_thumbnail_id": 1654,
+            "blog_meta_image_id": 1654,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:27:51.000000Z",
+            "updated_at": "2024-03-08T06:10:03.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1654,
+                "name": "5",
+                "file_name": "5.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:09:52.000000Z",
+                "asset_url": "/storage/1654/5.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1654,
+                "name": "5",
+                "file_name": "5.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:09:52.000000Z",
+                "asset_url": "/storage/1654/5.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "28",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "28",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "title": "Rediscovering Nature's Serenity",
+            "slug": "rediscovering-nature-s-serenity",
+            "description": "Reconnect with the soothing embrace of nature. Discover how immersing yourself in the great outdoors can rejuvenate your mind, body, and soul. Let's explore the wonders of nature together!",
+            "meta_title": "Rediscovering Nature's Serenity",
+            "blog_thumbnail_id": 1660,
+            "blog_meta_image_id": 1660,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:24:08.000000Z",
+            "updated_at": "2024-03-08T06:14:10.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1660,
+                "name": "4",
+                "file_name": "4.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:14:03.000000Z",
+                "asset_url": "/storage/1660/4.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1660,
+                "name": "4",
+                "file_name": "4.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:14:03.000000Z",
+                "asset_url": "/storage/1660/4.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "27",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "27",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "title": "Unbeatable Deals: Dive into Our Mega Sale Extravaganza",
+            "slug": "unbeatable-deals-dive-into-our-mega-sale-extravaganza",
+            "description": "Get ready to snag unbelievable bargains at our Mega Sale event! From fashion to electronics, home goods to gadgets, this sale has it all. Don't miss out on the chance to save big on top brands and must-have items. Hurry, these deals won't last long!",
+            "meta_title": "Unbeatable Deals: Dive into Our Mega Sale Extravaganza",
+            "blog_thumbnail_id": 1662,
+            "blog_meta_image_id": 1662,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:19:48.000000Z",
+            "updated_at": "2024-03-08T06:17:08.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1662,
+                "name": "1",
+                "file_name": "1.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:17:00.000000Z",
+                "asset_url": "/storage/1662/1.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1662,
+                "name": "1",
+                "file_name": "1.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:17:00.000000Z",
+                "asset_url": "/storage/1662/1.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "26",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "26",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "title": "Crafting Spaces: Exploring the Intersection of Design and Architecture",
+            "slug": "crafting-spaces-exploring-the-intersection-of-design-and-architecture",
+            "description": "Discover the fusion of creativity and functionality in the world of design and architecture. From innovative structures to awe-inspiring interiors, delve into the artistry shaping our built environments.",
+            "meta_title": "Crafting Spaces: Exploring the Intersection of Design and Architecture",
+            "blog_thumbnail_id": 1658,
+            "blog_meta_image_id": 1658,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-03-04T12:10:47.000000Z",
+            "updated_at": "2024-03-08T06:13:05.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 1658,
+                "name": "2",
+                "file_name": "2.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:12:54.000000Z",
+                "asset_url": "/storage/1658/2.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 1658,
+                "name": "2",
+                "file_name": "2.jpg",
+                "mime_type": "image/jpeg",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-03-08T06:12:54.000000Z",
+                "asset_url": "/storage/1658/2.jpg",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 33,
+                    "name": "Book",
+                    "slug": "book",
+                    "pivot": {
+                        "blog_id": "25",
+                        "category_id": "33"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 23,
+                    "name": "Self-help Books",
+                    "slug": "self-help-books-2",
+                    "pivot": {
+                        "blog_id": "25",
+                        "tag_id": "23"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "title": "Unveiling the Secrets of a Balanced Diet: How Vegetables and Fruits Transform Your Health",
+            "slug": "unveiling-the-secrets-of-a-balanced-diet-how-vegetables-and-fruits-transform-your-health",
+            "description": "The Artistry of Grocery Curation. In today's fast-paced world, grocery shopping has become more than just a mundane chore. It has transformed into a carefully curated experience, where each item is chosen with precision and purpose. In this blog post, we delve into the realm of vegetable and fruit selection, exploring the artistry behind the scenes that goes beyond the simple act of filling a shopping cart.",
+            "meta_title": "Unveiling the Secrets of a Balanced Diet: How Vegetables and Fruits Transform Your Health",
+            "blog_thumbnail_id": 511,
+            "blog_meta_image_id": 511,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:16:57.000000Z",
+            "updated_at": "2023-09-02T05:56:35.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 511,
+                "name": "02-3",
+                "file_name": "02-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:56:28.000000Z",
+                "asset_url": "/storage/511/02-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 511,
+                "name": "02-3",
+                "file_name": "02-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:56:28.000000Z",
+                "asset_url": "/storage/511/02-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "23",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "23",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "title": "Optimize Your Health with Nutrient-Rich Vegetables and Fruits\"",
+            "slug": "optimize-your-health-with-nutrient-rich-vegetables-and-fruits",
+            "description": "In the world of grocery shopping, there is an often overlooked artistry that goes beyond simply filling a basket. It is the art of grocery curation, a skill that requires knowledge, creativity, and a deep understanding of the produce aisle. In this blog post, we will delve into the captivating world of vegetable and fruit selection, exploring the meticulous process behind curating the perfect assortment for your plate. Join us as we uncover the secrets and techniques that elevate grocery shopping from a mundane chore to a truly artistic experience.",
+            "meta_title": "Optimize Your Health with Nutrient-Rich Vegetables and Fruits\"",
+            "blog_thumbnail_id": 513,
+            "blog_meta_image_id": 513,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:14:10.000000Z",
+            "updated_at": "2023-09-02T05:57:18.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 513,
+                "name": "03-3",
+                "file_name": "03-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:56:58.000000Z",
+                "asset_url": "/storage/513/03-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 513,
+                "name": "03-3",
+                "file_name": "03-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:56:58.000000Z",
+                "asset_url": "/storage/513/03-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "22",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "22",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "title": "Nourishing from Within: A Journey to Feed Your Cells and Soul",
+            "slug": "nourishing-from-within-a-journey-to-feed-your-cells-and-soul",
+            "description": "This engaging journey awaits us with insights spiced with scientific evidence, ancient wisdom and modern understanding. So prepare yourself for an engrossing exploration of the collective body-mind consciousness and its correlation with our daily life nourishment choices. Welcome aboard.",
+            "meta_title": "Nourishing from Within: A Journey to Feed Your Cells and Soul",
+            "blog_thumbnail_id": 515,
+            "blog_meta_image_id": 515,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:07:23.000000Z",
+            "updated_at": "2023-09-02T05:58:39.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 515,
+                "name": "04-3",
+                "file_name": "04-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:58:27.000000Z",
+                "asset_url": "/storage/515/04-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 515,
+                "name": "04-3",
+                "file_name": "04-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:58:27.000000Z",
+                "asset_url": "/storage/515/04-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "21",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "21",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Fresh and Flavorsome: Decoding the World of Groceries",
+            "slug": "fresh-and-flavorsome-decoding-the-world-of-groceries",
+            "description": "Welcome to a world where culinary dreams come true. Our grocery collection isn't just a mere assortment of products; it's a carefully curated gallery of flavors, textures, and aromas that promise to elevate your gastronomic experiences.",
+            "meta_title": "Fresh and Flavorsome: Decoding the World of Groceries",
+            "blog_thumbnail_id": 517,
+            "blog_meta_image_id": 517,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:04:53.000000Z",
+            "updated_at": "2023-09-02T05:59:08.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 517,
+                "name": "01-2",
+                "file_name": "01-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:59:00.000000Z",
+                "asset_url": "/storage/517/01-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 517,
+                "name": "01-2",
+                "file_name": "01-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:59:00.000000Z",
+                "asset_url": "/storage/517/01-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "20",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "20",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "title": "Beyond the Basket: The Artistry of Grocery Curation",
+            "slug": "beyond-the-basket-the-artistry-of-grocery-curation",
+            "description": "Embark on a delectable journey through the world of groceries, where every aisle holds the promise of culinary wonders. From vibrant produce that bursts with freshness to aisles laden with pantry essentials, the realm of groceries is a treasure trove for both home cooks and food enthusiasts. Indulge your senses as you explore our aisles, brimming with the freshest produce, finest ingredients, and gourmet delights. From plump, sun-kissed fruits to vibrant, farm-fresh vegetables, every item is a testament to nature's bounty.",
+            "meta_title": "Beyond the Basket: The Artistry of Grocery Curation",
+            "blog_thumbnail_id": 519,
+            "blog_meta_image_id": 519,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:01:45.000000Z",
+            "updated_at": "2023-09-02T05:59:36.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 519,
+                "name": "02-2",
+                "file_name": "02-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:59:28.000000Z",
+                "asset_url": "/storage/519/02-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 519,
+                "name": "02-2",
+                "file_name": "02-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T05:59:28.000000Z",
+                "asset_url": "/storage/519/02-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "19",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "19",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Foodie's Paradise: Exploring the World of Flavorful Healthy Food Hacks",
+            "slug": "foodie-s-paradise-exploring-the-world-of-flavorful-healthy-food-hacks",
+            "description": "It provides a roadmap to this enticing territory, ensuring you never dread a dull meal again. This first-hand expedition into the exciting world of health-conscious eating guarantees a stimulating read, packed with countless culinary tricks that do not compromise on flavor or nutrition. So, fasten your apron strings, prepare your palates, and get ready to take a deep-dive into a smorgasbord of healthy and delicious experiences!",
+            "meta_title": "Foodie's Paradise: Exploring the World of Flavorful Healthy Food Hacks",
+            "blog_thumbnail_id": 521,
+            "blog_meta_image_id": 521,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T11:01:35.000000Z",
+            "updated_at": "2023-09-02T06:00:40.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 521,
+                "name": "05-3",
+                "file_name": "05-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:00:05.000000Z",
+                "asset_url": "/storage/521/05-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 521,
+                "name": "05-3",
+                "file_name": "05-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:00:05.000000Z",
+                "asset_url": "/storage/521/05-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "18",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "18",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "title": "Garden to Plate: Celebrating the Wonder of Farm Fresh Produce",
+            "slug": "garden-to-plate-celebrating-the-wonder-of-farm-fresh-produce",
+            "description": "It drives into the heart of this profound relationship, providing a delightful exploration into the incredible world of self-sustainment, organic farming, and culinary creativity. This journey aims to inspire an appreciation for nutritious, fresh, and local ingredients, and the transformative magic they impart on everyday cooking and eating habits.",
+            "meta_title": "Garden to Plate: Celebrating the Wonder of Farm Fresh Produce",
+            "blog_thumbnail_id": 525,
+            "blog_meta_image_id": 525,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:57:28.000000Z",
+            "updated_at": "2023-09-02T06:01:46.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 525,
+                "name": "06-3",
+                "file_name": "06-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:01:38.000000Z",
+                "asset_url": "/storage/525/06-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 525,
+                "name": "06-3",
+                "file_name": "06-3.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:01:38.000000Z",
+                "asset_url": "/storage/525/06-3.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 28,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "16",
+                        "category_id": "28"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 19,
+                    "name": "Farm Fresh Produce",
+                    "slug": "farm-fresh-produce",
+                    "pivot": {
+                        "blog_id": "16",
+                        "tag_id": "19"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Fashion Fusion: Where Creativity Meets Wearability",
+            "slug": "fashion-fusion-where-creativity-meets-wearability",
+            "description": "In an increasingly interconnected world, fashion has become a powerful medium for self-expression and cultural celebration. As individuals, we have the unique opportunity to infuse our personal style with various cultural influences and embrace the diversity that global fashion offers. From traditional textiles and patterns to unique silhouettes and accessories, fashion fusion allows us to create a style that transcends boundaries and speaks to our global identity.",
+            "meta_title": "Fashion Fusion: Where Creativity Meets Wearability",
+            "blog_thumbnail_id": 527,
+            "blog_meta_image_id": 527,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:48:34.000000Z",
+            "updated_at": "2023-09-02T06:02:17.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 527,
+                "name": "01-1",
+                "file_name": "01-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:02:09.000000Z",
+                "asset_url": "/storage/527/01-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 527,
+                "name": "01-1",
+                "file_name": "01-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:02:09.000000Z",
+                "asset_url": "/storage/527/01-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "15",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "15",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "title": "The Grocery Guru: Tips for Stress-Free Shopping and Savings",
+            "slug": "the-grocery-guru-tips-for-stress-free-shopping-and-savings",
+            "description": "Carefully curated from industry insights, firsthand experiences, and savvy shopper secrets, this insightful guide seeks to alleviate your grocery store woes while ensuring your savings account breathes a sigh of relief.",
+            "meta_title": "The Grocery Guru: Tips for Stress-Free Shopping and Savings",
+            "blog_thumbnail_id": 529,
+            "blog_meta_image_id": 529,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:46:11.000000Z",
+            "updated_at": "2023-09-02T06:02:56.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 529,
+                "name": "04-2",
+                "file_name": "04-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:02:48.000000Z",
+                "asset_url": "/storage/529/04-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 529,
+                "name": "04-2",
+                "file_name": "04-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:02:48.000000Z",
+                "asset_url": "/storage/529/04-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "14",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "14",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Wardrobe Wonders: Unraveling the Enigma of Fashion",
+            "slug": "wardrobe-wonders-unraveling-the-enigma-of-fashion",
+            "description": "Fashion has long been regarded as a mirror of society, reflecting the ever-changing tastes and trends of individuals across the globe. From the elegant attire of the Victorian era to the bold and unconventional designs of the present day, fashion has continuously evolved, captivating the hearts and minds of fashion enthusiasts and trendsetters alike.",
+            "meta_title": "Wardrobe Wonders: Unravelling the Enigma of Fashion",
+            "blog_thumbnail_id": 531,
+            "blog_meta_image_id": 531,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:44:08.000000Z",
+            "updated_at": "2023-09-02T06:03:32.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 531,
+                "name": "02-1",
+                "file_name": "02-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:03:22.000000Z",
+                "asset_url": "/storage/531/02-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 531,
+                "name": "02-1",
+                "file_name": "02-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:03:22.000000Z",
+                "asset_url": "/storage/531/02-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "13",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "13",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Shop, Cook, Repeat: Turning Groceries into Delicious Meals",
+            "slug": "shop-cook-repeat-turning-groceries-into-delicious-meals",
+            "description": "The artful journey from stocking your pantry to serving up mouth-watering meals can be both an exciting and challenging adventure for many. Balancing the pursuit of culinary excellence with grocery budget restraints is no mean feat.",
+            "meta_title": "Shop, Cook, Repeat: Turning Groceries into Delicious Meals",
+            "blog_thumbnail_id": 533,
+            "blog_meta_image_id": 533,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:42:36.000000Z",
+            "updated_at": "2023-09-02T06:04:08.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 533,
+                "name": "05-2",
+                "file_name": "05-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:03:59.000000Z",
+                "asset_url": "/storage/533/05-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 533,
+                "name": "05-2",
+                "file_name": "05-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:03:59.000000Z",
+                "asset_url": "/storage/533/05-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "12",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "12",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Elevate Your Style: Exploring the Allure of Fashion",
+            "slug": "elevate-your-style-exploring-the-allure-of-fashion",
+            "description": "Welcome to a captivating journey into the world of fashion, where we delve into the ever-evolving concept of fashion fusion. In this post, we're here to inspire and educate you on infusing cultural influences into your personal style.",
+            "meta_title": "Elevate Your Style: Exploring the Allure of Fashion",
+            "blog_thumbnail_id": 535,
+            "blog_meta_image_id": 535,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:42:12.000000Z",
+            "updated_at": "2023-09-02T06:04:34.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 535,
+                "name": "03-1",
+                "file_name": "03-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:04:27.000000Z",
+                "asset_url": "/storage/535/03-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 535,
+                "name": "03-1",
+                "file_name": "03-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:04:27.000000Z",
+                "asset_url": "/storage/535/03-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "11",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "11",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Grocery Hacks for Busy Lives: Quick Tips for Effortless Shopping",
+            "slug": "grocery-hacks-for-busy-lives-quick-tips-for-effortless-shopping",
+            "description": "With the hustle and bustle of everyday life, it can often feel challenging to squeeze in regular grocery runs while juggling a multitude of tasks. Immerse yourself in this transformative journey to reshape your grocery shopping experience, save precious time, and make your daily life a tad bit easier.",
+            "meta_title": "Grocery Hacks for Busy Lives: Quick Tips for Effortless Shopping",
+            "blog_thumbnail_id": 537,
+            "blog_meta_image_id": 537,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:40:44.000000Z",
+            "updated_at": "2023-09-02T06:05:01.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 537,
+                "name": "06-2",
+                "file_name": "06-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:04:53.000000Z",
+                "asset_url": "/storage/537/06-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 537,
+                "name": "06-2",
+                "file_name": "06-2.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:04:53.000000Z",
+                "asset_url": "/storage/537/06-2.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 29,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "10",
+                        "category_id": "29"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 18,
+                    "name": "Groceries",
+                    "slug": "groceries",
+                    "pivot": {
+                        "blog_id": "10",
+                        "tag_id": "18"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Bold and Beautiful: Embracing Vibrant Colors in Your Fashion Palette",
+            "slug": "bold-and-beautiful-embracing-vibrant-colors-in-your-fashion-palette",
+            "description": "Unfolding within these lines are insights into how experimenting with color schemes, coordinating unexpected combinations, and integrating bold hues can reinvent your fashion identity. So, prepare to immerse yourself in a dynamic drama of colors and let them spill vivaciously onto your fashion canvas to inspire both yourself and others.",
+            "meta_title": "Bold and Beautiful: Embracing Vibrant Colors in Your Fashion Palette",
+            "blog_thumbnail_id": 539,
+            "blog_meta_image_id": 539,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:37:47.000000Z",
+            "updated_at": "2023-09-02T06:05:43.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 539,
+                "name": "04-1",
+                "file_name": "04-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:05:37.000000Z",
+                "asset_url": "/storage/539/04-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 539,
+                "name": "04-1",
+                "file_name": "04-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:05:37.000000Z",
+                "asset_url": "/storage/539/04-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "9",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "9",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Minimalist Magic: The Allure of Simplicity in a World of Trends",
+            "slug": "minimalist-magic-the-allure-of-simplicity-in-a-world-of-trends",
+            "description": "In an era where trends are transient and consumer preferences are constantly evolving, there's a fascinating paradox that has quietly taken hold: the enduring appeal of simplistic elegance and minimalist charm. This is the realm where less is indeed more.",
+            "meta_title": "Minimalist Magic: The Allure of Simplicity in a World of Trends",
+            "blog_thumbnail_id": 541,
+            "blog_meta_image_id": 541,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:35:33.000000Z",
+            "updated_at": "2023-09-02T06:06:10.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 541,
+                "name": "05-1",
+                "file_name": "05-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:06:03.000000Z",
+                "asset_url": "/storage/541/05-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 541,
+                "name": "05-1",
+                "file_name": "05-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:06:03.000000Z",
+                "asset_url": "/storage/541/05-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "8",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "8",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Vintage Vibes: Channeling Old-World Glamour in Modern Fashion",
+            "slug": "vintage-vibes-channeling-old-world-glamour-in-modern-fashion",
+            "description": "In the ever-evolving fashion landscape, certain timeless trends have a recurring propensity to make a grand comeback. This exploration seeks to dissect the elegance of yesteryears, its stunning transformation over time and its significant imprint on modern style narratives.",
+            "meta_title": "Vintage Vibes: Channeling Old-World Glamour in Modern Fashion",
+            "blog_thumbnail_id": 543,
+            "blog_meta_image_id": 543,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:33:14.000000Z",
+            "updated_at": "2023-09-02T06:06:40.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 543,
+                "name": "06-1",
+                "file_name": "06-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:06:32.000000Z",
+                "asset_url": "/storage/543/06-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 543,
+                "name": "06-1",
+                "file_name": "06-1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:06:32.000000Z",
+                "asset_url": "/storage/543/06-1.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 30,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "7",
+                        "category_id": "30"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 17,
+                    "name": "Fashions",
+                    "slug": "fashions",
+                    "pivot": {
+                        "blog_id": "7",
+                        "tag_id": "17"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Artistry in Every Corner: Mastering the Symphony of Furnishing",
+            "slug": "artistry-in-every-corner-mastering-the-symphony-of-furnishing",
+            "description": "Furnishing isn't just about sofas and tables; it's about sculpting emotions, fostering comfort, and igniting inspiration. Immerse yourself in the art of creating spaces that resonate with you. From sleek minimalism to cozy eclecticism, let your imagination flow as you transform houses into harmonious havens through the power of furnishing.",
+            "meta_title": "Artistry in Every Corner: Mastering the Symphony of Furnishing",
+            "blog_thumbnail_id": 545,
+            "blog_meta_image_id": 545,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:31:38.000000Z",
+            "updated_at": "2023-09-02T06:07:18.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 545,
+                "name": "01",
+                "file_name": "01.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:07:08.000000Z",
+                "asset_url": "/storage/545/01.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 545,
+                "name": "01",
+                "file_name": "01.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:07:08.000000Z",
+                "asset_url": "/storage/545/01.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "6",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "6",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Elevate Your Space: The Art of Stylish Furnishing!",
+            "slug": "elevate-your-space-the-art-of-stylish-furnishing",
+            "description": "Unveil the secrets of arranging furniture in perfect harmony, balancing aesthetics with function. Whether you're transforming a corner or an entire home, our blog unveils the magic that turns mere rooms into living, breathing reflections of your individuality. Step in and let the furnishing journey begin!",
+            "meta_title": "Elevate Your Space: The Art of Stylish Furnishing!",
+            "blog_thumbnail_id": 547,
+            "blog_meta_image_id": 547,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:31:11.000000Z",
+            "updated_at": "2023-09-02T06:07:59.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 547,
+                "name": "05",
+                "file_name": "05.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:07:51.000000Z",
+                "asset_url": "/storage/547/05.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 547,
+                "name": "05",
+                "file_name": "05.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:07:51.000000Z",
+                "asset_url": "/storage/547/05.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "5",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "5",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Small Space, Big Style: Furnishing Ideas for Compact Living",
+            "slug": "small-space-big-style-furnishing-ideas-for-compact-living",
+            "description": "As metropolitan living becomes increasingly prevalent, the design challenge of transforming small spaces into functional and stylish homes is one that many of us face. 'Small Space, Big Style: Furnishing Ideas for Compact Living,' aims to provide innovative and creative solutions to this space conundrum.",
+            "meta_title": "Small Space, Big Style: Furnishing Ideas for Compact Living",
+            "blog_thumbnail_id": 549,
+            "blog_meta_image_id": 549,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:30:16.000000Z",
+            "updated_at": "2023-09-02T06:08:32.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 549,
+                "name": "03",
+                "file_name": "03.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:08:25.000000Z",
+                "asset_url": "/storage/549/03.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 549,
+                "name": "03",
+                "file_name": "03.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:08:25.000000Z",
+                "asset_url": "/storage/549/03.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "4",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "4",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Crafting Your Dream Living Space",
+            "slug": "crafting-your-dream-living-space",
+            "description": "Step into a world where design meets desire, where furnishings breathe life into rooms, and comfort embraces style. Welcome to the realm of furnishing, where ordinary spaces transform into captivating havens. Discover the art of curating with purpose - every piece a brushstroke on the canvas of your home.",
+            "meta_title": "Crafting Your Dream Living Space",
+            "blog_thumbnail_id": 551,
+            "blog_meta_image_id": null,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:29:18.000000Z",
+            "updated_at": "2023-09-02T06:09:17.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 551,
+                "name": "04",
+                "file_name": "04.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:09:00.000000Z",
+                "asset_url": "/storage/551/04.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": null,
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "3",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "3",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Mix and Match: Creating Eclectic Interiors with Creative Furnishing",
+            "slug": "mix-and-match-creating-eclectic-interiors-with-creative-furnishing",
+            "description": "Navigating the vast world of interior design can often feel like a daunting challenge with its myriad of styles, trends, and aesthetics. However, more daring design enthusiasts may find a captivating allure in the eclectic decor, where creative furnishings become the stars of the show. The refreshing concept of 'Mix and Match', offers the freedom and flexibility to blend various elements, breaking the monotony of stylistic rigidity, consequently producing more personalized and artful spaces.",
+            "meta_title": "Mix and Match: Creating Eclectic Interiors with Creative Furnishing",
+            "blog_thumbnail_id": 553,
+            "blog_meta_image_id": 553,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:28:18.000000Z",
+            "updated_at": "2023-09-02T06:10:20.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 553,
+                "name": "02",
+                "file_name": "02.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:10:04.000000Z",
+                "asset_url": "/storage/553/02.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 553,
+                "name": "02",
+                "file_name": "02.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:10:04.000000Z",
+                "asset_url": "/storage/553/02.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "2",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "2",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "The Art of Furnishing: Where Comfort Meets Style",
+            "slug": "the-art-of-furnishing-where-comfort-meets-style",
+            "description": "A comprehensive guide to tackle the art and science of furnishing.  Whether you're setting up a new home or giving an existing space a makeover, you'll find insightful suggestions, creative ideas and practical tips on every aspect of furnishing. Prepare to dive deep into the world of furniture shopping, space planning, style selection, and décor enhancement.",
+            "meta_title": "The Art of Furnishing: Where Comfort Meets Style",
+            "blog_thumbnail_id": 555,
+            "blog_meta_image_id": 555,
+            "is_featured": 0,
+            "is_sticky": 0,
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2023-08-31T10:26:26.000000Z",
+            "updated_at": "2023-09-02T06:10:49.000000Z",
+            "deleted_at": null,
+            "blog_thumbnail": {
+                "id": 555,
+                "name": "06",
+                "file_name": "06.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:10:42.000000Z",
+                "asset_url": "/storage/555/06.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "blog_meta_image": {
+                "id": 555,
+                "name": "06",
+                "file_name": "06.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2023-09-02T06:10:42.000000Z",
+                "asset_url": "/storage/555/06.png",
+                "original_url": "assets/images/data/blog.png"
+            },
+            "categories": [
+                {
+                    "id": 31,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "1",
+                        "category_id": "31"
+                    },
+                    "category_image": null,
+                    "category_meta_image": null,
+                    "category_icon": null
+                }
+            ],
+            "created_by": {
+                "id": 1,
+                "name": "Super Admin",
+                "email": "admin@example.com",
+                "role": {
+                    "id": 1,
+                    "name": "admin",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": null,
+                "point": null
+            },
+            "tags": [
+                {
+                    "id": 16,
+                    "name": "Furnishing",
+                    "slug": "furnishing",
+                    "pivot": {
+                        "blog_id": "1",
+                        "tag_id": "16"
+                    }
+                }
+            ]
+        }
+    ],
+    "first_page_url": "https://laravel.pixelstrap.net/fastkart/api/blog?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://laravel.pixelstrap.net/fastkart/api/blog?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "https://laravel.pixelstrap.net/fastkart/api/blog?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "https://laravel.pixelstrap.net/fastkart/api/blog",
+    "per_page": 31,
+    "prev_page_url": null,
+    "to": 31,
+    "total": 31
+}

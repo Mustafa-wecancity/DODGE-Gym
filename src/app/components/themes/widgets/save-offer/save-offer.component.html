@@ -1,0 +1,128 @@
+<!-- Banner Horizontal Style-->
+
+<!-- [style]="'simple'" -->
+@if(home){
+
+<div [class]="class" class="pfor">
+  <owl-carousel-o [options]="ISliderFull ? bannerSlider : customOptionsItem1">
+    @for(item of Bundle_; track item.id){ @if(item){
+    <ng-template carouselSlide>
+      <div>
+        <div class="product-theme-box">
+          <div class="img-box ratio_50">
+            <a
+              [routerLink]="[
+                '/BundleDetails/',
+                item.id,
+                setPathDecodeURIComponent(item.name)
+              ]"
+            >
+              <div class="banner-contain hover-effect">
+                <img
+                  appLazyLoad
+                  [dataSrc]="item.image | customPipeForImages"
+                  class="image-contain"
+                  alt="item"
+                />
+              </div>
+            </a>
+          </div>
+          <div class="content-box ">
+            <div class="top-content">
+              <a
+                [routerLink]="[
+                  '/BundleDetails/',
+                  item.id,
+                  setPathDecodeURIComponent(item.name)
+                ]"
+              >
+                <p class="text-white mb-1">
+                  <span class="time"
+                    ><i data-feather="clock"></i>
+                    <span
+                      >{{ "Bundle.form.Include" | translate }}
+                      <span class="bold theme-color"> {{ item.points }}</span>
+                      {{ "Bundle.form.Points" | translate }} ,{{
+                        "Bundle.form.validity" | translate
+                      }}
+                      <span class="bold theme-color">{{
+                        item.validityDays
+                      }}</span>
+                      {{ "Bundle.form.Days" | translate }}</span
+                    ></span
+                  >
+                </p>
+                <h5 class="Medium text-white">
+                  {{ item.name | summary : 70 }}
+                </h5>
+              </a>
+            </div>
+            <div class="bottom-content" style="margin-top: 0px !important">
+              <h6 class="price text-white">
+                <span class="bold theme-color"
+                  >{{ item.priceAfterDiscount }}
+                </span>
+                <span id="sar" class="text-white mx-2">{{
+                  "SAR" | translate
+                }}</span>
+                @if(item.discount>0){
+                <del class="text-content mx-1">
+                  <del
+                    class="Regular text-white"
+                    style="color: white !important"
+                    >{{ item.price }}
+                  </del>
+                  <span id="sar" class="text-white">{{
+                    "SAR" | translate
+                  }}</span>
+                </del>
+                <span class="offer text-white"
+                  >(
+                  <span class="bold text-white"> {{ item.discount }}% </span>
+                  {{ "servicesBox.off" | translate }})
+                </span>
+                }
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    }}
+  </owl-carousel-o>
+</div>
+
+} @else if(!home){
+
+<app-title
+  [title]="'Bundle.header.title'"
+  [description]="'Bundle.header.description'"
+  [routerLink]="['/BundleList/']"
+>
+</app-title>
+<div [class]="class" class="pfor">
+  <owl-carousel-o [options]="ISliderFull ? bannerSlider : bannerSlider">
+    @for(item of Bundle_; track item.id){ @if(item){
+    <ng-template carouselSlide>
+      <a
+        [routerLink]="[
+          '/BundleDetails/',
+          item.id,
+          setPathDecodeURIComponent(item.name)
+        ]"
+      >
+        <div class="banner-contain hover-effect">
+          <img
+            appLazyLoad
+            [dataSrc]="item.image | customPipeForImages"
+            class="image-contain"
+            alt="item"
+          />
+        </div>
+      </a>
+    </ng-template>
+    }}
+  </owl-carousel-o>
+</div>
+
+}

@@ -1,0 +1,46 @@
+.blog-box{
+    h5{ color: var(--theme-color);}
+    &:hover
+
+    {
+        h5{
+            color :black
+        }
+    }
+}
+
+
+
+.bold{
+    font-family: 'LamaSansBold' !important;
+  
+  }
+  
+  .Medium{
+ 
+    font-family: 'LamaSansMedium' !important;
+    }
+  
+    b {
+      font-family: 'LamaSansRegular' !important;
+  font-size: 14px;
+  }
+   .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+  span{
+  font-family: 'LamaSansBold' !important;
+  
+  }
+  }
+  
+  .product-contain {
+  
+    p{
+      font-family: 'LamaSansRegular' !important;
+  
+    }
+  }
+  
+  p , .Regular {
+    font-family: 'LamaSansRegular' !important;
+  
+  }

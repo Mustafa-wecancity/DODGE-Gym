@@ -1,0 +1,53 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 5,
+            "item_name": "Fuzzify the Moments",
+            "item_image": "https://laravel.pixelstrap.net/fastkart/storage/1672/6.jpg",
+            "can_download_file": true,
+            "can_download_license": false
+        },
+        {
+            "id": 6,
+            "item_name": "Maxico Fiesta Frames",
+            "item_image": "https://laravel.pixelstrap.net/fastkart/storage/1680/8.jpg",
+            "can_download_file": true,
+            "can_download_license": false
+        },
+        {
+            "id": 4,
+            "item_name": "Fastkart - Single or Multivendor Ecommerce with React Next JS & Laravel REST API",
+            "item_image": "https://laravel.pixelstrap.net/fastkart/storage/1700/8.jpg",
+            "can_download_file": true,
+            "can_download_license": false
+        }
+    ],
+    "first_page_url": "https://laravel.pixelstrap.net/fastkart/api/download?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://laravel.pixelstrap.net/fastkart/api/download?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "https://laravel.pixelstrap.net/fastkart/api/download?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "https://laravel.pixelstrap.net/fastkart/api/download",
+    "per_page": 3,
+    "prev_page_url": null,
+    "to": 3,
+    "total": 3
+}

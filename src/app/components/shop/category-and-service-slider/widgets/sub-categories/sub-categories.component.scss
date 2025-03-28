@@ -1,0 +1,39 @@
+.is-focus{
+    // &:hover,
+    // &.active {
+      background-color: transparent;
+  
+      &::after {
+        opacity: 1;
+      }
+  
+      img {
+        filter: invert(1) brightness(100);
+      }
+  
+      h5 {
+        color: #fff;
+      }
+  
+      .background-image {
+        filter: none;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+// }
+
+.category-box {
+  background-color: #fff !important;
+  margin: 0px auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: calc(15px + 20*(100vw - 320px) / 1600) 8px;
+  border-right: 1px solid #ececec;
+}

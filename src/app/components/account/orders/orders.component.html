@@ -1,0 +1,252 @@
+@if(isBrowser){
+
+<div class="titl e -header w-100">
+  <div class="title">
+    <h2 class="theme-colorTwo bold">
+      {{ "MyDashboard.MyOrder.my_orders" | translate }}
+    </h2>
+
+    <span class="title-leaf title-leaf-gray">
+      <svg class="icon-width bg-gray">
+        <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+      </svg>
+    </span>
+  </div>
+
+  <div class="mx-2">
+    <form class="row" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-12 col-lg-4 col-md-6">
+        <div class="">
+          <label class="form-label" for="serial">{{
+            "MyDashboard.MyOrder.form.serial" | translate
+          }}</label>
+          <input
+            class="form-control"
+            id="serial"
+            type="text"
+            placeholder="{{ 'MyDashboard.MyOrder.form.serial' | translate }}"
+            formControlName="serial"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4 col-md-6">
+        <div class="">
+          <label class="form-label" for="dateFrom">{{
+            "MyDashboard.MyOrder.form.dateFrom" | translate
+          }}</label>
+          <input
+            class="form-control"
+            id="dateFrom"
+            type="date"
+            placeholder="{{ 'MyDashboard.MyOrder.form.dateFrom' | translate }}"
+            formControlName="dateFrom"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4 col-md-6">
+        <div class="">
+          <label class="form-label" for="dateTo">{{
+            "MyDashboard.MyOrder.form.dateTo" | translate
+          }}</label>
+          <input
+            class="form-control"
+            id="dateTo"
+            type="date"
+            placeholder="{{ 'MyDashboard.MyOrder.form.dateTo' | translate }}"
+            formControlName="dateTo"
+          />
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-12 col-md-12 my-4 d-flex justify-content-end">
+        <app-button
+          class="mx-2"
+          (click)="onSubmit()"
+          [class]="
+            'btn btn-animation w-100 Medium justify-content-center rounded-3  '
+          "
+          >{{ "MyDashboard.MyOrder.form.Filter" | translate }}</app-button
+        >
+
+        <app-button
+          class="mx-2"
+          (click)="clearFilter()"
+          [class]="
+            'btn btn-animation theme- color w-100    Medium  justify-content-center rounded-3 '
+          "
+          >{{ "MyDashboard.MyOrder.form.Clear" | translate }}</app-button
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="total-box mt-0">
+  <div class="wallet-table mt-0">
+    <div class="table-responsive">
+      <table>
+        <tbody>
+          <tr>
+            <th (click)="sortBy('OrderNumber')" class="Medium theme-colorTwo">
+              {{ "MyDashboard.MyOrder.orderNumber" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+            </th>
+            <th scope="col"
+            (click)="sortBy('bundlename')">
+              {{ "MyDashboard.MyOrder.bundleName" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+            </th>
+            <th scope="col" (click)="sortBy('qty')">
+              {{ "MyDashboard.MyOrder.quantity" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+            </th>
+            <!-- <th  class="Medium theme-colorTwo ">{{ "MyDashboard.MyOrder.Tax" | translate }}</th> -->
+
+            <th scope="col"
+            (click)="sortBy('subsotal')">
+              {{ "MyDashboard.MyOrder.bundlePrice" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+
+            </th>
+            <th scope="col" class="Medium theme-colorTwo"
+            (click)="sortBy('creationdate')"
+            >
+              {{ "MyDashboard.MyOrder.orderDate" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+
+            </th>
+            <th
+              scope="col"
+              class="Medium theme-colorTwo"
+            >
+              {{ "MyDashboard.MyOrder.orderStatus" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+            </th>
+            <th
+              scope="col"
+              class="Medium theme-colorTwo"
+              (click)="sortBy('totalAmount')"
+            >
+              {{ "MyDashboard.MyOrder.totalAmount" | translate }}
+              <i class="fa-solid fa-sort  "></i>
+            </th>
+            <!-- <th (click)="sortBy('OrderNumber')" class="Medium theme-colorTwo ">
+              {{ "MyDashboard.MyOrder.OrderNumber" | translate }}
+              <i class="fa-solid fa-sort"></i>
+            </th>
+            <th  class="Medium theme-colorTwo " (click)="sortBy('OrderCreationDate')">
+              {{ "MyDashboard.MyOrder.OrderCreationDate" | translate }}
+              <i class="fa-solid fa-sort"></i>
+
+            </th>
+            <th  class="Medium theme-colorTwo " (click)="sortBy('OrderExecutionDate')">
+              {{ "MyDashboard.MyOrder.OrderExecutionDate" | translate }}
+              <i class="fa-solid fa-sort"></i>
+
+            </th>
+            
+            <th  class="Medium theme-colorTwo " (click)="sortBy('TotalAmount')">
+              {{ "MyDashboard.MyOrder.TotalAmount" | translate }}
+              <i class="fa-solid fa-sort"></i>
+              
+            </th> -->
+            <th class="Medium theme-colorTwo">{{ "report" | translate }}</th>
+          </tr>
+          @if(Orders&&Orders.length){ @for(order of Orders; track order; let i =
+          $index){
+          <tr
+            [routerLink]="['/account/order/details/', order.customerBundleId]"
+          >
+            <td
+              [routerLink]="['/account/order/details/', order.customerBundleId]"
+            >
+              <span class="theme-colorTwo Medium">{{order.serial}}</span>
+            </td>
+            <td class="theme-colorTwo Medium">{{ order?.bundleName }}</td>
+            <td class="theme-colorTwo Medium">
+              <label class="success theme-colorTwo"
+                >{{ order?.quantity }}
+                {{ "MyDashboard.MyOrder.bundles" | translate }}</label
+              >
+              <span  class="bold mx-1 d-block "> {{ "MyDashboard.MyOrder.Tax" | translate }}  <span  class="bold mx-1   theme-color">{{ order?.tax  }}</span>     <span id="sar"> {{ "SAR" | translate }}</span>
+            </span>
+
+            </td>
+            <!-- <td class="theme-color Regular d-block" [routerLink]="['/account/order/details/', order.customerBundleId]">
+              <span  class="bold mx-1 d-block"> {{ "MyDashboard.MyOrder.Tax" | translate }} {{ order?.tax  }}    <span id="sar"> {{ "SAR" | translate }}</span>
+            </span>
+            </td> -->
+
+            <td
+              class="theme-colorTwo Regular"
+              [routerLink]="['/account/order/details/', order.customerBundleId]"
+            >
+              <h5>
+                <span class="bold mx-1 "> {{ order?.priceAfterDiscount }} </span>
+                <span id="sar"> {{ "SAR" | translate }} </span>
+                <del class="text-content d-block" style="color: red">
+                  {{ order?.price }} {{ "SAR" | translate }}</del
+                >
+              </h5>
+            </td>
+
+            <td
+              class="theme-colorTwo Medium"
+              [routerLink]="['/account/order/details/', order.customerBundleId]"
+            >
+              {{ order?.purchasedDate | date : "dd/MM/yyyy" }}
+            </td>
+            <td>
+              <label class="success">Success</label>
+            </td>
+            <td
+              class="theme-colorTwo Regular"
+              [routerLink]="['/account/order/details/', order.customerBundleId]"
+            >
+              <h5>
+                <span class="bold mx-1">
+                  {{ order?.totalPriceAfterDiscount }}
+                </span>
+                <span id="sar"> {{ "SAR" | translate }} </span>
+                <del class="text-content d-block" style="color: red">
+                  {{ order?.totalPrice }} {{ "SAR" | translate }}</del
+                >
+              </h5>
+            </td>
+   
+            <td
+              class="theme-colorTwo Regular"
+              (click)="navigateWithEncryptedData(order.customerBundleId)"
+            >
+              <i class="fa-solid fa-file"></i> {{ "report" | translate }}
+            </td>
+          </tr>
+          } }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  @if(Orders&& Orders.length){
+  <nav class="custome-pagination">
+    <app-pagination
+      [total]="totalCount || 0"
+      [currentPage]="filter['page']"
+      [pageSize]="filter['paginate']"
+      (setPage)="setPaginate($event)"
+    >
+    </app-pagination>
+  </nav>
+  }
+</div>
+@if(!Orders){
+<app-no-data
+  [class]="'no-data-added'"
+  [image]="'assets/svg/empty-items.svg'"
+  [text]="'no_orders_found'"
+  [description]="'no_orders_have_yet'"
+>
+</app-no-data>
+} }

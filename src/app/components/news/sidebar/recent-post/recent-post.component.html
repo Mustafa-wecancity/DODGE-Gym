@@ -1,0 +1,23 @@
+<div class="recent-post-box">
+   @for(item of News | slice:0:5; track item){
+      <div class="recent-box">
+         <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]" class="recent-image">
+            <img [src]="item.image 
+                 ?(item.image|customPipeForImages)
+
+                       : 'assets/images/blog.png'" class="img-fluid" [alt]="item.title">
+         </a>
+         <div class="recent-detail">
+            <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]">
+               <h5 class="recent-name theme-colorTwo bold">{{ item.title }}</h5>
+            </a>
+            <h6 class="Medium">{{ item.date |   date: 'dd MMM yyyy'}}</h6>
+         </div>
+      </div>
+   }
+</div>
+<!-- No Data -->
+@if(!(News && News.length)){
+   <app-no-data [class]="'no-data-added bg-light'" [text]="'no_news_found'">
+   </app-no-data>
+}

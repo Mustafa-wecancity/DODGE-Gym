@@ -1,0 +1,23 @@
+ 
+  
+ @if( (ServicesHome && ServicesHome.length)){ 
+
+ <div class="row g-4">
+
+   @if(!ServicesHome.length){
+      <div class="row row-cols-5 m-0">
+         @for(item of skeletonItems; track item){
+            <div>
+               <app-skeleton-product-box></app-skeleton-product-box>
+            </div>
+         }
+      </div>
+   }@else {
+      @for(service of ServicesHome; track service){
+         <app-services-box  class="col-xxl-3 col-lg-4 col-sm-6" [service]="service" [close]="close"></app-services-box>
+
+}
+}
+</div>
+
+}

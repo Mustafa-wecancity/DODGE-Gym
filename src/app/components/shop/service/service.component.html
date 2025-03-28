@@ -1,0 +1,47 @@
+@if(ServiceGetById){
+
+  @if(ServiceGetById.serviceMediaList){
+
+    <section class="product-list-section  " style=" background-color: #f9f9f9 !important;
+      ">
+      <div class="container-fluid-lg mt-lg-5">
+        <app-service-media
+          [serviceMediaList]="ServiceGetById.serviceMediaList"
+          [class]="'banner-slider   pfor'"
+        ></app-service-media>
+      </div>
+    
+    </section>
+    }
+    
+<!-- Product Details Layout -->
+<section
+  class="product-section"
+  [class.section-b-space]="!ServiceGetById"
+  [class.theme-product-section5]="layout === 'product_digital'"
+>
+  <!-- @if(layout == 'product_thumbnail'){ -->
+  <app-product-thumbnail
+    [ServiceGetById]="ServiceGetById"
+  ></app-product-thumbnail>
+  <!-- } -->
+</section>
+
+<!-- Related Products -->
+@if(MostViewedServices){
+<section
+  class="product-list-section releted-product section-b-space bg-white"
+  id="MostViewedServices"
+  appLazyLoadSection
+  (sectionInView)="MostViewedServicesParent = $event"
+>
+  @if(MostViewedServicesParent){
+
+  <app-related-products
+    [serviceCategoryId]="ServiceGetById.categoryId"
+    [title]="'Home.header.MostOrderedServices'"
+  ></app-related-products>
+  }
+</section>
+
+} }

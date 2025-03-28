@@ -1,0 +1,10 @@
+ 
+ 
+ <div class="input-group input-group-sm mb-3">
+  
+    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="{{'search_text' | translate}}" (keyup.enter)="applyFilter()"  [(ngModel)]="searchText">
+    <div class="input-group-prepend">
+        <span class="input-group-text bg-white" id="inputGroup-sizing-lg" (click)="applyFilter()">      <i class="ri-search-line"></i>
+        </span>
+      </div>  
+</div>

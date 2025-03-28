@@ -1,0 +1,34 @@
+<div [class]="class" class="pfor">
+    <owl-carousel-o [options]="ISliderFull ? bannerSlider : bannerSlider">
+       @for(item of serviceMediaList; track item.id){
+          @if(item){
+        <ng-template carouselSlide>
+            <a>
+                <div class="banner-contain hover-effect" >
+                    @if(item.imagePath){
+                        <img 
+                        appLazyLoad [dataSrc]="item.imagePath|customPipeForImages"
+                            class="image-contain" 
+                            alt="item"> 
+                    }
+               
+                    @if(item.url ){
+                        <iframe 
+                        *ngIf="item.url"
+                        [src]="getEmbedUrl(item.url) | safeUrl" 
+                        width="560" 
+                        height="258" 
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                      </iframe>
+                    }
+                </div>
+            </a> 
+        </ng-template>
+       }}
+    </owl-carousel-o>
+ </div>
+ 

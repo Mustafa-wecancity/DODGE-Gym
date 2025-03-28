@@ -1,0 +1,101 @@
+.bank-section {
+  padding: 0 35px !important;
+}
+
+
+.seller-poster-section {
+  margin-bottom: 1erm !important;
+
+  h2 {
+    font-size: 2.6em;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+    letter-spacing: .5px;
+  }
+
+  .seller-title p {
+    margin-bottom: 0;
+    font-size: calc(26px + 1 * (100vw - 320px) / 1600);
+    color: #ddd;
+    line-height: 1.2;
+  }
+}
+.businesswoman , .entrepreneurs {
+  font-size: calc(22px + 1*(100vw - 320px) / 1600) !important;
+}
+
+#bundles {
+  // background-color: #fff;
+}
+
+
+.delivery-list {
+
+  p {
+    color: #ddd;
+
+  }
+}
+
+.fresh-vegetable-section .delivery-box li .delivery-box .delivery-icon img {
+  -webkit-filter: invert(0);  
+  // filter: invert(1) brightness(100);
+  filter: invert(0);
+
+}
+
+.feature-title h2{
+  color: var(--theme-color) !important;
+  cursor: pointer;
+  font-family: "LamaSansBold" !important;
+}
+.Behind{
+
+  .dedicatedArmy{
+    background-color: var(--theme-color);
+    line-height: 1.2;
+    padding: 8px 0 0 0;
+  }
+}
+@media (max-width: 992px) {
+
+  h2 {
+    font-size: 1.8em !important;
+    ;
+    text-transform: uppercase;
+  }
+ .Behind p {
+font-size: 14px !important;
+  }
+  
+
+  .businesswoman , .entrepreneurs {
+    font-size: calc(17px + 1*(100vw - 320px) / 1600) !important;
+  }
+  
+}
+
+@media (max-width: 792px) {
+  h2 {
+    font-size: 1.5em !important;
+    ;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+    letter-spacing: .5px;
+  }
+.delivery-box{
+  h5{
+    font-size: 13px !important;
+  }
+}
+  
+  .businesswoman , .entrepreneurs {
+    font-size: calc(15px + 1*(100vw - 320px) / 1600) !important;
+  }
+
+  #bundles{
+    padding: 0!important;
+  }
+  
+
+}

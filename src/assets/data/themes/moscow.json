@@ -1,0 +1,138 @@
+{
+    "id": 8,
+    "content": {
+        "home_banner": {
+            "status": false,
+            "main_banner": {
+                "image_url": "/assets/images/data/themes/moscow/1.jpg",
+                "redirect_link": {
+                    "link": "books",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            }
+        },
+        "categories_icon_list": {
+            "status": true,
+            "category_ids": [
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                39
+            ],
+            "title": "Categories"
+        },
+        "products_list_1": {
+            "title": "Popular Books This Year",
+            "product_ids": [
+                183,
+                192,
+                191,
+                193,
+                189,
+                186,
+                187,
+                185
+            ],
+            "status": true
+        },
+        "coupons": {
+            "status": true,
+            "image_url": "/assets/images/data/themes/moscow/2.jpg",
+            "redirect_link": {
+                "link": "books",
+                "link_type": "collection",
+                "product_ids": null
+            }
+        },
+        "slider_product_with_banner": {
+            "left_side_banners": {
+                "status": true,
+                "banner_1": {
+                    "image_url": "/assets/images/data/themes/moscow/3.jpg",
+                    "redirect_link": {
+                        "link": 183,
+                        "link_type": "product",
+                        "product_ids": 183
+                    }
+                }
+            },
+            "slider_products": {
+                "status": true,
+                "product_slider_1": {
+                    "title": "Top Selling",
+                    "product_ids": [
+                        193,
+                        192,
+                        190,
+                        191
+                    ],
+                    "status": true
+                },
+                "product_slider_2": {
+                    "title": "Trending Books",
+                    "product_ids": [
+                        190,
+                        192,
+                        187,
+                        186
+                    ],
+                    "status": true
+                },
+                "product_slider_3": {
+                    "title": "Recently Added",
+                    "product_ids": [
+                        192,
+                        191,
+                        193,
+                        190
+                    ],
+                    "status": true
+                }
+            }
+        },
+        "products_list_2": {
+            "title": "Best Selling Books",
+            "product_ids": [
+                189,
+                188,
+                190,
+                193,
+                192,
+                187
+            ],
+            "status": true
+        },
+        "news_letter": {
+            "title": "Join Our Newsletter And Get...",
+            "status": true,
+            "image_url": "/assets/images/data/newsletter.jpg",
+            "sub_title": "$20 discount for your first order"
+        },
+        "brands": {
+            "status": false,
+            "brand_ids": [
+                3,
+                1
+            ]
+        },
+        "products_ids": [
+            183,
+            192,
+            191,
+            193,
+            189,
+            186,
+            187,
+            185,
+            190,
+            188
+        ]
+    },
+    "slug": "moscow"
+}

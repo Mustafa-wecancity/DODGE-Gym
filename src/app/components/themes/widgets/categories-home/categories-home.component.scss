@@ -1,0 +1,49 @@
+h3 {
+  color: var(--theme-colorTow);
+}
+
+h5 a {
+  color: #912b38;
+
+  font-family: "LamaSansMedium" !important;
+  font-size: 14px !important;
+}
+
+@media (max-width: 767px) {
+  .category-menu {
+    background-color: transparent;
+  }
+}
+
+.bold {
+  font-family: "LamaSansBold" !important;
+}
+.Medium {
+  font-family: "LamaSansMedium" !important;
+}
+
+h6 {
+  color: var(--theme-colorTow);
+  font-family: "LamaSansMedium" !important;
+}
+
+b {
+  font-family: "LamaSansRegular" !important;
+  font-size: 14px;
+}
+.label-tag,
+.label-flex label,
+del.bold,
+.discountPercent,
+.bold {
+  span {
+    font-family: "LamaSansBold" !important;
+  }
+}
+.Regular {
+  font-family: "LamaSansRegular" !important;
+}
+del {
+  font-size: 12px;
+  font-family: "LamaSansBold" !important;
+}

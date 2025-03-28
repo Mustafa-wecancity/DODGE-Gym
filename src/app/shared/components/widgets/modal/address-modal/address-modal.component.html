@@ -1,0 +1,130 @@
+<ng-template #addressModal let-modal>
+   <div class="modal-header">
+      <h3 class="fw-semibold"> {{ (!attachment ? 'add_address' : 'edit_address') | translate  }}</h3>
+      <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'address_modal_close_btn'" (click)="modal.dismiss('Cross click')">
+         <i class="ri-close-line"></i>
+      </app-button>
+   </div>
+   @if(form){
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+         <a class="seller-grid-box">
+           <div class="grid-contain">
+             <div class="seller-contact-detail s mb-3 ml-1">
+               <div class="seller-contact">
+                 <div class="contact-detail">
+                   <h5 class="bold mb-1">
+                     <i class="fa-solid fa-map-pin"></i>
+                     {{ "Description" | translate }}
+                   </h5>
+                   <textarea
+                     class="msger-input noResize two uk-textarea Regular mx-2 w-100"
+                     placeholder="{{ 'Type Message here..' | translate }}"
+                     formControlName="attachmentText"
+                   >
+                   </textarea>
+
+                   @if(form.controls['attachmentText'].touched
+                   &&
+                   form.controls['attachmentText'].errors?.['required']){
+                   <div class="invalid-feedback">
+                     {{ "attachmentText_is_required" | translate }}
+                   </div>
+                   }
+                 </div>
+               </div>
+             </div>
+             <div class="seller-contact-detail s mb-3">
+               <div class="seller-contact">
+                 <div class="contact-detail">
+                   <h5 class="bold mb-1">
+                     <i class="fa-solid fa-map-pin"></i>
+                     {{ "attachmentType" | translate }}
+                   </h5>
+                   <ng-select
+                     #attachmentTypeId_
+                     [selectOnTab]="true"
+                     formControlName="attachmentId"
+                     class="p-0 custom-select"
+                     dropdownPosition="auto"
+                     labelForId="validation02"
+                   >
+                     @for (item of AttachmentType; track item) { // Html
+                     template to repeat
+                     <ng-option [value]="item.id"
+                       >{{ item.name }}
+                     </ng-option>
+                     }
+                   </ng-select>
+
+                   @if(form.controls['attachmentId'].touched &&
+                   form.controls['attachmentId'].errors?.['required']){
+                   <div class="invalid-feedback">
+                     {{ "attachmentType_is_required" | translate }}
+                   </div>
+                   }
+                 </div>
+               </div>
+             </div>
+
+             <div class="seller-contact-detail s mb-3">
+               <div class="seller-contact">
+       
+                 <div class="contain-name mb-2">
+                  <div class="grid-image">
+                    <a rel="noopener noreferrer">
+                      <img
+                        [src]="
+                          imageLogo ? imageLogo : 'assets/images/category.png'
+                        "
+                        onerror="this.src='assets/images/category.png';"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </a>
+                  </div>
+                </div>
+                @if(form.controls['attachmentFileUrl'].touched &&
+                form.controls['attachmentFileUrl'].errors?.['required']){
+                <p *ngIf="!imageLogo">{{ "There is no photo" | translate }}</p>
+
+                }
+                <div class="user-icon">
+                  <input
+                    type="file"
+                    class="d-none"
+                    id="dropzone-file"
+                    (change)="uploadImage($event)"
+                    accept="image/*,application/pdf"
+
+                  />
+                  <i
+                    class="ri-image-edit-line d-lg-block d-none"
+                    style="font-size: 25px"
+                    onclick="document.getElementById('dropzone-file').click()"
+                  >
+                  </i>
+                  <i
+                    class="ri-pencil-fill edit-icon d-lg-none"
+                    style="font-size: 25px"
+                    onclick="document.getElementById('dropzone-file').click()"
+                  >
+                  </i>
+                </div>
+                 </div>
+               </div>
+             </div>
+
+     
+             <app-button
+               class="d-flex justify-content-end"
+               [class]="'btn theme-bg-color btn-md fw-bold text-light mt-2'"
+               [id]="'submit_address_btn'"
+               [disabled]="!OrderService.submit" 
+               type="submit"
+             >
+             {{ "submit" | translate }}
+             </app-button>
+         </a>
+       </form>
+   }
+</ng-template>

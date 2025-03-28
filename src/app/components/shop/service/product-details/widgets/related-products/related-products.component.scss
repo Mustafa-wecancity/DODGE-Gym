@@ -1,0 +1,27 @@
+
+/* iPad بورتريه (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .lg{
+        margin-top: 25px;
+    }
+        
+    }
+    
+    /* iPad لاندسكيب (Landscape) */
+    @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        .lg{
+            margin-top: 25px;
+        }
+            
+    
+    }
+    
+    /* شاشات أقل من 776px */
+    @media (max-width: 776px) {
+.lg{
+    margin-top: 25px;
+}
+    
+    }
+    
+    

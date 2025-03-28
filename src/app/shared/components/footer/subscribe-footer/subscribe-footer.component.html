@@ -1,0 +1,43 @@
+<!-- Footer Section Start -->
+ @if(isBrowser){
+
+<div class="section-t-space footer-section-2 footer-section-4 mt-md-5">
+   <!-- <img [src]="'assets/images/footer-bg.jpg'" class="footer-image img-fluid" alt=""> -->
+   <div class="container-fluid-lg">
+      <div class="footer-newsletter section-b-space">
+         <div class="newsletter-detail">
+
+       
+            <div >
+
+               <h2 class="bold">{{'footer.firstTwoWords' |translate}}<span class="mx-1">{{'footer.remainingText' |translate}}</span></h2>
+            </div>
+
+            <h5 class="text-white">{{'footer.sub_title'|translate}}</h5>
+            <div class="input-box input-group">
+               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{'enter_your_email'  | translate}}" [formControl]="email">
+               <app-button [id]="'subscribe'" [class]="'sub-btn'" [spinner]="true"  (click)="submit()"> 
+                  <span>{{ 'Subscribe' | translate }}</span>
+                  <i class="fa-solid fa-arrow-right icon mx-2"></i>
+               </app-button>
+            </div>
+            <div class="input-box mt-1">
+               @if(email.touched && email.errors?.['required']){
+                  <div class="invalid-feedback">
+                     {{ 'email_is_required' | translate }}
+                  </div>
+               }
+
+               @if(email.touched && email.errors?.['email']){
+                  <div class="invalid-feedback mt-1">
+                     {{ 'invalid_email' | translate }}
+                  </div>
+               }
+            </div>
+         </div>
+      </div>
+      <app-basic-footer [data]="data" [footer]="footer"></app-basic-footer>
+   </div>
+</div>
+ }
+ <!-- Footer Section End -->

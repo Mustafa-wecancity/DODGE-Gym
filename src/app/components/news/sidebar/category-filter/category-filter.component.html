@@ -1,0 +1,57 @@
+ 
+<div class="category-menu section-b-space d-no ne">
+    @if(Categories && Categories.length){
+    <ul>
+      @for(category of Categories; track category){
+      <li>
+ 
+        <div  >
+          <div class="list">
+            <h5
+              [ngClass]="{ 'is-focus': selectedCategory === category.id }"
+            >
+              <h5
+              class=" theme-Subcolor cursor"
+                (click)="
+                 changeId(category?.id?.toString())
+                "
+              >
+                <img
+                  [src]="
+                    category.imagePath
+                      ?   (category.imagePath |customPipeForImages)
+                      : 'assets/images/category.png'
+                  "
+                  [alt]="category?.title"
+                />
+                {{ category.title }}
+                <!-- <span>({{ category.newsCount}})</span> -->
+              </h5>
+        
+            </h5>
+   
+          </div>
+        </div>
+      
+      </li>
+      }
+    </ul>
+    } @if(!(Categories && Categories.length)){
+    <ul>
+      <li>
+        <div class="category-list">
+          <h5>
+            <a href="javascript:void(0)">{{ "no_category_found" | translate }}</a>
+          </h5>
+        </div>
+      </li>
+    </ul>
+    }
+  </div>
+  
+ 
+ @if(!(Categories && Categories.length)){
+ <app-no-data [class]="'no-data-added bg-light'" [text]="'no_category_found'">
+ </app-no-data>
+ }
+ 

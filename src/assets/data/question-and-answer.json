@@ -1,0 +1,242 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 7,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "How can I find out about product recalls?",
+            "answer": "Check the product's official website, the manufacturer's website, or government websites for recalls. You can also sign up for email alerts from consumer protection organizations.",
+            "product_id": 10,
+            "created_at": "2023-09-29T08:05:22.000000Z",
+            "product": {
+                "id": 10,
+                "name": "Juicy Green Kiwi",
+                "product_thumbnail_id": 63,
+                "product_thumbnail": {
+                    "id": 63,
+                    "name": "Kiwi_4",
+                    "file_name": "Kiwi_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T12:20:25.000000Z",
+                    "asset_url": "/storage/63/Kiwi_4.png",
+                    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/63/Kiwi_4.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 6,
+            "reaction": null,
+            "total_likes": 2,
+            "total_dislikes": 0,
+            "question": "What should I do if a product arrives damaged?",
+            "answer": "Contact the retailer's customer service immediately. Most retailers have a process for handling damaged or defective items and may offer a replacement or refund.",
+            "product_id": 15,
+            "created_at": "2023-09-29T06:54:11.000000Z",
+            "product": {
+                "id": 15,
+                "name": "Premium Organic Pumpkin",
+                "product_thumbnail_id": 77,
+                "product_thumbnail": {
+                    "id": 77,
+                    "name": "Pumpkin_3",
+                    "file_name": "Pumpkin_3.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T12:47:15.000000Z",
+                    "asset_url": "/storage/77/Pumpkin_3.png",
+                    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/77/Pumpkin_3.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 5,
+            "reaction": null,
+            "total_likes": 1,
+            "total_dislikes": 1,
+            "question": "Can I cancel an order after it has been placed?",
+            "answer": "It depends on the retailer and the stage of processing. Quickly contact customer service to inquire about cancellation possibilities.",
+            "product_id": 16,
+            "created_at": "2023-09-29T06:52:34.000000Z",
+            "product": {
+                "id": 16,
+                "name": "Fresh Pear",
+                "product_thumbnail_id": 83,
+                "product_thumbnail": {
+                    "id": 83,
+                    "name": "Pear_4",
+                    "file_name": "Pear_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T12:51:03.000000Z",
+                    "asset_url": "/storage/83/Pear_4.png",
+                    "original_url": "assets/images/data/product.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 4,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 2,
+            "question": "Are online reviews reliable for making purchasing decisions?",
+            "answer": "Online reviews can be helpful, but it's essential to consider the overall sentiment and read multiple reviews. Look for detailed reviews and consider the source's credibility.",
+            "product_id": 16,
+            "created_at": "2023-09-29T06:51:25.000000Z",
+            "product": {
+                "id": 16,
+                "name": "Fresh Pear",
+                "product_thumbnail_id": 83,
+                "product_thumbnail": {
+                    "id": 83,
+                    "name": "Pear_4",
+                    "file_name": "Pear_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T12:51:03.000000Z",
+                    "asset_url": "/storage/83/Pear_4.png",
+                    "original_url": "assets/images/data/product.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 3,
+            "reaction": null,
+            "total_likes": 2,
+            "total_dislikes": 0,
+            "question": "How do I find the best deals and discounts when shopping online?",
+            "answer": "Subscribe to newsletters, follow retailers on social media, and use price comparison tools. Many retailers also offer discounts for first-time shoppers or during seasonal sales.",
+            "product_id": 18,
+            "created_at": "2023-09-29T06:46:56.000000Z",
+            "product": {
+                "id": 18,
+                "name": "Deliciously Sweet Watermelon",
+                "product_thumbnail_id": 100,
+                "product_thumbnail": {
+                    "id": 100,
+                    "name": "Watermelon_4",
+                    "file_name": "Watermelon_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T13:00:14.000000Z",
+                    "asset_url": "/storage/100/Watermelon_4.png",
+                    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/100/Watermelon_4.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 2,
+            "reaction": null,
+            "total_likes": 3,
+            "total_dislikes": 0,
+            "question": "What is the return policy for most products?",
+            "answer": "Return policies vary by retailer. Typically, there is a specified window (e.g., 30 days) for returns. Check the retailer's website or contact customer service for specific details.",
+            "product_id": 18,
+            "created_at": "2023-09-29T06:45:48.000000Z",
+            "product": {
+                "id": 18,
+                "name": "Deliciously Sweet Watermelon",
+                "product_thumbnail_id": 100,
+                "product_thumbnail": {
+                    "id": 100,
+                    "name": "Watermelon_4",
+                    "file_name": "Watermelon_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T13:00:14.000000Z",
+                    "asset_url": "/storage/100/Watermelon_4.png",
+                    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/100/Watermelon_4.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        },
+        {
+            "id": 1,
+            "reaction": null,
+            "total_likes": 2,
+            "total_dislikes": 1,
+            "question": "How can I track my online order?",
+            "answer": "Most online retailers provide a tracking number in your order confirmation email. You can use this number on the carrier's website to track the status and location of your package.",
+            "product_id": 18,
+            "created_at": "2023-09-29T06:44:56.000000Z",
+            "product": {
+                "id": 18,
+                "name": "Deliciously Sweet Watermelon",
+                "product_thumbnail_id": 100,
+                "product_thumbnail": {
+                    "id": 100,
+                    "name": "Watermelon_4",
+                    "file_name": "Watermelon_4.png",
+                    "mime_type": "image/png",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2023-08-24T13:00:14.000000Z",
+                    "asset_url": "/storage/100/Watermelon_4.png",
+                    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/100/Watermelon_4.png"
+                }
+            },
+            "consumer": {
+                "id": 18,
+                "name": "Jack Doe"
+            }
+        }
+    ],
+    "first_page_url": "https://laravel.pixelstrap.net/fastkart/api/question-and-answer?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://laravel.pixelstrap.net/fastkart/api/question-and-answer?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "https://laravel.pixelstrap.net/fastkart/api/question-and-answer?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "https://laravel.pixelstrap.net/fastkart/api/question-and-answer",
+    "per_page": 7,
+    "prev_page_url": null,
+    "to": 7,
+    "total": 7
+}

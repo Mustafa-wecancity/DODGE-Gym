@@ -1,0 +1,67 @@
+<!-- My Account Basic Style -->
+@if(style == 'basic' ){
+   <div>
+      <div class="delivery-login-box">
+         <div class="delivery-icon">
+            @if(!localStorage.getToken()){
+               <i class="ri-user-line"></i>
+            }@else {
+               <div class="user-box">
+                  @if(localStorage.GetByName('imageCustomer')&& localStorage.GetByName('imageCustomer')!="null"){
+                     <img [src]="localStorage.GetByName('imageCustomer')|customPipeForImages"
+                     onerror="this.src='assets/images/logo/Asset 6.svg';"  class="img-fluid" alt="profile">
+                  }@else {
+                     <!-- <h3>{{ localStorage.GetByName('customer_name')?.charAt(0)?.toString()?.toUpperCase() }}</h3> -->
+                
+                  <img [src]="'assets/images/logo/Asset 6.svg'"
+               
+                  onerror="this.src='assets/images/logo/Asset 6.svg';"class="img-fluid" alt="profile">
+
+                  }
+               </div>
+            }
+         </div>
+         <div class="delivery-detail">
+            <!-- <h6>{{ 'hi' | translate }}, {{ (localStorage.getToken() ? localStorage.GetByName('customer_name')!="null" ?localStorage.GetByName('customer_name'): 'Guest' | translate) }}</h6> -->
+        
+            <h6>
+               {{ 'hi' | translate }}, 
+               {{
+                 (localStorage.getToken() ? 
+                   (localStorage.GetByName('customer_name') && localStorage.GetByName('customer_name') != "null" ? 
+                     localStorage.GetByName('customer_name') : 
+                     '' | translate) 
+                   : 'Guest' | translate) 
+               }}
+             </h6>
+             
+           <h5>{{ 'my_account' | translate }}</h5>
+         </div>
+      </div>
+      <div class="onhover-div onhover-div-login">
+         <ul class="user-box-name">
+
+            @if(!localStorage.getToken()){    
+               <li class="product-box-contain">
+                  <a [routerLink]="['/auth/login']">{{ 'log_in' | translate }}</a>
+               </li>
+               <li class="product-box-contain">
+                  <a [routerLink]="['/auth/register']">{{ 'register' | translate }}</a>
+               </li>
+            }
+
+            @if(localStorage.getToken()){
+               <li class="product-box-contain">
+                  <a [routerLink]="['/account/dashboard']"><i class="ri-user-line me-2"></i> {{ 'my_account' | translate }}</a>
+               </li>
+               <li class="product-box-contain">
+                  <a href="javascript:void(0)" (click)="confirmationModal.openModal()"><i class="ri-logout-box-r-line me-2"></i> {{ 'log_out' | translate }}</a>
+               </li>
+            }
+         </ul>
+      </div>
+   </div>
+}
+
+<app-confirmation-modal #confirmationModal (confirmed)="logout()">
+</app-confirmation-modal>

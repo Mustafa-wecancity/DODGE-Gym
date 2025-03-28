@@ -1,0 +1,93 @@
+.banner-slider{     }
+.banner-slider.page{     
+
+img{
+    // height: 366px!important;
+    // width:  300px !important;
+}
+}
+
+
+.owl-carousel .owl-dot {
+    cursor: pointer;
+  }
+  
+  .owl-carousel .owl-dot span {
+    background: #D6D6D6;
+    border-radius: 50%;
+    display: block;
+    height: 12px;
+    margin: 5px 7px;
+    width: 12px;
+  }
+  
+  .owl-carousel .owl-dot.active span {
+    background: #869791;
+  }
+  
+
+  .owl-dot {
+    pointer-events: auto !important;
+}
+
+
+// @media (min-width: 991px) {
+//   .pfor{
+//     padding:  0 60px 0 0  !important;
+//     body.rtl &{
+//       padding:  0  0 0   60px!important;
+  
+//     }
+  
+//   }
+// }
+
+.pfor{
+  img{
+    // max-height: 225px !important;
+    // height: 225px !important;
+
+
+  }
+}
+
+.banner-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* تأكد أن الحاوية تأخذ الطول الكامل */
+  width: 100%; /* تأكد أن الحاوية تأخذ العرض الكامل */
+  overflow: hidden; /* لمنع المحتوى الزائد */
+}
+
+.image-contain {
+  object-fit: contain; /* لعرض الصورة بالكامل بدون قص */
+  max-height: 100%; /* لضمان توافق الصورة مع الحاوية */
+  max-width: 100%; /* لضمان توافق الصورة مع الحاوية */
+  width: auto; /* لإبقاء النسبة العرضية صحيحة */
+  height: auto; /* لإبقاء النسبة الطولية صحيحة */
+}
+
+/* iPad بورتريه (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  
+  .pfor{
+  img{
+
+    // max-height: 166px !important;
+}
+}
+  }
+  
+  /* iPad لاندسكيب (Landscape) */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+ 
+  
+  }
+  
+  /* شاشات أقل من 776px */
+  @media (max-width: 776px) {
+ 
+  }
+  
+  

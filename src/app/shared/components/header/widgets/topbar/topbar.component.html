@@ -1,0 +1,65 @@
+<!-- Topbar -->
+
+<!-- @if(isBrowser){
+   
+} -->
+<div class="header-top overflow-hidden" [class.bg-dark]="data?.header?.page_top_bar_dark">
+   <div class="container-fluid-lg">
+      <div class="row  ">
+                    <div class="col-xxl-3 d-xxl-block d-none">
+                <div class="top-left-header">
+                  <a class="text-white" href="#" >
+                     <span class="text-white">{{ 'footer.location' | translate }}</span>
+                  </a>
+               </div>
+          
+         </div>
+         <div class="col-xxl-6 col-lg-9 d-lg-block d-none">
+            
+            <div class="header-offer">
+               <app-notice (TickersList)="TickersList_= $event" ></app-notice>
+            </div>
+            </div>
+       <div class="col-xxl-12 col-lg-12 d-lg-none d-block pt-1 offer_h ">
+
+            <div class="header-offer">
+              
+
+                 <a   target="_blank">
+                  <div class="d-flex notification-slider justify-content-xxl-center" >
+                     <div class="timer-notification">
+                        <h6 class="mx-1 cursor" [routerLinkActive]="['active']" [routerLink]="['/auth/register']" >
+                        @for(item of TickersList_; track item; let i = $index){
+                           @if(item.title){
+                          {{item.title}}
+                              }
+                           -}
+                           </h6>
+                        
+                           <!-- <h6 class="mx-1 cursor" [routerLinkActive]="['active']" [routerLink]="['/auth/register']" > {{'Compony.welcome_message' |translate}} 
+                           </h6>
+                           <h6 class="mx-1 cursor" [routerLinkActive]="['active']" [routerLink]="['/auth/register']" > {{'Compony.welcome_message' |translate}} 
+                           </h6>
+                -->
+                     </div>
+                  </div>
+               </a> 
+            </div>
+         </div> 
+         <div class="col-lg-3">
+            <ul class="about-list right-nav-about">
+               <!-- <li class="right-nav-list">
+                  <div class="dropdown theme-form-select">
+                     <app-language></app-language>
+                  </div>
+               </li> -->
+               <!-- <li class="right-nav-list">
+                  <div class="dropdown theme-form-select select-arrow">
+                     <app-currency></app-currency>
+                  </div>
+               </li> -->
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>

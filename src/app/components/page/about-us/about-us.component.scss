@@ -1,0 +1,10 @@
+.about-us-title h4 {
+    font-size: calc(16px + 5*(100vw - 320px) / 1600);
+    margin-bottom: calc(7px + 6*(100vw - 320px) / 1600);
+    color: var(--theme-Subcolor);
+    font-family: "Pacifico", cursive !important;
+}
+
+h2,h3 , .team-name h3{
+    color: var(--theme-colorTwo) !important;
+}

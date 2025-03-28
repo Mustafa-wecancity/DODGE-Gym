@@ -1,0 +1,30 @@
+
+
+@if(Tickers && Tickers.length ){
+   <swiper 
+   [direction]="'vertical'" 
+   [loop]="true" 
+   [autoHeight]="true" 
+   [allowTouchMove]="false" 
+   [autoplay]="{ delay: 1000, disableOnInteraction: false }" 
+   [pagination]="false" 
+   [navigation]="false">
+
+   @for(item of Tickers; track item; let i = $index){
+      @if(item.title){
+         <ng-template attr.data-swiper-autoplay="{{7000 * (i+1)}}" swiperSlide>
+            <a [href]="item.navigationUrl" target="_blank">
+            <div class="d-flex notification-slider justify-content-center xxl-center" >
+               <div class="timer-notification">
+                  <h6 class="theme-col orTwo mx-1" >{{
+                  item.title}}</h6>
+               </div>
+            </div>
+         </a>
+         </ng-template>
+      }
+   }
+</swiper>
+
+
+}

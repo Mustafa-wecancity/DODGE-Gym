@@ -1,0 +1,205 @@
+<div class="container-fluid-lg  bg-theme-Subcolor mt- 5">
+   <div class="main-footer section-b-space">
+      <div class="row g-md-4 g-3">
+         <div  class="col-xxl-6 col-xl-4 col-sm-12">
+            <div class="footer-logo">
+               <!-- <app-footer-logo [data]="data" [footer]="footer"></app-footer-logo> -->
+               <div class="theme-logo">
+                <a [routerLink]="['/home']">
+              
+                  @if(_PublicService.getCurrentLanguage() == 'ar'){
+                   <img src="assets/images/logo/Asset 6.svg" class="img-fluid" alt="logo">
+
+                   }
+                   @else{
+                   <img src="assets/images/logo/Asset 6.svg" class="img-fluid" alt="logo">
+
+                 }
+                   
+                </a>
+             </div>
+               <!-- <app-footer-about [data]="data"></app-footer-about> -->
+               <p class="information-text  text-white">
+                {{'footer.sub_logo' |translate}}               </p>
+
+               <ul class="social-icon">
+                  <li class="light-bg">
+                      <a href="#" class="footer-link-color">
+                          <i class="ri-facebook-fill"></i>
+                      </a>
+                  </li>
+                  <li class="light-bg">
+                      <a href="#"
+                          class="footer-link-color">
+                          <i class="ri-google-fill  "></i>
+                      </a>
+                  </li>
+                  <li class="light-bg">
+                      <a href="#" class="footer-link-color">
+                          <i class="ri-twitter-fill"></i>
+                      </a>
+                  </li>
+                  <li class="light-bg">
+                      <a href="#" class="footer-link-color">
+                          <i class="ri-instagram-fill"></i>
+                      </a>
+                  </li>
+                  <li class="light-bg">
+                      <a href="#" class="footer-link-color">
+                          <i class="ri-pinterest-fill "></i>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+         </div>
+    
+         <div  class="col-xxl-3 col-xl-4 col-sm-12" (click)="toggle('useful_link')">
+            <div class="footer-title" [class.show]="active['useful_link']">
+               <h4 class="text-underline">{{ 'footer.Useful_Links' | translate }}</h4>
+            </div>
+            <div class="footer-contain">
+               <!-- <app-footer-links [links]="data?.footer?.useful_link || []"></app-footer-links> -->
+               <!-- No Data -->
+          
+
+               <ul>
+       
+                
+                <li>
+                    <a routerLink="/service-category" class="text-content">{{ 'Nav.Services' |translate}}</a>
+                 </li>
+                
+                <li>
+                    <a routerLink="/BundleList" class="text-content">{{ 'Nav.Bundles' |translate}}</a>
+                 </li>
+                
+                <li>
+                    <a routerLink="/values" class="text-content">{{ 'Nav.values' |translate}}</a>
+                 </li>
+         
+
+                 <!-- <li>
+                    <a routerLink="/contactUs" class="text-content">{{ 'Nav.contact' |translate}}</a>
+                 </li>
+              -->
+                  
+                   <li>
+         
+                      <a [routerLink]="['/TermsandConditions/',layoutService.config.langu]" class="text-content">{{ 'footer.terms_Codditlons' |translate}}</a>
+                   </li>
+                   <li>
+                      <a [routerLink]="['/PrivacyPolicy/',layoutService.config.langu]"class="text-content">{{ 'footer.PrivacyPolicy' |translate}}</a>
+                   </li>
+
+                   <li>
+                    <a  [routerLink]="['/RefundPolicy/',layoutService.config.langu]"   class="text-content">{{ 'footer.Refund' |translate}}</a>
+                 </li>
+               
+               
+             </ul>
+            </div>
+         </div>
+         <!-- <div  class="col-xxl-3 col-xl-4 col-sm-12" (click)="toggle('Corporate_Account')">
+            <div class="footer-title" [class.show]="active['Corporate_Account']">
+               <h4 class="text-underline">{{ 'footer.Corporate_Account' | translate }}</h4>
+            </div>
+            <div class="footer-contain">
+                <ul>
+                
+                    
+                    <li>
+                       <a [routerLinkActive]="['active']" [routerLink]="['/account/orders']" class="text-content">{{ 'MyDashboard.Sidebar.myOrders' |translate}}</a>
+                    </li>
+
+              <li>
+                       <a  [routerLinkActive]="['active']" class="text-content">{{ 'MyDashboard.Sidebar.services_requests' |translate}}</a>
+                    </li>  
+                
+                    <li>
+                        <a  [routerLinkActive]="['active']" [routerLink]="['/account/my-bundles']"class="text-content">{{ 'MyDashboard.Sidebar.my_Bundles' |translate}}</a>
+                     </li>
+                 
+                 
+                    <li>
+                       <a  [routerLinkActive]="['active']" [routerLink]="['/account/MySavingPackages']"class="text-content">{{ 'MyDashboard.Sidebar.MySavingPackages' |translate}}</a>
+                    </li>
+                    <li>
+                       <a  [routerLinkActive]="['active']" [routerLink]="['/account/Attachment']"class="text-content">{{ 'MyDashboard.Sidebar.MyAttachment' |translate}}</a>
+                    </li>
+                 
+              </ul>
+            </div>
+         </div> -->
+<!-- 
+         <div  class="col-xxl-2 col-xl-4 col-sm-6" (click)="toggle('Categories')">
+            <div class="footer-title" [class.show]="active['Categories']">
+               <h4 class="text-underline">{{ 'footer.categories' | translate }}</h4>
+               
+            </div>
+            <div class="footer-contain">
+                <ul>
+      
+
+                    @for (category of categories; track $index) { 
+                    <li>
+                       <a [routerLinkActive]="['active']"   [routerLink]="['/service-category/',category.id]"   class="text-content">{{ category.title }}</a>
+                    </li>
+                }
+                
+ 
+                 
+              </ul>
+            </div>
+         </div> -->
+
+
+         <!-- @if(data?.footer?.support_email ||
+         data?.footer?.support_number ||
+         data?.footer?.play_store_url ||
+         data?.footer?.app_store_url){ -->
+            <div   class="col-xxl-3 col-xl-4 col-sm-12">
+               <div class="footer-title contact-title">
+                  <!-- <h4>{{ 'footer.SaudiaServicesInformation' | translate }}</h4> -->
+                  <h4>{{ 'footer.contact_information' | translate }}</h4>
+               </div>
+               <app-footer-contact [data]="data"></app-footer-contact>
+            </div>
+         <!-- } -->
+      </div>
+   </div>
+   <!-- <div class="sub-footer section-small-space justify-content-center "> -->
+   
+         <!-- <div class="reserve">
+            <app-footer-copyright  ></app-footer-copyright>
+         </div> -->
+   
+
+         
+      <!-- <div class="payment">
+         <app-footer-payment-options></app-footer-payment-options>
+      </div> -->
+
+      <!-- @if(data?.footer?.social_media_enable){
+         <app-footer-social-links [data]="data"></app-footer-social-links>
+      } -->
+   <!-- </div> -->
+
+   <div class="sub-footer sub-footer-lite py-3">
+    <div class="left-footer">
+        <p class="light-text" style="font-style: normal; text-transform:capitalize">2024 Copyright By
+             DODGE-Gym Powered By <a href="https://wecancity.com"><span
+                    style="text-transform: lowercase;">wecancity</span></a>
+        </p>
+    </div>
+
+    <ul class="payment-box">
+        <p class="light-text" style="font-style: normal; text-transform:lowercase"> DODGE-Gym is an <a
+                href="https://emerald.com.sa"><img src="../assets/images/dwebsite/logo.svg"
+                    class="img-fluid blur-up lazyload" alt="" style="width: 16px;
+                  vertical-align: top;">&nbsp;<span style="text-transform: uppercase; color: white;">EMERALD</span></a> Product
+        </p>
+    </ul>
+</div>
+</div>
+
+ 

@@ -1,0 +1,13 @@
+@if(    this.isBrowser ){
+   
+<dx-report-viewer [reportUrl]="reportUrl" height="800px" 
+>
+
+   <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
+   <dxrv-callbacks (ParametersSubmitted)="parametersSubmitted($event)" (CustomizeExportOptions)="OnCustomizeExportOptions($event)">  
+      </dxrv-callbacks >    
+   </dx-report-viewer>
+}
+
+
+ 

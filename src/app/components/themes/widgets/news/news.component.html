@@ -1,0 +1,44 @@
+<div class="slider-3-blog ratio_65 no-arrow product-wrapper">
+    <owl-carousel-o [options]="sliderOption ? sliderOption : blogOption ">
+       @if(!News){
+          @for(item of skeletonItems; track item){
+             <ng-template carouselSlide>
+                <app-skeleton-blog></app-skeleton-blog>
+             </ng-template>
+          }
+       }@else {
+          @for(item of News; track item){
+             <ng-template carouselSlide>
+                <div>
+                   <div class="blog-box ratio_65 vsticky-blog-box"  >
+ 
+                      <!-- @if(blog?.is_featured){
+                         <div class="blog-label-tag">
+                            <span>{{ 'Featured' | translate }}</span>
+                         </div>
+                      } -->
+                      <div class="blog-box-image">
+                         <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]" class="blog-image bg-size" [ngStyle]="{'background-image': 'url(' + (item.image?(item.image|customPipeForImages)                         : 'assets/images/product.png') + ')'}">
+                         </a>
+                      </div>
+                      <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]" class="blog-detail">
+                         <!-- <h6 class="Medium">{{ item.date| date: 'dd MMM yyyy' }}</h6> -->
+                         <h5 class="bold">{{ item.title }}</h5>
+                      </a>
+  
+                      @if(item.description){
+                         <p [innerHTML]="item.description"></p>
+                      }  
+                   </div>
+                </div>
+             </ng-template>
+          }
+       }
+    </owl-carousel-o>
+ </div>
+ <!-- No Data -->
+ 
+ @if(!(News && News.length)){
+    <app-no-data [class]="'no-data-added bg-light'" [text]="'no_news_found'">
+    </app-no-data>
+ }

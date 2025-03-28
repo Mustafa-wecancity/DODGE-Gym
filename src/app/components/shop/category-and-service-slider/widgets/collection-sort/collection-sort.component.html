@@ -1,0 +1,44 @@
+<div class="show-button ">
+
+   @if(filter['layout'] !== 'collection_offcanvas_filter' && filter['layout'] !== 'collection_no_sidebar'){
+      <div class="filter-button-group mt-0">
+         <div class="filter-button d-block d-lg-none">
+            <a (click)="openFilter(true)"><i class="ri-filter-2-fill"></i> {{ 'ParentCategoryAndServices.form.filter_menu' | translate }}</a>
+         </div>
+      </div>
+   }
+
+   <div class="top-filter-menu m-0">
+      <div class="category-dropdown">
+
+         @if(filter && filter['layout'] == 'collection_offcanvas_filter'){
+            <a href="javascript:void(0)" class="filter-offcanvas-title" (click)="openOffCanvasMenu()">
+               <i class="ri-filter-2-fill"></i> {{ 'ParentCategoryAndServices.form.filter_menu' | translate }}
+            </a>
+         }
+
+         <h5 class="text-content">{{ 'ParentCategoryAndServices.form.sort_by'| translate}} :</h5>
+         <div class="dropdown">
+            <select2 class="custom-select" [displaySearchStatus]="'hidden'" [placeholder]="'Sort'" [value]="filter['sortDirection'] |translate" [data]="sorting ? sorting : []" (update)="sortByFilter($event)">
+            </select2>
+
+ 
+         </div>
+      </div>
+      <!-- <div class="grid-option d-none d-md-block">
+         <ul>
+            <li class="three-grid" [class.active]="selectedGrid == 'collection_3_grid'">
+               <a href="javascript:void(0)" (click)="grid('collection_3_grid')">
+                  <img src="assets/svg/grid-3.svg" alt="sort">
+               </a>
+            </li>
+    
+            <li class="list-btn" [class.active]="selectedGrid == 'collection_list_view'">
+               <a href="javascript:void(0)" (click)="grid('collection_list_view')">
+                  <img src="assets/svg/list.svg" alt="sort">
+               </a>
+            </li>
+         </ul>
+      </div> -->
+   </div>
+</div>

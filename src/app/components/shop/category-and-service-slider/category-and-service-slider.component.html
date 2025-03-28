@@ -1,0 +1,9 @@
+
+@if(browserOnlyService.isBrowser()) {
+
+    @if(layout == 'collection_category_slider'){
+        <app-category  [ParentCategoryAndServices]="IParentCategoryAndServices"  [filter]="filter"></app-category>
+    }
+ }
+
+ 

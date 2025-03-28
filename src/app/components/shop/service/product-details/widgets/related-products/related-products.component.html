@@ -1,0 +1,19 @@
+@if(ServicesHome && ServicesHome.length){
+   <div class="container-fluid-lg lg">
+      <app-title class="titleList" [title]="title"></app-title>
+      <div [ngClass]="{ 'full_border': (themeOption$ | async)?.product?.full_border,
+           'product_img_bg': (themeOption$ | async)?.product?.image_bg,
+           'full_bg': (themeOption$ | async)?.product?.product_box_bg,
+           'product_border': (themeOption$ | async)?.product?.product_box_border }">
+
+         <div class="row g-sm-3 g-2 mt-2">
+            @for(service of ServicesHome; track service){
+               <div class="col-xxl-3 col-lg-4 col-md-6 col-12 product-box-contain">
+                  <!-- <app-product-box [product]="product" [class]="'product-box-3'" [style]="'horizontal'"></app-product-box> -->
+                  <app-related-service-box [service]="service" [class]="'product-box-3'" [style]="'horizontal'"></app-related-service-box>
+               </div>
+            }
+         </div>
+      </div>
+   </div>
+}

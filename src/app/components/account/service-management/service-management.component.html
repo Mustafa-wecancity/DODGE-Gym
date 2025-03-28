@@ -1,0 +1,165 @@
+
+@if(isBrowser){
+
+<div class="tab-pane fade show active" id="pills-profile" role="tabpanel">
+ @if(CustomerOrderServiceDetails){
+  <div class="dashboard-profile">
+    <div class="title">
+      <h2 class="theme-colorTwo bold">{{ CustomerOrderServiceDetails.serviceName }}</h2>
+      <span class="title-leaf">
+        <svg class="icon-width bg-gray">
+          <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+        </svg>
+      </span>
+      <div class="profile-description theme-Subcolor">
+        <p [innerHTML]=" CustomerOrderServiceDetails.description "></p>
+      </div>
+
+
+    </div>
+
+    <div class="profile-detail dashboard-bg-box">
+      <div class="dashboard-title">
+     
+        
+        <h4 class="theme-colorTwo">
+          @if(CustomerOrderServiceDetails.statusName){
+            <span class="bold theme-Subcolor"
+            >{{ CustomerOrderServiceDetails.statusName }},</span
+          >
+          }
+           
+          {{
+            "MyDashboard.ServiceManagement.number" | translate
+          }} &nbsp;<span class=" bold" style="color: #ff5b5b"
+            >{{ CustomerOrderServiceDetails.serviceRequestCode }},</span
+          >&nbsp;  
+          
+       
+        </h4>
+        <p class="text-content">{{ "MyDashboard.MyServiceRequest.successMessage" | translate }} <strong> {{CustomerOrderServiceDetails.days}}</strong>. {{ "MyDashboard.MyServiceRequest.thankYouMessage" | translate }}</p>
+
+        @if(CustomerOrderServiceDetails.voiceNoteUrl){
+
+          <h4 class=" text-white mt-3">
+       
+        
+            <span
+             class="p-2"
+              style="
+              color: #fff;
+                background: linear-gradient(
+                  90.56deg,
+                  var(--theme-Subcolor) 8.46%,
+                  var(--theme-Subcolor) 62.97%
+                );
+              " (click)="playAudio()"
+            >
+           
+            <i class="fa fa-play"></i> {{ 'play_voice_recording' | translate }}
+            </span
+            >
+            <audio #audioPlayer    [src]="CustomerOrderServiceDetails.voiceNoteUrl |customPipeForImages"    hidden></audio>
+          
+          </h4>
+        }
+  
+      </div>
+
+      <!-- <div class="location-profile">
+        <ul>
+          @for(item of CustomerOrderServiceDetails.serviceAttachmentsList;
+          track item; let i = $index){
+
+          <li>
+            <div class="location-box theme-Subcolor"
+            
+            [class.theme-Subcolor]="
+         item.isExist
+         "
+             
+             [class.theme-red]="
+             !item.isExist
+             ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2em"
+                height="2em"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                >
+                  <path d="m9 11l3 3L22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </g>
+              </svg>
+              <h6>{{ item.serviceAttachmentTitle }}</h6>
+            </div>
+          </li>
+          }
+        </ul>
+      </div> -->
+
+      <!-- @if(!CustomerOrderServiceDetails.attachment &&CustomerOrderServiceDetails.serviceAttachmentsList){
+
+      <div class="profile-description" style="text-align: center">
+        <br />
+
+        <h4 style="color: red">
+            {{
+                "MyDashboard.ServiceManagement.ALERT" | translate
+              }} 
+        </h4>
+      </div>
+      } -->
+    </div>
+
+    <div class="profile-about dashboard-bg-box">
+  
+
+      <div class="product-section-box mt-0">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav nav-tabs custom-nav">
+      
+       
+           <li ngbNavItem="Chat">
+            <a ngbNavLink class="bold theme-colorTwo">{{ "Attachment.Chat_taps"|translate }}</a>
+            <ng-template ngbNavContent>
+              @if(id){
+    
+                <app-chat [orderServiceId]="id"></app-chat>
+
+         
+               }
+            </ng-template>
+         </li>
+
+           <li ngbNavItem="Attachment">
+              <a ngbNavLink class="bold theme-colorTwo">{{ "Attachment.Attachment_taps"|translate }}</a>
+              <ng-template ngbNavContent>
+                @if(id){
+      
+                  <app-attachment-for-order-service [orderServiceId]="id"></app-attachment-for-order-service>
+           
+                 }
+              </ng-template>
+           </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="custom-t ab"></div>
+      </div>
+    </div>
+  </div>
+ }
+  
+</div>
+   
+}
+
+
+

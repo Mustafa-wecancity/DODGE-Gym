@@ -1,0 +1,22 @@
+@if(style === 'simple' && title){
+   <div class="title title-flex-2 " [class]="class">
+      <h2>{{ title |translate }}</h2>
+      <ng-content></ng-content>
+   </div>
+}@else {
+   @if(title){
+      <div [class]="class">
+         <div>
+            <h2>{{ title  |translate }}</h2>
+            <span class="title-leaf">
+               <svg class="icon-width">
+                  <use attr.xlink:href="assets/svg/Small.svg#{{svg}}"></use>
+               </svg>
+            </span>
+            <!-- @if(description){
+               <p class="theme-Subcolor ">{{ description |translate }}</p>
+            } -->
+         </div>
+      </div>
+   }
+}

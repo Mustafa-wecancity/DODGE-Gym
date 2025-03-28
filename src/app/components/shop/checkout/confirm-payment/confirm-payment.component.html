@@ -1,0 +1,115 @@
+ @if(    this.isBrowser)
+
+ {
+
+
+     @if(responseCode=='000'){
+ <!-- Payment Is Successfully Section Start -->
+    <section class="breadcrumb-section pt-0">
+        <div class="container-fluid-lg">
+            <div class="row align-items-center py-3">
+                <div class="col-12 col-md-6">
+
+                    <img src="assets/images/inner-page/order-success.png" class="img-fluid order-success " alt="Payment">
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="breadcrumb-contain breadcrumb-order">
+                        <div class="order-box">
+                            <div class="order-image">
+                                <div class="checkmark">
+                                    
+                                    <svg class="checkmark__check" height="36" viewBox="0 0 48 36" width="48"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M47.248 3.9L43.906.667a2.428 2.428 0 0 0-3.344 0l-23.63 23.09-9.554-9.338a2.432 2.432 0 0 0-3.345 0L.692 17.654a2.236 2.236 0 0 0 .002 3.233l14.567 14.175c.926.894 2.42.894 3.342.01L47.248 7.128c.922-.89.922-2.34 0-3.23">
+                                        </path>
+                                    </svg>
+                                    <svg class="checkmark__background" height="115" viewBox="0 0 120 115" width="120"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M107.332 72.938c-1.798 5.557 4.564 15.334 1.21 19.96-3.387 4.674-14.646 1.605-19.298 5.003-4.61 3.368-5.163 15.074-10.695 16.878-5.344 1.743-12.628-7.35-18.545-7.35-5.922 0-13.206 9.088-18.543 7.345-5.538-1.804-6.09-13.515-10.696-16.877-4.657-3.398-15.91-.334-19.297-5.002-3.356-4.627 3.006-14.404 1.208-19.962C10.93 67.576 0 63.442 0 57.5c0-5.943 10.93-10.076 12.668-15.438 1.798-5.557-4.564-15.334-1.21-19.96 3.387-4.674 14.646-1.605 19.298-5.003C35.366 13.73 35.92 2.025 41.45.22c5.344-1.743 12.628 7.35 18.545 7.35 5.922 0 13.206-9.088 18.543-7.345 5.538 1.804 6.09 13.515 10.696 16.877 4.657 3.398 15.91.334 19.297 5.002 3.356 4.627-3.006 14.404-1.208 19.962C109.07 47.424 120 51.562 120 57.5c0 5.943-10.93 10.076-12.668 15.438z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="order-contain">
+                                <!-- <h3 class="theme-color">{{ "ConfirmBooking.body.PaymentSuccess"  |translate }} </h3> -->
+                                <h3 class="theme-color Medium">{{ "ConfirmBooking.body.YourPaymentApproveSuccessfully"  |translate }}</h3>
+                                <h5 class="text-content">      {{ "ConfirmBooking.body.Your-payment-had-been-done-successfully" |translate}}</h5>
+                                <h6>Transaction ID: <span class="bold"> 1708031724431131</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Payment Is Successfully Section End -->
+     }
+
+
+    @if(responseCode!='000'){
+
+        <!-- Payment Is Failed Section Start -->
+        <section class="breadcrumb-section  pt-0">
+            <div class="container-fluid-lg">
+                <div class="row align-items-center py-3">
+                    <div class="col-12 col-md-6">
+    
+                        <img src="assets/images/inner-page/order-failed.png" class="img-fluid order-success " alt="Payment">
+    
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="breadcrumb-contain breadcrumb-order">
+                            <div class="order-box">
+                                <div class="order-image">
+                                    <div class="checkmark">
+                                        
+                                       
+
+                                        <svg 
+                                        class="checkmark__check " height="36" viewBox="0 0 48 36" width="48"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                                        <svg class="checkmark__check_error" height="115" viewBox="0 0 120 115" width="120"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M107.332 72.938c-1.798 5.557 4.564 15.334 1.21 19.96-3.387 4.674-14.646 1.605-19.298 5.003-4.61 3.368-5.163 15.074-10.695 16.878-5.344 1.743-12.628-7.35-18.545-7.35-5.922 0-13.206 9.088-18.543 7.345-5.538-1.804-6.09-13.515-10.696-16.877-4.657-3.398-15.91-.334-19.297-5.002-3.356-4.627 3.006-14.404 1.208-19.962C10.93 67.576 0 63.442 0 57.5c0-5.943 10.93-10.076 12.668-15.438 1.798-5.557-4.564-15.334-1.21-19.96 3.387-4.674 14.646-1.605 19.298-5.003C35.366 13.73 35.92 2.025 41.45.22c5.344-1.743 12.628 7.35 18.545 7.35 5.922 0 13.206-9.088 18.543-7.345 5.538 1.804 6.09 13.515 10.696 16.877 4.657 3.398 15.91.334 19.297 5.002 3.356 4.627-3.006 14.404-1.208 19.962C109.07 47.424 120 51.562 120 57.5c0 5.943-10.93 10.076-12.668 15.438z">
+                                            </path>
+                                        </svg>
+
+                                        
+                                    </div>
+                                </div>
+    
+                                <div class="order-contain error">
+                                    <!-- <h3 class="theme-color">Payment Failed</h3> -->
+                                        <!-- <h3 class="theme-color">{{ "ConfirmBooking.body.PaymentSuccess"  |translate }} </h3> -->
+                                        <h3 class="theme-color Medium">{{ "ConfirmBooking.body.YourPaymentFailed"  |translate }}</h3>
+                                        <h5 class="text-content">          {{ "ConfirmBooking.body.Please-back-to-your-account-and-enjoy"  |translate}}
+                                        </h5>
+                                        <h6>Transaction ID: <span class="bold">
+                                            1708031724431131
+                                        </span></h6>
+                                </div>
+                                <!-- <button
+                                type="submit"
+                                routerLink="/main/home"
+                                class="w-full text-[#fff] bg-[var(--theme-deafult-studentWithClick)] rounded-lg  hover:bg-[var(--theme-deafult-studentWithClick)] hover:text-white focus:outline-none focus:ring-4 focus:ring-[var(--theme-deafult-studentWithClick)] text-Regular text-[11px] md:text-[14px]rounded-lg text-sm px-5 h-[3.75rem] mr-2 mb-2 dark:bg-[var(--theme-deafult-studentWithClick)] dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                              >
+                              {{ "ConfirmBooking.body.Go-To-Home" | translate }}
+                          
+                              </button>
+
+                              <app-button class="w-50"  [id]="'login_btn'">{{ 'ConfirmBooking.body.Go-To-Home' | translate }}</app-button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Payment  Un Failed Section End -->
+
+    }
+}

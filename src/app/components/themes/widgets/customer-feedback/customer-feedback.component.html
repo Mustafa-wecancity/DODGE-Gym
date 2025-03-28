@@ -1,0 +1,61 @@
+<!-- <div class="slider-3-blog ratio_65 no-arrow product-wrapper"> -->
+    <div class="slider-4-half product-wrapper">
+    <owl-carousel-o [options]=" blogOption ">
+       @if(!CuestomerFeedback){
+          @for(item of skeletonItems; track item){
+             <ng-template carouselSlide>
+                <app-skeleton-blog></app-skeleton-blog>
+             </ng-template>
+          }
+       }@else {
+          @for(item of CuestomerFeedback; track item){
+             <ng-template carouselSlide>
+                <!-- <div>
+                   <div class="blog-box ratio_65 vsticky-blog-box"  >
+ 
+                      <div class="blog-box-image">
+                         <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]" class="blog-image bg-size" [ngStyle]="{'background-image': 'url(' + (item.customerImage?(item.customerImage|customPipeForImages)                         : 'assets/images/product.png') + ')'}">
+                         </a>
+                      </div>
+                      <a [routerLink]="['/newsDetails/', item.id,setPathDecodeURIComponent(item.title)]" class="blog-detail">
+                         <h5 class="bold">{{ item.title }}</h5>
+                      </a>
+  
+                      @if(item.testimonialText){
+                         <p [innerHTML]="item.testimonialText"></p>
+                      }  
+                   </div>
+                </div> -->
+                <div>
+                    <div class="reviewer-box">
+                       
+                        <h3 class="theme-colorTwo">{{ item.title }}</h3>
+
+                        <p>{{ item.testimonialText }}</p>
+
+                        <div class="reviewer-profile">
+                            <div class="reviewer-image">
+                                <img  [src]="item.customerImage|customPipeForImages" class="blur-up lazyload"
+                                    alt="">
+                            </div>
+
+                            <div class="reviewer-name">
+                                <h4 class="theme-Subcolor">{{ item.customerName }}</h4>
+                                <h6>{{ item.customerTitle}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </ng-template>
+          }
+       }
+    </owl-carousel-o>
+ </div>
+ <!-- </div> -->
+ <!-- No Data -->
+ 
+ @if(!(CuestomerFeedback && CuestomerFeedback.length)){
+    <app-no-data [class]="'no-data-added bg-light'" [text]="'no_news_found'">
+    </app-no-data>
+ }

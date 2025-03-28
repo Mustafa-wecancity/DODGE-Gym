@@ -1,0 +1,113 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Paris",
+            "slug": "paris",
+            "image": "/admin/images/themes/1.jpg",
+            "status": 1,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Tokyo",
+            "slug": "tokyo",
+            "image": "/admin/images/themes/2.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Osaka",
+            "slug": "osaka",
+            "image": "/admin/images/themes/3.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 4,
+            "name": "Rome",
+            "slug": "rome",
+            "image": "/admin/images/themes/4.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 5,
+            "name": "Madrid",
+            "slug": "madrid",
+            "image": "/admin/images/themes/5.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 6,
+            "name": "Berlin",
+            "slug": "berlin",
+            "image": "/admin/images/themes/6.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 7,
+            "name": "Denver",
+            "slug": "denver",
+            "image": "/admin/images/themes/7.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 8,
+            "name": "Moscow",
+            "slug": "moscow",
+            "image": "/admin/images/themes/8.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        },
+        {
+            "id": 9,
+            "name": "Cairo",
+            "slug": "cairo",
+            "image": "/admin/images/themes/9.jpg",
+            "status": 0,
+            "created_at": "2024-02-05T19:52:59.000000Z",
+            "updated_at": "2024-03-08T03:56:53.000000Z"
+        }
+    ],
+    "first_page_url": "https://laravel.pixelstrap.net/fastkart/api/theme?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://laravel.pixelstrap.net/fastkart/api/theme?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "https://laravel.pixelstrap.net/fastkart/api/theme?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "https://laravel.pixelstrap.net/fastkart/api/theme",
+    "per_page": 9,
+    "prev_page_url": null,
+    "to": 9,
+    "total": 9
+}

@@ -1,0 +1,63 @@
+<div class="left-sidebar-box" >
+   <div class="back-button d-inline-block d-lg-none " (click)="closeCanvasMenu()">
+      <h3>
+         <a href="javascript:vois(0)" class="text-title">
+            <i class="ri-close-fill"></i>
+            <!-- <span>{{ 'back' | translate }}</span> -->
+         </a>
+      </h3>
+   </div>
+   <ng-content></ng-content>
+   <!-- @if(blogService.skeletonLoader){
+      <app-skeleton-blog [type]="'sidebar'"></app-skeleton-blog>
+   }@else { -->
+      <div class="accordion left-accordion-box" ngbAccordion>
+     <app-filter-inputs-text [filter]="filter" ></app-filter-inputs-text>
+         <div class="accordion-item d-n one d-lg- bl ock" ngbAccordionItem [collapsed]="false">
+            <h2 class="accordion-header" ngbAccordionHeader>
+               <button class="accordion-button theme-colorTwo bold" type="button" ngbAccordionButton>
+                  {{ 'NewsList.form.recent_posts' | translate }}
+               </button>
+            </h2>
+            <div class="accordion-collapse collapse" ngbAccordionCollapse>
+               <div class="accordion-body pt-0" ngbAccordionBody>
+                  <ng-template>
+                     <app-recent-post ></app-recent-post>
+                  </ng-template>
+               </div>
+            </div>
+         </div>
+      <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+         <h2 class="accordion-header" ngbAccordionHeader>
+            <button class="accordion-button theme-colorTwo not bold" type="button"  >
+               <span>{{ 'NewsList.form.Categories' | translate }}</span>
+            </button>
+         </h2>
+            <div ngbAccordionCollapse class="accordion-collapse collapse">
+               <div class="accordion-body pt-0" ngbAccordionBody>
+                  <ng-template>
+                   <app-category-filter  [mainCategoryId]="mainCategoryId" [filter]="filter"></app-category-filter>
+                  </ng-template>
+               </div>
+            </div>
+         </div>
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+            <h2 class="accordion-header" ngbAccordionHeader>
+                  <button class="accordion-button theme-colorTwo not bold" ngbAccordionButton type="button"  >
+                  {{ 'NewsList.form.tags' | translate }}
+               </button>
+            </h2>
+            <div ngbAccordionCollapse class="accordion-collapse collapse">
+               <div class="accordion-body pt-0" ngbAccordionBody>
+                  <ng-template>
+                     <app-news-tag [filter]="filter"  ></app-news-tag>
+                  </ng-template>
+               </div>
+            </div>
+         </div>
+      </div>
+   <!-- } -->
+</div>
+
+
+ 

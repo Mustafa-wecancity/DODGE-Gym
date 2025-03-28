@@ -1,0 +1,14 @@
+
+@if(style == 'horizontal' && themeOptionService.productBox == 'classic'){
+   <app-classic-product-box [product]="product" [close]="close"></app-classic-product-box>
+}
+
+@if(style == 'horizontal' && themeOptionService.productBox == 'standard'){
+   <app-standard-product-box [product]="product" [close]="close"></app-standard-product-box>
+}
+
+ 
+@if(style == 'vertical'){
+   <app-product-box-vertical [product]="product"></app-product-box-vertical>
+}
+ 

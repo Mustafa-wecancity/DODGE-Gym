@@ -1,0 +1,18 @@
+<div class="pickup-box">
+   <div class="product-title">
+      <h4>{{ 'product_information' | translate }}</h4>
+   </div>
+   <div class="product-info">
+      <ul class="product-info-list product-info-list-2">
+ 
+         @if(serviceAttachmentsList && serviceAttachmentsList.length){
+            @for(Attachments of serviceAttachmentsList ; track Attachments){
+
+            <!-- <li>{{ 'sku' | translate }}: {{ Attachments?.serviceAttachmentTitle }}</li> -->
+            <li>{{ Attachments?.serviceAttachmentTitle }}</li>
+         }
+         }
+ 
+      </ul>
+   </div>
+</div>

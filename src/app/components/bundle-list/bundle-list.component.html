@@ -1,0 +1,172 @@
+<section class="blog-section section-b-space mt-4">
+  <div class="container-fluid-lg">
+    <div class="row g-4">
+      <app-title [title]="'Bundle.header.title'" [class]="'titleList'">
+      </app-title>
+      <!-- [description]="'Bundle.header.description'"  [style]="'sim ple'" -->
+      <div
+        class="col-xxl-9 col-xl-8 col-lg-7"
+        [class.order-lg-2]="sidebar === 'left_sidebar'"
+        [class]="
+          sidebar === 'no_sidebar'
+            ? 'col-xxl-12 col-xl-12 col-lg-12'
+            : 'col-xxl-9 col-xl-8 col-lg-7'
+        "
+      >
+        @if(!Bundles){
+        <div class="row g-4">
+          @for(item of skeletonItems; track item){
+          <div
+            [class]="
+              style === 'list_view' ? 'col-12 list_view' : 'col-xxl-4 col-sm-6'
+            "
+          >
+            <app-skeleton-blog></app-skeleton-blog>
+          </div>
+          }
+        </div>
+        }@else { @if(Bundles){
+        <div class="row g-4" [class.ratio_65]="style === 'list_view'">
+          @for(Bundle of Bundles; track Bundle){
+
+          <div class="col-xxl-4 col-sm-6">
+            <div
+              class="blog-box ratio_65 vsticky-blog-box"
+              style="
+                border: 1px solid var(--theme-colorTwo);
+                background-color: var(--theme-colorTwo);
+              "
+              [routerLink]="[
+                '/BundleDetails/',
+                Bundle.id,
+                setPathDecodeURIComponent(Bundle.name)
+              ]"
+            >
+              @if(Bundle.discountPercent>0){
+
+              <div class="blog-label-tag">
+                <span class="bold">
+                  <i class="ri-flashlight-line"></i
+                  >{{ Bundle.discountPercent }} %
+                </span>
+              </div>
+              }
+
+              <div class="img-box ratio_50">
+                <a
+                  [routerLink]="[
+                    '/BundleDetails/',
+                    Bundle.id,
+                    setPathDecodeURIComponent(Bundle.name)
+                  ]"
+                >
+                  <img
+                    [src]="
+                      Bundle.imagePath
+                        ? (Bundle.imagePath | customPipeForImages)
+                        : 'assets/images/product.png'
+                    "
+                    [alt]="Bundle.name"
+                    class="bg-img w-100"
+                  />
+                </a>
+              </div>
+
+
+              <div class="content-box px-2" style="padding: 0 10px 10px 10px;">
+               <div class="top-content">
+                 <a
+                   [routerLink]="[
+                     '/BundleDetails/',
+                     Bundle.id,
+                     setPathDecodeURIComponent(Bundle.name)
+                   ]"
+                 >
+                   <p class="text-white mb-1">
+                     <span class="time"
+                       ><i data-feather="clock"></i>
+                       <span
+                         >{{ "Bundle.form.Include" | translate }}
+                         <span class="bold theme-color"> {{ Bundle.points }}</span>
+                         {{ "Bundle.form.Points" | translate }} ,{{
+                           "Bundle.form.validity" | translate
+                         }}
+                         <span class="bold theme-color">{{
+                           Bundle.validityDays
+                         }}</span>
+                         {{ "Bundle.form.Days" | translate }}</span
+                       ></span
+                     >
+                   </p>
+                   <h5 class="Medium text-white">
+                     {{ Bundle.name | summary : 70 }}
+                   </h5>
+                 </a>
+               </div>
+               <div class="bottom-content" style="margin-top: 0px !important">
+                 <h6 class="price text-white">
+                   <span class="bold theme-color"
+                     >{{ Bundle.priceAfterDiscount }}
+                   </span>
+                   <span id="sar" class="text-white mx-2">{{
+                     "SAR" | translate
+                   }}</span>
+                   @if(Bundle.discount>0){
+                   <del class="text-content mx-1">
+                     <del
+                       class="Regular text-white"
+                       style="color: white !important"
+                       >{{ Bundle.price }}
+                     </del>
+                     <span id="sar" class="text-white">{{
+                       "SAR" | translate
+                     }}</span>
+                   </del>
+                   <span class="offer text-white"
+                     >(
+                     <span class="bold text-white"> {{ Bundle.discount }}% </span>
+                     {{ "servicesBox.off" | translate }})
+                   </span>
+                   }
+                 </h6>
+               </div>
+             </div>
+              <!-- <div class="blog-box-image">
+                                 <a [routerLink]="['/BundleDetails/', Bundle.id,setPathDecodeURIComponent(Bundle.name)]" class="blog-image bg-size" [ngStyle]="{'background-image': 'url(' + (Bundle.imagePath?(Bundle.imagePath|customPipeForImages)    
+                                  : 'assets/images/product.png') + ')'}">
+                               </a>
+                              </div> -->
+              
+              <!--  
+                              @if(blog.title){
+                                 <p [innerHTML]="blog.title"></p>
+                              } -->
+            </div>
+          </div>
+          }
+        </div>
+        }@else {
+        <app-no-data
+          [class]="'no-data-added'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_blogs_found'"
+          [description]="
+            'Bundle.form.not_find_any_blogs_matching_search_criteria'
+          "
+        >
+        </app-no-data>
+        } } @if(Bundles){
+        <nav class="custome-pagination mb-2">
+          <app-pagination
+            [total]="totalCount"
+            [currentPage]="filter['page']"
+            [pageSize]="filter['paginate']"
+            (setPage)="setPaginate($event)"
+          >
+          </app-pagination>
+        </nav>
+        }
+      </div>
+    </div>
+  </div>
+</section>

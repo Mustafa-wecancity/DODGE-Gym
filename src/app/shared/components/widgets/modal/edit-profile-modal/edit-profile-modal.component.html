@@ -1,0 +1,418 @@
+<!-- <ng-template #profileModal let-modal>
+   <div class="modal-header">
+      <h3 class="fw-semibold">{{ 'edit_profile' | translate }}</h3>
+      <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modal.dismiss('Cross click')">
+         <i class="ri-close-line"></i>
+      </app-button>
+   </div>
+
+   @if(form && !flicker){
+      <form [formGroup]="form" (ngSubmit)="submit()">
+         <div class="modal-body address-form">
+            <div class="row g-4">
+               <div class="col-xxl-12">
+                  <div class="">
+                     <label class="form-label" for="fullName">{{ 'full_name' | translate }}</label>
+                     <input class="form-control" id="fullName" type="text" placeholder="{{ 'enter_name' | translate }}" formControlName="fullName" />
+                     @if(form.controls['fullName'].touched && form.controls['fullName'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'name_is_required' | translate }}
+                        </div>
+                     }
+                  </div>
+               </div>
+               <div class="col-12">
+                  <div class="">
+                     <label class="form-label" for="email">{{ 'email_address' | translate }}</label>
+                     <input class="form-control" id="email" type="text" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email">
+
+                     @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'email_address_is_required' | translate }}
+                        </div>
+                     }
+
+                     @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
+                        <div class="invalid-feedback">
+                           {{ 'please_enter_valid_email' | translate }}
+                        </div>
+                     }
+                  </div>
+               </div>
+               <div class="col-12">
+                  <div class="">
+                     <label class="form-label" for="nationalId">{{ 'nationalId' | translate }}</label>
+                     <input class="form-control" id="nationalId" type="text" placeholder="{{ 'enter_nationalId' | translate }}" formControlName="nationalId">
+
+                     @if(form.controls['nationalId'].touched && form.controls['nationalId'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'The nationalId require' | translate }}
+                        </div>
+                     }
+
+                     @if(form.controls['nationalId'].touched && form.controls['nationalId'].errors?.['nationalId']){
+                        <div class="invalid-feedback">
+                           {{ 'please_enter_valid_nationalId' | translate }}
+                        </div>
+                     }
+                  </div>
+               </div>
+
+               <div class="col-12 phone-field">
+                  <div class="">
+                     <label class="form-label" for="cityId">{{ 'City' | translate }}</label>
+                     <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="cityId">
+                        <ng-template #template let-data="data">
+                           <div class="country">
+                              <div class="flag-box">
+                                 <div class="iti-flag {{data?.class}}"></div>
+                              </div>
+                              <span class="dial-code">{{data.nam}}</span>
+                           </div>
+                        </ng-template>
+                     </select2>
+                
+                     @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'The cityId required' | translate }}
+                        </div>
+                     }
+
+                     @if(form.controls['phone'].touched && form.controls['phone'].errors?.['pattern']){
+                        <div class="invalid-feedback">
+                           {{ 'City_is_invalid' | translate }}
+                        </div>
+                     }
+                  </div>
+               </div>
+               <div class="col-12">
+                  <div class="">
+                     <label class="form-label" for="birthDate">{{ 'birthDate' | translate }}</label>
+                     <input class="form-control" id="birthDate" type="date" placeholder="{{ 'enter_birthDate' | translate }}" formControlName="birthDate">
+
+                     @if(form.controls['birthDate'].touched && form.controls['birthDate'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'The birthDate require' | translate }}
+                        </div>
+                     }
+
+                     @if(form.controls['birthDate'].touched && form.controls['birthDate'].errors?.['birthDate']){
+                        <div class="invalid-feedback">
+                           {{ 'please_enter_valid_birthDate' | translate }}
+                        </div>
+                     }
+                  </div>
+               </div>
+         
+            </div>
+            <div class="modal-footer">
+               <app-button [class]="'btn btn-theme-outline btn-md fw-bold'" [type]="'button'" [spinner]="false" [id]="'cancel_profile_btn'" (click)="modal.dismiss('Cancel')">
+                  {{ 'cancel' | translate }}
+               </app-button>
+               <app-button [class]="'btn theme-bg-color btn-md fw-bold text-light'" [id]="'submit_profile_btn'">
+                  {{ 'submit' | translate }}
+               </app-button>
+            </div>
+         </div>
+      </form>
+   }
+</ng-template>
+ -->
+
+<ng-template #profileModal let-modal>
+  <div class="modal-header">
+    <h3 class="fw-semibold">{{ "edit_profile" | translate }}</h3>
+    <app-button
+      [class]="'btn btn-close'"
+      [spinner]="false"
+      [id]="'profile_modal_close_btn'"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <i class="ri-close-line"></i>
+    </app-button>
+  </div>
+  
+
+
+  <div class="col-md-13">
+<div class="col-md-6 text-center my-3 d-flex flex-column align-items-center">
+   <img [src]=" imageLogo " class="image-style w-50" />
+   @if(!imageLogo){
+      <p>{{'There is no photo'|translate}}</p>
+   }
+ 
+   <div class="user-icon">
+   <input type="file" class="d-none" id="dropzone-file" (change)="uploadImage($event)" accept="image/*">
+   <i class="ri-image-edit-line d-lg-block d-none"    onclick="document.getElementById('dropzone-file').click()"></i>
+   <i class="ri-pencil-fill edit-icon d-lg-none"     onclick="document.getElementById('dropzone-file').click()"></i>
+   {{ "upload picture" | translate }}
+
+</div>
+</div>
+ </div>
+ 
+  @if(form){
+  <form [formGroup]="form" class="" (ngSubmit)="submit()">
+    <div class="modal-body address-form">
+      <div class="row g-md-4 g-sm-3 g-2">
+        <div class="col-xxl-12">
+          <div class="">
+            <label class="form-label" for="fullName">{{
+              "full_name" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="fullName"
+              type="text"
+              placeholder="{{ 'enter_name' | translate }}"
+              formControlName="fullName"
+            />
+            @if(form.controls['fullName'].touched &&
+            form.controls['fullName'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "name_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="">
+            <label class="form-label" for="email">{{
+              "email_address" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="email"
+              type="text"
+              placeholder="{{ 'enter_email_address' | translate }}"
+              formControlName="email"
+            />
+
+            @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "email_address_is_required" | translate }}
+            </div>
+            } @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['email']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_email" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+                <!-- start nationalId  -->
+
+        <div class="col-sm-6">
+          <div class="">
+            <label class="form-label" for="nationalId">{{
+              "nationalId" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="nationalId"
+              type="text"
+              placeholder="{{ 'enter_nationalId' | translate }}"
+              formControlName="nationalId"
+            />
+
+            @if(form.controls['nationalId'].touched &&
+            form.controls['nationalId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "The nationalId require" | translate }}
+            </div>
+            } @if(form.controls['nationalId'].touched &&
+            form.controls['nationalId'].errors?.['nationalId']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_nationalId" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+        <!-- End nationalId  -->
+        <!-- start PassportId  -->
+        <div class="col-sm-6">
+
+         <div class="">
+           <label class="form-label" for="passportId">{{
+             "passportId" | translate
+           }}</label>
+           <input
+             class="form-control"
+             id="passportId"
+             type="text"
+             placeholder="{{ 'enter_passportId' | translate }}"
+             formControlName="passportId"
+           />
+
+           @if(form.controls['passportId'].touched &&
+           form.controls['passportId'].errors?.['required']){
+           <div class="invalid-feedback">
+             {{ "The passportId require" | translate }}
+           </div>
+           } @if(form.controls['passportId'].touched &&
+           form.controls['passportId'].errors?.['passportId']){
+           <div class="invalid-feedback">
+             {{ "please_enter_valid_passportId" | translate }}
+           </div>
+           }
+         </div>
+       </div>
+
+        <!-- end PassportId  -->
+        <!-- start gender  -->
+
+        <div class="col-sm-12">
+          <div>
+            <label class="form-label" for="gender">{{
+              "Gender" | translate
+            }}</label>
+            <ng-select
+              #Gender_
+              [selectOnTab]="true"
+              formControlName="gender"
+              class="p-0 custom-select"
+              dropdownPosition="auto"
+              labelForId="validation02"
+            >
+              @for (item of genders; track item) { // Html template to repeat
+              <ng-option [value]="item.id">{{ item.title }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['gender'].touched &&
+            form.controls['gender'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- End gender  -->
+        <!-- start region  -->
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label" for="regionId">{{
+              "region" | translate
+            }}</label>
+            <ng-select
+              #region_
+              [selectOnTab]="true"
+              formControlName="regionId"
+              class="p-0 custom-select"
+              (change)="ChangRegione()"
+              dropdownPosition="auto"
+              labelForId="validation02"
+            >
+              @for (item of region; track item) {
+              <ng-option [value]="item.id">{{ item.name }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['regionId'].touched &&
+            form.controls['regionId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+        <!-- End region  -->
+        <!-- start City  -->
+
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label" for="cityId">{{
+              "City" | translate
+            }}</label>
+            <ng-select
+              #city
+              [selectOnTab]="true"
+              formControlName="cityId"
+              class="p-0 custom-select"
+              dropdownPosition="auto"
+              labelForId="validation02"
+            >
+              @for (item of cityList; track item) { // Html template to repeat
+              <ng-option [value]="item.id">{{ item.name }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['cityId'].touched &&
+            form.controls['cityId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- End City  -->
+        <div class="col-12">
+          <div class="">
+            <label class="form-label" for="birthDate">{{
+              "birthDate" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="birthDate"
+              type="date"
+              placeholder="{{ 'enter_birthDate' | translate }}"
+              formControlName="birthDate"
+            />
+
+            @if(form.controls['birthDate'].touched &&
+            form.controls['birthDate'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "The birthDate require" | translate }}
+            </div>
+            } @if(form.controls['birthDate'].touched &&
+            form.controls['birthDate'].errors?.['birthDate']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_birthDate" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+
+
+        <div class="col-md-6 text-center my-3 d-flex flex-column d-none">
+         <img [src]=" imageLogo " class="image-style w-50" />
+         @if(imageLogo==null){
+            <p>{{'There is no photo'|translate}}</p>
+         }
+<!--         
+         <input type="file" formControlName="imagePath" #file id="getLogo" style="display: none" accept="image/*"
+           (change)=" checkType($event.target.files[0].type)==true?getLogoUrl($event):  imageLogo=null" />
+         <button type="button" onclick="document.getElementById('getLogo').click()"
+           class="btn   btn-solid w-50 m-auto d-block">
+           {{ "upload picture" | translate }}
+         </button>
+         <div *ngIf="!isvalid" class="error">
+           <p>{{error |translate}}</p>
+         </div> -->
+       </div>
+      </div>
+      <div class="modal-footer">
+        <app-button
+          [class]="'btn btn-theme-outline btn-md fw-bold'"
+          [type]="'button'"
+          [spinner]="false"
+          [id]="'cancel_addres_btn'"
+          (click)="modal.dismiss('Cancel')"
+        >
+          {{ "cancel" | translate }}
+        </app-button>
+        <app-button
+          [class]="'btn theme-bg-color btn-md fw-bold text-light'"
+          [id]="'submit_address_btn'"
+          [disabled]="!this._CustomerProfile.submit" 
+        >
+          {{ "submit" | translate }}
+        </app-button>
+      </div>
+    </div>
+  </form>
+  }
+</ng-template>

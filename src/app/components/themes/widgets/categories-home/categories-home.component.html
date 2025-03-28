@@ -1,0 +1,74 @@
+<div class="category-menu section-b-space">
+    <h3 class="d-none d-xl-block bold">{{'Home.header.categories' | translate }}</h3>
+ 
+    
+    <!-- Category Style Horizontal -->
+ @if(style == 'horizontal'){
+    <div class="product-wrapper no-arrow" [class]="'category-slider'">
+       <owl-carousel-o [options]="sliderOption">
+          @for(category of categories; track category){
+             <ng-template carouselSlide>
+                   <div>
+                      <a      [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active"  class="category-box category-dark" >
+                      
+                   <img  appLazyLoad [dataSrc]="category.imagePath ? (category.imagePath |customPipeForImages): 'assets/images/category.png'"  [alt]="category.title">
+                
+                         <h5 class="colorTow Medium">{{ category.title }}
+
+                           @if(category.productCount){
+                           <span>({{category.productCount}})</span>
+                                                   }
+                           </h5>
+                         
+                      </a>
+                   </div>
+  
+             </ng-template>
+          }
+       </owl-carousel-o>
+ 
+       @if(!(categories && categories.length)){
+          <app-no-data [class]="'no-data-added bg-light'" [text]="'no_category_found'">
+          </app-no-data>
+       }
+    </div>
+ }
+ @else{
+    
+    @if(categories && categories.length){
+       <ul>
+          @for(category of categories; track category){
+             <li>
+                <div class="category-list"
+                   [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active">
+                   <img [src]="category.imagePath ? (category.imagePath |customPipeForImages): 'assets/images/category.png'" [alt]="category.title">
+                   <h5       [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }">
+                      <a      [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active" >{{ category.title  }}
+
+                        @if(category.productCount){
+                           <span>({{category.productCount}})</span>} 
+                      </a>
+                   </h5>
+                </div>
+             </li>
+          }
+       </ul>
+    }
+ }
+ 
+    @if(!(categories && categories.length)){
+       <ul>
+          <li>
+             <div class="category-list">
+                <h5>
+                   <a href="javascript:void(0)">{{ "no_category_found" | translate }}</a>
+                </h5>
+             </div>
+          </li>
+       </ul>
+    }
+ </div>
+ 
+ 
+ 
+ 

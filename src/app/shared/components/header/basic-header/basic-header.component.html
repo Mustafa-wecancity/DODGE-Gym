@@ -1,0 +1,173 @@
+<header
+  class="pb- md-4 pb-0 bg-white"
+  [class.active]="stick && sticky"
+  class="{{ !stick && sticky ? class : '' }}"
+>
+  <!-- @if(data?.header?.page_top_bar_enable){ -->
+  <app-topbar [data]="data"></app-topbar>
+  <!-- } -->
+
+  <div class="top-nav top-header sticky-header bg-theme-colorTwo">
+    <div class="container-fluid-lg">
+      <div class="row">
+        <div class="col-12">
+          <div class="navbar-top">
+            <div class="d-xl-none d-inline">
+              <app-navbar-menu-button
+                (activeMenu)="toggle($event)"
+                [show]="active"
+              ></app-navbar-menu-button>
+            </div>
+            <app-logo
+              [textClass]="'txt-theme f-w-600'"
+              [data]="data"
+              [logo]="logo"
+            ></app-logo>
+            <!-- <div class="middle-box">
+                     <div class="search-box">
+                        <app-box-search></app-box-search>
+                     </div>
+                  </div> -->
+
+            <div class="header-nav">
+              <!-- <div class="header-nav-left">
+                        <app-header-categories [data]="data"></app-header-categories>
+                     </div> -->
+              <div class="header-nav-middle">
+                <div
+                  class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky"
+                >
+                  <div
+                    class="offcanvas offcanvas-collapse order-xl-2"
+                    [class.show]="active"
+                  >
+                    <div class="offcanvas-header navbar-shadow bg-theme-colorTwo">
+                      <!-- <h5 class="bold">{{ "menu" | translate }}</h5> -->
+                       
+                      
+                      <app-logo
+                      [textClass]="'txt-theme f-w-600'"
+                      [data]="data"
+                      [logo]="logo"
+                    ></app-logo>
+                      <app-button
+                        [type]="'button'"
+                        [class]="'btn-close lead text-white'"
+                        [id]="'toggle_menu_btn'"
+                        [spinner]="false"
+                        (click)="toggle(false)"
+                      >
+                        <i class="ri-close-fill"></i>
+                      </app-button>
+                    </div>
+                    <div class="offcanvas-body bg-theme-colorTwo">
+                      <app-menu (setmenu)="toggle(false)"></app-menu>
+                    </div>
+                  </div>
+
+                  @if(active){
+                  <div
+                    class="offcanvas-backdrop fade"
+                    [class.show]="active"
+                    (click)="toggle(false)"
+                  ></div>
+                  }
+                </div>
+              </div>
+              <!-- <div class="header-nav-right">
+                        <app-deal [data]="data"></app-deal>
+                     </div> -->
+            </div>
+            <div class="rightside-box">
+              <ul class="right-side-menu">
+                <!-- <li class="right-side mobile-search d-xl-none">
+                           <app-box-search [style]="'berlin'"></app-box-search>
+                        </li> -->
+
+                @if(data?.header?.support_number){
+                <li class="right-side d-xl-block d-block">
+                  <app-call [data]="data"></app-call>
+                </li>
+                }
+
+                <!-- <li class="right-side d-xl-block d-none">
+
+                  <app-header-wishlist></app-header-wishlist>
+                </li> -->
+                <!-- <li class="right-side d-xl-block d-none">
+
+                  <div class="header-nav-right">
+                    <app-deal [data]="data"></app-deal>
+                  </div>
+                </li> -->
+                <!-- <li class="right-side">
+                  <div class="onhover-dropdown header-badge">
+                    <div class="onhover-dropdown header-badge">
+                      <app-button
+                        [routerLink]="['/cart']"
+                        routerLinkActive="router-link-active"
+                        [type]="'button'"
+                        [class]="'btn p-0 position-relative header-wishlist'"
+                        [spinner]="false"
+                        [id]="'cart_sidebar_btn'"
+                      >
+                        <i class="ri-shopping-cart-line"></i>
+
+                        <span class="position-absolute top-0 start-100 translate-middle badge " style="background-color: var(--theme-color);">
+                                            <span class="visually-hidden">{{ 'unread_messages' | translate }}</span>
+                                       </span>
+                      </app-button>
+                    </div>
+                  </div>
+                </li> -->
+                <li class="right-side onhover-dropdown d-block">
+                  <app-language></app-language>
+
+                </li>
+                <li class="right-side onhover-dropdown">
+                  <app-my-account></app-my-account>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- <div class="container-fluid-lg d-none  ">
+      <div class="row">
+         <div class="col-12">
+            <div class="header-nav">
+               <div class="header-nav-left">
+                  <app-header-categories [data]="data"></app-header-categories>
+               </div>
+               <div class="header-nav-middle">
+                  <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky">
+                     <div class="offcanvas offcanvas-collapse order-xl-2" [class.show]="active">
+                        <div class="offcanvas-header navbar-shadow">
+                           <h5>{{ 'menu' | translate }}</h5>
+                           <app-button [type]="'button'" [class]="'btn-close lead'" [id]="'toggle_menu_btn'" [spinner]="false" (click)="toggle(false)">
+                              <i class="ri-close-fill"></i>
+                           </app-button>
+                        </div>
+                        <div class="offcanvas-body">
+                           <app-menu></app-menu>
+                        </div>
+                     </div>
+
+                     @if(active){
+                        <div class="offcanvas-backdrop fade" [class.show]="active" (click)="toggle(false)"></div>
+                     }
+                  </div>
+               </div>
+               <div class="header-nav-right">
+                  <app-deal [data]="data"></app-deal>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div> -->
+</header>

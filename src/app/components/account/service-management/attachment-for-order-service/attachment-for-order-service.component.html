@@ -1,0 +1,373 @@
+<!-- Grid Section Start -->
+<section class="seller-grid- section card" [ngClass]="{ rotate: isRotated }">
+  <div class="contai ner-fluid">
+    <div class="d-flex justify-content-end">
+      <!-- <div>
+        <h5 class="bold theme-colorTwo">{{ "Attachment.Attachment"|translate }}</h5>
+        <span class="title-leaf">
+          <svg class="icon-width bg-gray">
+            <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+          </svg>
+        </span>
+      </div> -->
+      <div class="modal-footer">
+        <app-button
+          [class]="'btn theme-bg-color btn-md   text-light mt-2'"
+          [id]="'submit_address_btn'"
+          (click)="rotateCard()"
+        >
+          @if(this.isRotated ){
+          {{ "Attachment.View_Attachment" | translate }}
+
+          } @else{
+
+          {{ "Attachment.Add_Attachment" | translate }}
+          }
+        </app-button>
+      </div>
+    </div>
+
+    <div class="card-inner">
+
+      <div class="tab-pane fade show active card-front" id="pills-order" role="tabpanel">
+        <div class="dashboard-order">
+          @for(item of Attachment; track item; let i = $index){
+
+  
+          <div class="order-contain">
+            <div class="order-box dashboard-bg-box w-100" style="padding: 0;">
+             
+ 
+  
+              <div
+              [ngClass]="{ 'full_border': (item.createdByProvider&& item.attachmentTypeId==1 && !item.attachmentText) ||(item.createdByProvider&& item.attachmentTypeId==2 && !item.attachmentFilePath)
+            }"
+                class="product-order-detail  position-relative d-"
+                style="width: 100%; cursor: pointer; display: block ;margin-top: 15px; padding-bottom: 0;"
+           
+              >
+                <div class="order-wrap">
+                  <div class="order-container ">
+                    <div class="order-detail orderP d-flex">
+                      <h4 class="theme-colorTwo Medium h4_date">
+                        <div class="order-tracking-icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            height="24"
+                            class="main-grid-item-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                          >
+                            <rect
+                              height="18"
+                              rx="2"
+                              ry="2"
+                              width="18"
+                              x="3"
+                              y="4"
+                            />
+                            <line x1="16" x2="16" y1="2" y2="6" />
+                            <line x1="8" x2="8" y1="2" y2="6" />
+                            <line x1="3" x2="21" y1="10" y2="10" />
+                          </svg>
+  
+                          &nbsp;
+                        </div>
+                        {{ item.creationDate |  date: 'dd MMM yy hh:mm:a' }}
+                      </h4>
+                      <h4 class="theme-colorTwo Ongoing">
+                        <span   style="background: var(--theme-colorTwo); padding-top: 4px"
+  
+                  >
+                
+                         {{"CustomerAttachment.CreateBy" | translate}}
+
+                         {{
+                          item.createdByProvider
+                            ? ("Attachment.Provider" | translate)
+                            : ("Attachment.Me" | translate)
+                        }} </span
+                        >
+            
+                      @if(!item.createdByProvider){
+                        <span class="edit"  style="background: #809c73"  (click)="EditItem(item)" >
+                          <i class="ri-edit-box-line"></i> {{ 'edit' | translate }}
+                      </span>
+                        <span class="delete"  style="background: red;"    [id]="'remove_address'+item.id" (click)="DeleteModal.openModal('delete', item)" >
+                          <i class="ri-delete-bin-line"></i> {{ 'delete' | translate }}
+                      </span>
+
+               }
+               @if((item.createdByProvider&& item.attachmentTypeId==1 && !item.attachmentText) ||(item.createdByProvider&& item.attachmentTypeId==2 && !item.attachmentFilePath))
+                    {
+                      <span class=" delete"  style="background: #ff5b5b; padding-top: 10px"  (click)="EditItem(item)" >
+                        <i class="ri-edit-box-line"></i> {{ 'editForProvider' | translate }}
+
+                    </span>
+                    }
+     
+                      </h4>
+                    </div>
+                  </div>
+                  <p
+                    class="text-content theme-Subcolor description mt-2"
+        
+                  >
+                  {{ item.attachmentDescription }}
+                </p>
+                  <ul class="product-size">
+                    @if(item.attachmentText){
+                    <li>
+                      <div class="size-box detail">
+                        <h6 class="text-content theme-colorTwo Regular">
+                          {{ "Attachment.Content" | translate }}
+                        </h6>
+                        <h5 class="theme-Subcolor  Medium mx-2">
+                          {{ item.attachmentText }}
+                        </h5>
+                      </div>
+                    </li>
+                  }
+                    <li>
+                      <div class="size-box detail">
+                        <h6 class="text-content theme-colorTwo Regular">
+                          {{ "Attachment.attachmentType" | translate }}
+                        </h6>
+                        <h5 class="theme-colorTwo bold mx-2">{{ item.attachmentTypeTitle }}</h5>
+                      </div>
+                    </li>
+                    <li>
+
+                      @if(item.createdByProvider==false){
+                        <!-- <div class="button-group delete"> -->
+                           <!-- <app-button [class]="'btn btn-sm add-button'" [type]="'button'" [spinner]="false" [id]="'edit_address'+item.id" (click)="CustomerAttachmentModal.openModal(item)" >
+                              <i class="ri-edit-box-line"></i> {{ 'edit' | translate }}
+                           </app-button> -->
+                           <!-- <app-button [class]="'btn btn-sm add-button text-wihte'" [type]="'button'" [spinner]="false" [id]="'remove_address'+item.id" >
+                              <i class="ri-delete-bin-line"></i> 
+                       {{ 'CustomerAttachment.remove' | translate }}  
+                           </app-button>
+                        </div> -->
+         
+         
+                        <!-- <div class="button-group  ">
+                           <app-button [class]="'btn btn-sm add-button'" [type]="'button'" [spinner]="false" [id]="'edit_address'+item.id"   >
+                              <i class="ri-edit-box-line"></i> {{ 'edit' | translate }}
+                           </app-button>
+                  
+                        </div>-->
+                     }
+                      <!-- <div class="size-box detail">
+                        <h6 class="text-content theme-colorTwo Regular">
+                          {{ "Attachment.attachmentType" | translate }}
+                        </h6>
+                        <h5 class="theme-colorTwo bold">{{ item.attachmentTypeTitle }}</h5>
+                      </div> -->
+                    </li>
+  
+                
+                  </ul>
+              
+  
+                  @if(item?.attachmentFilePath){
+
+                    <div class="grid-image d-flex justify-content-end mt-2" >
+                      <a
+                        [href]="
+                          item?.attachmentFilePath
+                            ? (item.attachmentFilePath | customPipeForImages)
+                            : null
+                        "
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          [src]="
+                            item?.attachmentFilePath
+                              ? (item.attachmentFilePath | customPipeForImages)
+                              : 'assets/images/pdf.png'
+                          "
+                          onerror="this.src='assets/images/pdf.png';"
+                          alt=""
+                          class="img-fluid"
+                        />
+                      </a>
+               
+                    </div>
+                    }
+                </div>
+           
+              </div>
+           
+            </div>
+          </div>
+           
+  
+        }
+        
+ 
+        </div>
+      </div>
+
+ 
+
+      <div class="row g- 4 mt-2 card-back">
+        <div class="col-xxl-12 col-md-12 mb-4" >
+          <form [formGroup]="insertForm" (ngSubmit)="onSubmit()">
+            <a class="seller-grid-box">
+              <div class="grid-contain">
+                <div class="seller-contact-detail s mb-3">
+                  <div class="seller-contact">
+                    <div class="contact-detail "
+                    [ngClass]="{ 'editforProvider': insertForm.controls['ByProvider'].value ==true
+            }">
+               
+                      <label class="form-label Medium" for="fullName">
+                        {{ "Attachment.Description" | translate }}
+                      </label>
+                      <textarea
+                        class="msger-input noResize two uk-textarea Regular mx-2 w-100"
+                        placeholder="{{ 'Type Message here..' | translate }}"
+                        formControlName="attachmentDescription"
+                      >
+                      </textarea>
+
+                      @if(insertForm.controls['attachmentDescription'].touched
+                      &&
+                      insertForm.controls['attachmentDescription'].errors?.['required']){
+                      <div class="invalid-feedback">
+                        {{ "attachmentDescription_is_required" | translate }}
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+                <div class="seller-contact-detail s mb-3 "
+                [ngClass]="{ 'editforProvider': insertForm.controls['ByProvider'].value ==true
+            }">
+                  <div class="seller-contact">
+                    <div class="contact-detail">
+           
+                      <label class="form-label Medium" for="fullName">
+                        {{ "Attachment.attachmentType" | translate }}
+                      </label>
+                      <ng-select
+                        #attachmentTypeId_
+                        [selectOnTab]="true"
+                        formControlName="attachmentTypeId"
+                        class="p-0 custom-select"
+                        dropdownPosition="auto"
+                        labelForId="validation02"
+                        (change)="changeType()"
+                      >
+                        @for (item of AttachmentType; track item) { // Html
+                        template to repeat
+                        <ng-option [value]="item.id"
+                          >{{ item.title }}
+                        </ng-option>
+                        }
+                      </ng-select>
+
+                      @if(insertForm.controls['attachmentTypeId'].touched &&
+                      insertForm.controls['attachmentTypeId'].errors?.['required']){
+                      <div class="invalid-feedback">
+                        {{ "Attachment.attachmentType_is_required" | translate }}
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+
+                @if( insertForm.controls['attachmentTypeId'].value ){ @if(
+                insertForm.controls['attachmentTypeId'].value ==1){
+                <div class="seller-contact-detail s mb-3">
+                  <div class="seller-contact">
+                    <div class="contact-detail">
+             
+
+                      <label class="form-label Medium" for="fullName">
+                        {{ "Attachment.Content" | translate }}
+                      </label>
+                      <textarea
+                        class="msger-input noResize two uk-textarea Regular mx-2 w-100"
+                        formControlName="attachmentText"
+                      >
+                      </textarea>
+
+                      @if(insertForm.controls['attachmentText'].touched &&
+                      insertForm.controls['attachmentText'].errors?.['required']){
+                      <div class="invalid-feedback">
+                        {{ "Attachment.attachmentText_is_required" | translate }}
+                      </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+
+                } @else if ( insertForm.controls['attachmentTypeId'].value ==2)
+                {
+                <div class="contain-name mb-2">
+                  <div class="grid-image">
+                    <a rel="noopener noreferrer">
+                      <img
+                        [src]="
+                          imageLogo ? imageLogo : 'assets/images/category.png'
+                        "
+                        onerror="this.src='assets/images/category.png';"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </a>
+                  </div>
+                </div>
+                @if(insertForm.controls['attachmentFileUrl'].touched &&
+                insertForm.controls['attachmentFileUrl'].errors?.['required']){
+                <p *ngIf="!imageLogo">{{ "There_is_no_photo" | translate }}</p>
+
+                }
+
+                <div class="user-icon">
+                  <input
+                    type="file"
+                    class="d-none"
+                    id="dropzone-file"
+                    (change)="uploadImage($event)"
+                    accept="image/*"
+                  />
+                  <app-button
+                  [class]="'btn theme-bg-color btn-sm   text-light mt-2'"
+                  [id]="'file_btn'"
+                  onclick="document.getElementById('dropzone-file').click()"
+                >
+                {{ "upload picture" | translate }}
+                </app-button>
+                </div>
+
+                }}
+
+                <app-button
+                  class="d-flex justify-content-end"
+                  [class]="'btn theme-bg-color btn-md   text-light mt-2'"
+                  [id]="'submit_address_btn'"
+                  [disabled]="!OrderService.submit" 
+                  type="submit"
+                >
+                {{ "submit" | translate }}
+                </app-button>
+              </div>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Grid Section End -->
+
+
+<app-delete-modal #deleteModal (deleteItem)="delete($event.actionToPerform,$event.data)"></app-delete-modal>

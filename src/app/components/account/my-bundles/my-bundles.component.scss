@@ -1,0 +1,130 @@
+@media (max-width: 991px) {
+  .isExpired {
+    font-size: 13px !important;
+    
+  }
+  .title h2 {
+    font-size: 20px !important;
+  }
+}
+
+.title {
+  padding: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+ 
+ 
+}
+.BundleHas{
+  color: #4a5568 !important;
+  font-family: 'LamaSansRegular' !important;
+  font-size:15px !important
+
+}
+ 
+
+.bold{
+  font-family: 'LamaSansBold' !important;
+
+}
+.Medium{
+  font-family: 'LamaSansMedium' !important;
+
+}
+
+
+ .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+span{
+font-family: 'LamaSansBold' !important;
+
+}
+}
+.Regular {
+  font-family: 'LamaSansRegular' !important;
+ }
+ del{
+  font-size: 12px;
+font-family: 'LamaSansBold' !important;
+
+ }
+ .description{
+  color: #6b4e45;
+ }
+
+
+ 
+   
+/* iPad بورتريه (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  li .size-box.detail  {
+    display: flex !important
+  ;
+    align-items: center;
+  }
+  
+  .Ongoing{
+    margin: 10px 30px ;
+  }
+  .orderP  {
+    display: block !important;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .order-icon-one{
+  
+    display: none !important;
+  }
+  .order-icon-tow{
+  
+    display: block !important;
+  }
+}
+
+/* iPad لاندسكيب (Landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container-md, .container-sm, .container {
+    max-width: 874px !important;
+}
+.Ongoing{
+  margin: 10px 30px ;
+}
+.orderP  {
+  display: block !important;
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.order-icon-one{
+
+  display: none !important;
+}
+.order-icon-tow{
+
+  display: block !important;
+}
+}
+
+/* شاشات أقل من 776px */
+@media (max-width: 776px) {
+.order-container{
+  // flex-wrap: nowrap !important;
+  letter-spacing: 0px !important;
+}
+
+ li .size-box.detail  {
+  display: flex !important
+;
+  align-items: center;
+}
+
+}
+
+label {
+  margin: 10px 5px 0;
+}
+
+

@@ -1,0 +1,545 @@
+@if(browserOnlyService.isBrowser()&&isLoadingHomeData) {
+
+<div class="bg- effect">
+  <!-- Home Section Start -->
+  @if(Ads){
+  <section class="home-section pt -2 mb-5" id="ads">
+    <app-theme-home-banner
+      [ads]="Ads"
+    ></app-theme-home-banner>
+    <!-- <app-theme-home-banner [theme]="'paris'" [data]="data?.content?.home_banner"></app-theme-home-banner> -->
+  </section>
+  }
+  <!-- Home Section End -->
+
+  <!-- Home Section End -->
+  <section class="seller-poster-section">
+    <div class="container-fluid-lg">
+      <div class="row text-center">
+        <div class="col-xxl-12">
+          <div
+            class="seller-title h-100 d-flex align-items-center justify-content-center"
+          >
+            <div class="Behind ">
+              <h2 class="theme-colorTwo Medium">
+                {{ "Behind.behindScreen" | translate }} <br />
+                {{ "Behind.a" | translate }}
+                <span
+                  class="text-white bold dedicatedArmy"
+                
+                  >&nbsp; {{ "Behind.dedicatedArmy" | translate }}&nbsp;</span
+                >
+                {{ "Behind.atYourDisposal" | translate }}
+              </h2>
+
+              <p class="theme-colorTwo">
+                {{ "Behind.getCreativeTeamReady" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Product Section Start -->
+
+
+
+  <!-- Product Section Start -->
+  <section class="product-section mt-4"
+  id="categories"
+  appLazyLoadSection
+  (sectionInView)="categoriesParent = $event">
+    <div class="container-fluid-lg">
+      <div class="row g-sm-4 g-3">
+
+           <!-- Left Content Start -->
+           @if(categoriesParent){
+            <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
+              <div class="p-sticky">
+                <!-- Sidebar Category Vertical Style -->
+                <ng-container>
+                  <app-categories-home [style]="'vertical'"> </app-categories-home>
+                </ng-container>
+                <!-- Sidebar Vertical Banner -->
+    
+                @if(Ads[4]){
+                <div class="home-contain hover-effect mt-3">
+                  <a [href]="Ads[4].adUrl" target="_blank">
+                    <img
+                      [src]="Ads[4].adImage | customPipeForImages"
+                      class="h-1 00 bg-img w-100"
+                      alt="banner"
+                    />
+                  </a>
+                </div>
+    
+                }
+    
+                <!-- Sidebar Vertical Banner -->
+                @if(Ads[5]){
+                <div class="home-contain hover-effect mt-3">
+                  <a>
+                    <img
+                      [src]="Ads[5].adImage | customPipeForImages"
+                      class="h-1 00 bg-img w-100"
+                      alt="banner"
+                    />
+                  </a>
+                </div>
+    
+                }
+              </div>
+            </div>
+            }
+            <!-- Left Content End -->
+        <!-- Right Content Start -->
+        <!-- [class]="'col-xxl-12 col-xl-12'" -->
+        <div
+        [class]="true ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12'"
+    >
+          <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
+          <app-title [title]="'Home.header.Trending-Services'"> </app-title>
+          <div
+            class="section-b-space"
+            id="MostOrderedServices"
+            appLazyLoadSection
+            (sectionInView)="TrendingServicesdsParent = $event"
+          >
+            <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                  </app-theme-product> -->
+            @if(TrendingServicesdsParent){
+
+            <app-home-services-list
+              [type]="'TrendingServices'"
+              [slider]="false"
+              [showItem]="4"
+              [close]="false"
+              [sliderOption]="productSlider"
+              [style]="'horizontal_cust'"
+            >
+            </app-home-services-list>
+            }
+          </div>
+        </div>
+
+        <div 
+        [class]="true ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12'"
+        >
+          <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
+          <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
+          <div
+            class="section-b-space"
+            id="MostViewedServices"
+            appLazyLoadSection
+            (sectionInView)="MostOrderedServicesParent = $event"
+          >
+            <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                  </app-theme-product> -->
+            @if(MostOrderedServicesParent){
+
+            <app-home-services-list
+              [type]="'MostViewedServices'"
+              [slider]="false"
+              [showItem]="4"
+              [close]="false"
+              [sliderOption]="productSlider"
+              [style]="'horizontal_cust'"
+            >
+            </app-home-services-list>
+            }
+          </div>
+        </div>
+    
+
+      </div>
+    </div>
+
+    <!-- feature section start -->
+    <div class="container-fluid ">
+      <section
+        class="featured-sec section-b-space"
+        id="bundles"
+        appLazyLoadSection
+        (sectionInView)="bundleParent = $event"
+      >
+        <div class="container-fluid-lg">
+          <div class="row g-3">
+            <div class="col-xxl-3 col-lg-4">
+              <div class="feature-title">
+                <div>
+                  <h2  >
+                    {{ "Bundle.header.title" | translate }}
+                  </h2>
+                     <span class="title-leaf">
+               <svg class="icon-width">
+                  <use attr.xlink:href="assets/svg/Small.svg#{{'Layer_1'}}"></use>
+               </svg>
+            </span>
+                  <p class="theme-colorTwo">
+                    {{ "Bundle.header.description" | translate }}
+                  </p>
+                  <button
+                   style="font-family: LamaSansRegular !important;"
+
+                    [routerLink]="['/BundleList/']"
+                    class="btn theme-bg-color text-light mt-sm-4 mt-3"
+                  >
+                    {{ "servicesBox.requestNow" | translate }}
+                    <i data-feather="arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            @if(bundleParent) {
+
+            <div class="col-xxl-9 col-lg-8">
+              <app-save-offer
+                [home]="true"
+                [class]="'banner-slider home pfor'"
+              ></app-save-offer>
+            </div>
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Banner Section Start -->
+    <div class="container-fluid-lg">
+      <div class="row g-sm-4 g-3">
+        <!-- Banner Section Start -->
+        <div [class]="'col-xxl-12 col-xl-12'">
+          <!-- Banner Section Start -->
+          @if(Ads[4]){
+          <section class="banner-section mt-4">
+            <div class="container- fluid-lg">
+              <div class="row">
+                <div class="col-12">
+                  <div
+                    class="banner-contain-3 section-b-space section-t-space hover-effect overflow-visible"
+                  >
+                    <a [href]="Ads[4].adUrl" target="_blank">
+                      <img
+                        [src]="Ads[4].adImage | customPipeForImages"
+                        class="bg-img w-100"
+                        alt=""
+                      />
+                    </a>
+                    <!-- <div
+                        class="banner-detail p-center-left position-relative d-block py-0 banner-furniture mend-auto">
+                        <div class="row">
+                            <div class="col-xl-6 offset-xxl-2 offset-xl-1 col-md-8 col-sm-9">
+                                <h4 class="text-uppercase text-yellow text-kaushan furniture-title">&nbsp;</h4>
+                                <h2 class="mt-sm-3 mt-1 mb-2 text-content">&nbsp;<span
+                                        class="theme-color fw-bold">&nbsp;</span> &nbsp;</h2>
+                                <p class="text-content">&nbsp;</p>
+                                <h2 class="mt-sm-3 mt-1 mb-2 text-content">&nbsp;<span
+                                        class="theme-color fw-bold">&nbsp;</span> &nbsp;</h2>
+                                <p class="text-content">&nbsp;</p>
+                                <h2 class="mt-sm-3 mt-1 mb-2 text-content">&nbsp;<span
+                                        class="theme-color fw-bold">&nbsp;</span> &nbsp;</h2>
+                                <p class="text-content">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          }
+
+          <div [class]="'col-xxl-12 col-xl-12'">
+            <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
+            <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
+            <div
+              class="section-b-space"
+              id="MostViewedProducts"
+              appLazyLoadSection
+              (sectionInView)="MostViewedProductssParent = $event"
+            >
+              <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                    </app-theme-product> -->
+              @if(MostViewedProductssParent){
+  
+              <app-home-services-list
+                [type]="'MostViewedServices'"
+                [slider]="false"
+                [showItem]="4"
+                [close]="false"
+                [sliderOption]="productSlider"
+                [style]="'horizontal_cust'"
+              >
+              </app-home-services-list>
+              }
+            </div>
+          </div>
+          <!-- Banner Section End -->
+
+          <section
+            class="fresh-vegetable-section section- lg-space"
+            id="values"
+            appLazyLoadSection
+            (sectionInView)="valuesParent = $event"
+          >
+            <div class="container- fluid-lg">
+              <div class="row gx-xl-5 gy-xl-0 g-3 ratio_148_1">
+                @if(valuesParent ){
+
+                <div class="col-xl-6 col-12">
+                  <div class="row g-sm-4 g-2">
+                    @if(Ads[5] && Ads[6]){
+
+                    <div class="col-6">
+                      <div class="fresh-image-2">
+                        <div>
+                          <img
+                            [src]="Ads[5].adImage | customPipeForImages"
+                            class="bg-img blur-up lazyload w-100"
+                            alt="image"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    }
+
+                    <div class="col-6">
+                      <div class="fresh-image">
+                        <div>
+                          <img
+                            [src]="Ads[6].adImage | customPipeForImages"
+                            class="bg-img blur-up lazyload w-100"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                }
+                <div class="col-xl-6 col-12">
+                  <div class="fresh-contain p-center-left">
+                    <div>
+                      <div class="review-title">
+                        <h4 class="bold  theme-colorTwo">
+                          {{ "values. DODGE-GymValues" | translate }}
+                        </h4>
+                        <h2
+                          class="Empowering SemiBold theme-color"
+                          style="  text-transform: full-size-kana"
+                        >
+                          {{ "values.empoweringBusinessWomen" | translate }}
+                          <br />
+                          {{ "values.startGrowMove" | translate }}
+                        </h2>
+                      </div>
+
+                      <div class="delivery-list">
+                        <p class="text-content entrepreneurs theme-colorTwo Regular">
+                          {{
+                            "values.startupsAndFemaleEntrepreneurs" | translate
+                          }}
+                        </p>
+                        <p class="text-content businesswoman theme-colorTwo Regular">
+                          {{
+                            "values.businesswomanTiredOfCostlyTeam" | translate
+                          }}
+                        </p>
+
+                        <ul class="delivery-box theme-colorTwo">
+                          <li>
+                            <div class="delivery-box">
+                              <div class="delivery-icon">
+                                <img
+                                  src="../assets/images/dwebsite/01.svg"
+                                  class="blur-up lazyload"
+                                  alt=""
+                                />
+                              </div>
+
+                              <div class="delivery-detail">
+                                <h5 class="text theme-colorTwo">
+                                  {{
+                                    "values.accessToCreativeTeams" | translate
+                                  }}
+                                </h5>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="delivery-box">
+                              <div class="delivery-icon">
+                                <img
+                                  src="../assets/images/dwebsite/02.svg"
+                                  class="blur-up lazyload"
+                                  alt=""
+                                />
+                              </div>
+
+                              <div class="delivery-detail">
+                                <h5 class="text theme-colorTwo">
+                                  {{
+                                    "values.empoweringBusinessWomen" | translate
+                                  }}
+                                </h5>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="delivery-box">
+                              <div class="delivery-icon">
+                                <img
+                                  src="../assets/images/dwebsite/03.svg"
+                                  class="blur-up lazyload"
+                                  alt=""
+                                />
+                              </div>
+
+                              <div class="delivery-detail">
+                                <h5 class="text theme-colorTwo">
+                                  {{
+                                    "values.highQualityStandards" | translate
+                                  }}
+                                </h5>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="delivery-box">
+                              <div class="delivery-icon">
+                                <img
+                                  src="../assets/images/dwebsite/04.svg"
+                                  class="blur-up lazyload"
+                                  alt=""
+                                  style="color: #7244ea"
+                                />
+                              </div>
+
+                              <div class="delivery-detail">
+                                <h5 class="text theme-colorTwo">
+                                  {{
+                                    "values.longTermPartnerships" | translate
+                                  }}
+                                </h5>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Coupons Banner Section Start -->
+         
+        </div>
+        <!-- Right Content End -->
+      </div>
+    </div>
+    <!-- feature section start -->
+    <div class="container-fluid">
+      <section class="featured-sec section-b-space">
+        <div class="container-fluid-">
+          <div class="row g-3 p-0">
+            @if(Ads[7]){
+
+            <div class="col-12 p-0">
+              <div class="slider-animate">
+                <div>
+                  @if(Ads[7].adImage){
+
+                  <div class="home-contain rounded-0 p-0">
+                    <a [href]="Ads[7].adUrl" target="_blank">
+                      <img
+                      [src]="Ads[7].adImage | customPipeForImages"
+
+                        class="img-fluid bg-img blur-up lazyload"
+                        alt=""
+                      />
+                    </a>
+                  
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Banner Section Start -->
+
+    <div class="container-fluid-lg">
+      <div class="row g-sm-4 g-3">
+        <!-- Banner Section Start -->
+        <div [class]="'col-xxl-12 col-xl-12'">
+          <div class="section-b-space no-section-b-space">
+            <div class="row g-md-4 g-3">
+              <div
+                id="News"
+                appLazyLoadSection
+                (sectionInView)="newsionsParent = $event"
+              >
+                <!-- Blogs Section Start -->
+                <!-- @if(data?.content?.main_content?.section9_featured_blogs?.status){
+                          <app-title [title]="data?.content?.main_content?.section9_featured_blogs?.title" [description]="data?.content?.main_content?.section9_featured_blogs?.description">
+                          </app-title>
+                          <app-blog [blogIds]="data?.content?.main_content?.section9_featured_blogs?.blog_ids || []">
+                          </app-blog>
+                       } -->
+                <!-- Blogs Section End -->
+
+                <!-- News Section Start -->
+                @if(newsionsParent){
+                <app-title
+                  [title]="'Home.header.tipsTricksTrends'"
+                  [description]="'uncover_intriguing_highlights'"
+                  [routerLink]="['/newsList/']"
+                >
+                </app-title>
+                <app-news> </app-news>
+                }
+                <!-- Blogs Section End -->
+              </div>
+            </div>
+          </div>
+          <!-- Two Column Banner Section End -->
+        </div>
+        <!-- Right Content End -->
+      </div>
+    </div>
+
+    <!-- feature section start -->
+    <div class="container-fluid d-n one"   >
+      <section
+      class="review-section section-l g-space"
+        id="CustomerFeedback"
+        appLazyLoadSection
+        (sectionInView)="CustomerFeedbackParent = $event"
+      >
+        <!-- <div class="container-fluid-lg"> -->
+          <div class="row g-3 mx-5">
+            @if(CustomerFeedbackParent){
+            <app-title
+              [title]="'Home.header.latestTestimonials'"
+              [description]="'Home.header.whatPeopleSay'"
+               
+            >
+            </app-title>
+            <app-customer-feedback> </app-customer-feedback>
+            }
+          </div>
+        <!-- </div> -->
+      </section>
+    </div>
+    <!-- Banner Section Start -->
+  </section>
+</div>
+}

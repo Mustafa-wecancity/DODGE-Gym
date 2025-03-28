@@ -1,0 +1,59 @@
+.theme-red{
+    color:  red !important;
+border-bottom:2px solid red !important ;
+}
+
+    
+@media (max-width: 991px) {
+     h2{
+        font-size: 18px !important;
+    }
+
+    .location-box{
+
+h6, h3{
+    font-size: 13px !important;
+
+}   
+svg{
+    height: 16px;
+} }
+
+.dashboard-title, .profile-description{
+   h4{
+    font-size: 13px !important;
+text-align: start;
+   } 
+}
+}
+
+.title {
+    padding: 10px;
+   
+  }
+
+
+
+     
+/* iPad بورتريه (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+}
+
+/* iPad لاندسكيب (Landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container-md, .container-sm, .container {
+    max-width: 874px !important;
+}
+
+}
+
+/* شاشات أقل من 776px */
+@media (max-width: 776px) {
+    a.nav-link {
+    
+        letter-spacing:0px !important ; 
+        padding:  0 8px !important ; 
+    font-size: 12px !important;}
+
+}

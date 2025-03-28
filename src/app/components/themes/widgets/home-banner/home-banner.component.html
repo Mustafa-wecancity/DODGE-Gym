@@ -1,0 +1,64 @@
+    <!-- Home Section Start -->
+ @if(isBrowser){
+
+@if(selectedAd&& selectedAd.adImage !=null){
+      <!-- <section class="home-search-full pt-0 overflow-hidden gradient-home">
+      <div class="container-fluid p-0">
+          <div class="row">
+              <div class="col-12">
+                  <div class="slider-animate">
+                      <div>
+                          <div class="home-contain  mainbanner rounded-0 p-0">
+                             <a [href]="ads[0].adUrl" target="_blank">
+                              <img [src]="ads[0].adImage| customPipeForImages" 
+                               
+                                  class="img-fluid bg-img blur-up lazyload bg-top" alt="mainbanner"> 
+                                 </a>
+
+                              <div class="home-detail p-center text-center home-overlay position-relative">
+                                  <div>
+                                      <div class="content">
+
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section> -->
+  
+
+  <section class="home-search-full pt-0 overflow-hidden gradient-home">
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="col-12">
+          <div class="slider-animate">
+            <div>
+              <div class="home-contain mainbanner rounded-0 p-0">
+                <a [href]="selectedAd.adUrl" target="_blank">
+                    <img [src]="selectedAd.adImage | customPipeForImages"
+                    class="img-fluid bg-img blur-up lazyload bg-top"
+                    [alt]="selectedAd.adTitle || 'Advertisement'"
+               />
+               
+                </a>
+                <div class="home-detail p-center text-center home-overlay position-relative">
+                  <div>
+                    <div class="content"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+}
+}
+  <!-- Home Section End -->
+ 

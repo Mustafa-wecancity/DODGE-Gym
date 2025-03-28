@@ -1,0 +1,251 @@
+<!-- @if(chatCustomerData&&chatCustomerData.length){ -->
+
+<div class="container -fluid-lg">
+  <div class="row g-0">
+    <div class="col-12 box-col-7">
+      <div class="card right-sidebar-chat mb-2">
+        <!-- <div>
+          <h5 class="bold theme-colorTwo">{{ "Chat"|translate }}</h5>
+          <span class="title-leaf">
+            <svg class="icon-width bg-gray">
+              <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+            </svg>
+          </span>
+        </div> -->
+        <div class="right-sidebar-Chats">
+          <div class="msger">
+            <div class="msger-chat" #scrollBottom>
+              @for (item of chatCustomerData; track item) {
+              <div class="msg {{ item.sendByCustomer ? 'right' : 'left' }}-msg">
+                <div class="msg-img">
+                  @if(item.customerImage &&item.sendByCustomer){
+                  <img
+                    [src]="item.customerImage | customPipeForImages"
+                    class="img-fluid"
+                    alt="profile"
+                  />
+                  }@else {
+                    <img [src]="'assets/images/logo/Asset 6.svg'"
+                    class="img-fluid"
+               
+                    onerror="this.src='assets/images/logo/Asset 6.svg';"class="img-fluid" alt="profile">
+                  }
+                </div>
+                <div class="msg-bubble">
+                  <div class="msg-info">
+                    <div class="msg-info-name">{{ item.sentBy }}</div>
+                    <div class="msg-info-time">
+                      {{ item.creationDate | date : "dd/MM/yyyy,h:mm a" }}
+                    </div>
+                  </div>
+                  @if(item.fileTypeId==0 &&!item.fileTypeId ){
+
+                  <div class="msg-text">{{ item.comment }}</div>
+                  } @if( item.fileTypeId&&item.fileTypeId==1 ){
+
+                  <a
+                    [href]="item.filePath | customPipeForImages"
+                    target="_blank"
+                    class="text-white"
+                    ><i class="fa-solid fa-file-pdf text-white"></i> الملف</a
+                  >} @if( item.fileTypeId&&item.fileTypeId==2 ){
+                  <a
+                    [href]="item.filePath | customPipeForImages"
+                    target="_blank"
+                    class="text-white"
+                  >
+                    <img
+                      alt="img chat "
+                      class="img-fluid"
+                      [src]="
+                        item?.filePath
+                          ? (item.filePath | customPipeForImages)
+                          : 'assets/images/category.png'
+                      "
+                      onerror="this.src='assets/images/category.png';"
+                    />
+                  </a>
+
+                  } @if( item.fileTypeId&&item.fileTypeId==3 ){
+                  <div *ngIf="item.filePath" class="msg-text">
+                    <audio controls>
+                      <source
+                        [src]="item.filePath | customPipeForImages"
+                        type="audio/wav"
+                      />
+                    </audio>
+                  </div>
+
+                  }
+                </div>
+              </div>
+              }
+            </div>
+            <form class="msger-inputarea" [formGroup]="insertForm">
+              <div  
+                class="dropdown-form dropdown-toggle"
+                role="main"
+  
+              >
+              <!-- (click)="isShow = !isShow" -->
+              <div *ngIf="   !fc['comment'].value"  class="dropdo wn-item" (click)="!isStart && fc['voiceNoteUrl'].value?DeleteRecord() :startRecording()">
+                <i class="fa fa-microphone"></i>
+              </div>
+                <!-- <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 16 16"
+                >
+                  <rect width="16" height="16" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5z"
+                  />
+                </svg> -->
+                <div
+                  class="chat-icon dropdown-menu dropdown-menu-start"
+                  [class.show]="isShow"
+                  style="
+                    position: absolute;
+                    inset: auto auto 0px 0px;
+                    margin: 0px;
+                    transform: translate(0px, -43px);
+                  "
+                >
+                  <!-- <div
+                    class="dropdown-item mb-2"
+                    onclick="document.getElementById('getchatFile').click()"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="48"
+                      height="48"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect width="24" height="24" fill="none" />
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          d="M2 19V9a2 2 0 0 1 2-2h.5a2 2 0 0 0 1.6-.8l2.22-2.96A.6.6 0 0 1 8.8 3h6.4a.6.6 0 0 1 .48.24L17.9 6.2a2 2 0 0 0 1.6.8h.5a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2"
+                        />
+                        <path d="M12 17a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                      </g>
+                    </svg>
+                  </div> -->
+                  <div class="dropdown-item" (click)="startRecording()">
+                    <i class="fa fa-microphone"></i>
+                  </div>
+                </div>
+              </div>
+
+              <textarea
+                *ngIf="
+                  !isStart &&
+                  !fc['voiceNoteUrl'].value &&
+                  !fc['fileUrl'].value &&
+                  !fc['fileTypeId'].value
+                "
+                class="msger-input noResize two uk-textarea"
+                (keydown.enter)="
+                !fc['comment'].errors && submit ? onSubmit() : null;
+                $event.preventDefault()
+              "
+                type="text"
+                placeholder="{{ 'Type Message here..' | translate }}"
+                formControlName="comment"
+              >
+              </textarea>
+
+              <div class="w-100" *ngIf="isStart && !fc['voiceNoteUrl'].value">
+                <i
+                  class="far fa-stop-circle stopIcon f-20"
+                  (click)="stopRecording()"
+                ></i>
+                <span class="recordTimer">{{ time }}</span>
+              </div>
+              <div class="w-100" *ngIf="!isStart && fc['voiceNoteUrl'].value">
+                <audio class="file-input" controls>
+                  <source [src]="fc['voiceNoteUrl'].value" type="audio/webm" />
+                </audio>
+                <span (click)="DeleteRecord()">
+                  <svg class="SvgDeleteColor deleteRecord mb-2">
+                    <use
+                      attr.xlink:href="assets/svg/icon-sprite.svg#{{
+                        'trash1'
+                      }}"
+                    ></use>
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="w-100 overflow-hidden"
+                *ngIf="fc['fileTypeId'].value == 2 && fc['fileUrl'].value"
+              >
+                <a [href]="imgURL" target="_blank" rel="noopener noreferrer">
+                  <img
+                    [src]="imgURL"
+                    alt=""
+                    style="height: 70px; width: 100px"
+                  />
+                </a>
+                <span (click)="DeleteSelectImage()">
+                  <svg class="SvgDeleteColor deleteRecord mb-2">
+                    <use
+                      attr.xlink:href="assets/svg/icon-sprite.svg#{{
+                        'trash1'
+                      }}"
+                    ></use>
+                  </svg>
+                </span>
+              </div>
+
+              <button
+                class="msger-send-btn"
+                type="submit"
+                (click)="submit ? onSubmit() : null"
+                appButtonDisable
+              >
+                <i class="fa fa-location-arrow text-white"></i>
+              </button>
+
+              <input
+                type="file"
+                #file
+                id="getchatFile"
+                style="display: none"
+                formControlName="fileUrl"
+                (change)="previewChatFiles(file.files); DeleteRecord()"
+                name="filename"
+              />
+            </form>
+            <!-- <pdf-viewer *ngIf="pdfFile" [src]="pdfFile" [original-size]="false"
+                                  style="height: 150px; width: 200px;">
+                                </pdf-viewer> -->
+            @if((fc['comment'].touched ||fc['comment'].dirty) &&
+            fc['comment'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "comment_is_required" | translate }}
+            </div>
+            } @if((fc['comment'].touched ||fc['comment'].dirty) &&
+            fc['comment'].errors?.['pattern']){
+            <div class="invalid-feedback">
+              {{
+                "Input_cannot_consist solely_of_whitespace_characters"
+                  | translate
+              }}
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- } -->

@@ -1,0 +1,200 @@
+@if(Bundle){
+  <div class="pt-4" style="margin-top: 3px;">
+    <div class="discount-box">
+      <h4 class="Medium text-white">
+        {{ "Bundle.form.orderServiceNow" | translate }}
+        <span
+          >{{ "Bundle.form.saveUpTo" | translate }} {{ Bundle?.discountPercent }}%
+        </span>
+      </h4>
+      <p class="theme-S ubcolor text-white">
+        {{ "Bundle.form.experienceQuality" | translate }}
+      </p>
+  
+      <div class="note-box product-package gap-3" >
+        <div
+          class="cart_qty qty-box product-qty bg-white"
+          style="min-width: 100% !important"
+        >
+          <div class="input-group w-100">
+            <app-button
+              [class]="'btn qty-left-minus bold'"
+              [id]="'add-to-cart' + Bundle.id"
+              [spinner]="false"
+              (click)="updateQuantity(-1)"
+            >
+              <i class="ri-subtract-fill"></i>
+            </app-button>
+            <input
+              class="form-control input-number qty-input"
+              type="text"
+              name="quantity"
+              value="{{ productQty }}"
+              readonly
+            />
+            <app-button
+              [class]="'btn qty-left-minus'"
+              [id]="'qty-left-minus' + Bundle.id"
+              [spinner]="false"
+              (click)="updateQuantity(1)"
+            >
+              <i class="ri-add-line"></i>
+            </app-button>
+          </div>
+        </div>
+  
+        <!-- <div class="summery-contain"> -->
+        <!-- <div class="coupon-cart" style="min-width: 100% !important;"> -->
+        <h6 class="text-white " style="min-width: 100% !important">
+          {{ "couponApply" | translate }}
+        </h6>
+        <div class="mb-3 input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="coupon"
+            id="exampleFormControlInput1"
+            placeholder="{{ 'enterCouponCodeHere' | translate }}"
+            [ngbTooltip]="'Password is required'"
+          />
+  
+          <button
+            class="btn-apply Medium bg-theme-color text-white"
+            style="border: 1px solid var(--theme-color)"
+            (click)="CalculateBundleTotalWithTax(coupon())"
+          >
+            {{ "apply" | translate }}
+          </button>
+          <!-- </div> -->
+        </div>
+        <!-- </div> -->
+        <div  class="d-flex justify-content-between w-100">
+          <h4 class="text-white Medium ">
+            {{ "couponDiscount" | translate }}</h4>
+          <!-- @if(HedaerCart&&HedaerCart.couponDiscount){ -->
+  
+          <h4 class="price bold  text-white">(-) {{ bundleData.couponDiscount }}</h4>
+        </div>
+        <div  class="d-flex justify-content-between w-100">
+          <h4 class="text-white Medium">
+            {{ "MyDashboard.MyOrder.Tax" | translate }}
+            <!-- <span class="bold">{{ bundleData.taxPercent }}%</span> -->
+          </h4>
+          <h4 class="price text-end text-white">
+            <span class="bold">{{ bundleData.taxValue }}</span>
+          </h4>
+        </div>
+   
+        <div  class="d-flex justify-content-between w-100">
+  
+          <h4 class="Medium text-white">{{ "Cart.Subtotal" | translate }}</h4>
+          @if(bundleData){
+  
+          <h4 class="price bold text-white">
+            {{ bundleData.subTotal }}
+            <span id="sar"> {{ "SAR" | translate }}</span>
+          </h4>
+          }
+        </div>
+    
+        <div class="dynamic-checkout w-100 scroll-button">
+          @if(Bundle){
+  
+          <app-button
+            [id]="'addcartbtnVariation' + Bundle.id"
+            [class]="'btn btn-md bg-theme scroll-button w-100 Regular nogap'"
+            (click)="PurchaseBundle(Bundle)"
+          >
+            <i class="ri-shopping-cart-line me-1"></i>
+            {{ "Bundle.form.orderNow" | translate }} [
+            <span class="bold me-1"> {{ bundleData.price }} </span
+            >{{ "SAR" | translate }}]
+          </app-button>
+  
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  }
+  
+  <!-- 
+  
+  <h6 class="offer-top offer-top-one ">
+    <span class="bold " style="    margin-top: 2px;">{{ Bundle?.points }} </span> {{ "Bundle.form.Point" | translate }}
+  </h6>
+  <h6 class="offer-top mx-2 offer-top-tow ">
+    {{ "Bundle.form.Valid-for" | translate }} <span class="bold" style="    margin-top: 2px;">{{ Bundle?.validityDays }}</span>
+    {{ "Bundle.form.Day" | translate }}
+  </h6>
+  <h2 class="name bold" >{{ Bundle?.name }}</h2>
+  <div class="price-rating">
+  
+    <h3 class="price-rating price theme-Subc olor"><span class="bold theme-colorTwo" >{{ Bundle?.priceAfterDiscount }} </span>  <b >{{'SAR' |translate}}</b>
+      @if(Bundle.discountPercent>0){
+      <del class="text-content mx- 1 Regular"
+              > 
+              {{ Bundle.price }}  {{'SAR' |translate}} 
+            </del> 
+             <span
+             class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ Bundle?.discountPercent }}% </span>{{'Bundle.form.off'| translate}}) </span>
+     }
+     </h3>
+  </div>
+  
+  <div class="product-contain">
+    <p class="w-100 Regular" [innerHTML]="Bundle?.description"></p>
+  </div>
+  
+  @if(Bundle){
+  <div class="note-box product-package">
+    <div class="cart_qty qty-box product-qty">
+      <div class="input-group">
+        <app-button
+          [class]="'btn qty-left-minus bold'"
+          [id]="'add-to-cart' + Bundle.id"
+          [spinner]="false"
+          (click)="updateQuantity(-1)"
+        >
+          <i class="ri-subtract-fill"></i>
+        </app-button>
+        <input
+          class="form-control input-number qty-input"
+          type="text"
+          name="quantity"
+          value="{{ productQty }}"
+          readonly
+        />
+        <app-button
+          [class]="'btn qty-left-minus'"
+          [id]="'qty-left-minus' + Bundle.id"
+          [spinner]="false"
+          (click)="updateQuantity(1)"
+        >
+          <i class="ri-add-line"></i>
+        </app-button>
+      </div>
+    </div>
+    <div class="dynamic-checkout w-50 scroll-button">
+      @if(Bundle){
+  
+      <app-button
+        [id]="'addcartbtnVariation' + Bundle.id"
+        [class]="'btn btn-md bg-theme scroll-button w-100 Regular nogap'"
+        (click)="addToCart(Bundle)"
+      >
+        <i class="ri-shopping-cart-line me-1 "></i> {{ 'Bundle.form.AddtoCart' | translate }}
+        [ <span class="bold me-1"> 
+          {{ Bundle.priceAfterDiscount * productQty  }} </span>{{'SAR' |translate}}]
+      </app-button>
+  
+      }
+    </div>
+  </div>
+  
+  } @if(!(Bundle)){
+  
+  <div class="not-available">{{ "currently_item_unavailable" | translate }}</div>
+  } } -->
+  

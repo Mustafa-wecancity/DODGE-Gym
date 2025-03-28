@@ -1,0 +1,18 @@
+<div class="pickup-box">
+    <div class="product-title">
+       <h4>{{ 'saving_package_information' | translate }}</h4>
+    </div>
+    <div class="product-info">
+       <ul class="product-info-list product-info-list-2">
+          @if(serviceAttachmentsList && serviceAttachmentsList.length){
+             @for(item of serviceAttachmentsList ; track item){
+                 <li>{{ item.name }}</li>
+                 <li>{{ 'points' | translate }}: {{ item?.points }}</li>
+                 <li>{{ 'price' | translate }}: {{ item?.price  }} <span id="sar"> {{ "SAR" | translate }}</span></li>
+             <li class="border-bottom">{{ item.description|summary:30  }}</li>
+          }
+          }
+  
+       </ul>
+    </div>
+ </div>

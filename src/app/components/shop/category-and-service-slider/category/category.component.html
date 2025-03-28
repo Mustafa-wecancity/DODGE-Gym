@@ -1,0 +1,24 @@
+<!-- <section class="bg-white">
+    <div class="container-fluid-lg " >
+       <div class="row">
+          <div class="col-12 mb-2">
+             <app-sub-categories [sliderOption]="categorySlider"   [theme]="'paris'" [style]="'horizontal'">
+             </app-sub-categories>
+          </div>
+       </div>
+    </div>
+ </section> -->
+ <section class="section-b-space shop-section bg-white" id="filtered_products">
+    <div class="container-fluid-lg">
+       <div class="row">
+          <div class="col-custome-3">
+             <div class="left-box" [class.show]="attributeService.offCanvasMenu"> 
+                <app-collection-sidebar  [filter]="filter" [mainCategoryId]="ParentCategoryAndServices?.mainCategoryId"></app-collection-sidebar>
+             </div>
+          </div>
+          <div class="col-custome-9">
+               <app-service-category [SubServiceCategoryList]="ParentCategoryAndServices?.productList?.items?? []"[title]="ParentCategoryAndServices?.mainCategoryName??'Home.header.MostOrderedServices'"  [filter]="filter"></app-service-category>
+            </div>
+       </div>
+    </div>
+ </section>

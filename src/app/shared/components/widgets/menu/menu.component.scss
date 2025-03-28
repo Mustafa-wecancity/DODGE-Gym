@@ -1,0 +1,26 @@
+a
+{
+    color: var(--theme-colorTwo) !important;
+    color: #fff !important;
+
+    &:hover{
+        color: #fff !important;
+    }
+
+    &::before {
+        // @include pos;
+        // @include center(vertical);
+        // @include pseudowh($width: 2px, $height: 24px);
+        height:24px;
+        width:2px;
+        right: 14px;
+        background-color: #000;
+
+        body.rtl & {
+          right: unset;
+          left: 14px;
+        }
+      }
+}
+
+

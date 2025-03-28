@@ -1,0 +1,71 @@
+ 
+ <!-- <app-product-detail-modal #productDetailModal [product]="product"></app-product-detail-modal>
+ <app-variation-modal #variationModal></app-variation-modal>-->
+
+ 
+
+ 
+ 
+ <div class=" service" >
+    <div class="product-theme-box"   >
+     @if(service.discountPercent> 0){
+ 
+        <div class="label-tag"  [routerLink]="['/service/', service.serviceId,service.serviceName]"  >
+            <span>{{service.discountPercent}} %</span>
+            <i class="ri-flashlight-line"></i>
+        </div>
+     }
+        <div class="label-flex"  [routerLink]="['/service/', service.serviceId,service.serviceName]">
+            <div class="discount" style=" color: white;">
+                <label><span class="px-1">{{service.points }}  </span> {{'servicesBox.Point' |translate}}</label>
+            </div>
+        </div>
+        <div class="img-box ratio_50 ">
+            @if(close){
+               <div class="product-header-top">
+                  <app-button [class]="'btn wishlist-button close_button'" [spinner]="false" [id]="'close_btn'" (click)="removeWishlist(service.customerWhishlistId)">
+                     <i class="ri-close-line"></i>
+                  </app-button>
+               </div>
+            }
+          </div>
+        <div class="content-box mt-4 "  [routerLink]="['/service/', service.serviceId,service.serviceName]">
+            <div class="top-content theme-colorTwo bold">
+                <a  [routerLink]="['/service/', service.serviceId,service.serviceName]">
+                    <h5 class="top-content theme-colorTwo " style="  font-family: 'LamaSemiBold' !important;">{{service.serviceName| truncate: 78}} </h5>
+ 
+                </a>
+            </div>
+            <div class="description theme-colorTwo" [innerHTML]="service.description | truncate: 150">   </div>
+ 
+            <div class="bottom-content">
+                <div>
+                 <!-- <del class="text-content mx-1"
+                 ><span class="discountPercent">{{ service.priceAfterDiscount }}</span> {{'SAR' |translate}}</del> <span
+                class="offer theme-Subcolor" > (<span class="discountPercent">{{service.discountPercent}} %</span>  {{'servicesBox.off'| translate}}) </span> -->
+                    <h6 class="price"><span class="bold theme-colorTwo" >{{ service.priceAfterDiscount }} </span>  <b >{{'SAR' |translate}}</b>
+                     @if(service.discountPercent>0){
+                     <del class="text-content mx-1"
+                             > 
+                           <del  class="Regular">{{ service.price }} </del> <b >{{'SAR' |translate}}</b>
+                            
+                            </del> 
+                            <span
+                            class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ service.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
+                    }
+                    </h6>
+                </div>
+                <div class="btn-grp">
+                    <a class="btn " [routerLink]="['/service/', service.serviceId,service.serviceName]">  
+                            <i class="ri-shopping-cart-line theme-Subcolor"  ></i>
+                         </a>
+                    <a class="btn btn-theme text-white" [routerLink]="['/service/', service.serviceId,service.serviceName]">{{'servicesBox.Preview' |translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+  <!-- <app-product-detail-modal #productDetailModal [product]="product"></app-product-detail-modal>
+  <app-variation-modal #variationModal></app-variation-modal>-->
+ 
+  

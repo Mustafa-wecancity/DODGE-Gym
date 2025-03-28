@@ -1,0 +1,25 @@
+<!-- @if(layout !== 'product_digital'){
+   <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+}@else {
+   <app-breadcrumb-digital [product]="(product$ | async)!"></app-breadcrumb-digital>
+} -->
+
+<!-- Product Details Layout -->
+<section class="product-section"   [class.theme-product-section]="layout === 'product_digital'">
+ 
+  <app-bundle-thumbnail [Bundle]="bundleGetById" [option]="themeOptions$ | async">
+
+  </app-bundle-thumbnail>
+ </section>
+ 
+ 
+
+
+ 
+ <!-- Sticky Cart Box Start -->
+  <!-- @if(bundleGetById){ -->
+
+     <!-- <app-sticky-checkout  class=" d-none d-xl-block"  [bundleGetById]="bundleGetById"  ></app-sticky-checkout> -->
+     <!-- Sticky Cart Box End -->
+   <!-- } -->
+ 

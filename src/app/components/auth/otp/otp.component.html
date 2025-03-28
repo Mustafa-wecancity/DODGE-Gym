@@ -1,0 +1,93 @@
+<!-- <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb> -->
+
+@if(isBrowser){
+
+
+  <section class="log-in-section otp-section section-b-space">
+    <div class="container-fluid-lg w-100">
+      <div class="row align-items-center">
+        <div class="col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto">
+          <div class="image-contain">
+            <img src="assets/images/inner-page/otp.png" class="img-fluid" alt="image">
+          </div>
+        </div>
+        <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
+          <!-- <app-alert></app-alert> -->
+          <div class="log-in-box">
+            <div class="log-in-title">
+              <h3 class="text-title">{{ 'please_enter_the_one_time_password_to_verify_your_account' | translate }}</h3>
+              <h5 class="text-content">{{ 'a_code_has_been_sent_to' | translate }} 
+  
+                 <!-- @if(otpType === 'email'){
+                    <span>{{ email }}</span>
+                 } -->
+  
+                 @if(mobile){
+                  <span>{{mobile}}</span>
+  
+                 }
+              </h5>
+            
+          
+              @if(showSendOtp){
+                <div class="text-center mt-4 mb-4"  >
+                  <span class="reset-password-link"
+                    >{{
+                      "If
+                    don't receive OTP?" | translate
+                    }}  <a class="btn-link text-danger" (click)="SendOTP()"
+                      >{{ "Resend" | translate }}
+                    </a></span
+                  >
+                </div>
+              }
+              @if(!showSendOtp){
+  
+              <div class="text-center mt-4 mb-4"  >
+                <span class="reset-password-link"
+                  >{{
+                    "Resend
+                  code in" | translate
+                  }}  <a class="btn-link text-danger"
+                    >{{ time + " " }}{{ " " }} {{ "secondly" | translate }}</a
+                  ></span
+                >
+              </div>
+           
+            }
+   
+            </div>
+  
+            <ng-otp-input
+            dir="ltr"
+            class="text-[var(--theme-deafult-TeacherWithClick)]"
+            (keyup.enter)="SendVerify()"
+               #ngOtpInputRef
+               (onInputChange)="onOtpChange($event)"
+            [class.invalid-border]="isOtpInvalid"
+            [config]="config"></ng-otp-input>
+            <br>
+            <!-- <form [formGroup]="form" (ngSubmit)="submit()">
+              <div class="outer-otp">
+                <div id="otp" class="inner-otp">
+                  <input type="text" formControlName="otp" maxlength="6"
+                    oninput="this.value = this.value?.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    onKeyPress="if(this.value.length==6) return false;" 
+                    [class.is-valid]="
+                fc['otp'].valid && fc['otp'].touched
+              " [class.is-invalid]="
+                fc['otp'].invalid && fc['otp'].touched
+              " class="otp"
+                    />
+                </div>
+              </div>
+              <app-button [disabled]="!this._VerificationService.submit"   [class]="'btn btn-animation w-100 mt-3'" [id]="'forgot_btn'">{{ 'validate' | translate }}</app-button>
+            </form> -->
+            <app-button [disabled]="!this._VerificationService.submit"  (click)="SendVerify()" [class]="'btn btn-animation w-100 mt-3'" [id]="'forgot_btn'">{{ 'validate' | translate }}</app-button>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  }

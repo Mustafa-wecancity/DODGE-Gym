@@ -1,0 +1,76 @@
+tbody {
+  th {
+    color: var(--theme-colorTwo ) !important;
+    font-size: calc(14px + 2 * (100vw - 320px) / 1600) !important;
+    cursor:pointer
+  }
+  td {
+    font-size: 13px !important;
+  }
+}
+
+tbody tr td label {
+  padding: 3px 12px;
+  font-size: 12px;
+  border-radius: 50px;
+  color: var(--theme-Subcolor) !important;
+  background-color: rgba(107, 78, 69, 0.1);
+}
+
+td ,tr{
+  cursor: pointer !important;
+}
+
+.title {
+  padding: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+ 
+ 
+}
+
+
+
+.bold{
+  font-family: 'LamaSansBold' !important;
+
+}
+.Medium{
+  font-family: 'LamaSansMedium' !important;
+
+}
+
+h6{
+ 
+  font-family: 'LamaSansMedium' !important;
+  }
+
+  b {
+    font-family: 'LamaSansRegular' !important;
+font-size: 14px;
+}
+ .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+span{
+font-family: 'LamaSansBold' !important;
+
+}
+}
+.Regular {
+  font-family: 'LamaSansRegular' !important;
+ }
+ del{
+  font-size: 12px;
+font-family: 'LamaSansBold' !important;
+
+ }
+
+ label {
+  margin: 10px 5px 0;
+}
+
+
+@media (max-width: 776px) {
+  .title{
+      margin-bottom: 0 !important;
+  }
+  }

@@ -1,0 +1,347 @@
+.is-focus {
+  h5 {
+    a {
+      letter-spacing: 0.5px;
+
+      &:before {
+        width: 70px;
+      }
+    }
+  }
+  h6 {
+    letter-spacing: 0.5px;
+
+    border-bottom: 2px solid var(--theme-colorTwo) ;
+    // border-image: linear-gradient(to right, var(--theme-colorTwo) 70%, rgba(255, 0, 0, 0) 30%);
+    // border-image: linear-gradient(
+    //   to right,
+    //   rgba(255, 0, 0, 0) 5%,
+    //   var(--theme-colorTwo) 605%,
+    //   rgba(255, 0, 0, 0) 30%
+    // );
+
+    border-image-slice: 1;
+
+    &:before {
+      width: 70px !important;
+      background-color: red;
+      height: 3px;
+    }
+  }
+}
+.list {
+  background: transparent;
+  h5 {
+    display: flex;
+    font-size: 14px !important;
+    // justify-content: space-around;
+    font-family: 'LamaSansMedium' !important;
+    font-weight: normal !important;
+    color: var(--theme-colorTwo) !important;
+    background: transparent;
+    // margin-bottom: 5px;
+    span {
+      font-size: 12px !important;
+      margin: 0 8px;
+    }
+    button {
+      // font-size: 15px !important;
+
+      // display: flex;
+      // justify-content: space-around;
+      background: transparent;
+      // color: var(--theme-colorTwo) !important;
+      width: 34px !important;
+      &::before {
+        // display: none !important;
+        right: 0 !important;
+      }
+      // span{
+      //   font-size: 12px !important;
+      // }
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin: 0 8px;
+    }
+  }
+
+  h6 {
+    display: flex;
+    font-size: 14px !important;
+    font-weight: normal;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: 'LamaSansRegular' !important;
+
+    color: var(--theme-colorTwo) !important;
+    background: transparent;
+
+    button {
+      font-size: 13px !important;
+      font-weight: normal;
+
+      display: flex;
+      justify-content: space-around;
+      background: transparent;
+      color: var(--theme-colorTwo) !important;
+      &::before {
+        display: none !important;
+      }
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin: 0 3px;
+    }
+  }
+
+
+    padding: 5px 2px !important;
+  
+}
+
+.sub-category-name {
+  padding: 0 45px !important;
+}
+
+.category-menu {
+  background-color: transparent !important;
+  // padding: calc(0px + 8 * (100vw - 320px) / 1600)
+  //   calc(0px + 5 * (100vw - 320px) / 1600);
+  padding: 5px 2px !important;
+  border-radius: 5px;
+
+  ul {
+      gap: 4px !important;
+      .accordion-item{
+
+
+        padding: 5px 2px 0px 5px  !important;
+      
+      }
+
+  }
+}
+
+img {
+  width:17px;
+  height: 17px;
+  margin: 0 3px;
+}
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.list-tow li h6 {
+  display: list-item !important;
+  font-family: 'LamaSansRegular' !important;
+  font-size: 14px !important;
+  padding-left: 0px;
+  list-style-type: none; /* إلغاء النمط الافتراضي */
+  position: relative;
+}
+
+.is-focus {
+  h5 {
+    a {
+      letter-spacing: 0.5px;
+
+      &:before {
+        width: 70px;
+      }
+    }
+  }
+  h6 {
+    letter-spacing: 0.5px;
+
+    border-bottom: 2px solid var(--theme-colorTwo) ;
+    // border-image: linear-gradient(to right, var(--theme-colorTwo) 70%, rgba(255, 0, 0, 0) 30%);
+    // border-image: linear-gradient(
+    //   to right,
+    //   rgba(255, 0, 0, 0) 5%,
+    //   var(--theme-colorTwo) 605%,
+    //   rgba(255, 0, 0, 0) 30%
+    // );
+
+    border-image-slice: 1;
+
+    &:before {
+      width: 70px !important;
+      background-color: red;
+      height: 3px;
+    }
+  }
+}
+.list {
+  background: transparent;
+  h5 {
+    display: flex;
+    font-size: 14px !important;
+    // justify-content: space-around;
+    font-family: 'LamaSansMedium' !important;
+    font-weight: normal !important;
+    color: var(--theme-colorTwo) !important;
+    background: transparent;
+    // margin-bottom: 5px;
+    span {
+      font-size: 12px !important;
+      margin: 0 8px;
+    }
+    button {
+      // font-size: 15px !important;
+
+      // display: flex;
+      // justify-content: space-around;
+      background: transparent;
+      // color: var(--theme-colorTwo) !important;
+      width: 34px !important;
+      &::before {
+        // display: none !important;
+        right: 0 !important;
+      }
+      // span{
+      //   font-size: 12px !important;
+      // }
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin: 0 8px;
+    }
+  }
+
+  h6 {
+    display: flex;
+    font-size: 14px !important;
+    font-weight: normal;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: 'LamaSansRegular' !important;
+
+    color: var(--theme-colorTwo) !important;
+    background: transparent;
+
+    button {
+      font-size: 13px !important;
+      font-weight: normal;
+
+      display: flex;
+      justify-content: space-around;
+      background: transparent;
+      color: var(--theme-colorTwo) !important;
+      &::before {
+        display: none !important;
+      }
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin: 0 3px;
+    }
+  }
+
+
+    padding: 5px 2px !important;
+  
+}
+
+.sub-category-name {
+  padding: 0 45px !important;
+}
+
+.category-menu {
+  background-color: transparent !important;
+  // padding: calc(0px + 8 * (100vw - 320px) / 1600)
+  //   calc(0px + 5 * (100vw - 320px) / 1600);
+  padding: 5px 2px !important;
+  border-radius: 5px;
+
+  ul {
+      gap: 4px !important;
+      .accordion-item{
+
+
+        padding: 5px 2px 0px 5px  !important;
+      
+      }
+
+  }
+}
+
+img {
+  width:17px;
+  height: 17px;
+  margin: 0 3px;
+}
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.list-tow li h6 {
+  display: list-item !important;
+  font-family: 'LamaSansRegular' !important;
+  font-size: 13px !important;
+  padding-left: 8px;
+  padding-right: 8px; /* إضافة padding من الجهة اليمنى للأجهزة RTL */
+  list-style-type: none;
+  position: relative;
+}
+
+/* دائرة للغة الإنجليزية (LTR) */
+.list-tow li h6:dir(ltr)::before {
+  content: '';
+  display: inline-block;
+  width: 8px !important;
+  height: 8px !important;
+  background-color: currentColor;
+  border-radius: 5%;
+  position: absolute;
+  left: 0; /* محاذاة الدائرة إلى اليسار */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -20px;
+}
+
+/* دائرة للغة العربية (RTL) */
+.list-tow li h6:dir(rtl)::before {
+  content: '';
+  display: inline-block;
+  width: 8px !important;
+  height: 8px !important;
+  background-color: currentColor;
+  border-radius: 5%;
+  position: absolute;
+  right: 0; /* محاذاة الدائرة إلى اليمين */
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: -20px;
+}
+.accordion-button::before{
+  background-color: transparent !important;
+}
+ 
+
+.accordion-collapse
+{
+
+  margin-top: -12px !important;
+}
+.accordion-button::before{
+  background-color: transparent !important;
+}
+ 
+
+.accordion-collapse
+{
+
+  margin-top: -12px !important;
+}
+.cursor{
+  cursor: pointer !important;
+}

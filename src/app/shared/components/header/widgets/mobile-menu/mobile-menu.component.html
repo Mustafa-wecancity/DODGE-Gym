@@ -1,0 +1,60 @@
+<div class="mobile-menu d-lg-none d-block mobile-cart "> 
+   <!-- bottom-navigation overflow- visible -->
+   <ul>
+      <li [class.active]="'/' === active">
+         <a   [routerLink]="['/home']" (click)="activeMenu('/home')">
+            <i class="ri-home-2-line deactivated"></i>
+            <i class="ri-home-2-fill activated"></i>
+            <span>{{'Nav.Home' |translate}}</span>
+         </a>
+      </li>
+      <li [class.active]="'service-category' === active">
+         <a   [routerLink]="['/service-category']" (click)="activeMenu('/service-category')">
+            <i class="ri-apps-line js-line deactivated"></i>
+            <i class="ri-apps-line js-fill activated"></i>
+            <span>{{'Nav.Services' |translate}}</span>
+         </a>
+      </li>
+      <!-- <li class="nav-item d-flex position-relative">
+         <a class="nav-link camel d-flex justify-content-center align-items-center rounded-circle" [routerLink]="['/account/dashboard']"
+           title="camel-logo">
+           <img src="assets/images/logo/Asset 6.svg" width="45px" height="45px" alt="image" class="rounded-circle">
+           
+         </a>
+
+       </li> -->
+
+      <li [class.active]="'/account/dashboard' === active">
+         <a   [routerLink]="['/account/dashboard']" (click)="opneCanvasMenu()">
+     
+            <i class="ri-user-line me-2"></i>
+            <span>  {{ 'my_account' | translate }}</span>
+         </a>
+      </li>
+      <li [class.active]="'/BundleList' === active">
+         <a   [routerLink]="['/BundleList']" (click)="opneCanvasMenu()">
+     
+            <i class="ri-bubble-chart-line me-2"></i>
+            <span>  {{ 'Nav.Bundles' | translate }}</span>
+         </a>
+      </li>
+      <!-- <li [class.active]="'wishlist' === active">
+         <a   [routerLink]="['/wishlist']" (click)="activeMenu('/wishlist')">
+            <i class="ri-heart-3-line deactivated"></i>
+            <i class="ri-heart-3-fill activated"></i>
+            <span>{{'Nav.wishlist' |translate}}</span>
+         </a>
+      </li>
+      <li [class.active]="'cart' === active">
+         <a   [routerLink]="['/cart']">
+            <i class="fly-cate ri-shopping-bag-line deactivated"></i>
+            <i class="fly-cate ri-shopping-bag-fill activated"></i>
+            <span> {{'Nav.Cart' |translate}}</span>
+         </a>
+      </li> -->
+
+   </ul>
+</div>
+
+
+

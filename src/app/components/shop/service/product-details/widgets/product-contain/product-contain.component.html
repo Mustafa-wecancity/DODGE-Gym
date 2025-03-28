@@ -1,0 +1,82 @@
+ 
+
+@if(ServiceGetById){
+  <div class="pt-4 " >
+    <div class="discount-box "  >
+        <h4 class="Medium text-white" >{{ 'servicesBox.orderServiceNow' | translate }} <span>{{ 'servicesBox.saveUpTo' | translate }}  {{ ServiceGetById?.discountPercent }}% </span></h4>
+        <p class="theme-Sub color text-white">{{ 'servicesBox.experienceQuality' | translate }}</p>
+    
+
+        <div class="note-box product-package">
+          <div class="cart_qty qty-box product-qty bg-white " style="min-width: 100% !important;">
+            <div class="input-group w-100">
+              <app-button
+                [class]="'btn qty-left-minus bold'"
+                [id]="'add-to-cart' + ServiceGetById.id"
+                [spinner]="false"
+                (click)="updateQuantity(-1)"
+              >
+                <i class="ri-subtract-fill"></i>
+              </app-button>
+              <input
+                class="form-control input-number qty-input"
+                type="text"
+                name="quantity"
+                value="{{ productQty }}"
+                readonly
+              />
+              <app-button
+                [class]="'btn qty-left-minus'"
+                [id]="'qty-left-minus' + ServiceGetById.id"
+                [spinner]="false"
+                (click)="updateQuantity(1)"
+              >
+                <i class="ri-add-line"></i>
+              </app-button>
+            </div>
+          </div>
+
+          <h6 class="text-white mb-2" style="min-width: 100% !important">
+            {{ "couponApply" | translate }}
+          </h6>
+          <div class="mb-3 input-group">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="coupon"
+              id="exampleFormControlInput1"
+              placeholder="{{ 'enterCouponCodeHere' | translate }}"
+              [ngbTooltip]="'Password is required'"
+            />
+    
+            <button
+              class="btn-apply Medium text-white bg-theme-color"
+              style="border: 1px solid var(--theme-color)"
+              (click)="CalculateServiceTotalWithTax(coupon())"
+            >
+              {{ "apply" | translate }}
+            </button>
+            <!-- </div> -->
+          </div>
+          <div class="dynamic-checkout w-100 scroll-button">
+            @if(ServiceGetById){
+        
+            <app-button
+              [id]="'addcartbtnVariation' + ServiceGetById.id"
+              [class]="'btn btn-md bg-theme scroll-button w-100 Regular nogap '"
+              (click)="loopform()"
+            >
+              <i class="ri-shopping-cart-line me-1 "></i> {{ 'servicesBox.orderNow' | translate }}
+              [ <span class="bold me-1"> 
+                {{ ServiceData.serviceBalance  }} </span>{{'servicesBox.Point' |translate}}]
+            </app-button>
+        
+            }
+          </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+}

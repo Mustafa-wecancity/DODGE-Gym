@@ -1,0 +1,25 @@
+<div class="offer-product">
+    <!-- <a [routerLink]="['/product/', product.slug]" class="offer-image">
+       <img [src]="product.product_thumbnail
+                 ? product.product_thumbnail.original_url
+                 : 'assets/images/product.png'" alt="product">
+    </a> -->
+    <div class="offer-detail">
+       <div>
+          <a [routerLink]="['/service/', service.id,service.serviceName]" class="text-title">
+             <h6 class="name">{{ service.serviceName }}</h6>
+          </a>
+ 
+          <!-- @if(service.points){ -->
+             <span>{{ service.points }} ●</span>
+          <!-- } -->
+          <div class="vertical-price">
+             <h5 class="price theme-color">{{ service.price | currencySymbol }}</h5>
+ 
+             <!-- @if(service.){
+                <del class="text-content">{{ product.price | currencySymbol }}</del>
+             } -->
+          </div>
+       </div>
+    </div>
+ </div>

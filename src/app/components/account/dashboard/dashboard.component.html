@@ -1,0 +1,145 @@
+
+@if(isBrowser ) {
+   <div class="tab-pane fade show active">
+   @if(Customer != null){
+
+   <div class="dashboard-home">
+ 
+
+      <div class="title">
+         <h2 class="theme-colorTwo  bold" >
+           {{ "my_dashboard" | translate }}
+         </h2>
+     
+         <span class="title-leaf title-leaf-gray">
+           <svg class="icon-width bg-gray">
+             <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+           </svg>
+         </span>
+       </div>
+      <div class="dashboard-user-name mx-2">
+         <h6 class="text-content">{{ 'hello' | translate }}, <b class="text-title">{{ Customer.fullName }}</b></h6>
+         <p class="text-content">
+            {{ "MyDashboard.Dashboard.welcome_text" | translate}}
+         </p>
+      </div>
+      <div class="total-box">
+         <div class="row row-cols-xxl-3 g-sm-4 g-3">
+            @if(customerDashboardStatus){
+            <div>
+
+               <div class="totle-contain" >
+                  <div class="wallet-point-box">
+                     <img src="assets/images/svg/wallet.svg" class="img-1 " alt="wallet">
+                     <img src="assets/images/svg/wallet.svg" alt="wallet">
+                     <div class="totle-detail">
+                        <h5 class="Regular">{{ 'MyDashboard.Dashboard.AvailablePoints'| translate}}</h5>
+                        <h3 class="Medium">{{ customerDashboardStatus.points}}
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        
+        
+               <div class="totle-contain" >
+                  <div class="wallet-point-box">
+                     <img src="assets/images/svg/wallet.svg" class="img-1 " alt="wallet">
+                     <img src="assets/images/svg/wallet.svg" alt="wallet">
+                     <div class="totle-detail">
+                        <h5 class="Regular">{{ 'MyDashboard.Dashboard.walletPointBalance'| translate}}</h5>
+                        <h3 class="Medium">{{ customerDashboardStatus.walletPoints}}
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+           
+         }
+
+         </div>
+      </div>
+      @if(Customer &&Customer.mobile){
+
+      <div class="profile-about dashboard-bg-box">
+         <div class="row">
+            <div class="col-xxl-7">
+               <div class="dashboard-title mb-3">
+                  <h3  class="Medium">{{ 'profile_information'| translate}}</h3>
+               </div>
+
+               <div class="table-responsive">
+                  <table class="table">
+                     <tbody>
+                        <tr>
+                           <td  class="Medium">{{ 'name'| translate}}:</td>
+                           <td  class="Regular">     
+                              @if(Customer.fullName){
+                                 {{ Customer.fullName  }}
+                               }
+                             </td>
+                        </tr>
+                        <tr>
+                           <td class="Medium">{{ 'phone'| translate}}:</td>
+                           <td  class="Regular">
+                        @if(Customer.mobile){
+                              
+                          {{ Customer.mobile }}
+                        }
+                           </td>
+                        </tr>
+
+                        @if(Customer.address){
+                           <tr>
+                              <td  class="Medium">{{ 'address'| translate}}:</td>
+                              <td  class="Regular">
+                                 {{ Customer.address }}
+                                 <!-- {{ address.city }}, {{ address.state.name }},
+                                 {{ address.country.name }} {{ address.pincode }} -->
+                              </td>
+                           </tr>
+
+                        }
+                     </tbody>
+                  </table>
+               </div>
+
+               <div class="dashboard-title mb-3">
+                  <h3  class="Medium">{{ 'login_details'| translate}}</h3>
+               </div>
+
+               <div class="table-responsive">
+                  <table class="table">
+                     <tbody>
+                        <tr>
+                           <td>{{ 'email'| translate}} :</td>
+                           <td>
+                              @if(Customer.email){
+                                 {{ Customer.email }}
+                               }
+                              <a [routerLink]="['/account/editProfile']" routerLinkActive="active" >{{ 'edit' | translate }}</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>{{ 'password'| translate}} :</td>
+                           <td>
+                              ●●●●●●
+                              <a [routerLink]="['/account/changePassword']" routerLinkActive="active">{{ 'edit' | translate }}</a>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="col-xxl-5">
+               <div class="profile-image">
+                  <img src="assets/images/inner-page/dashboard-profile.png" class="img-fluid" alt="dashboard-profile">
+               </div>
+            </div>
+         </div>
+      </div>
+   }
+   </div>
+}
+
+</div>
+}

@@ -1,0 +1,31 @@
+.dropdown,
+.custom-select {
+    width: 229px !important;
+}
+
+
+
+@media (min-width:767px) and (max-width:991px) {
+
+    .show-button {
+        display: flex !important;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 776px) {
+
+    .show-button {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        h5{
+            display: none !important;
+        }
+        .filter-button-group
+        {
+            margin-bottom: 0;
+        }
+    }
+
+}

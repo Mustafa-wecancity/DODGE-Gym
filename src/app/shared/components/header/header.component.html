@@ -1,0 +1,20 @@
+@if(browserOnlyService.isBrowser()) {
+
+@if(style == 'basic_header'){
+   <app-basic-header [data]="(themeOption$ | async)" [logo]="logo" [sticky]="sticky" [class]="(path ? path : (activeTheme$ | async)) == 'cairo' && (activeTheme$ | async) == 'cairo' ? 'header-gradient' : '' "></app-basic-header>
+}
+
+<!-- @if(style == 'classic_header'){
+   <app-classic-header [data]="(themeOption$ | async)" [logo]="logo" [sticky]="sticky" [class]="(path ? path : (activeTheme$ | async)) == 'cairo' && (activeTheme$ | async) == 'cairo' ?'header-gradient' : '' "></app-classic-header>
+} -->
+
+<!-- @if(style == 'standard_header'){
+   <app-standard-header [data]="(themeOption$ | async)" [logo]="logo" [sticky]="sticky" [class]="(path ? path : (activeTheme$ | async)) == 'cairo' && (activeTheme$ | async) == 'cairo' ? 'header-gradient' : '' "></app-standard-header>
+} -->
+<!-- 
+@if(style == 'minimal_header'){
+   <app-minimal-header [data]="(themeOption$ | async)" [logo]="logo" [sticky]="sticky" [class]="(path ? path : (activeTheme$ | async)) == 'cairo' && (activeTheme$ | async) == 'cairo' ? 'header-gradient' : '' "></app-minimal-header>
+} -->
+
+<app-mobile-menu></app-mobile-menu>
+}

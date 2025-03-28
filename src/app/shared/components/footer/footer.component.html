@@ -1,0 +1,16 @@
+<footer [class]="style == 'footer_subscribe' ? '': 'section-t-space'" [ngClass]="style === 'classic_footer' ? 'footer-section-2 footer-color-3' : ''">
+
+   @if(style == 'footer_subscribe'){
+      <app-subscribe-footer [data]="(themeOption$ | async)" [footer]="footer"></app-subscribe-footer>
+   }
+
+   @if(style == 'basic_footer'){
+      <!-- <app-basic-footer [data]="(themeOption$ | async)" [footer]="footer"></app-basic-footer> -->
+      <app-subscribe-footer [data]="(themeOption$ | async)" [footer]="footer"></app-subscribe-footer>
+   
+   }
+
+   @if(style == 'classic_footer'){
+      <app-basic-footer [data]="(themeOption$ | async)" [footer]="footer"></app-basic-footer>
+   }
+</footer>

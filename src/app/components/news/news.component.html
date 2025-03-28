@@ -1,0 +1,102 @@
+
+@if(isBrowser){
+
+<section class="blog-section section-b-space bg-white">
+   
+       <!-- <div class="filter-button-group mt-0">
+         <div class="filter-button d-inline-block d-lg-none">
+            <a (click)="openFilter(true)"><i class="ri-filter-2-fill"></i> {{ 'ParentCategoryAndServices.form.filter_menu' | translate }}</a>
+         </div>
+      </div> -->
+   <div class="container-fluid-lg">
+      <div class="row g-4">
+         <div class="col-xxl-9 col-xl-8 col-lg-7" [class.order-lg-2]="sidebar === 'left_sidebar'" [class]="sidebar === 'no_sidebar' ?
+                        'col-xxl-12 col-xl-12 col-lg-12' : 'col-xxl-9 col-xl-8 col-lg-7'">
+
+            @if(!News){
+               <div class="row g-4">
+                  @for(item of skeletonItems; track item){
+                     <div [class]="style === 'list_view' ? 'col-12 list_view' : 'col-xxl-4 col-sm-6'">
+                        <app-skeleton-blog></app-skeleton-blog>
+                     </div>
+                  }
+               </div>
+            }@else {
+               @if(News){
+                  <div class="row g-4" [class.ratio_65]="style === 'list_view'">
+                     @for(blog of News; track blog){
+                        <div [class]="style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'">
+                           <div class="blog-box"  [class.blog-list]="style === 'list_view'" [ngClass]=" 'sticky-b log-box'">
+
+                              <!-- @if(blog?.is_featured){
+                                 <div class="blog-label-tag">
+                                    <span>{{ 'featured' | translate }}</span>
+                                 </div>
+                              } -->
+                              <div class="blog-image">
+                                 <a [routerLink]="['/newsDetails/', blog.id,setPathDecodeURIComponent(blog.title)]">
+                                    <img [src]="blog.image
+                                                  ?(blog.image|customPipeForImages)
+                                                  : 'assets/images/blog.png'" [alt]="blog?.title">
+                                 </a>
+                              </div>
+                              <div class="blog-contain blog-contain-2" [class.blog-contain-2]="style === 'list_view'">
+                                 <div class="blog-label">
+                                    <span class="time">
+                                       <i class="ri-time-line"></i>
+                                       <span class="Medium">{{ blog?.date | date: 'dd MMM yyyy'}}</span>
+                                    </span>
+
+                                    <!-- @if((themeOption$ | async)?.blog?.blog_author_enable){
+                                       <span class="super">
+                                          <i class="ri-user-line"></i>
+                                          <span>{{ blog?.created_by?.name }}</span>
+                                       </span>
+                                    } -->
+                                 </div>
+                                 <a [routerLink]="['/newsDetails/', blog.id,setPathDecodeURIComponent(blog.title)]">
+                                    <h3 class="bold">{{ blog?.title }}</h3>
+                                 </a>
+
+                                 @if(blog?.description){
+                                    <p class="Regular" [innerHTML]="blog.description | summary:200"></p>
+                                 }
+
+                                 @if((themeOption$ | async)?.blog?.read_more_enable){
+                                    <a [routerLink]="['/newsDetails/', blog.id,setPathDecodeURIComponent(blog.title)]" class="blog-button Medium">
+                                       {{ 'NewsList.form.read_more' | translate }} <i class="ri-arrow-right-fill"></i>
+                                    </a>
+                                 }
+                              </div>
+                           </div>
+                        </div>
+                     }
+                  </div>
+               }@else {
+                  <app-no-data [class]="'no-data-added'" [image]="'assets/svg/empty-items.svg'" [text]="'no_blogs_found'" [description]="'not_find_any_blogs_matching_search_criteria'">
+                  </app-no-data>
+               }
+            }
+
+            @if(News){
+               <nav class="custome-pagination">
+                  <app-pagination [total]="totalCount" [currentPage]="filter['page']" [pageSize]="filter['paginate']" (setPage)="setPaginate($event)">
+                  </app-pagination>
+               </nav>
+            }
+
+            @if(!News.length ){
+               <app-no-data [class]="'no-data-added collection-no-data'" [image]="'assets/svg/no-product.svg'" [text]="'sorry_cant_find_products_looking'" [description]="'NewsList.form.please_check_misspelt_something_searching_other_way'">
+               </app-no-data>
+            }
+         </div>
+         <div class="col-xxl-3 col-xl-4 col-lg-5" [class.order-lg-1]="sidebar === 'left_sidebar'" [class]="sidebar === 'no_sidebar' ? 'd-none' : ''">
+            <div class="left-sidebar-box" [ngClass]="{'show': attributeService.offCanvasMenu}">
+               <app-blog-sidebar  [mainCategoryId]="mainCategoryId" [filter]="filter"></app-blog-sidebar>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+}

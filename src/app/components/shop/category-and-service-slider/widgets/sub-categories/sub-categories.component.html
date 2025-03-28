@@ -1,0 +1,30 @@
+ 
+<!-- @if(style == 'horizontal'){ -->
+   <div class="product-wrapper no-arrow mt-4 mb-1" [class]="'category-slider'">
+      <owl-carousel-o [options]="sliderOption">
+         @for(category of SubCategoryList; track category){
+            <ng-template carouselSlide>
+               @if(theme == 'paris'){
+                  <div>
+                     <a    class="category-box category-dark " 
+                     [ngClass]="{'is-focus': selectedCategory == category.id}"  (click)="selectCategory(category.id)"
+                     >
+                        <!-- [class.active]="selectedCategorySlug.length && selectedCategorySlug.includes(category.slug!)" -->
+                        <img [src]="image ? image : 'assets/images/shape.png'" class="background-image" [alt]="category?.title">
+                        <img [src]="category.imagePath|customPipeForImages" [alt]="category.title">
+                     
+                        <h6 class="mt-4 Medium theme-colorTwo">{{ category.title }}</h6>
+                     </a>
+                  </div>
+               }
+            </ng-template>
+         }
+      </owl-carousel-o>
+
+      @if(!(SubCategoryList && SubCategoryList.length)){
+         <app-no-data [class]="'no-data-added bg-light'" [text]="'no_category_found'">
+         </app-no-data>
+      }
+   </div>
+ 
+ 

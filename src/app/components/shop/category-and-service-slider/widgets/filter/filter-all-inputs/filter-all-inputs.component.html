@@ -1,0 +1,18 @@
+<!-- <div class="theme-form search-box">
+   <input type="text" placeholder="{{'search_text' | translate}}" [(ngModel)]="searchText" class="form-control">
+</div> -->
+
+<ngx-slider [(value)]="fromPrice" [(highValue)]="toPrice" [options]="options"></ngx-slider>
+<!-- <div class="theme-form search-box">
+   <input type="text"  (click)="$event.preventDefault()"  (paste)="$event.preventDefault()"  (keypress)="$event.preventDefault()" [(ngModel)]="toPrice" class="form-control">
+</div> -->
+<br>
+<ngx-slider [(value)]="fromPoint" [(highValue)]="toPoint" [options]="optionsTow"></ngx-slider>
+<!-- <div class="theme-form search-box">
+   <input type="text"  (click)="$event.preventDefault()"  (paste)="$event.preventDefault()"  (keypress)="$event.preventDefault()" [(ngModel)]="toPoint" class="form-control">
+</div> -->
+<div class="col-12 mt-2 d-flex">
+   <app-button class="mx-2" (click)="applyFilter()" [class]="'btn btn-animation w-100 b justify-content-center rounded-3'">{{ 'Filter' | translate }}</app-button>
+   <app-button class="mx-2" (click)="clearFilter()" [class]="'btn btn-animation w-100 b justify-content-center rounded-3'">{{ 'Clear' | translate }}</app-button>
+</div>
+ 

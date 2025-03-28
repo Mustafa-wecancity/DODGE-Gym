@@ -1,0 +1,274 @@
+
+@if(isBrowser){
+
+
+<div class="titl e -header w-100">
+  <div class="row justify-content-between px-2">
+    <div class="title col-md-6 col-12">
+      <h2 class="theme-colorTwo bold">
+        {{ "Edit_Profile" | translate }}
+      </h2>
+
+      <span class="title-leaf title-leaf-gray">
+        <svg class="icon-width bg-gray">
+          <use xlink:href="../assets/svg/Small.svg#Layer_1"></use>
+        </svg>
+      </span>
+    </div>
+
+    <div class="col-md-6 col-12">
+      <div
+        class="text-end my-3 text-center d-flex flex-column align-items-center"
+      >
+        <img [src]="imageLogo" class="image-style" />
+        @if(!imageLogo){
+        <p>{{ "There is no photo" | translate }}</p>
+        }
+
+        <div class="user-icon">
+          <input
+            type="file"
+            class="d-none"
+            id="dropzone-file"
+            (change)="uploadImage($event)"
+            accept="image/*"
+          />
+          <app-button
+            [class]="'btn theme-bg-color btn-sm   text-light mt-2'"
+            [id]="'file_btn'"
+            onclick="document.getElementById('dropzone-file').click()"
+          >
+            {{ "upload picture" | translate }}
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if(form){
+  <form [formGroup]="form" class="" (ngSubmit)="submit()">
+    <div class="modal-body address-form px-2">
+      <div class="row g-md-4 g-sm-3 g-2">
+        <div class="col-md-6 col-12">
+          <div class="">
+            <label class="form-label" for="fullName">{{
+              "full_name" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="fullName"
+              type="text"
+              placeholder="{{ 'enter_name' | translate }}"
+              formControlName="fullName"
+              [ngClass]="{
+                'invalid': fc['fullName'].invalid && (fc['fullName'].dirty || fc['fullName'].touched),
+                'valid': fc['fullName'].valid && (fc['fullName'].dirty || fc['fullName'].touched),
+              }"
+            />
+            @if(form.controls['fullName'].touched &&
+            form.controls['fullName'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "name_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="">
+            <label class="form-label" for="email">{{
+              "email_address" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="email"
+              type="text"
+              placeholder="{{ 'enter_email_address' | translate }}"
+              formControlName="email"
+              [ngClass]="{
+                'invalid': fc['email'].invalid && (fc['email'].dirty || fc['email'].touched),
+                'valid': fc['email'].valid && (fc['email'].dirty || fc['email'].touched),
+              }"
+            />
+
+            @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "email_address_is_required" | translate }}
+            </div>
+            } @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['pattern']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_email" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+ 
+
+   
+ 
+        <!-- start gender  -->
+
+        <div class="col-md-6 col-12">
+
+
+          <div>
+            <label class="form-label" for="gender">{{
+              "Gender" | translate
+            }}</label>
+            <ng-select
+              #Gender_
+              [selectOnTab]="true"
+              formControlName="genderId"
+              class="p-0 custom-select"
+              dropdownPosition="auto"
+              labelForId="validation02"
+              [ngClass]="{
+                'invalid': fc['genderId'].invalid && (fc['genderId'].dirty || fc['genderId'].touched),
+                'valid': fc['genderId'].valid && (fc['genderId'].dirty || fc['genderId'].touched),
+              }"
+            >
+              @for (item of genders; track item) {  
+              <ng-option [value]="item.id"
+                >{{ item.title | translate }}
+              </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['genderId'].touched &&
+            form.controls['genderId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "gender_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- End gender  -->
+
+   
+        <!-- start region  -->
+          <!-- <div class="col-md-6">
+
+          <div>
+            <label class="form-label" for="regionId">{{
+              "region" | translate
+            }}</label>
+            <ng-select
+              #region_
+              [selectOnTab]="true"
+              formControlName="regionId"
+              class="p-0 custom-select"
+              (change)="ChangRegione()"
+              dropdownPosition="auto"
+              labelForId="validation02"
+              [ngClass]="{
+                'invalid': fc['regionId'].invalid && (fc['regionId'].dirty || fc['regionId'].touched),
+                'valid': fc['regionId'].valid && (fc['regionId'].dirty || fc['regionId'].touched),
+              }"
+            >
+              @for (item of region; track item) {
+              <ng-option [value]="item.id">{{ item.name }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['regionId'].touched &&
+            form.controls['regionId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div> -->
+        <!-- End region  -->
+        <!-- start City  -->
+
+        <!-- <div class="col-md-6">
+          <div>
+            <label class="form-label" for="cityId">{{
+              "City" | translate
+            }}</label>
+            <ng-select
+              #city
+              [selectOnTab]="true"
+              formControlName="cityId"
+              class="p-0 custom-select"
+              dropdownPosition="auto"
+              labelForId="validation02"
+              [ngClass]="{
+                'invalid': fc['cityId'].invalid && (fc['cityId'].dirty || fc['cityId'].touched),
+                'valid': fc['cityId'].valid && (fc['cityId'].dirty || fc['cityId'].touched),
+              }"
+            >
+              @for (item of cityList; track item) { // Html template to repeat
+              <ng-option [value]="item.id">{{ item.name }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['cityId'].touched &&
+            form.controls['cityId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div> -->
+
+        <!-- End City  -->
+        <div class="col-md-6 col-12">
+
+          <div class="">
+            <label class="form-label" for="birthDate">{{
+              "birthDate" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="birthDate"
+              type="date"
+              [max]="expirationDateNow"
+              placeholder="{{ 'enter_birthDate' | translate }}"
+              formControlName="birthDate"
+              [ngClass]="{
+                'invalid': fc['birthDate'].invalid && (fc['birthDate'].dirty || fc['birthDate'].touched),
+                'valid': fc['birthDate'].valid && (fc['birthDate'].dirty || fc['birthDate'].touched),
+              }"
+            />
+
+            @if(form.controls['birthDate'].touched &&
+            form.controls['birthDate'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "The birthDate require" | translate }}
+            </div>
+            } @if(form.controls['birthDate'].touched &&
+            form.controls['birthDate'].errors?.['birthDate']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_birthDate" | translate }}
+            </div>
+            }
+          </div>
+        </div>
+    
+ 
+        <div class="col-md-6 text-center my-3 d-flex flex-column d-none">
+          <img [src]="imageLogo" class="image-style w-50" />
+          @if(imageLogo==null){
+          <p>{{ "There is no photo" | translate }}</p>
+          }
+    
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <app-button
+          [class]="'btn theme-bg-color btn-md   text-light mt-2'"
+          [id]="'submit_address_btn'"
+          [disabled]="!this._CustomerProfile.submit"
+        >
+          {{ "submit" | translate }}
+        </app-button>
+      </div>
+    </div>
+  </form>
+  }
+</div>
+}

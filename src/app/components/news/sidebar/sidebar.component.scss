@@ -1,0 +1,57 @@
+h2 {
+  button {
+    span {
+      color: var(--theme-colorTwo) !important;
+      font-weight: normal !important;
+      font-family: "LamaSansBold" !important;
+      font-size: 18px !important;
+    }
+  }
+}
+.not {
+  &::before {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  h2 {
+    margin: 13px;
+  }
+}
+
+
+
+
+.bold{
+  font-family: 'LamaSansBold' !important;
+
+}
+.Medium{
+  font-family: 'LamaSansMedium' !important;
+
+}
+
+h6{
+  color: var( --theme-colorTwo);
+  font-family: 'LamaSansMedium' !important;
+  }
+
+  b {
+    font-family: 'LamaSansRegular' !important;
+font-size: 14px;
+}
+ .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+span{
+font-family: 'LamaSansBold' !important;
+
+}
+}
+.Regular {
+  font-family: 'LamaSansRegular' !important;
+ }
+ del{
+  font-size: 12px;
+font-family: 'LamaSansBold' !important;
+
+ }
