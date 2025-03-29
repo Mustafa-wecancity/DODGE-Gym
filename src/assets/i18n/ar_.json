@@ -215,7 +215,7 @@
   "edit": "تعديل",
   "logout": "تسجيل خروج",
   "my_CustomerServiceRequest": "طلباتي لخدمة العملاء",
-  "serviceName": "اسم الخدمة",
+  "productName": "اسم الخدمة",
   "serviceRequestCode": "رمز طلب الخدمة",
   "dateFrom": "من تاريخ",
   "dateTo": "إلى تاريخ",

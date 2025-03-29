@@ -11,11 +11,11 @@
                      <div class="content">
                         <h5 class="bold">{{ ServiceGetById.name }}</h5>
                 
-                        <h3 class="price theme-color"><span class="bold theme-colorTwo" >{{ ServiceGetById.pointsAfter }} </span> <b  id="sar">{{'servicesBox.Point' |translate}}</b>
+                        <h3 class="price theme-color"><span class="bold theme-colorTwo" >{{ ServiceGetById.priceAfter }} </span> <b  id="sar">{{'servicesBox.Point' |translate}}</b>
                            @if(ServiceGetById.discountPercent>0){
                            <del class="text-content mx-1"
                                    > 
-                                 <del  class="Regular">{{ServiceGetById.pointsBefore}} </del>   <b  id="sar">{{'servicesBox.Point' |translate}}</b>
+                                 <del  class="Regular">{{ServiceGetById.priceBefore}} </del>   <b  id="sar">{{'servicesBox.Point' |translate}}</b>
                                   
                                   </del> 
                                   <span class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
@@ -43,29 +43,41 @@
                            </div>
          
                         
+                           <div class="product-rating custom-rate mx-2">
+                              <a
+                                class="wishlist-button btn"
+                                [class.bg-theme-color]="ServiceGetById.inwishList"
+                                (click)="addToWishlist(ServiceGetById)"
+                              >
+                                <i
+                                  class="ri-heart-{{ ServiceGetById.inwishList ? 'fill' : 'line' }}"
+                                ></i>
+                              </a>
+                              <!-- </div> -->
+                            </div>
                         </div>
                      }
                   </div>
                   <div class="add-btn">
                      @if(ServiceGetById){
-                           <!-- <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular'" (click)="addToCart(ServiceGetById, false)">
+                           <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular'" (click)="addToCart(ServiceGetById, false)">
                               <i class="ri-shopping-cart-line me-1"></i>
                               &nbsp;{{'servicesBox.AddtoCart' |translate}}  [<span class="bold px-1"> 
                               {{ ServiceGetById.priceAfter * productQty  }}  </span> {{'SAR' |translate}}]
-                           </app-button> -->
+                           </app-button>
 
                            
-                        <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById,false)">
+                        <!-- <app-button [id]="'addcartbtnVariationsticky'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById,false)">
                            <i class="ri-shopping-cart-line me-1 "></i>{{ 'servicesBox.AddtoCart' | translate }}
                            [<span class="bold me-1"> 
-                             {{ServiceGetById.pointsAfter * productQty}} </span> {{'SAR' |translate}}]
+                             {{ServiceGetById.priceAfter * productQty}} </span> {{'SAR' |translate}}]
                         </app-button>
-                     
-                        <app-button [id]="'externalBtn'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById , true)">
-                           <i class="ri-shopping-cart-line me-1"></i>&nbsp; {{'servicesBox.AddtoCart' |translate}} [<span class="bold px-1">    {{ ServiceGetById.points * productQty }} </span>   {{'servicesBox.Point' |translate}}] 
+                      -->
+                        <!-- <app-button [id]="'externalBtn'+ServiceGetById.id" [class]="'btn theme-bg-color text-white Regular nogap'" (click)="addToCart(ServiceGetById , true)">
+                           <i class="ri-shopping-cart-line me-1"></i>&nbsp; {{'servicesBox.AddtoCart' |translate}} [<span class="bold px-1">    {{ ServiceGetById.price * productQty }} </span>   {{'servicesBox.Point' |translate}}] 
                         </app-button>
    
-   
+    -->
                     
                      }
                   </div>

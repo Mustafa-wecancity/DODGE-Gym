@@ -52,7 +52,7 @@ export interface ISeoGetCategory {
 export interface seokeywords {
   categoryId: number;
   id: number;
-  serviceId: number;
+  productd: number;
   title: string;
 }
 

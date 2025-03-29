@@ -72,7 +72,7 @@ export interface GetCustomerBundlePurchasesDto {
 export interface  IGetCustomerOrderServiceDetail
 {
   id: number,
-   serviceId: number,
+   productd: number,
     orderId: number,
     qty: number,
    price: number,

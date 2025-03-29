@@ -205,7 +205,7 @@ export class CustomerServiceRequestComponent extends BaseComponent {
 
   UpdateCustomerOrderDetail(item: GetServiceRequest, qty: number): void {
     const params: any = {
-      OrderServiceId: item?.id,
+      Orderproductd: item?.id,
       ...(qty !== undefined && { qty }), // Include 'qty' only if defined
     };
 
@@ -248,7 +248,7 @@ export class CustomerServiceRequestComponent extends BaseComponent {
     this._CustomerServiceRequest.submit = false;
 
     // Prepare the API call
-    const params = { OrderServiceId: data?.id };
+    const params = { Orderproductd: data?.id };
 
     this._CustomerServiceRequest
       .get<GenericResponse<any>>(

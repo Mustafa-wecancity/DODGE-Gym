@@ -74,7 +74,7 @@ export class ServiceManagementComponent {
           (data) => {
             this.CustomerOrderServiceDetails = data;
             this.seoV2Service.setTitle(
-              this. CustomerOrderServiceDetails.serviceName
+              this. CustomerOrderServiceDetails.productName
              );
           },
           (error) => {

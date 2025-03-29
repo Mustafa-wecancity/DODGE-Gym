@@ -1,9 +1,8 @@
 @if(ServiceGetById){
 
-  @if(ServiceGetById.serviceMediaList){
+  <!-- @if(ServiceGetById.serviceMediaList){
 
-    <section class="product-list-section  " style=" background-color: #f9f9f9 !important;
-      ">
+    <section class="product-list-section  " >
       <div class="container-fluid-lg mt-lg-5">
         <app-service-media
           [serviceMediaList]="ServiceGetById.serviceMediaList"
@@ -13,7 +12,7 @@
     
     </section>
     }
-    
+     -->
 <!-- Product Details Layout -->
 <section
   class="product-section"
@@ -44,4 +43,10 @@
   }
 </section>
 
-} }
+}
+
+@if(ServiceGetById !=null){
+     
+  <app-sticky-checkout  class=" d-none d-xl-block" [ServiceGetById]="ServiceGetById"  ></app-sticky-checkout>
+ }
+}

@@ -10,12 +10,12 @@
     <div class="product-theme-box"   >
      @if(service.discountPercent> 0){
  
-        <div class="label-tag"  [routerLink]="['/service/', service.serviceId,service.serviceName]"  >
+        <div class="label-tag"  [routerLink]="['/service/', service.productd,service.productName]"  >
             <span>{{service.discountPercent}} %</span>
             <i class="ri-flashlight-line"></i>
         </div>
      }
-        <div class="label-flex"  [routerLink]="['/service/', service.serviceId,service.serviceName]">
+        <div class="label-flex"  [routerLink]="['/service/', service.productd,service.productName]">
             <div class="discount" style=" color: white;">
                 <label><span class="px-1">{{service.points }}  </span> {{'servicesBox.Point' |translate}}</label>
             </div>
@@ -29,10 +29,10 @@
                </div>
             }
           </div>
-        <div class="content-box mt-4 "  [routerLink]="['/service/', service.serviceId,service.serviceName]">
+        <div class="content-box mt-4 "  [routerLink]="['/service/', service.productd,service.productName]">
             <div class="top-content theme-colorTwo bold">
-                <a  [routerLink]="['/service/', service.serviceId,service.serviceName]">
-                    <h5 class="top-content theme-colorTwo " style="  font-family: 'LamaSemiBold' !important;">{{service.serviceName| truncate: 78}} </h5>
+                <a  [routerLink]="['/service/', service.productd,service.productName]">
+                    <h5 class="top-content theme-colorTwo " style="  font-family: 'LamaSemiBold' !important;">{{service.productName| truncate: 78}} </h5>
  
                 </a>
             </div>
@@ -56,10 +56,10 @@
                     </h6>
                 </div>
                 <div class="btn-grp">
-                    <a class="btn " [routerLink]="['/service/', service.serviceId,service.serviceName]">  
+                    <a class="btn " [routerLink]="['/service/', service.productd,service.productName]">  
                             <i class="ri-shopping-cart-line theme-Subcolor"  ></i>
                          </a>
-                    <a class="btn btn-theme text-white" [routerLink]="['/service/', service.serviceId,service.serviceName]">{{'servicesBox.Preview' |translate}}</a>
+                    <a class="btn btn-theme text-white" [routerLink]="['/service/', service.productd,service.productName]">{{'servicesBox.Preview' |translate}}</a>
                 </div>
             </div>
         </div>

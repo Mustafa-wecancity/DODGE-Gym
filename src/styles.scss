@@ -361,3 +361,53 @@ header .navbar-toggler-icon {
   padding-bottom:calc(10px + 3 * (100vw - 320px) / 1600)  !important;
   font-size: 16px;
 }
+
+.rtl{
+  
+  .whatsapp{
+  
+    // display: block !important;
+    width: 50px;
+    height: 50px;
+    background: transparent !important;
+    // position: fixed;
+    // bottom: 40px;
+    right: 2.7%  !important;
+    z-index: 999999 !important;
+
+    // text-align: center;
+    // transition: all 0.4s ease;
+    // border-radius: 50%;
+    // transition: all 0.4s ease;
+  
+  img{
+  width: 50px;
+  
+  
+  }
+  }
+  }
+.ltr{
+  
+.whatsapp{
+
+  // display: block !important;
+  // width: 50px;
+  // height: 50px;
+  background: transparent !important;
+  // position: fixed;
+  // bottom: 40px;
+  left: 2.7%  !important;
+z-index: 999999 !important;
+  // text-align: center;
+  // transition: all 0.4s ease;
+  // border-radius: 50%;
+  // transition: all 0.4s ease;
+
+img{
+width: 50px;
+
+
+}
+}
+}

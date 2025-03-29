@@ -4,13 +4,13 @@
 
     @if(service.discountPercent> 0){
 
-        <div class="label-tag " style="top:0 !important"   (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.serviceName))"   >
+        <div class="label-tag " style="top:0 !important"   (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.productName))"   >
             <span>{{service.discountPercent}} %</span>
             <i class="ri-flashlight-line"></i>
         </div>
      }
     <div class="img-box ratio_50">
-        <a   (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.serviceName))" >
+        <a   (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.productName))" >
             <!-- src="../assets/images/dwebsite/7.png" -->
             <img 
             appLazyLoad [dataSrc]="service.imagePath|customPipeForImages" class="bg-img w-100">
@@ -58,7 +58,7 @@
             <div class="btn-grp">
                 <a class="btn"  
             style="font-family: LamaSansRegular !important;"
-            (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.serviceName))" >{{'servicesBox.requestNow' |translate}}</a>
+            (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.productName))" >{{'servicesBox.requestNow' |translate}}</a>
             </div>
 
 

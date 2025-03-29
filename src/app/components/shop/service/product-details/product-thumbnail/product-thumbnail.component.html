@@ -27,23 +27,23 @@
 
 @if(ServiceGetById){
 
-  <div class="container-fluid-lg bg-white">
+  <div class="container-fluid-lg bg-w hite">
     <div class="row">
       <div class="col-xxl-12 m- h mt-3">
         <div class="row g-4">
           <div class="col-xl-8 col-lg-7 xol-12">
-            <h2 class="name bold theme-colorTwo">{{ ServiceGetById?.name }}</h2>
+            <h2 class="name bold text-white" style="color:white !important">{{ ServiceGetById?.name }}</h2>
             <div class="price-rating">
   
-              <h3 class="price theme-color  mt-2"><span class="bold theme-color " >{{ ServiceGetById.pointsAfter }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Point' |translate}}</span>
+              <h3 class="price theme-color  mt-2 mb-3"><span class="bold theme-color " >{{ ServiceGetById.priceAfter }} </span>  <span  id="sar" class="theme-Subcolor  mx-2"> {{'servicesBox.Point' |translate}}</span>
                 @if(ServiceGetById.discountPercent>0){
                 <del class="text-content mx-1"
                       > 
                       
-                      <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ ServiceGetById.points }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Point' |translate}}</span>
+                      <del  class="Regular theme-Subcolor" style="color:var(--theme-Subcolor) !important">{{ ServiceGetById.price }} </del> <span  id="sar" class="theme-Subcolor" >{{'servicesBox.Point' |translate}}</span>
                       
                       </del> 
-                      <span class="offer theme-colorTwo" >(<span class="bold theme-colorTwo"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
+                      <span class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
 
                     
              }
@@ -52,7 +52,7 @@
             </div>
         
               @if(ServiceGetById.serviceCategories && ServiceGetById.serviceCategories){
-               <h6 class="mb-2 theme-colorTwo Medium"> {{'from' |translate}}  @for (item of ServiceGetById.serviceCategories; track $index) {
+               <h6 class="mb-2 theme-Subcolor Medium"> {{'from' |translate}}  @for (item of ServiceGetById.serviceCategories; track $index) {
                <a class="theme-color cursor text-decoration-underline"  (click)="redirect('/service-category/' + item.categoryId)" >  - {{item.categoryTitle}}</a>
             }
           </h6>}
@@ -66,17 +66,18 @@
                     : 'assets/images/data/themes/madrid/2.jpg'
                 "
                 class="h-100 bg-img w-100"
+                style="max-height: 70vh;"
                 alt="banner"
               />
             </div>
             }
-            <!-- <div class="product-contain">
-              <p class="w-100 Regular" [innerHTML]="Bundle?.description"></p>
-            </div> -->
+            <div class="product-contain my-2">
+              <p class="w-100 Regular" [innerHTML]="ServiceGetById?.description"></p>
+            </div>
             <div >
            
    
-              <div class="profile-about dashboard-bg-box  mt-md-4 mt-2">
+              <!-- <div class="profile-about dashboard-bg-box  mt-md-4 mt-2">
   
 
                 <div class="product-section-box mt-0">
@@ -84,28 +85,28 @@
                 
                  
                      <li ngbNavItem="description">
-                      <a ngbNavLink class="bold theme-colorTwo">{{ "description"|translate }}</a>
+                      <a ngbNavLink class="bold theme-Subcolor">{{ "description"|translate }}</a>
                       <ng-template ngbNavContent>
-                        <p class=" mt-2 w-100 Regular theme-colorTwo" [innerHTML]="ServiceGetById?.description"></p>
+                        <p class=" mt-2 w-100 Regular theme-Subcolor" [innerHTML]="ServiceGetById?.description"></p>
                    
                       </ng-template>
                    </li>
           
                      <li ngbNavItem="serviceRequirement">
-                        <a ngbNavLink class="bold theme-colorTwo">{{ "serviceRequirement"|translate }}</a>
+                        <a ngbNavLink class="bold theme-Subcolor">{{ "serviceRequirement"|translate }}</a>
                         <ng-template ngbNavContent>
-                          <p class=" mt-2 w-100 Regular theme-colorTwo" [innerHTML]="ServiceGetById?.serviceRequirement"></p>
+                          <p class=" mt-2 w-100 Regular theme-Subcolor" [innerHTML]="ServiceGetById?.serviceRequirement"></p>
                         
                         </ng-template>
                      </li>
                   </ul>
                   <div [ngbNavOutlet]="nav" class="custom-t ab"></div>
                 </div>
-              </div>
+              </div> -->
             
           </div>
           </div>
-          <div class="col-xl-4 col-lg-5 xol-12">
+          <!-- <div class="col-xl-4 col-lg-5 xol-12">
    
             <div class="right-box- contain">
               @if(ServiceGetById) { 
@@ -121,7 +122,7 @@
                   <div class=" col-12">
                     <div class="feature-title">
                       <div>
-                        <h2  class="bold theme-colorTwo mb-2">
+                        <h2  class="bold theme-Subcolor mb-2">
                           {{ "Bundle.header.title" | translate }}
                         </h2>
                         <p style="color: #5e5e5e" class="Medium">
@@ -143,7 +144,7 @@
             </section>
    
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
            

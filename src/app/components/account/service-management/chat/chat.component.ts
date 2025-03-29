@@ -48,7 +48,7 @@ import { interval, takeWhile } from "rxjs";
   styleUrl: "./chat.component.scss",
 })
 export class ChatComponent {
-  @Input() orderServiceId: string;
+  @Input() orderproductd: string;
   @ViewChild("scrollBottom") private chatContainer!: ElementRef;
 
   localStorage = inject(AuthService);
@@ -76,7 +76,7 @@ export class ChatComponent {
 
   private init() {
     this.insertForm = this.formBuilder.group({
-      orderServiceId: new FormControl(this.orderServiceId, [
+      orderproductd: new FormControl(this.orderproductd, [
         Validators.required,
       ]),
       comment: new FormControl("", [
@@ -93,10 +93,10 @@ export class ChatComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes["orderServiceId"] && changes["orderServiceId"].currentValue) {
+    if (changes["orderproductd"] && changes["orderproductd"].currentValue) {
       // clearInterval(this.countsInterval);
-      this.orderServiceId = changes["orderServiceId"]?.currentValue;
-      this.fc["orderServiceId"].setValue(this.orderServiceId);
+      this.orderproductd = changes["orderproductd"]?.currentValue;
+      this.fc["orderproductd"].setValue(this.orderproductd);
       this.GetComments();
       this.scrollToBottom();
     }
@@ -113,7 +113,7 @@ export class ChatComponent {
 
   GetComments() {
     const parameters = {
-      OrderServiceId: this.orderServiceId,
+      Orderproductd: this.orderproductd,
     };
     this._chat
       .getAll<IMessage>(
@@ -132,11 +132,11 @@ export class ChatComponent {
   }
   CreateComments() {
     const parameters = {
-      OrderServiceId: this.orderServiceId,
+      Orderproductd: this.orderproductd,
     };
 
     const data = new FormData();
-    data.append("OrderServiceId", this.orderServiceId);
+    data.append("Orderproductd", this.orderproductd);
     data.append("comment", this.fc["comment"].value);
     // if (this.selectedFile && this.selectedFile.name != "dummy.txt") {
     //   data.append("File", this.selectedFile);
@@ -159,7 +159,7 @@ export class ChatComponent {
             // Update the view
             this.GetComments();
             this.insertForm.reset();
-            this.fc["orderServiceId"].setValue(this.orderServiceId);
+            this.fc["orderproductd"].setValue(this.orderproductd);
 
             this.ClearFile();
             this.scrollToBottom();

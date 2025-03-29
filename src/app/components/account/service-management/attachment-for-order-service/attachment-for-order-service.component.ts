@@ -63,7 +63,7 @@ EditItem(item :OrderServiceAttachment) {
   insertForm: FormGroup;
   logoForm = new FormData();
   submit: Boolean = false;
-  @Input() orderServiceId: string;
+  @Input() orderproductd: string;
   public isShow: boolean = false;
   constructor(
     public OrderService: GenericService,
@@ -77,7 +77,7 @@ EditItem(item :OrderServiceAttachment) {
  
      this.insertForm = this.formBuilder.group({
       id: [item?.id||""],
-      customerServiceRequestId: new FormControl(this.orderServiceId, [
+      customerServiceRequestId: new FormControl(this.orderproductd, [
         Validators.required,
       ]),
       attachmentDescription: new FormControl(item?.attachmentDescription||"", [
@@ -95,10 +95,10 @@ EditItem(item :OrderServiceAttachment) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes["orderServiceId"] && changes["orderServiceId"].currentValue) {
+    if (changes["orderproductd"] && changes["orderproductd"].currentValue) {
       // clearInterval(this.countsInterval);
-      this.orderServiceId = changes["orderServiceId"]?.currentValue;
-      this.fc["customerServiceRequestId"].setValue(this.orderServiceId);
+      this.orderproductd = changes["orderproductd"]?.currentValue;
+      this.fc["customerServiceRequestId"].setValue(this.orderproductd);
       this.GetAttachmentForOrderService();
       this.GetAttachmentTypeForList();
       // this.scrollToBottom();
@@ -107,7 +107,7 @@ EditItem(item :OrderServiceAttachment) {
 
   GetAttachmentForOrderService() {
     const parameters = {
-      RequestId: this.orderServiceId,
+      RequestId: this.orderproductd,
     };
     this.OrderService.getAll<OrderServiceAttachment>(
       API_ENDPOINTS.CustomerServiceRequestAttachment.GetRequestAttachment,

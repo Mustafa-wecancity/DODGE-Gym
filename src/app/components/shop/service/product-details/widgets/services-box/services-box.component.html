@@ -10,7 +10,7 @@
           '/service/' +
             service.id +
             '/' +
-            setPathDecodeURIComponent(service.serviceName)
+            setPathDecodeURIComponent(service.productName)
         )
       "
     >
@@ -25,7 +25,7 @@
             '/service/' +
               service.id +
               '/' +
-              setPathDecodeURIComponent(service.serviceName)
+              setPathDecodeURIComponent(service.productName)
           )
         "
       >
@@ -45,7 +45,7 @@
               '/service/' +
                 service.id +
                 '/' +
-                setPathDecodeURIComponent(service.serviceName)
+                setPathDecodeURIComponent(service.productName)
             )
           "
         >
@@ -53,7 +53,7 @@
             class="top-content theme-colorTwo"
             style="font-family: 'LamaSemiBold' !important"
           >
-            {{ service.serviceName | truncate : 78 }}
+            {{ service.productName | truncate : 78 }}
           </h5>
         </a>
         <div class="d-flex align-items-center justify-content-between">
@@ -94,7 +94,7 @@
     <div class="btn-grp">
         <a class="btn"  
     style="font-family: LamaSansRegular !important;"
-    (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.serviceName))" >{{'servicesBox.requestNow' |translate}}</a>
+    (click)="redirect('/service/' + service.id+'/'+setPathDecodeURIComponent(service.productName))" >{{'servicesBox.requestNow' |translate}}</a>
     </div>
 
 

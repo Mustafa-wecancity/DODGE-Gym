@@ -6,12 +6,12 @@ export interface GetServiceRequest {
   statusPayment: string;
   description: string;
   imagePath: string;
-  serviceName: string;
+  productName: string;
   days: string;
   statusName: string;
   creationDate: string;
   serviceRequestId: number;
-  serviceId: number;
+  productd: number;
   latestMessage: string;
   latestMessageDate: string;
   attachments: boolean;

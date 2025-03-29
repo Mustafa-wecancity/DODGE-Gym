@@ -1,10 +1,10 @@
 export interface CustomerOrderServiceManagement {
  id: number;
-  serviceId: number;
+  productd: number;
   serviceRequestCount: number;
  
   voiceNoteUrl: string;
-  serviceName: string;
+  productName: string;
   serviceRequestCode: string;
   description: string;
   statusName: string;

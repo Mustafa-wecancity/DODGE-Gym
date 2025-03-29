@@ -8,9 +8,10 @@ export interface IServiceGetById {
  serviceRequirement: string,
  description: string,
  
- pointsAfter: number,
- points: number,
- pointsBefore: number,
+ priceAfter: number,
+ inwishList: boolean,
+ price: number,
+ priceBefore: number,
  discountPercent: number,
  serviceCategories: IServiceCategories[]
  serviceMediaList: IServiceMediaList[]
@@ -20,7 +21,7 @@ export interface IServiceGetById {
 
 export interface IServiceMediaList {
     id: number;
-    serviceId: number;
+    productd: number;
     imagePath: string ; // Nullable field
     url: string;
   }

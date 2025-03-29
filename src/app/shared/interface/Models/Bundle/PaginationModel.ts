@@ -81,9 +81,9 @@ export interface ServicesHomePage
 export interface PosterviceDetailWebApp{
     categoryId?: number|null,
     categoryName?: string|null,
-    serviceName?: string|null,
+    productName?: string|null,
     takeCount: number,
-    serviceId?: number
+    productd?: number
 
 }
 
@@ -105,7 +105,6 @@ export interface Bundle
 export interface ServicesHome
 {
   id: number,
-  serviceName: string,
   productName: string,
   imagePath: string,
   description: string,

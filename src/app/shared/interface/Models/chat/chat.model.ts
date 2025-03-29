@@ -12,7 +12,7 @@ export interface IMessage {
   sentBy?: string;
   filePath?:any;
   fileTypeId?:number 
-  orderServiceId?: number
+  orderproductd?: number
   customerImage: string;
   senderUserImagePath?: string;
   creationDate?: Date;

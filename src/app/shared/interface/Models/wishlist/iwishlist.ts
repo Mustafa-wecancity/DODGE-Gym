@@ -1,7 +1,7 @@
 export interface Iwishlist {
     customerWhishlistId: number,
-    serviceId: number,
-    serviceName: string,
+    productd: number,
+    productName: string,
     description: string,
     price: number,
     points: number,

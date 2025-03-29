@@ -3,7 +3,7 @@ export interface CreatePayemnt
     tranId: string,
     packageId?:number|null ;
     customerPackageId?: number|null,
-    serviceId?: number|null,
+    productd?: number|null,
     serviceRequestId?: number|null,
     cardBrand: string,
     amount: number,
@@ -17,7 +17,7 @@ export interface GetPayment
         tranId: string,
         packageId: number,
         customerPackageId: number,
-        serviceId: number,
+        productd: number,
         serviceRequestId: number,
         cardBrand: string,
         amount: number,

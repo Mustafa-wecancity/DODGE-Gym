@@ -68,6 +68,7 @@ export const API_ENDPOINTS = {
       },
       Product: {
         GetProductByIdForHome: 'Product/GetProductByIdForHome',
+        AddToCart: 'CustomerCarts/AddToCart',
       },
       News: {
         GetLocalizedNewsList: 'News/GetLocalizedNewsList',

@@ -52,10 +52,10 @@ export interface BundleData {
     bundleId: number;
   }
 
-  export interface ServiceIdCalculator  {
+  export interface productdCalculator  {
     qty: number;
     couponCode: string | null; // Nullable field, could be a string or null
-    serviceId: number;
+    productd: number;
   }
 export interface IBundleGetById extends IGetBundleList
 {
@@ -66,7 +66,7 @@ includedInCustomerBundles:boolean
 
 
 export interface ServiceData {
-    serviceId: number;
+    productd: number;
     quantity: number;
     points: number;
     discountValue: number;

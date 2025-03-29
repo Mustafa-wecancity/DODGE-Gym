@@ -59,7 +59,7 @@ export class StickyCheckoutComponent {
     // if (product && this.productQty > 0) {
     //   if (this._AuthService.getToken()) {
     //     const params = {
-    //       serviceId: product.id,
+    //       productd: product.id,
     //       qty: this.productQty,
     //       price: product.points,
     //       buyByPoints: buyNow,
@@ -95,7 +95,7 @@ export class StickyCheckoutComponent {
   addToWishlist(service: IServiceGetById) {
 
     if (this._AuthService.getToken()) {
-      const params = { serviceId: service.id };
+      const params = { productd: service.id };
 
       this._Service.subscription.add(
         this._Service

@@ -19,7 +19,7 @@ h5 {
   height: calc(38px + 0.005 * (100vw - 320px));
   border: 1px solid #eee;
   border-radius: 100%;
-  background-color: #f8f8f8;
+  background-color: #f8f8f8 !important;
   transition: none;
   .ri-heart-line {
     color: var(--theme-color) !important;
@@ -29,7 +29,7 @@ h5 {
 .bg-theme-color {
   background-color: var(--theme-color) !important;
   .ri-heart-fill {
-    color: #f8f8f8;
+    color: #f8f8f8 !important; 
   }
 }
 

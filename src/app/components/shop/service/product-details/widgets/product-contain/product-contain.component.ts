@@ -23,7 +23,7 @@ import { NotificationService } from "../../../../../../shared/services/notificat
 import { ErrorService } from "../../../../../../shared/services/error.service";
 import {
   ServiceData,
-  ServiceIdCalculator,
+  productdCalculator,
 } from "../../../../../../shared/interface/Models/CustomerPackage/CustomerPackageService";
 import { FormsModule } from "@angular/forms";
 
@@ -79,7 +79,7 @@ export class ProductContainComponent {
     if (isPlatformBrowser(this.platformId)) {
       if (this.ServiceGetById) {
         {
-          this.CalculateServiceTotalWithTax();
+          // this.CalculateServiceTotalWithTax();
         }
         //  this.router.navigate([lang,'/BundleDetails/', data.id,this.setPathDecodeURIComponent(data.name)]);
       }
@@ -93,41 +93,39 @@ export class ProductContainComponent {
   updateQuantity(qty: number) {
     if (1 > this.productQty + qty) return;
     this.productQty = this.productQty + qty;
-    this.CalculateServiceTotalWithTax();
+    // this.CalculateServiceTotalWithTax();
   }
   _ErrorService = inject(ErrorService);
 
-  addToCart(product: IServiceGetById, buyNow: boolean) {
-    // if (product && this.productQty > 0) {
-    //   if (this._AuthService.getToken()) {
-    //     const params = {
-    //       serviceId: product.id,
-    //       qty: this.productQty,
-    //       price: product.points,
-    //       buyByPoints: buyNow,
-    //     };
-    //     this._Service.subscription.add(
-    //       this._Service
-    //         .create<GenericResponse<any>, any>(
-    //           API_ENDPOINTS.Bundle.PurchaseBundle,
-    //           params
-    //         )
-    //         .subscribe(
-    //           // must be change endpointe post to get
-    //           (data) => {
-    //             if (data.success) {
-    //               this. _ErrorService.setNotification({message :'تم إضافة المنتج إلى سلة التسوق'});
-    //             }
-    //           },
-    //           (error) => {
-    //             console.error("Error fetching data", error);
-    //           }
-    //         )
-    //     );
-    //   } else {
-    //     this.router.navigate([`/auth/login`]);
-    //   }
-    // }
+  addToCart(product: IServiceGetById ) {
+    if (product && this.productQty > 0) {
+      if (this._AuthService.getToken()) {
+        const params = {
+          productId: product.id,
+          qty: this.productQty,
+        };
+        this._Service.subscription.add(
+          this._Service
+            .create<GenericResponse<any>, any>(
+              API_ENDPOINTS.Product.AddToCart,
+              params
+            )
+            .subscribe(
+              // must be change endpointe post to get
+              (data) => {
+                if (data.success) {
+                  this. _ErrorService.setNotification({message :'تم إضافة المنتج إلى سلة التسوق'});
+                }
+              },
+              (error) => {
+                console.error("Error fetching data", error);
+              }
+            )
+        );
+      } else {
+        this.router.navigate([`/auth/login`]);
+      }
+    }
   }
 
   protected coupon = signal("");
@@ -138,7 +136,7 @@ export class ProductContainComponent {
 
     this.ServiceFormData = new FormData();
 
-    this.ServiceFormData.append("ServiceId", this.ServiceGetById.id.toString());
+    this.ServiceFormData.append("productd", this.ServiceGetById.id.toString());
     this.ServiceFormData.append("Qty", this.productQty.toString());
     // Ensure VoiceFile is a valid Blob before appending
     if (this.coupon() != "") {
@@ -150,8 +148,8 @@ export class ProductContainComponent {
   }
   ServiceData:ServiceData
   CalculateServiceTotalWithTax(coupon?: string): void {
-    const bundleCalculator: ServiceIdCalculator = {
-      serviceId: this.ServiceGetById.id,
+    const bundleCalculator: productdCalculator = {
+      productd: this.ServiceGetById.id,
       qty: this.productQty,
       couponCode: this.coupon() != "" ? this.coupon() : null,
     };

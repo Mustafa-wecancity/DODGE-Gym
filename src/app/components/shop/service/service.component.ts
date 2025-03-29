@@ -1,5 +1,6 @@
 import {
   Component,
+  HostListener,
   Inject,
   PLATFORM_ID,
   Renderer2,
@@ -22,6 +23,7 @@ import { SeoV2Service } from "../../../shared/services/seo-v2.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { LazyLoadSectionDirective } from "../../../shared/directive/lazyLoad-section.directive";
 import { ServiceMediaComponent } from "./product-details/widgets/service-media/service-media.component";
+import { StickyCheckoutComponent } from "./product-details/widgets/sticky-checkout/sticky-checkout.component";
 @Component({
   selector: "app-service",
   standalone: true,
@@ -29,7 +31,7 @@ import { ServiceMediaComponent } from "./product-details/widgets/service-media/s
     CommonModule,
     ProductThumbnailComponent,
     RelatedProductsComponent,
-    LazyLoadSectionDirective,ServiceMediaComponent
+    LazyLoadSectionDirective,ServiceMediaComponent, StickyCheckoutComponent
   ],
   templateUrl: "./service.component.html",
   styleUrl: "./service.component.scss",
@@ -57,6 +59,22 @@ export class ServiceComponent {
     });
   }
 
+  @HostListener("window:scroll", ["$event"])
+  onScroll() {
+    if (isPlatformBrowser(this.platformId)) {
+      const button = document.querySelector(".scroll-button");
+      if (button) {
+        const buttonRect = button.getBoundingClientRect();
+        this.isScrollActive = buttonRect.bottom < 0;
+        this.renderer[this.isScrollActive ? "addClass" : "removeClass"](
+          document.body,
+          "stickyCart"
+        );
+      }
+    }
+  }
+
+  
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.remove("stickyCart");

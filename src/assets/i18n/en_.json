@@ -217,7 +217,7 @@
   "edit": "Edit",
   "logout": "Logout",
   "my_CustomerServiceRequest": "My Customer Service Requests",
-  "serviceName": "Service Name",
+  "productName": "Service Name",
   "serviceRequestCode": "Service Request Code",
   "dateFrom": "Date From",
   "dateTo": "Date To",
