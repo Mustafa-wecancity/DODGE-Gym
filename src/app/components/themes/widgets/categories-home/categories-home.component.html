@@ -13,7 +13,7 @@
                       
                    <img  appLazyLoad [dataSrc]="category.imagePath ? (category.imagePath |customPipeForImages): 'assets/images/category.png'"  [alt]="category.title">
                 
-                         <h5 class="colorTow Medium">{{ category.title }}
+                         <h5 class="text-white Medium" style="color:white">{{ category.title }}
 
                            @if(category.productCount){
                            <span>({{category.productCount}})</span>
@@ -43,7 +43,8 @@
                    [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active">
                    <img [src]="category.imagePath ? (category.imagePath |customPipeForImages): 'assets/images/category.png'" [alt]="category.title">
                    <h5       [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }">
-                      <a      [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active" >{{ category.title  }}
+                      <a      [routerLink]="['/service-category/']"  [queryParams]="{ page: 1, id: category.id }" routerLinkActive="router-link-active"
+                      style="color:white" >{{ category.title  }}
 
                         @if(category.productCount){
                            <span>({{category.productCount}})</span>} 

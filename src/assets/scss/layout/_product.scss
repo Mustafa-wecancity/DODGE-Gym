@@ -506,7 +506,9 @@
 
         h5 {
           a {
-            color: var(--theme-color) !important;
+            // color: var(--theme-color) !important;
+          color: var(--theme-Subcolor) !important;
+
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             display: -webkit-box;
