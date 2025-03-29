@@ -99,64 +99,93 @@
         [class]="true ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12'"
     >
           <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
-          <app-title [title]="'Home.header.Trending-Services'"> </app-title>
-          <div
-            class="section-b-space"
-            id="MostOrderedServices"
-            appLazyLoadSection
-            (sectionInView)="TrendingServicesdsParent = $event"
-          >
-            <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
-                  </app-theme-product> -->
-            @if(TrendingServicesdsParent){
-
-            <app-home-services-list
-              [type]="'TrendingServices'"
-              [slider]="false"
-              [showItem]="4"
-              [close]="false"
-              [sliderOption]="productSlider"
-              [style]="'horizontal_cust'"
+       
+          <div>
+            <app-title [title]="'Home.header.Trending-Services'"> </app-title>
+            <div
+              class="section-b-space"
+              id="MostOrderedServices"
+              appLazyLoadSection
+              (sectionInView)="TrendingServicesdsParent = $event"
             >
-            </app-home-services-list>
-            }
+              <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                    </app-theme-product> -->
+              @if(TrendingServicesdsParent){
+  
+              <app-home-services-list
+                [type]="'TrendingServices'"
+                [slider]="false"
+                [showItem]="4"
+                [close]="false"
+                [sliderOption]="productSlider"
+                [style]="'horizontal_cust'"
+              >
+              </app-home-services-list>
+              }
+            </div>
           </div>
+          <div 
+          
+          >
+            <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
+            <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
+            <div
+              class="section-b-space"
+              id="MostViewedServices"
+              appLazyLoadSection
+              (sectionInView)="MostOrderedServicesParent = $event"
+            >
+              <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                    </app-theme-product> -->
+              @if(MostOrderedServicesParent){
+  
+              <app-home-services-list
+                [type]="'MostViewedServices'"
+                [slider]="false"
+                [showItem]="4"
+                [close]="false"
+                [sliderOption]="productSlider"
+                [style]="'horizontal_cust'"
+              >
+              </app-home-services-list>
+              }
+            </div>
+          </div>
+          <div [class]="'col-xxl-12 col-xl-12'">
+            <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
+            <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
+            <div
+              class="section-b-space"
+              id="MostViewedProducts"
+              appLazyLoadSection
+              (sectionInView)="MostViewedProductssParent = $event"
+            >
+              <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
+                    </app-theme-product> -->
+              @if(MostViewedProductssParent){
+  
+              <app-home-services-list
+                [type]="'MostViewedServices'"
+                [slider]="false"
+                [showItem]="4"
+                [close]="false"
+                [sliderOption]="productSlider"
+                [style]="'horizontal_cust'"
+              >
+              </app-home-services-list>
+              }
+            </div>
+          </div>
+      
         </div>
 
-        <div 
-        [class]="true ? 'col-xxl-9 col-xl-8' : 'col-xxl-12 col-xl-12'"
-        >
-          <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
-          <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
-          <div
-            class="section-b-space"
-            id="MostViewedServices"
-            appLazyLoadSection
-            (sectionInView)="MostOrderedServicesParent = $event"
-          >
-            <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
-                  </app-theme-product> -->
-            @if(MostOrderedServicesParent){
-
-            <app-home-services-list
-              [type]="'MostViewedServices'"
-              [slider]="false"
-              [showItem]="4"
-              [close]="false"
-              [sliderOption]="productSlider"
-              [style]="'horizontal_cust'"
-            >
-            </app-home-services-list>
-            }
-          </div>
-        </div>
-    
+     
 
       </div>
     </div>
 
     <!-- feature section start -->
-    <div class="container-fluid ">
+    <!-- <div class="container-fluid ">
       <section
         class="featured-sec section-b-space"
         id="bundles"
@@ -173,7 +202,7 @@
                   </h2>
                      <span class="title-leaf">
                <svg class="icon-width">
-                  <use attr.xlink:href="assets/svg/Small.svg#{{'Layer_1'}}"></use>
+                  <use attr.xlink:href="assets/svg/Small.svg#{{'Icons'}}"></use>
                </svg>
             </span>
                   <p class="theme-colorTwo">
@@ -203,7 +232,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div> -->
     <!-- Banner Section Start -->
     <div class="container-fluid-lg">
       <div class="row g-sm-4 g-3">
@@ -211,7 +240,7 @@
         <div [class]="'col-xxl-12 col-xl-12'">
           <!-- Banner Section Start -->
           @if(Ads[4]){
-          <section class="banner-section mt-4">
+          <section class="banner-section mt-4 d-none">
             <div class="container- fluid-lg">
               <div class="row">
                 <div class="col-12">
@@ -249,31 +278,7 @@
           </section>
           }
 
-          <div [class]="'col-xxl-12 col-xl-12'">
-            <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
-            <app-title [title]="'Home.header.MostOrderedServices'"> </app-title>
-            <div
-              class="section-b-space"
-              id="MostViewedProducts"
-              appLazyLoadSection
-              (sectionInView)="MostViewedProductssParent = $event"
-            >
-              <!-- <app-theme-product [productIds]="data?.content?.main_content?.section4_products?.product_ids || []" [sliderOption]="productSlider" [slider]="false"[showItem]="4" [style]="'horizontal_cust'">
-                    </app-theme-product> -->
-              @if(MostViewedProductssParent){
   
-              <app-home-services-list
-                [type]="'MostViewedServices'"
-                [slider]="false"
-                [showItem]="4"
-                [close]="false"
-                [sliderOption]="productSlider"
-                [style]="'horizontal_cust'"
-              >
-              </app-home-services-list>
-              }
-            </div>
-          </div>
           <!-- Banner Section End -->
 
           <section
@@ -288,13 +293,13 @@
 
                 <div class="col-xl-6 col-12">
                   <div class="row g-sm-4 g-2">
-                    @if(Ads[5] && Ads[6]){
+                    @if(Ads[7] && Ads[6]){
 
                     <div class="col-6">
                       <div class="fresh-image-2">
                         <div>
                           <img
-                            [src]="Ads[5].adImage | customPipeForImages"
+                            [src]="Ads[6].adImage | customPipeForImages"
                             class="bg-img blur-up lazyload w-100"
                             alt="image"
                           />
@@ -307,7 +312,7 @@
                       <div class="fresh-image">
                         <div>
                           <img
-                            [src]="Ads[6].adImage | customPipeForImages"
+                            [src]="Ads[7].adImage | customPipeForImages"
                             class="bg-img blur-up lazyload w-100"
                             alt=""
                           />
@@ -443,7 +448,7 @@
       </div>
     </div>
     <!-- feature section start -->
-    <div class="container-fluid">
+    <div class="container-fluid d-none">
       <section class="featured-sec section-b-space">
         <div class="container-fluid-">
           <div class="row g-3 p-0">
@@ -476,9 +481,8 @@
     </div>
     <!-- Banner Section Start -->
 
-    <div class="container-fluid-lg">
+    <!-- <div class="container-fluid-lg">
       <div class="row g-sm-4 g-3">
-        <!-- Banner Section Start -->
         <div [class]="'col-xxl-12 col-xl-12'">
           <div class="section-b-space no-section-b-space">
             <div class="row g-md-4 g-3">
@@ -487,16 +491,8 @@
                 appLazyLoadSection
                 (sectionInView)="newsionsParent = $event"
               >
-                <!-- Blogs Section Start -->
-                <!-- @if(data?.content?.main_content?.section9_featured_blogs?.status){
-                          <app-title [title]="data?.content?.main_content?.section9_featured_blogs?.title" [description]="data?.content?.main_content?.section9_featured_blogs?.description">
-                          </app-title>
-                          <app-blog [blogIds]="data?.content?.main_content?.section9_featured_blogs?.blog_ids || []">
-                          </app-blog>
-                       } -->
-                <!-- Blogs Section End -->
 
-                <!-- News Section Start -->
+
                 @if(newsionsParent){
                 <app-title
                   [title]="'Home.header.tipsTricksTrends'"
@@ -506,15 +502,12 @@
                 </app-title>
                 <app-news> </app-news>
                 }
-                <!-- Blogs Section End -->
               </div>
             </div>
           </div>
-          <!-- Two Column Banner Section End -->
         </div>
-        <!-- Right Content End -->
       </div>
-    </div>
+    </div> -->
 
     <!-- feature section start -->
     <div class="container-fluid d-n one"   >

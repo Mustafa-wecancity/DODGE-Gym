@@ -430,7 +430,8 @@
 }
 
 .category-menu {
-  background-color: $light-gray;
+  background-color: transparent !important;
+
   padding: calc(0px + (33 - 16) * ((100vw - 320px) / (1920 - 320)));
   border-radius: 5px;
 

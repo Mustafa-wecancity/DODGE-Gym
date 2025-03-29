@@ -7,7 +7,9 @@ h2 {
 
 .titleList{
     h2 {
-        color: var(--theme-colorTwo);
+        // color: var(--theme-colorTwo);
+    color: var(--theme-color);
+
         cursor: pointer;
         font-family: 'LamaSansBold' !important;
     }

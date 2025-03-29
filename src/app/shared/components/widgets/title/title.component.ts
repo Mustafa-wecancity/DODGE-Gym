@@ -11,7 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class TitleComponent {
 
   @Input() class: string = 'title';
-  @Input() svg: string = 'Layer_1';
+  @Input() svg: string = 'Icons';
   @Input() style: string;
   @Input() title?: string;
   @Input() description?: string;
