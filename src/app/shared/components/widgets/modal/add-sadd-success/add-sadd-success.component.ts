@@ -14,10 +14,11 @@ import { GenericResponse } from "../../../../interface/Models/generic-response";
 import { API_ENDPOINTS } from "../../../../Api-Services/API_ENDPOINTS";
 import { interval, Subscription, takeWhile } from "rxjs";
 import { ErrorService } from "../../../../services/error.service";
+import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-add-sadd-success',
   standalone: true,
-  imports: [TranslateModule, ButtonComponent],
+  imports: [TranslateModule, ButtonComponent, RouterLink],
 
   templateUrl: './add-sadd-success.component.html',
   styleUrl: './add-sadd-success.component.scss'

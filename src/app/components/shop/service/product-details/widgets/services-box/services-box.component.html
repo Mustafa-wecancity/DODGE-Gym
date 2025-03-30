@@ -38,7 +38,7 @@
       </a>
     </div>
     <div class="content-box">
-      <div class="top-content theme-colorTwo bold">
+      <div class="top-content theme-Subcolor bold">
         <a
           (click)="
             redirect(
@@ -50,7 +50,7 @@
           "
         >
           <h5
-            class="top-content theme-colorTwo"
+            class="top-content theme-Subcolor"
             style="font-family: 'LamaSemiBold' !important"
           >
             {{ service.productName | truncate : 78 }}
@@ -75,12 +75,12 @@
         </div>
       </div>
       <div class="bottom-content">
-        <h6 class="price theme-color "><span class="bold theme-color " >{{ service.pointsAfterDiscount }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Point' |translate}}</span>
+        <h6 class="price theme-color "><span class="bold theme-color " >{{ service.priceAfterDiscount }} </span>  <span  id="sar" class="theme-Subcolor  mx-2"> {{'servicesBox.Price' |translate}}</span>
             @if(service.discountPercent>0){
             <del class="text-content mx-1"
                   > 
                   
-                  <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ service.points }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Point' |translate}}</span>
+                  <del  class="Regular theme-Subcolor" style="color:var(--theme-Subcolor) !important">{{ service.price }} </del> <span  id="sar" class="theme-Subcolor" >{{'servicesBox.Price' |translate}}</span>
                   
                   </del> 
                 

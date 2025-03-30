@@ -119,4 +119,21 @@ export const API_ENDPOINTS = {
         
       },
  
+
+      Cart: {
+        CustomerCart: 'CustomerCarts/CustomerCart',
+        UpdateCustomerCartDetail: 'CustomerCarts/UpdateCustomerCartDetail',
+
+        RemoveFromCart: 'CustomerCarts/RemoveFromCart',
+        CustomerServiceByPointsCart: 'CustomerCarts/CustomerServiceByPointsCart',
+        UpdateCustomercart: 'CustomerCarts/UpdateCustomercart',
+        AddtoCart: 'CustomerCarts/AddtoCart',
+        RemoveBundleFromCart: 'CustomerCarts/RemoveBundleFromCart',
+        RemoveSavingPackageFromCart: 'CustomerCarts/RemoveSavingPackageFromCart',
+        RemoveServiceFromCart: 'CustomerCarts/RemoveServiceFromCart',
+        CreateOrder: 'Order/CreateOrder',
+        ConfirmCheckout: 'CustomerCarts/ConfirmCheckout',
+ 
+        
+      },
   };                                                    

@@ -8,8 +8,16 @@ import { RefundPolicyComponent } from "../../shared/components/Policy/refund-pol
 import { RefundPolicyEnComponent } from "../../shared/components/Policy/refund-policy/refund-policy-en/refund-policy-en.component";
 import { TermsandConditionsComponent } from "../../shared/components/Policy/termsand-conditions/termsand-conditions.component";
 import { TermsandConditionsEnComponent } from "../../shared/components/Policy/termsand-conditions/termsand-conditions-en/termsand-conditions-en.component";
+import { CartComponent } from "./cart/cart.component";
+import { AuthGuard } from "../../core/guard/auth.guard";
 
 export const shopRoutes: Routes = [
+  {
+    path: "cart",
+    component: CartComponent,
+    canActivate: [AuthGuard],
+  },
+  
   {
     path: "service/:id",
     component: ServiceComponent,

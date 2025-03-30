@@ -35,12 +35,12 @@
             <h2 class="name bold text-white" style="color:white !important">{{ ServiceGetById?.name }}</h2>
             <div class="price-rating">
   
-              <h3 class="price theme-color  mt-2 mb-3"><span class="bold theme-color " >{{ ServiceGetById.priceAfter }} </span>  <span  id="sar" class="theme-Subcolor  mx-2"> {{'servicesBox.Point' |translate}}</span>
+              <h3 class="price theme-color  mt-2 mb-3"><span class="bold theme-color " >{{ ServiceGetById.priceAfter }} </span>  <span  id="sar" class="theme-Subcolor  mx-2"> {{'servicesBox.Price' |translate}}</span>
                 @if(ServiceGetById.discountPercent>0){
                 <del class="text-content mx-1"
                       > 
                       
-                      <del  class="Regular theme-Subcolor" style="color:var(--theme-Subcolor) !important">{{ ServiceGetById.price }} </del> <span  id="sar" class="theme-Subcolor" >{{'servicesBox.Point' |translate}}</span>
+                      <del  class="Regular theme-Subcolor" style="color:var(--theme-Subcolor) !important">{{ ServiceGetById.price }} </del> <span  id="sar" class="theme-Subcolor" >{{'servicesBox.Price' |translate}}</span>
                       
                       </del> 
                       <span class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
@@ -106,7 +106,7 @@
             
           </div>
           </div>
-          <!-- <div class="col-xl-4 col-lg-5 xol-12">
+       <div class="col-xl-4 col-lg-5 xol-12">
    
             <div class="right-box- contain">
               @if(ServiceGetById) { 
@@ -116,7 +116,7 @@
               class="mt-3"
               id="bundles"
             >
-           
+<!--            
             <div class="container-fluid mt-3" >
               <div class="row g-3" style="margin-top: 15px;">
                   <div class=" col-12">
@@ -140,11 +140,11 @@
                     ></app-save-offer>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </section>
    
             </div>
-          </div> -->
+          </div>  
         </div>
       </div>
            

@@ -82,7 +82,8 @@ export class RegisterComponent {
           ],
         ],
 
-        country_code: new FormControl("966", [Validators.required]),
+        country_code: new FormControl('+20' ),
+
         password_confirmation: new FormControl("", [Validators.required]),
         recaptcha: new FormControl(false, Validators.required),
       },

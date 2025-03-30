@@ -54,9 +54,10 @@ export class ForgotPasswordComponent {
     public authService: AuthService, 
     public formBuilder: FormBuilder ) {
     this.form = this.formBuilder.group({
-      mobile: ['', [Validators.required,        Validators.minLength(9),
-        Validators.maxLength(9),]],
-      country_code: new FormControl('966', [Validators.required]),
+      mobile: ['', [Validators.required,        Validators.minLength(11),
+        Validators.maxLength(11),]],
+        country_code: new FormControl('+20' ),
+
 
       recaptcha: [true, [Validators.required]]
     },{validator : CustomValidators.MatchValidator('newPassword', 'password_confirmation')});
@@ -88,7 +89,7 @@ this.seo()
   }
   public SendOTP() {
     let form = this.form.value
-    form.mobile= 966 + this.fc['mobile'].value
+    // form.mobile= 966 + this.fc['mobile'].value
    this._forgotService.subscription.add( this._forgotService.create<GenericResponse<ResponseRegister>,SendOTP>(API_ENDPOINTS.Customer.SendOTP, { mobile:form.mobile}).subscribe((res) => {
       if (res.success &&res.data['otp']) {
       this.navigateWithEncryptedData(form);

@@ -1,0 +1,675 @@
+
+@if(isBrowser)
+{
+
+
+<section class="cart-section section-b-space mt-md-0 mt-5">
+  <div class="container-fluid-lg">
+    <div class="row g-xl-5 g-sm-4 g-3">
+      <div class="col-xxl-9 col-xl-8">
+        <div class="summery-header" style="text-align: center">
+          <h2 class="Medium">
+            {{ "Cart.header.Flexible" | translate }}
+            <span class="theme-Cart"
+              >{{ "Cart.header.ShoppingCart" | translate }}
+            </span>
+          </h2>
+          <h6 class="mt-2" style="color: #6b4e45">
+            {{ "Cart.header.Subtitle" | translate }}
+          </h6>
+          <br />
+        </div>
+
+        @if( !ClaerCart&&CustomerCart ){
+
+        <div class="summery-header mt-4">
+          @if( CustomerCart &&CustomerCart.productByPriceList &&
+          CustomerCart.productByPriceList.length){
+          <h3 class="Medium">
+            {{ "Cart.serviceByPriceList.Service" | translate }} [<span
+              class="bold"
+              class="theme-Cart"
+            >
+              {{ "Cart.serviceByPriceList.CashPayment" | translate }} </span
+            >]
+          </h3>
+
+          <h6 class="mt-2" style="color: #6b4e45">
+            {{ "Cart.serviceByPriceList.Subtitle" | translate }}
+          </h6>
+          <br />
+          <div class="cart-table d-none d-lg-block" style="background-color: transparent !important;">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  @for(item of CustomerCart.productByPriceList; track item){
+
+                  <tr class="product-box-contain">
+                    <td class="product-detail">
+                      @if($first){
+
+                      <h4 class="table-title text-content bold">
+                        {{ "Cart.serviceByPriceList.Service" | translate }}
+                      </h4>
+                      }
+                      <div
+                        class="product border-0"
+                        [routerLink]="['/service/', item.serviceId,setPathDecodeURIComponent(item.name)]"
+                      >
+                        <div class="product-detail">
+                          <ul>
+                            <li class="n ame theme-colorTow Medium">
+                              <a
+                                class="theme-colorTow Medium"
+                                [routerLink]="['/service/', item.serviceId,setPathDecodeURIComponent(item.name)]"
+                                >{{ item.name }}
+                              </a>
+                            </li>
+
+                            <li class="text-content Category">
+                              <!-- <span class="text-title bold "
+                                >{{
+                                  "Cart.serviceByPriceList.Category" | translate
+                                }}
+                                </span
+                              > -->
+                              {{ item.categoryName }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="price">
+                      @if($first){
+
+                      <h4 class="table-title text-content theme-Cart bold">
+                        {{ "Cart.serviceByPriceList.price" | translate }}
+                      </h4>
+                      }
+                      <h5 class="theme-Cart">
+                        <span class="bold">
+                          {{ item.itemPriceAfterDiscount }}
+                        </span>
+                        <span id="sar"> {{ "SAR" | translate }}</span>
+
+                        @if(item.amountSaved>0||item.discountValue>0){
+
+                        <del class="text-content" style="color: red">{{
+                          item.itemPrice | currencySymbol
+                        }}</del>
+                        }
+                      </h5>
+                      @if(item.discountValue>0 ||item.amountSaved >0 ){
+                      <h6 class="theme-Subcolor" style="font-size: 14px">
+                        {{ "Cart.serviceByPriceList.YouSave" | translate }}
+                        <span class="bold"> {{ item.amountSaved }} </span>
+                        <span id="sar"> {{ "SAR" | translate }}</span>
+                      </h6>
+                      }
+                    </td>
+                    <td class="quantity">
+                      @if($first){
+                      <h4 class="table-title text-content bold">
+                        {{ "Cart.serviceByPriceList.Qty" | translate }}
+                      </h4>
+                      }
+                      <div class="quantity-price">
+                        <div class="cart_qty">
+                          <div class="input-group">
+                            <app-button
+                              [class]="'btn qty-left-minus'"
+                              [id]="'minus_quantity'"
+                              [spinner]="false"
+                              [type]="'button'"
+                              (click)="
+                                item.qty > 1
+                                  ? UpdateCustomerCartDetail(item, item.qty - 1)
+                                  : null
+                              "
+                            >
+                              <i class="ri-subtract-fill ms-0"></i>
+                            </app-button>
+                            <input
+                              class="form-control input-number qty-input bold"
+                              type="text"
+                              name="quantity"
+                              value="{{ item.qty }}"
+                              readonly
+                            />
+                            <app-button
+                              [class]="'btn qty-left-minus'"
+                              [id]="'plus_quantity'"
+                              [spinner]="false"
+                              [type]="'button'"
+                              (click)="
+                                UpdateCustomerCartDetail(item, item.qty + 1)
+                              "
+                            >
+                              <i class="ri-add-line ms-0"></i>
+                            </app-button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="subtotal">
+                      @if($first){
+
+                      <h4 class="table-title text-content bold">
+                        {{ "Cart.serviceByPriceList.Total" | translate }}
+                      </h4>
+                      }
+                      <h5 class="theme-Cart">
+                        <span class="bold">
+                          {{ item.totalPriceAfterDiscount }}
+                        </span>
+                        <span id="sar"> {{ "SAR" | translate }}</span>
+                      </h5>
+                      @if(item.discountValue>0 || item.totalamountSaved >0){
+                      <h6 class="theme-Subcolor" style="font-size: 14px">
+                        {{ "Cart.serviceByPriceList.YouSave" | translate }}
+                        <span class="bold"> {{ item.totalamountSaved }} </span>
+                        <span id="sar"> {{ "SAR" | translate }}</span>
+                      </h6>
+                      }
+                    </td>
+                    <td class="save-remove">
+                      @if($first){
+                      <h4 class="table-title text-content bold">
+                        {{ "Cart.serviceByPriceList.Action" | translate }}
+                      </h4>
+                      }
+
+                      <a
+                        class="save notifi-wishlist"
+                        (click)="UpdateCustomerCartDetail(item, item.qty, true)"
+                        style="color: #809c73 !important"
+                      >
+                        <span class="theme-Cart Medium">
+                          <span class="bold"> {{ item.totalPoints }} </span>
+                          {{ "Cart.serviceByPriceList.Point" | translate }}
+                        </span>
+                      </a>
+                      <h5 class="flex">
+                        <a
+                          class="sa ve notifi-wishlist"
+                          (click)="
+                            UpdateCustomerCartDetail(item, item.qty, true)
+                          "
+                          style="color: #809c73 !important"
+                        >
+                          <span>
+                            {{
+                              "Cart.serviceByPriceList.ChangeWithTotal"
+                                | translate
+                            }}
+                          </span>
+                        </a>
+                        <a
+                          class="remove close_button mx-2"
+                          (click)="DeleteModal.openModal('delete',item)"
+                          style="color: red"
+                          >
+                      <i class="ri-delete-bin-line text-red"></i>
+
+                          <!-- {{ "Cart.serviceByPriceList.Remove" | translate }} -->
+                        </a>
+                      </h5>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            class="row g-sm-4 g-3 row-cols-md-1 row-cols-1 product-list-section d-lg-none d-block"
+          >
+            @for(item of CustomerCart.productByPriceList; track item){
+
+            <div class="product-box col-12">
+              <div class="product-detail">
+                <a [routerLink]="['/service/', item.serviceId,setPathDecodeURIComponent(item.name)]">
+                  <h3 class="n ame theme-colorTow bold mt-2">
+                    {{ item.name }}
+                  </h3>
+                </a>
+                <h6 class="brand-name text-content Category mt-1">
+                  {{ item.categoryName }}
+                </h6>
+
+          
+                <div class="d-flex justify-content-between mb-1">
+                  <h6 class="theme-Subc olor">
+                    <b id="sar">   {{ "Cart.serviceByPriceList.price" | translate }} </b>
+                    <span class="bold theme-colorTow"
+                      > {{ item.itemPriceAfterDiscount }}
+                    </span>
+                    <b id="sar">{{ "SAR" | translate }}</b>
+                    @if(item.discountValue>0){
+                    <del class="text-content mx-1">
+                      <del class="Regular">{{ item.itemPrice }} </del>
+                      <b id="sar">{{ "SAR" | translate }}</b>
+                    </del>
+                    @if(item.discountValue>0 ||item.amountSaved >0 ){
+
+
+                    <span class="offer theme-Subcolor"
+                      >({{ "Cart.serviceByPriceList.YouSave" | translate }}
+                      <span class="bold theme-Subcolor">
+                        {{ item.amountSaved }}
+                      </span>
+                      <b id="sar">{{ "SAR" | translate }}</b
+                      >)
+                    </span>
+                    } }
+                  </h6>
+                </div>
+
+           
+                <div class="d-flex justify-content-between">
+                  <h6 class="theme-Subc olor">
+
+                    <b id="sar">   {{ "Cart.serviceByPriceList.Total" | translate }} </b>
+
+                    <span class="bold theme-colorTow"
+                      > {{ item.totalPriceAfterDiscount }}
+                    </span>
+                    <b id="sar">{{ "SAR" | translate }}</b>
+                    @if(item.discountValue>0 ||item.totalamountSaved >0 ){
+
+                    <span class="offer theme-Subcolor"
+                      >({{ "Cart.serviceByPriceList.YouSave" | translate }}
+                      <span class="bold theme-Subcolor">
+                        {{ item.totalamountSaved }}
+                      </span>
+                      <b id="sar">{{ "SAR" | translate }}</b
+                      >)
+                    </span>
+                    }
+                  </h6>
+                </div>
+
+    
+
+                <a
+                  class="sa ve notifi-wishlist theme-colorTow d-flex justify-content-center  mb-2"
+                  (click)="UpdateCustomerCartDetail(item, item.qty, true)"
+                >
+                  <h5 clas="border-bottom ">
+                    <span style="color: #809c73 !important"
+                      >{{
+                        "Cart.serviceByPriceList.ChangeWithTotal"
+                          | translate
+                        
+                      }}
+                    </span>
+                    <span class="bold theme-colorTow mx-1">
+                      {{ item.totalPoints }}</span
+                    ><span id="sar" class="theme-colorTow bold"
+                      >{{ "Cart.serviceByPriceList.Point" | translate }}
+                    </span>
+                  </h5>
+                </a>
+
+                <div class="quantity">
+                  <div class="quantity-price">
+                    <div class="cart_qty d-flex justify-content-between">
+                      <div class="input-group  border  align-items-center" style="width: 75%; 
+                          padding-left: 5px;
+                          padding-right: 5px;
+                      " >
+                        <app-button
+                          [class]="'btn qty-left-minus'"
+                          [id]="'minus_quantity'"
+                          [spinner]="false"
+                          [type]="'button'"
+                          (click)="
+                            item.qty > 1
+                              ? UpdateCustomerCartDetail(item, item.qty - 1)
+                              : null
+                          "
+                        >
+                          <i class="ri-subtract-fill ms-0"></i>
+                        </app-button>
+                        <input
+                          style="margin-left: 0"
+                          class="form-control input-number qty-input bold border-0 text-center"
+                          type="text"
+                          name="quantity"
+                          value="{{ item.qty }}"
+                          readonly
+                        />
+                        <app-button
+                          [class]="'btn qty-left-minus'"
+                          [id]="'plus_quantity'"
+                          [spinner]="false"
+                          [type]="'button'"
+                          (click)="UpdateCustomerCartDetail(item, item.qty + 1)"
+                        >
+                          <i class="ri-add-line ms-0"></i>
+                        </app-button>
+                      </div>
+
+                      <app-button
+                    style="margin-top: 5px;"
+                        [class]="'btn qty-left-minus mx-3'"
+                        [id]="'plus_quantity'"
+                        [spinner]="false"
+                        [type]="'button'"
+                        (click)="DeleteModal.openModal('delete',item)"
+                      >
+                        <i class="ri-delete-bin-line text-red"></i>
+                      </app-button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- } -->
+              </div>
+            </div>
+            }
+          </div>
+
+          }
+        </div>
+   
+        }
+      </div>
+
+      @if( !ClaerCart && CustomerCart ){
+      <div class="col-xxl-3 col-xl-4">
+        <div class="summery-box p-sticky">
+          <div class="summery-header">
+            <h3 class="bold theme-colorTow">
+              {{ "Cart.summeryheader" | translate }}
+            </h3>
+          </div>
+
+          <form id="demoForm" [formGroup]="CartForm"  >
+            <div class="summery-contain">
+              <div class="coupon-cart">
+                <h6 class="text-content mb-2">
+                  {{ "Cart.OrderExecutionDate" | translate }}
+                </h6>
+
+                <div class="mb-3 coupon-box input-group">
+                  <input
+                    type="date"
+                    #xdate
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    [min]="expirationDateNow"
+                    formControlName="executionDate"
+                    [class.is-valid]="
+                      fc['executionDate'].valid && fc['executionDate'].touched
+                    "
+                    [class.is-invalid]="
+                      fc['executionDate'].invalid && fc['executionDate'].touched
+                    "
+                  />
+                  <button class="btn-apply" (click)="xdate.showPicker()">
+                    {{ "Cart.Date" | translate }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="coupon-cart">
+                <h6 class="text-content mb-2">
+                  {{ "Cart.VoiceNote" | translate }}
+                </h6>
+                <div class="mb-3 coupon-box input-group">
+                  <audio
+                    class="form- control"
+                    [src]="fc['voiceNotepathUrl'].value"
+                    controls
+                  ></audio>
+
+                  <!-- <audio  controls>
+                        <source [src]="fc['voiceNotepathUrl'].value" type="audio/mp3">
+                      </audio> -->
+                  <!-- <audio controls preload="metadata">
+                        <source [src]="audioUrl" >
+                      </audio> -->
+
+                  <!-- <ngx-mic-recorder  (getAsMp3)="saveAsMp3($event)"></ngx-mic-recorder> -->
+                  @if(isStart){
+
+                  <button
+                    (click)="stopRecording()"
+                    class="btn-apply py-2 d-block mt-2"
+                  >
+                    {{ "Cart.StopRecording" | translate }}
+                  </button>
+                  } @if(!isStart){
+
+                  <button
+                    (click)="startRecording()"
+                    class="btn-apply py-2 d-block mt-2"
+                  >
+                    {{ "Cart.StartRecording" | translate }}
+                  </button>
+                  }
+                  <!-- @if(audioUrl){ -->
+                  <div *ngIf="time > 0">
+                    <p>Recording Time: {{ time }} seconds</p>
+                  </div>
+
+                  <!-- <div *ngIf="fc['voiceNotepathUrl'].value">
+                      <p>Audio Path: {{ fc['voiceNotepathUrl'].value }}</p>
+                    </div> -->
+                  <!-- } -->
+                </div>
+
+                <!-- <div class="app-speech-input" [class.app-speech-input-listening]="listening">
+                      <input class="app-speech-input-form-control form-control" type="text" [value]="message" [placeholder]="placeholder">
+                      <button class="app-speech-input-btn" (click)="listen()"></button>
+                    </div> -->
+              </div>
+
+              <div class="coupon-cart">
+                <h6 class="text-content mb-2">
+                  {{ "Cart.Comment" | translate }}
+                </h6>
+                <div class="mb-3 coupon-box input-group">
+                  <!-- <input type="text" class="form-control" id="exampleFormControlInput1"
+                             placeholder="{{ 'Cart.WriteYourCommentHere' | translate }}" style="height: 75px;"> -->
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    formControlName="comment"
+                    [class.is-valid]="
+                      fc['comment'].valid && fc['comment'].touched
+                    "
+                    [class.is-invalid]="
+                      fc['comment'].invalid && fc['comment'].touched
+                    "
+                    placeholder="{{ 'Cart.WriteYourCommentHere' | translate }}"
+                    style="height: 75px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- <div class="coupon-cart">
+                <div class="mb-3 coupon-box input-grou text-center">
+                  <button class="btn-apply py-2 d-block mt-2 text-center">
+                    {{ "Cart.Apply" | translate }}
+                  </button>
+                </div>
+              </div> -->
+            </div>
+          </form>
+
+          <div class="summery-header">
+            <h3 class="theme-colorTow bold">
+              {{ "Cart.ShoppingCartTotal" | translate }}
+            </h3>
+          </div>
+
+          <div class="summery-contain">
+            <div class="coupon-cart">
+              <h6 class="text-content mb-2">
+                {{ "Cart.CouponApply" | translate }}
+              </h6>
+              <div class="mb-3 coupon-box input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="coupon"
+                  id="exampleFormControlInput1"
+                  placeholder="{{ 'Cart.EnterCouponCodeHere' | translate }}"
+                  [ngbTooltip]="'Password is required'"
+                />
+
+                <button
+                  class="btn-apply Medium"
+                  (click)="ValidateCouponForCart()"
+                >
+                  {{ "Cart.Apply" | translate }}
+                </button>
+              </div>
+
+              <!-- @if(coupon() ==""){
+                <div class="invalid-feedback">
+                   {{ 'Must_Be_Enter_Code' | translate }}
+                </div>
+             } -->
+            </div>
+            <ul>
+              <li>
+                <h4 class="Medium">{{ "Cart.DeductedPoints" | translate }}</h4>
+                <!-- @if(HedaerCart&&HedaerCart.deductedPoints){ -->
+
+                <h4 class="price bold">
+                  {{ HedaerCart.deductedPoints }}
+                  <span id="sar"> {{ "Cart.Point(s)" | translate }}</span>
+                </h4>
+                <!-- } -->
+              </li>
+              <li>
+                <h4 class="Medium">{{ "Cart.Subtotal" | translate }}</h4>
+                @if(HedaerCart){
+
+                <h4 class="price bold">
+                  {{ HedaerCart.subTotal }}
+                  <span id="sar"> {{ "SAR" | translate }}</span>
+                </h4>
+                }
+              </li>
+
+              <li>
+                <h4 class="Medium">{{ "Cart.CouponDiscount" | translate }}</h4>
+                <!-- @if(HedaerCart&&HedaerCart.couponDiscount){ -->
+
+                <h4 class="price bold">(-) {{ HedaerCart.couponDiscount }}</h4>
+                <!-- } -->
+              </li>
+
+              <li class="align-items-start">
+                <!-- @if(HedaerCart&&HedaerCart.taxValue &&HedaerCart.taxPercent){ -->
+
+                <h4>
+                  {{ "Cart.Tax" | translate }}
+                  <span class="bold">{{ HedaerCart.taxPercent }}%</span>
+                </h4>
+                <h4 class="price text-end">
+                  <span class="bold">{{ HedaerCart.taxValue }}</span>
+                </h4>
+                <!-- } -->
+              </li>
+              <li>
+                <h4 class="Medium">{{ "Cart.serviceByPriceList.customerWalletPoints" | translate }}</h4>
+                @if(HedaerCart){
+
+                <h4 class="price bold">
+                  {{ HedaerCart.customerWalletPoints }}
+                  <!-- <span id="sar"> {{ "SAR" | translate }}</span> -->
+                </h4>
+                }
+              </li>
+              <li>
+                <h4 class="Medium">{{ "Cart.serviceByPriceList.customerWalletBalance" | translate }}</h4>
+                <!-- @if(HedaerCart){ -->
+
+                <h4 class="price bold">
+                  {{ HedaerCart.customerWalletBalance }}
+                  <span id="sar"> {{ "SAR" | translate }}</span>
+                </h4>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="summery-total">
+            <li class="list-total border-top-0">
+              <h4 class="Medium">
+                {{ "Total" | translate }}
+                <span id="sar"> {{ "Cart.Point(s)" | translate }}</span>
+
+              </h4>
+              @if(HedaerCart){
+
+              <h4 class="price theme-color bold">
+                {{ HedaerCart.pointsAfterWallet }}
+                <span id="sar"> {{ "Cart.Point(s)" | translate }}</span>
+
+              </h4>
+              }
+            </li>
+            <li class="list-total border-top-0">
+              <h4 class="Medium">
+                {{ "Total" | translate }}
+                <span id="sar"> {{ "SAR" | translate }}</span>
+              </h4>
+              @if(HedaerCart){
+
+              <h4 class="price theme-color bold">
+                {{ HedaerCart.totalAfterWallet }}
+                <span id="sar"> {{ "SAR" | translate }}</span>
+              </h4>
+              }
+            </li>
+          </ul>
+          <div class="button-group cart-button">
+            <ul>
+              <li>
+                <a
+                  class="btn btn-animation proceed-btn bold"
+                  (click)="CustomerCart ? onSubmit() : null"
+                >
+                <!-- ConfirmCheckout -->
+                  {{ "Cart.process_to_checkout" | translate }}
+                </a>
+              </li>
+              <li>
+                <a
+                  class="btn shopping-button"
+                  [routerLink]="['/service-category/']"
+                >
+                  <i class="ri-arrow-left-line me-2"></i>
+                  {{ "Cart.return_to_shopping" | translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    @if(!CustomerCart||ClaerCart){
+    <app-no-data
+      [class]="'no-data-added'"
+      [image]="'assets/svg/empty-items.svg'"
+      [text]="'no_items_added'"
+      [description]="'cart_empty_message'"
+    >
+    </app-no-data>
+    }
+  </div>
+</section>
+
+ 
+<app-delete-modal
+#deleteModal
+(deleteItem)="delete($event.actionToPerform, $event.data)"
+></app-delete-modal>
+}

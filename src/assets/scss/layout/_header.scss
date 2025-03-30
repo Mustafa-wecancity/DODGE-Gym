@@ -601,7 +601,7 @@ header {
               padding-top: 4px;
 
           @include pseudowh($width: calc(185px + (182 - 150) * ((100vw - 320px) / (1920 - 320))),
-            $height: 80px);
+            $height: 60px);
           object-fit: contain;
 
           @include mq-max(md) {
@@ -619,7 +619,7 @@ header {
       
           img {
             @include pseudowh($width: calc(133px + (120 - 150) * ((100vw - 320px) / (1920 - 320))),
-              $height: 80px);
+              $height: 60px);
        
   
               padding-bottom: 10px;

@@ -1,0 +1,324 @@
+a {
+  cursor: pointer !important;
+}
+.name {
+  a {
+    color: var(--theme-colorTow) !important;
+  }
+}
+
+.ri-subtract-fill,
+.ri-add-line {
+  color: var(--theme-colorTow) !important;
+}
+
+.qty-input {
+  color: var(--theme-Cart);
+}
+.btn-animation {
+  background-color: #ff6666 !important;
+}
+
+.summery-box .summery-contain .coupon-cart .coupon-box .form-control,
+.control {
+  border: 2px solid var(--theme-Subcolor) !important;
+}
+
+.btn-apply {
+  background-color: var(--theme-Subcolor) !important;
+}
+
+.summery-box .summery-contain .coupon-cart .coupon-box {
+  padding: 0 !important;
+}
+
+audio:hover,
+audio:focus,
+audio:active {
+  -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+audio {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #006773;
+  -webkit-box-shadow: 2px 2px 4px 0px #006773;
+  box-shadow: 2px 2px 4px 0px #006773;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
+}
+
+.summery-header {
+  margin-top: 10px;
+}
+
+textarea {
+  overflow-y: auto;
+}
+
+.app-container {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-speech-input {
+  margin: 0;
+  position: relative;
+}
+
+.app-speech-input-btn {
+  position: absolute;
+  right: 0.35rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  line-height: 1;
+  top: calc(50% - 0.9rem);
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  background: transparent
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve"><g><g><path d="M164.998,210c35.888,0,65.085-29.195,65.085-65.12l-0.204-80c0-35.775-29.105-64.88-64.881-64.88 c-35.773,0-64.877,29.105-64.877,64.842l-0.203,80.076C99.918,180.805,129.112,210,164.998,210z M130.121,64.88 c0-19.233,15.646-34.88,34.877-34.88c19.233,0,34.881,15.647,34.881,34.919l0.204,80c0,19.344-15.739,35.081-35.085,35.081 c-19.343,0-35.08-15.737-35.08-35.044L130.121,64.88z"/></g><g><path d="M280.084,154.96c0-8.284-6.716-15-15-15c-8.284,0-15,6.716-15,15c0,46.732-37.878,84.774-84.546,85.068 c-0.181-0.006-0.357-0.027-0.54-0.027c-0.183,0-0.359,0.021-0.541,0.027c-46.665-0.293-84.541-38.335-84.541-85.068 c0-8.284-6.716-15-15-15s-15,6.716-15,15c0,58.373,43.688,106.731,100.082,114.104V300H117c-8.284,0-15,6.716-15,15 s6.716,15,15,15h96.001c8.284,0,15-6.716,15-15s-6.716-15-15-15h-33.003v-30.936C236.395,261.69,280.084,213.332,280.084,154.96z"/></g></g></svg>')
+    no-repeat center center / auto 65%;
+}
+
+.app-speech-input-btn:hover,
+.app-speech-input-btn:focus,
+.app-speech-input-listening .app-speech-input-btn {
+  opacity: 1;
+}
+
+.app-speech-input-listening .app-speech-input-btn {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.product-detail,
+.price,
+.quantity,
+.subtotal {
+  h4 {
+    color: var(--theme-Subcolor) !important;
+  }
+}
+
+li span.text-title {
+  color: var(--theme-colorTow) !important;
+}
+
+
+
+
+
+
+/* Style for dropdown */
+.chat-icon {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position the dropdown */
+  background-color: white; /* Background color for dropdown */
+  border: 1px solid #ccc; /* Border */
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Show dropdown when it's active */
+.chat-icon.active {
+  display: block; /* Display the dropdown when active */
+}
+
+/* For better positioning, adjust the dropdown near the icon */
+.msger-inputarea {
+  position: relative; /* Ensure that dropdown is positioned relative to input area */
+  height: 90px;
+}
+.noResize{
+  resize: none !important;
+}
+.chat-icon.active {
+  display: block;
+  height: 200px; /* Temporarily set a height to ensure visibility */
+  width: 150px; /* Set width as needed */
+  background-color: #fff; /* Background to ensure visibility */
+  border: 1px solid #ccc;
+}
+
+.stopIcon ,.ri-delete-bin-line{
+  color:red !important
+}
+.stopIcon:hover{
+  cursor: pointer;
+}
+.recordTimer{
+  color: black
+}
+.deleteRecord{
+  width: 40px;
+  height: 40px;
+}
+.deleteRecord:hover{
+  cursor: pointer;
+}
+
+
+// .dropdown-menu {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center; /* Center items horizontally */
+//   justify-content: center; /* Center items vertically */
+//   padding: 10px; /* Add some padding */
+//   background-color: #fff; /* Background color */
+//   border-radius: 8px; /* Rounded corners */
+//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+// }
+
+// .dropdown-item {
+//   display: flex;
+//   align-items: center; /* Center items vertically */
+//   padding: 10px; /* Padding for each item */
+//   width: 100%; /* Full width */
+//   cursor: pointer; /* Pointer cursor on hover */
+//   transition: background-color 0.2s; /* Smooth background transition */
+// }
+
+// .dropdown-item:hover {
+//   background-color: #f0f0f0; /* Background on hover */
+// }
+
+// .dropdown-label, .record-button {
+//   display: flex; /* Flex display for icon and text */
+//   align-items: center; /* Center items vertically */
+//   width: 100%; /* Full width */
+//   text-align: center; /* Center text */
+// }
+
+// .dropdown-label svg, .record-button svg {
+//   margin-right: 8px; /* Space between icon and text */
+//   width: 20px; /* Set icon width */
+//   height: 20px; /* Set icon height */
+// }
+
+// .record-button {
+//   background: none; /* No background for the button */
+//   border: none; /* No border */
+//   color: inherit; /* Inherit text color */
+//   font: inherit; /* Inherit font */
+//   cursor: pointer; /* Pointer cursor on hover */
+// }
+
+// .record-button:hover {
+//   text-decoration: underline; /* Underline on hover */
+// }
+
+.profile-dropdown {
+  display: none; /* Hide by default */
+  position: absolute; /* Position it absolutely */
+  /* Additional styles for your dropdown */
+}
+
+.profile-dropdown.active {
+  display: block; /* Show when active */
+}
+
+.onhover-show-div {
+  /* Any additional styles for the dropdown */
+}
+
+
+
+
+.bold{
+  font-family: 'LamaSansBold' !important;
+
+}
+.Medium{
+  font-family: 'LamaSansMedium' !important;
+
+}
+
+h6{
+  color: var( --theme-colorTow);
+  font-family: 'LamaSansMedium' !important;
+  // font-size: calc(13px + 1*(100vw - 320px) / 1600);
+  }
+
+  b {
+    font-family: 'LamaSansRegular' !important;
+font-size: 14px;
+}
+ .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+span{
+font-family: 'LamaSansBold' !important;
+
+}
+}
+.Regular {
+  font-family: 'LamaSansRegular' !important;
+ }
+ del{
+  font-size: 12px !important;
+font-family: 'LamaSansRegular' !important;
+
+ }
+
+ #sar{
+  font-size: 12px !important;
+  padding-right: 1px;
+  padding-left: 1px;
+ }
+
+ h3.bold , .table-title{
+  font-size: 16px !important;
+ }
+
+
+.Category{
+
+  color: #996633; 
+  cursor: pointer  !important;
+}
+
+a{
+
+  cursor: pointer !important;
+}
+
+
+ 
+.proceed-btn{
+  background-color: var(--theme-color) !important;
+}
+
+
+
+
+.xcolor{
+  color: #4a5568 !important;
+}
+
+.brand-name{
+  margin-bottom: 0 !important;
+}

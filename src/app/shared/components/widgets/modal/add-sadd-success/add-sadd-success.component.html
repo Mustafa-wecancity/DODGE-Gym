@@ -1,27 +1,35 @@
 
 <ng-template #addsuccessModal let-modal>
-    <div class="modal-body">
-      <i class="ri-checkbox-circle-line icon-box wo-bg "></i>
-      
-       <h5 class="modal-title theme-color  bold">{{ message | translate }}</h5>
-       <p class="theme-color">{{notificationMessage |translate}}</p>
-       <div class="button-box">
-          <app-button 
-             [class]="'btn btn-md fw-bold btn-theme-outline  theme-color'" 
-             [spinner]="false" 
-             [id]="'confirm_no_btn'" 
-             (click)="modal.dismiss('Cancel'); close()">
-             {{ 'Ok' | translate }}
-          </app-button>
- 
-          <!-- <app-button 
-             [class]="'btn theme-bg-color btn-md fw-bold text-light'" 
-             [id]="'confirm_yes_btn'" 
-             (click)="confirm()">
-             {{ 'yes' | translate }}
-          </app-button>
-           -->
-       </div>
-    </div>
- </ng-template>
- 
+   <div class="modal-body">
+     <i class="ri-checkbox-circle-line icon-box wo-bg "></i>
+     
+      <h5 class="modal-title theme-colorTow  bold">{{ message | translate }}</h5>
+      <p>{{notificationMessage |translate}}</p>
+      <div class="button-box mx-3">
+         <app-button 
+            [class]="'btn btn-md fw-bold btn-theme-outline px-3 '" 
+            [spinner]="false" 
+            [id]="'confirm_no_btn'" 
+            (click)="modal.dismiss('Cancel'); close()">
+            {{ 'continue' | translate }}
+         </app-button>
+         <app-button 
+            [class]="'btn btn-md fw-bold btn-theme-outline  bg-theme-color text-white px-3'" 
+            [spinner]="false" 
+            [id]="'confirm_no_btn'" 
+            (click)="modal.dismiss('Cancel'); close()"
+            [routerLink]="['/cart']" >
+            {{ 'go_to_cart' | translate }}
+          
+         </app-button>
+
+         <!-- <app-button 
+            [class]="'btn theme-bg-color btn-md fw-bold text-light'" 
+            [id]="'confirm_yes_btn'" 
+            (click)="confirm()">
+            {{ 'yes' | translate }}
+         </app-button>
+          -->
+      </div>
+   </div>
+</ng-template>

@@ -63,7 +63,7 @@ export class LoginComponent {
     this.form = this.formBuilder.group({
       mobile: ['', [Validators.required,        Validators.minLength(11),
         Validators.maxLength(11),]],
-      country_code: new FormControl('966', [Validators.required]),
+      country_code: new FormControl('+20' ),
 
       password: new FormControl('', [Validators.required]),
       // recaptcha: new FormControl(null)
