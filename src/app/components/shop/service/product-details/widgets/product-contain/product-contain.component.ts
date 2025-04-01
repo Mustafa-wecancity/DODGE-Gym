@@ -68,7 +68,7 @@ export class ProductContainComponent {
       if (isPlatformBrowser(this.platformId)) {
         if (this.ServiceGetById) {
           {
-            this.CalculateServiceTotalWithTax();
+            // this.CalculateServiceTotalWithTax();
           }
         }
       }

@@ -113,6 +113,7 @@ export interface ServicesHome
   priceAfterDiscount: number
   discountPercent: number
   pointsAfterDiscount: number
+  isWishlist: boolean,
   categoryList: ICategoryList[]
  
 }

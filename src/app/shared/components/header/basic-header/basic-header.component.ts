@@ -21,7 +21,7 @@ import { PublicService } from '../../../Api-Services/public.service';
   imports: [TranslateModule,TopbarComponent, NavbarMenuButtonComponent, LogoComponent,
             CallComponent, 
         MyAccountComponent,
-            ButtonComponent, DealComponent, MenuComponent,RouterLink,NoticeComponent,LanguageComponent
+            ButtonComponent, DealComponent, MenuComponent,RouterLink,NoticeComponent,LanguageComponent, 
   ],
   templateUrl: './basic-header.component.html',
   styleUrl: './basic-header.component.scss'

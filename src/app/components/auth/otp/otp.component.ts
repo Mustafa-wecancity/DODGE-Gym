@@ -128,8 +128,8 @@ export class OtpComponent {
             this.showOtp = true;
          
 
-            // this.otp = res.data["otp"];
-            // this.fc["otp"].setValue(res.data["otp"].toString());
+            this.otp = res.data["otp"];
+            this.fc["otp"].setValue(res.data["otp"].toString());
             this.time = res.data["secondsCount"];
             this.showSendOtp = false;
 

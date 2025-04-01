@@ -10,6 +10,7 @@ import { TermsandConditionsComponent } from "../../shared/components/Policy/term
 import { TermsandConditionsEnComponent } from "../../shared/components/Policy/termsand-conditions/termsand-conditions-en/termsand-conditions-en.component";
 import { CartComponent } from "./cart/cart.component";
 import { AuthGuard } from "../../core/guard/auth.guard";
+import { DealTodayServicesComponent } from "./deal-today-services/deal-today-services.component";
 
 export const shopRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ export const shopRoutes: Routes = [
   {
     path: "service/:id",
     component: ServiceComponent,
+  },
+  {
+    path: "DealToday",
+    component: DealTodayServicesComponent,
   },
  
   {
@@ -50,31 +55,31 @@ export const shopRoutes: Routes = [
 
 
   // start  routing for Privacy Policy
-  {
-    path: 'PrivacyPolicy/ar',
-    component: PrivacyPolicyComponent,
-  },
-  {
-    path: 'PrivacyPolicy/en',
-    component: PrivacyPolicyEnComponent,
-  },
+  // {
+  //   path: 'PrivacyPolicy/ar',
+  //   component: PrivacyPolicyComponent,
+  // },
+  // {
+  //   path: 'PrivacyPolicy/en',
+  //   component: PrivacyPolicyEnComponent,
+  // },
 
 
-  {
-    path: 'RefundPolicy/ar',
-    component: RefundPolicyComponent,
-  },
-  {
-    path: 'RefundPolicy/en',
-    component: RefundPolicyEnComponent,
-  },
+  // {
+  //   path: 'RefundPolicy/ar',
+  //   component: RefundPolicyComponent,
+  // },
+  // {
+  //   path: 'RefundPolicy/en',
+  //   component: RefundPolicyEnComponent,
+  // },
 
-  {
-    path: 'TermsandConditions/ar',
-    component: TermsandConditionsComponent,
-  },
-  {
-    path: 'TermsandConditions/en',
-    component: TermsandConditionsEnComponent,
-  },
+  // {
+  //   path: 'TermsandConditions/ar',
+  //   component: TermsandConditionsComponent,
+  // },
+  // {
+  //   path: 'TermsandConditions/en',
+  //   component: TermsandConditionsEnComponent,
+  // },
 ];

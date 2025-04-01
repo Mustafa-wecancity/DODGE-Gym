@@ -999,7 +999,7 @@ header {
               i {
                 line-height: 1;
                 font-size: 24px;
-                color: $content-color;
+                color: $white;
 
                 @include mq-max(4xl) {
                   color: $title-color;

@@ -1,0 +1,27 @@
+<div class="container ">
+  <app-title [title]="title"> </app-title>
+
+  <div [class]="gridClass">
+    @for(service of DealTodayServices;track service){
+    <app-deal-today-service-box  [service]="service" ></app-deal-today-service-box>
+
+    }
+    <!-- } -->
+  </div>
+
+  @if(!DealTodayServices.length ){
+  <app-no-data
+    [class]="'no-data-added collection-no-data'"
+    [image]="'assets/svg/no-product.svg'"
+    [text]="'sorry_cant_find_products_looking'"
+    [description]="'please_check_misspelt_something_searching_other_way'"
+  >
+  </app-no-data>
+  }
+</div>
+@if(DealTodayServices){
+    <nav class="custome-pagination">
+       <app-pagination [total]="totalCount" [currentPage]="filter['page']"   (setPage)="setPaginate($event)">
+       </app-pagination>
+    </nav>
+ }

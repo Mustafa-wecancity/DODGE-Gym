@@ -1,0 +1,72 @@
+
+ 
+ <div class=" service" >
+    <div class="product-theme-box"   >
+s
+     @if(service.discountPercent> 0){
+
+        <div class="label-flex"  [routerLink]="['/service/', service.id,setPathDecodeURIComponent(service.productName)]">
+            <div class="discount" style=" color: white;">
+                <label><span>{{service.discountPercent}} %</span></label>
+            </div>
+        </div>
+    }
+        <div class="img-box ratio_50 ">
+            <a >
+                &nbsp;<br>
+            </a>
+            <a b
+            [class.bg-theme-color]="service.isWishlist"
+            (click)=" addToWishlist(service)" class="heart-icon"> 
+             <!-- whsh list -->
+             <i class="ri-heart-{{ service.isWishlist? 'fill' : 'line' }}"></i> 
+            </a>
+        </div>
+
+        <div class="img-box ratio_50">
+            <a   [routerLink]="['/service/', service.id,setPathDecodeURIComponent(service.productName)]" >
+                <!-- src="../assets/images/dwebsite/7.png" -->
+                <img 
+                appLazyLoad [src]="service.imagePath|customPipeForImages" class="bg-img w-100">
+            </a>
+    
+        </div>
+        <div class="content-box mt-4 "  [routerLink]="['/service/', service.id,service.productName]">
+            <div class="top-content theme-colorTow bold">
+                <a  [routerLink]="['/service/', service.id,service.productName]">
+                    <h5 class="top-content theme-colorTow Medium">{{service.productName| truncate: 78}} </h5>
+ 
+                </a>
+            </div>
+             <div class="description theme-colorTow d-lg-block d-none" 
+            [innerHTML]="(service.description | stripHtml | truncate: 180)"> 
+       </div>
+                   
+            <div class="description theme-colorTow d-lg-none d-block" [innerHTML]="(service.description | stripHtml | truncate: 180)">   </div>
+ 
+            <div class="bottom-content">
+                <div>
+                 <h5 class="price"><span class="bold theme-colorTow" >{{ service.priceAfterDiscount }} </span>  <b >{{'SAR' |translate}}</b>
+                     @if(service.discountPercent>0){
+                     <del class="text-content mx-1"
+                             > 
+                           <del  class="Regular">{{ service.price }} </del> <b >{{'SAR' |translate}}</b>
+                            
+                            </del> 
+                            <span
+                            class="offer theme-Subcolor" >( <span class="bold theme-Subcolor"> {{ service.discountPercent }}%  </span> {{'servicesBox.off'| translate}}) </span>
+                    }
+                    </h5>
+                </div>
+                <div class="btn-grp">
+                    <a class="btn " [routerLink]="['/service/', service.id,service.productName]">  
+                            <i class="ri-shopping-cart-line theme-Subcolor"  ></i>
+                         </a>
+                    <a class="btn btn-theme text-white" [routerLink]="['/service/', service.id,service.productName]">{{'servicesBox.Preview' |translate}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ 
+  

@@ -1,11 +1,11 @@
 // export const api ="https://alnada-depointapi.azurewebsites.net" //live
-// export const api ="https://dodgegymdev.runasp.net" //test
-export const api ="https://localhost:44374" //Devolpment
+export const api ="https://dodgegymdev.runasp.net" //test
+// export const api ="https://localhost:44374" //Devolpment
 
 
 //  export const baseURL= 'http://localhost:4200' //Devolpment
 // export const baseURL= 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net' // live
-export const baseURL= 'https://alanda-DevDepointWebSite.azurewebsites.net' //  Test 
+export const baseURL= 'httpshttps://dodge-gym.vercel.app' //  Test 
 
 
  

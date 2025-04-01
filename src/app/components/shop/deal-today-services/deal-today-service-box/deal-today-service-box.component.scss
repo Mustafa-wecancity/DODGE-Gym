@@ -1,0 +1,77 @@
+ 
+.price_colors{
+    color: #d26a58 !important; 
+}
+ 
+.colorTow{
+    color: var( --theme-colorTow) !important; 
+}
+
+.price{
+    color: var( --theme-colorTow) !important; 
+    font-family: 'LamaSansRegular' !important;
+    span.bold{
+        // font-family: 'LamaSansBold' !important;
+        // font-size: calc(16px + 2*(100vw - 320px)/1600);
+
+
+    }
+    del{
+        font-size: 12px !important;
+        font-family: 'LamaSansRegular' !important;
+
+    color: var( -theme-Subcolor) !important; 
+
+    }
+    
+}
+
+// .ri-heart-fill{
+//     font-size: calc(18px + 2*(100vw - 320px)/1600);
+//     color: var( --theme-color) !important; 
+// }
+// .ri-heart-line{
+//     font-size: calc(18px + 2*(100vw - 320px)/1600);
+//     color: #fff !important; 
+// }
+.service{
+    min-height: 235px;
+    .product-theme-box{
+        min-height: 235px !important;
+    }
+    .top-content{
+        h5{
+        color: var( --theme-colorTow);
+        font-family: 'LamaSansMedium' !important;
+        }
+    }
+    .content-box{
+        min-height: 144px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 40px !important;
+    }
+
+    .description, .label-tag ,.label-flex label , .btn-grp  a{
+        font-family: 'LamaSansRegular' !important;
+
+    }
+    b {
+        font-family: 'LamaSansRegular' !important;
+font-size: 14px;
+    }
+     .label-tag ,.label-flex label,del.bold, .discountPercent ,.bold{
+span{
+    font-family: 'LamaSansBold' !important;
+
+}
+    }
+}
+
+
+del, del.Regular{
+    font-size: 12px  !important;
+  font-family: 'LamaSansBold' !important;
+  
+   }
