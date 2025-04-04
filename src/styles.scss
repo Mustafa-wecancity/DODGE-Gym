@@ -230,6 +230,14 @@ body.rtl {
   }
 }
 
+.service {
+
+  .img-box img  {
+     
+    height: 300px !important;
+
+  }
+}
 /* iPad بورتريه (Portrait) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   // body {
@@ -241,6 +249,12 @@ body.rtl {
   .service {
     .bottom-content {
       display: block;
+    }
+
+    .img-box img  {
+       
+      height: 300px !important;
+ 
     }
   }
   .pb-md-4 {

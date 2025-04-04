@@ -75,12 +75,12 @@
         </div>
       </div>
       <div class="bottom-content">
-        <h6 class="price theme-color "><span class="bold theme-color " >{{ service.pointsAfterDiscount }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Point' |translate}}</span>
+        <h6 class="price theme-color "><span class="bold theme-color " >{{ service.priceAfterDiscount }} </span>  <span  id="sar" class="theme-colorTwo  mx-2"> {{'servicesBox.Price' |translate}}</span>
             @if(service.discountPercent>0){
             <del class="text-content mx-1"
                   > 
                   
-                  <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ service.points }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Point' |translate}}</span>
+                  <del  class="Regular theme-colorTwo" style="color:var(--theme-colorTwo) !important">{{ service.price }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Price' |translate}}</span>
                   
                   </del> 
                 

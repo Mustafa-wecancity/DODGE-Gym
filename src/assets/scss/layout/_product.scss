@@ -4373,7 +4373,7 @@
     .top-content {
       h5 {
         font-weight: normal;
-        color: var(--theme-color);
+        color: var(--theme-color) !important;
         margin-bottom: 4px;
         white-space: normal;
         overflow: hidden;

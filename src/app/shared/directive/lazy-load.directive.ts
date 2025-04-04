@@ -6,7 +6,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2, AfterViewInit, ChangeD
 })
 export class LazyLoadDirective implements OnInit, AfterViewInit {
   @Input() dataSrc: string;
-  @Input() placeholder: string = 'assets/images/data/SaudiaServicesLoading.webp';
+  @Input() placeholder: string = 'assets/images/data/Asset 6.svg';
   // @Input() errorImage: string = 'assets/images/not-found/no-image.svg';
   @Input() errorImage: string = '';
   @Input() sliderContainer: HTMLElement;

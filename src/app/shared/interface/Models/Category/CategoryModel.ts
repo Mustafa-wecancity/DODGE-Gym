@@ -81,11 +81,10 @@ export interface IProductesList {
   productId: number;
   productTitle: string;
   price: number;
-  points: number;
   imagePath: string;
   description: string;
   discountPercent: number
-  pointsAfterDiscount: number
+  priceAfterDiscount: number
   // categoryList: ICategoryList[]
 
 }
