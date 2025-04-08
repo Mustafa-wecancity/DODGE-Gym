@@ -1,18 +1,21 @@
+<div class="bg-white ">
+
 @if(ServiceGetById){
 
-  <!-- @if(ServiceGetById.serviceMediaList){
+<!-- 
+@if(ServiceGetById.productMediaList){
 
-    <section class="product-list-section  " >
+    <section class="product-list-section bg-white " >
       <div class="container-fluid-lg mt-lg-5">
         <app-service-media
-          [serviceMediaList]="ServiceGetById.serviceMediaList"
+          [serviceMediaList]="ServiceGetById.productMediaList"
           [class]="'banner-slider   pfor'"
         ></app-service-media>
       </div>
     
     </section>
     }
-     -->
+   -->
 <!-- Product Details Layout -->
 <section
   class="product-section"
@@ -50,3 +53,4 @@
   <app-sticky-checkout  class=" d-none d-xl-block" [ServiceGetById]="ServiceGetById"  ></app-sticky-checkout>
  }
 }
+</div>

@@ -16,6 +16,7 @@ import { SaveOfferComponent } from "../../../../themes/widgets/save-offer/save-o
 import { CustomPipeForImagesPipe } from "../../../../../shared/pipe/custom-pipe-for-images-pipe.pipe";
 import { PublicService } from "../../../../../shared/Api-Services/public.service";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ServiceMediaComponent } from "../widgets/service-media/service-media.component";
 
 @Component({
   selector: "app-product-thumbnail",
@@ -25,7 +26,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     CarouselModule,
     NgxImageZoomModule,
     ProductContainComponent,
-    SaveOfferComponent,CustomPipeForImagesPipe,NgbModule,
+    SaveOfferComponent,CustomPipeForImagesPipe,NgbModule,ServiceMediaComponent
   ],
   templateUrl: "./product-thumbnail.component.html",
   styleUrl: "./product-thumbnail.component.scss",

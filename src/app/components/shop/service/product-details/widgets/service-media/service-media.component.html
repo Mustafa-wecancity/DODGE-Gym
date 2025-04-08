@@ -1,5 +1,5 @@
 <div [class]="class" class="pfor">
-    <owl-carousel-o [options]="ISliderFull ? bannerSlider : bannerSlider">
+    <owl-carousel-o [options]="ISliderFull ? customOptionsItem1 : bannerSlider">
        @for(item of serviceMediaList; track item.id){
           @if(item){
         <ng-template carouselSlide>
@@ -9,10 +9,11 @@
                         <img 
                         appLazyLoad [dataSrc]="item.imagePath|customPipeForImages"
                             class="image-contain" 
-                            alt="item"> 
+                            alt="item"
+                            style="height: 300px;"> 
                     }
                
-                    @if(item.url ){
+                    <!-- @if(item.url ){
                         <iframe 
                         *ngIf="item.url"
                         [src]="getEmbedUrl(item.url) | safeUrl" 
@@ -24,7 +25,7 @@
                         referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen>
                       </iframe>
-                    }
+                    } -->
                 </div>
             </a> 
         </ng-template>

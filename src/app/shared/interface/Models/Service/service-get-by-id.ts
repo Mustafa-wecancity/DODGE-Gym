@@ -14,7 +14,7 @@ export interface IServiceGetById {
  priceBefore: number,
  discountPercent: number,
  serviceCategories: IServiceCategories[]
- serviceMediaList: IServiceMediaList[]
+ productMediaList: IServiceMediaList[]
  
 }
 
@@ -23,7 +23,7 @@ export interface IServiceMediaList {
     id: number;
     productd: number;
     imagePath: string ; // Nullable field
-    url: string;
+   
   }
 export interface IServiceCategories
 {

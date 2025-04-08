@@ -24,6 +24,8 @@ export class ServiceMediaComponent {
   @Input() serviceMediaList?: IServiceMediaList[]
   public bannerSlider :OwlOptions= data.bannerSlider_;
   public customOptionsItem3 = data.customOptionsItem77;
+    public customOptionsItem1 = data.customOptionsItem1;
+  
 constructor( ) {
   // this.get()
 }

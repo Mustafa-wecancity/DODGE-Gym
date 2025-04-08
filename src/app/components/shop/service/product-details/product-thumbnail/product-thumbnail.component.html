@@ -32,7 +32,7 @@
       <div class="col-xxl-12 m- h mt-3">
         <div class="row g-4">
           <div class="col-xl-8 col-lg-7 xol-12">
-            <h2 class="name bold text-white" style="color:white !important">{{ ServiceGetById?.name }}</h2>
+            <h2 class="name bold text-white" style="color:var(--theme-color) !important">{{ ServiceGetById?.name }}</h2>
             <div class="price-rating">
   
               <h3 class="price theme-color  mt-2 mb-3"><span class="bold theme-color " >{{ ServiceGetById.priceAfter }} </span>  <span  id="sar" class="theme-Subcolor  mx-2"> {{'servicesBox.Price' |translate}}</span>
@@ -71,12 +71,16 @@
               />
             </div>
             }
-            <div class="product-contain my-2">
-              <p class="w-100 Regular text-white" [innerHTML]="ServiceGetById?.description"></p>
+            
+            @if(ServiceGetById.description){
+              <div class="product-contain my-2">
+              <p class="w-100 Regular text-white" [innerHTML]="ServiceGetById.description"></p>
             </div>
-            <div >
            
-   
+            }
+
+            <div >
+
               <!-- <div class="profile-about dashboard-bg-box  mt-md-4 mt-2">
   
 
@@ -116,7 +120,9 @@
               class="mt-3"
               id="bundles"
             >
-<!--            
+
+            
+        
             <div class="container-fluid mt-3" >
               <div class="row g-3" style="margin-top: 15px;">
                   <div class=" col-12">
@@ -132,15 +138,25 @@
                     </div>
                   </div>
       
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <app-save-offer
                       [home]="true"
                       [ISliderFull]="false"
                       [class]="'banner-slider bundel-details page pfor'"
                     ></app-save-offer>
-                  </div>
+                  </div> -->
+
+
+                    <div class="col-12">
+
+                      <app-service-media
+                        [serviceMediaList]="ServiceGetById.productMediaList"
+                        [class]="'banner-slider   pfor'"
+                      ></app-service-media>
+                    </div>
+                  
                 </div>
-              </div> -->
+              </div>  
             </section>
    
             </div>
