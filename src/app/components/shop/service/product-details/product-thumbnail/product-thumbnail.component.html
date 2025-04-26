@@ -40,10 +40,10 @@
                 <del class="text-content mx-1"
                       > 
                       
-                      <del  class="Regular theme-Subcolor" style="color:var(--theme-Subcolor) !important">{{ ServiceGetById.price }} </del> <span  id="sar" class="theme-Subcolor" >{{'servicesBox.Price' |translate}}</span>
+                      <del  class="Regular theme-Subcolor" style="color:var(--theme-colorTwo) !important">{{ ServiceGetById.price }} </del> <span  id="sar" class="theme-colorTwo" >{{'servicesBox.Price' |translate}}</span>
                       
                       </del> 
-                      <span class="offer theme-Subcolor" >(<span class="bold theme-Subcolor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
+                      <span class="offer text-" >(<span class="bold theme-colorTwor"> {{ ServiceGetById.discountPercent}}% </span> {{'servicesBox.off'| translate}}) </span>
 
                     
              }
@@ -58,14 +58,19 @@
           </h6>}
             @if(ServiceGetById?.imagePath ){
   
-            <div class="left-box-contain" >
+            <div class="left-box-contain text-center" >
               <img
                 [src]="
                   ServiceGetById.imagePath
                     ? (ServiceGetById.imagePath | customPipeForImages)
                     : 'assets/images/data/themes/madrid/2.jpg'
                 "
-                class="h-100 bg-img w-100"
+                class="text-center"
+               style="
+               height: 821px;
+             
+               
+           "
                 style="max-height: 70vh;"
                 alt="banner"
               />

@@ -3,9 +3,9 @@
 {
 
 
-<section class="cart-section section-b-space mt-md-0 mt-5 bg-white">
+<section class="cart-section section-b-space mt-md-0 mt-5 ">
   <div class="container-fluid-lg">
-    <div class="row g-xl-5 g-sm-4 g-3">
+    <div class="row g-xl-5 g-sm-4 g-3 mt-3">
       <div class="col-xxl-9 col-xl-8">
         <div class="summery-header" style="text-align: center">
           <h2 class="Medium">
@@ -100,7 +100,7 @@
                         }
                       </h5>
                       @if(item.discountValue>0 ||item.amountSaved >0 ){
-                      <h6 class="theme-Subcolor" style="font-size: 14px">
+                      <h6 class="theme-S bcolor" style="font-size: 14px">
                         {{ "Cart.serviceByPriceList.YouSave" | translate }}
                         <span class="bold"> {{ item.amountSaved }} </span>
                         <span id="sar"> {{ "SAR" | translate }}</span>
@@ -165,7 +165,7 @@
                         <span id="sar"> {{ "SAR" | translate }}</span>
                       </h5>
                       @if(item.discountValue>0 || item.totalamountSaved >0){
-                      <h6 class="theme-Subcolor" style="font-size: 14px">
+                      <h6 class="theme-colorTwo" style="font-size: 14px">
                         {{ "Cart.serviceByPriceList.YouSave" | translate }}
                         <span class="bold"> {{ item.totalamountSaved }} </span>
                         <span id="sar"> {{ "SAR" | translate }}</span>
@@ -179,31 +179,8 @@
                       </h4>
                       }
 
-                      <a
-                        class="save notifi-wishlist"
-                        (click)="UpdateCustomerCartDetail(item, item.qty, true)"
-                        style="color: #809c73 !important"
-                      >
-                        <span class="theme-Cart Medium">
-                          <span class="bold"> {{ item.totalPoints }} </span>
-                          {{ "Cart.serviceByPriceList.Point" | translate }}
-                        </span>
-                      </a>
                       <h5 class="flex">
-                        <a
-                          class="sa ve notifi-wishlist"
-                          (click)="
-                            UpdateCustomerCartDetail(item, item.qty, true)
-                          "
-                          style="color: #809c73 !important"
-                        >
-                          <span>
-                            {{
-                              "Cart.serviceByPriceList.ChangeWithTotal"
-                                | translate
-                            }}
-                          </span>
-                        </a>
+                   
                         <a
                           class="remove close_button mx-2"
                           (click)="DeleteModal.openModal('delete',item)"

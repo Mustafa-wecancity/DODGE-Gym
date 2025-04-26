@@ -37,13 +37,15 @@ body ::selection {
 
 body {
   font-family: "LamaSansRegular", sans-serif;
-  color: #fff;
+  color: #000;
 }
 header .navbar.navbar-expand-xl .navbar-nav .nav-link {
   font-weight: normal !important;
   font-family: "LamaSansMedium" !important;
 }
-
+.white{
+  color: white !important;
+}
 .bold {
   font-family: "LamaSansBold" !important;
 }

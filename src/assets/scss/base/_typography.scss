@@ -7,7 +7,7 @@ body {
   font-size: 14px;
   color: $white;
   margin: 0;
-  background-color: #160303;
+ background-color: #fff;
   transition: all 0.3s ease-in-out;
   padding-right: 0 !important;
   // margin-right: -12px;
@@ -183,8 +183,9 @@ span {
 .theme-color {
   color: var(--theme-color) !important;
 }
+ 
 .theme-colorTwo {
-  color: var(--theme-Subcolo) !important;
+  color: var(--theme-colorTwo) !important;
 }
 .bg-theme-colorTwo {
   background-color: var(--theme-colorTwo) !important;

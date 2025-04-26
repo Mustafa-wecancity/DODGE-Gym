@@ -64,6 +64,7 @@ export interface GetCustomerBundlePurchasesDto {
   priceAfterDiscount: number;
   totalPrice: number;
   totalPriceAfterDiscount: number;
+  total: number;
   discountPercent: number;
   tax: number;
   status: string;
