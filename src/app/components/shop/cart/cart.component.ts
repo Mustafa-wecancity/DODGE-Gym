@@ -46,6 +46,7 @@ import { DeleteModalComponent } from "../../../shared/components/widgets/modal/d
 import { BrowserOnlyService } from "../../../shared/Api-Services/browser-only.service";
 import { AuthService } from "../../../shared/services/auth.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
+import { CustomPipeForImagesPipe } from "../../../shared/pipe/custom-pipe-for-images-pipe.pipe";
 
 @Component({
   selector: "app-cart",
@@ -66,6 +67,7 @@ import { PublicService } from "../../../shared/Api-Services/public.service";
     // ,NgxMicRecorderModule
     NgbTooltip,
     DeleteModalComponent,
+    CustomPipeForImagesPipe
   ],
   providers: [
     { provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter },

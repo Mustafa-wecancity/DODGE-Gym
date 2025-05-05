@@ -32,6 +32,7 @@ export interface IGetCartServiceByPriceList {
   orderId: number;
   qty: number;
   price: number;
+  imagePath: string;
   name: string;
   categoryName: string;
   discountValue: number;
