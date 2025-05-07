@@ -514,7 +514,7 @@
               <li>
                 <a
                   class="btn btn-animation proceed-btn bold"
-                  (click)="CustomerCart ? onSubmit() : null"
+                  (click)="CustomerCart ? ConfirmCheckout() : null"
                 >
                 <!-- ConfirmCheckout -->
                   {{ "Cart.process_to_checkout" | translate }}

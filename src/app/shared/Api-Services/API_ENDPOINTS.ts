@@ -25,7 +25,7 @@ export const API_ENDPOINTS = {
 
       CustomerServiceRequest: {
 
-        GetCustomerRequestList:'CustomerServiceRequest/GetCustomerRequestList',
+        GetCustomerRequestList:'Customer/CustomerProductRequest',
         GetCustomerRequestDetail:'CustomerServiceRequest/GetCustomerRequestById',
         CreateServiceRequest:'CustomerServiceRequest/CreateServiceRequest',
         CalculateServiceTotalWithTax:'CustomerServiceRequest/CalculateServiceTotalWithTax',
@@ -131,7 +131,7 @@ export const API_ENDPOINTS = {
         RemoveBundleFromCart: 'CustomerCarts/RemoveBundleFromCart',
         RemoveSavingPackageFromCart: 'CustomerCarts/RemoveSavingPackageFromCart',
         RemoveServiceFromCart: 'CustomerCarts/RemoveServiceFromCart',
-        CreateOrder: 'Order/CreateOrder',
+        CreateOrder: 'customer/CreateOrder',
         ConfirmCheckout: 'CustomerCarts/ConfirmCheckout',
  
         

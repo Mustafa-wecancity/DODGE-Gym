@@ -472,11 +472,14 @@ export class CartComponent extends BaseComponent {
   ConfirmCheckout() {
     if (this.isBrowser) {
       this.publicService.isLoading.next(true);
+      const params = {
+        Comment:this.fc['comment'].value,
+      }
 
       this.CartDetails.subscription.add(
-        this.CartDetails.create<any, FormData>(
-          API_ENDPOINTS.Cart.ConfirmCheckout,
-          this.ServiceFormData
+        this.CartDetails.create<any, any>(
+          API_ENDPOINTS.Cart.CreateOrder,
+          params
         ).subscribe(
           (res) => {
              const data =res.data
