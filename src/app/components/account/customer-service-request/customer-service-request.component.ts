@@ -19,6 +19,7 @@ import { API_ENDPOINTS } from "../../../shared/Api-Services/API_ENDPOINTS";
 import { GenericResponse } from "../../../shared/interface/Models/generic-response";
 import { ITPagination } from "../../../shared/interface/Models/Pagination/pagination";
 import {
+  CustomerOrderServiceRequest,
   GetServiceRequest,
   StatusEnum,
 } from "../../../shared/interface/Models/ServiceRequest/CreateServiceRequestModel";
@@ -38,6 +39,7 @@ import { ConfirmationCancelComponent } from "../../../shared/components/widgets/
 import Swal from "sweetalert2";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { ErrorService } from "../../../shared/services/error.service";
+import { TruncatePipe } from "../../../shared/pipe/truncate.pipe";
 @Component({
   selector: "app-customer-service-request",
   standalone: true,
@@ -54,7 +56,7 @@ import { ErrorService } from "../../../shared/services/error.service";
     ReactiveFormsModule,
     NgSelectModule,
     CustomPipeForImagesPipe,
-    ConfirmationCancelComponent,
+    ConfirmationCancelComponent,TruncatePipe
   ],
   templateUrl: "./customer-service-request.component.html",
   styleUrl: "./customer-service-request.component.scss",
@@ -132,14 +134,14 @@ export class CustomerServiceRequestComponent extends BaseComponent {
     this.GetCustomerServiceRequest();
   }
 
-  public CustomerOrderServiceRequest: GetServiceRequest[] = [];
+  public CustomerOrderServiceRequest: CustomerOrderServiceRequest[] = [];
   GetCustomerServiceRequest(): void {
     this.pager.skipCount =
       (this.filter["page"] - 1) * this.pager.maxResultCount;
 
     this._CustomerServiceRequest.subscription.add(
       this._CustomerServiceRequest
-        .create<GenericResponse<ITPagination<GetServiceRequest>>, pager>(
+        .create<GenericResponse<ITPagination<CustomerOrderServiceRequest>>, pager>(
           API_ENDPOINTS.CustomerServiceRequest.GetCustomerRequestList,
           this.pager
         )

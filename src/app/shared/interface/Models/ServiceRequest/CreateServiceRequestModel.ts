@@ -1,26 +1,26 @@
 export interface GetServiceRequest {
   id: number;
   discountPercent: number;
+  serviceRequestCount: number;
   qty: number;
   status: boolean;
   statusPayment: string;
+  name: string;
+  categoryName: string;
   description: string;
-  imagePath: string;
-  productName: string;
-  days: string;
-  statusName: string;
-  creationDate: string;
-  serviceRequestId: number;
-  productd: number;
+  serviceRequestDate: string;
+  orderServiceId: number;
   latestMessage: string;
   latestMessageDate: string;
+  statusReason: string;
+  statusComment: string;
+  resultUrl: string;
   attachments: boolean;
   serviceRequestCode: string;
   isNew: boolean;
   isEditingQty: boolean;
   beforeQty: number;
   statusId: number;
-  
 }
 
 export interface CustomerOrderServiceRequest {
@@ -34,7 +34,7 @@ export interface CustomerOrderServiceRequest {
   date: string;
   voiceNoteUrl: string;
   savingPackageTitle: string;
-  serviceRequestList: GetServiceRequest[];
+  productRequestList: GetServiceRequest[];
 }
 
 export interface ITopBarContent {

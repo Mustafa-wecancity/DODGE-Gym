@@ -88,313 +88,421 @@
 
  
 
-<div class="tab-pane fade show active" id="pills-order" role="tabpanel">
-  <div class="dashboard-order">
-    @for(service of CustomerOrderServiceRequest; track service){
+<div class="dashboard-right-sidebar">
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-order" role="tabpanel">
+      <div class="dashboard-order">
+        @for(item of CustomerOrderServiceRequest; track item; let i = $index){
 
-    <div class="order-contain"
-    [ngStyle]="{'cursor': service.statusId === 5 ? 'not-allowed' : 'pointer'}">
-      <div class="order-box dashboard-bg-box w-100">
-        <div class="order-container  position-relative">
-          <div class="order-icon order-icon-one d-lg-block d-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              class="main-grid-item-icon"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            >
-              <rect height="18" rx="2" ry="2" width="18" x="3" y="4" />
-              <line x1="16" x2="16" y1="2" y2="6" />
-              <line x1="8" x2="8" y1="2" y2="6" />
-              <line x1="3" x2="21" y1="10" y2="10" />
-            </svg>
-          </div>
-
-          <div class="order-detail orderP d-flex">
-            <h4
-              class="theme-colorTwo Medium MySavingPackages"
-              [routerLink]="[
-                '/account/ServiceManagement/',
-                service.id,
-                setPathDecodeURIComponent(service.productName)
-              ]"
-            >
-           
-              {{ 'Delivered'  | translate }}
-            </h4>
-            <h4 class="theme-colorTwo Ongoing">
-              <span
-                style="
-                  background: var(--theme-color);
-                  padding-top: 2px;
-                "
-              >
-                <!-- class="bg-gr" -->
-                <!-- {{
-                 "MyDashboard.MyServiceRequest.Ongoing" | translate
-               }}  -->
-                {{ service.statusName }} </span
-              >
-              <span class="payment -bg" style=" background: var(--theme-colorTwo);padding-top: 2px">
-                @if(service.serviceRequestCode){
-                {{
-                  service.serviceRequestCode
-                }}
-                }
-               
-                
-                @if(service.statusId==statusEnum.New){
-
-                <span
-                  class="delete"
-                  style="background: red"
-                  [id]="'remove_address' + service.id"
-                  (click)="
-                    ConfirmationCancelModal.openModal('cancel', service)
-                  "
-                >
-                  <i class="ri-delete-bin-line"></i>
-                  {{ "Cancel" | translate }}
-                </span>
-                }
-              </span>
-            </h4>
-          </div>
-
-
-          <!-- @if(true){
-            <h5 class="isExpired">
-              {{ "MyDashboard.MyBundle.isExpired" | translate }}
-            </h5>
-
-            } -->
-        </div>
-        <div class="product-order-detail">
-          <a
-          [routerLink]="[
-          '/account/ServiceManagement/',
-          service.id,
-          setPathDecodeURIComponent(service.productName)
-        ]"
-            class="order-image"
-          >
-            <img
-              [src]="service.imagePath | customPipeForImages"
-              alt="{{ service.productName }}"
-              class="blur-up lazyload"
-              alt=""
-              width="350px"
-            />
-          </a>
-
-          <div class="order-wrap">
-            <a
-            [routerLink]="[
-            '/account/ServiceManagement/',
-            service.id,
-            setPathDecodeURIComponent(service.productName)
-          ]"
-            >
-              <h3 class="Medium theme-color">{{ service.productName }}</h3>
-            </a>
-            <p
-              class="text-content description"
-              [innerHTML]="service.description"
-            ></p>
-
-            <p class="text-content">{{ "MyDashboard.MyServiceRequest.successMessage" | translate }} <strong> {{service.days}}</strong>. {{ "MyDashboard.MyServiceRequest.thankYouMessage" | translate }}</p>
-       
-            <ul class="product-size">
-              <li>
-                <div class="size-box">
-                  <h6 class="text-content Medium">
-                    {{ "Request Date" | translate }} :
-                  </h6>
-                  <h5 class="bold theme-colorTwo">{{ service.creationDate|date }}  </h5>
-                </div>
-              </li>
-              <li>
-                <div class="size-box detail">
-                  <ng-container
-                    *ngIf="!service.isEditingQty; else editQtyTemplate"
-                  >
-                    <h6 class="text-content theme-colorTwo Regular">
-                      {{ "MyDashboard.MyServiceRequest.Qty" | translate }}
-                    </h6>
-                    <h5 class="theme-colorTwo bold mx-2">
-                      {{ service.qty }}
-                    </h5>
-                    @if(service.statusId==statusEnum.New){
-                    <span
-                      class="editInline"
-                      style="
-                        background-color: var(--theme-color);
-                        cursor: pointer;
-                      "
-                      (click)="
-                        service.isEditingQty = true;
-                        service.beforeQty = service.qty
-                      "
+        <div class="order-contain">
+          <div class="order-box dashboard-bg-box w-100">
+            <div class="order-container">
+              <div class="order-detail order_">
+                <h4 class="theme-colorTow Medium MySavingPackages">
+                  <div class="order-tracking-icon">
+                    <!-- https://feathericons.dev/?search=package&iconset=feather -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                      class="main-grid-item-icon"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                     >
-                      <i class="ri-edit-box-line"></i>
-                      {{ "edit" | translate }} </span
-                    >}
-                  </ng-container>
-
-                  <ng-template #editQtyTemplate>
-                    <br />
-
-                    <div class="quantity quantity-w">
-                      <div class="quantity-price">
-                        <div
-                          class="cart_qty d-flex justify-content-between"
-                        >
-                          <div
-                            class="input-group border align-items-center"
-                            style="padding-left: 5px; padding-right: 5px"
-                          >
-                            <app-button
-                              [class]="'btn qty-left-minus'"
-                              [id]="'minus_quantity'"
-                              [spinner]="false"
-                              [type]="'button'"
-                              (click)="
-                                service.qty > 1 ? updateQty(service) : null
-                              "
-                            >
-                              <i class="ri-subtract-fill ms-0"></i>
-                            </app-button>
-                            <input
-                              style="margin-left: 0"
-                              class="form-control input-number qty-input bold border-0 text-center"
-                              type="text"
-                              name="quantity"
-                              value="{{ service.qty }}"
-                              readonly
-                            />
-
-                            <app-button
-                              [class]="
-                                'btn qty-right-plus btn btn-success btn-sm'
-                              "
-                              [id]="'plus_quantity'"
-                              [spinner]="false"
-                              [type]="'button'"
-                              (click)="
-                                service.beforeQty > 1
-                                  ? UpdateCustomerOrderDetail(
-                                      service,
-                                      service.qty
-                                    )
-                                  : (service.qty = service.beforeQty);
-                                service.isEditingQty = false
-                              "
-                            >
-                              {{ "Save" | translate }}
-                            </app-button>
-
-                            <app-button
-                              [class]="
-                                'btn qty-right-plus btn btn-success btn-sm'
-                              "
-                              [id]="'plus_quantity'"
-                              [spinner]="false"
-                              [type]="'button'"
-                              (click)="
-                                service.qty = service.beforeQty;
-                                service.isEditingQty = false
-                              "
-                            >
-                              {{ "Cancel" | translate }}
-                            </app-button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ng-template>
-                </div>
-              </li>
-       
-
-            @if(service.latestMessage){
-
-              <li class="Lastest Message">
-                <div class="size-box">
-
-                  <h6 class="text-content theme-colorTwo Regular">
+                      <line x1="16.5" x2="7.5" y1="9.4" y2="4.21" />
+                      <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                      />
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                      <line x1="12" x2="12" y1="22.08" y2="12" />
+                    </svg>
+                  </div>
+                  &nbsp;
+                  {{ "MyDashboard.MyServiceRequest.Order" | translate }}
+                  &nbsp;
+                  <h6 class="bold" style="color: #ff5b5b">{{ item.serial }}</h6>
+                  &nbsp;
+                </h4>
+                <h4 class="theme-colorTow Medium">
+                  <span
+                    style="background: var(--theme-color); padding-top: 10px"
+                  >
                     {{
-                      "MyDashboard.MyServiceRequest.LastestMessage"
+                      "MyDashboard.MyServiceRequest.OrderCreationDate"
                         | translate
                     }}
-                  </h6>
-                  <h5 class="mx-3">
-                    <!-- {{
-                      "MyDashboard.MyServiceRequest.Pleasesendyourabsher"
-                        | translate
-                    }} -->
-                    <!-- {{ "MyDashboard.MyServiceRequest.number" | translate }} -->
-                    {{ service.latestMessage }}
-                    &nbsp;
-                  </h5>
+                    :
 
-                  <h5 style="color: #809c73">
-                    {{ "MyDashboard.MyServiceRequest.at" | translate }}
-                    {{ service?.latestMessageDate | date : "dd/MM/yyyy" }}
-                  </h5>
+                    {{ item?.creationDate | date : "dd/MM/yyyy" }} </span
+                  ><span
+                    style="
+                      background: linear-gradient(
+                        90.56deg,
+                        var(--theme-Subcolor) 8.46%,
+                        var(--theme-Subcolor) 62.97%
+                      );
+                      padding-top: 10px;
+                    "
+                  >
+                    {{
+                      "MyDashboard.MyServiceRequest.OrderExecutionDate"
+                        | translate
+                    }}
+                    :
+
+                    {{ item?.date | date : "dd/MM/yyyy" }}</span
+                  >
+                </h4>
+                @if(item.voiceNoteUrl){
+
+                <h6 class="text-content theme-Subcolor Regular Order_Recording">
+                  <span class="Medium mx-3">
+                    {{
+                      "MyDashboard.MyServiceRequest.Order_Recording" | translate
+                    }}
+                  </span>
+                  <audio
+                    class="form- control"
+                    [src]="item.voiceNoteUrl | customPipeForImages"
+                    controls
+                  ></audio>
+                </h6>
+                } @if(item.comment ) {
+
+                <h6 class="text-content theme-Subcolor Regular">
+                  <span class="Medium mx-3">
+                    {{
+                      "MyDashboard.MyServiceRequest.OrderComment" | translate
+                    }}
+                  </span>
+                </h6>
+                <p class="overflow-hidden">
+                  {{ item.comment }}
+                </p>
+
+                }
+              </div>
+            </div>
+
+            @for(service of item.productRequestList; track service; let i =
+            $index){
+
+            <div
+              class="product-order-detail position-relative"
+              style="width: 100%"
+              [ngStyle]="{
+                cursor: service.statusId === 5 ? 'not-allowed' : 'pointer'
+              }"
+             
+            >
+              <div class="order-wrap"
+           >
+                <div class="order-container"
+                >
+                  <div class="order-detail orderP d-flex">
+                    <h4
+                      class="theme-colorTow Medium MySavingPackages"
+                      [routerLink]="
+                      service.statusId == 5
+                        ? null
+                        : [
+                            '/account/ServiceManagement/',
+                            service.orderServiceId,
+                            setPathDecodeURIComponent(service.name)
+                          ]
+                    "
+                    >
+                      <div class="order-tracking-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          class="main-grid-item-icon"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                        >
+                          <rect
+                            height="18"
+                            rx="2"
+                            ry="2"
+                            width="18"
+                            x="3"
+                            y="4"
+                          />
+                          <line x1="16" x2="16" y1="2" y2="6" />
+                          <line x1="8" x2="8" y1="2" y2="6" />
+                          <line x1="3" x2="21" y1="10" y2="10" />
+                        </svg>
+
+                        &nbsp;
+                      </div>
+                      {{ service.name }}
+                    </h4>
+                    <h4 class="theme-colorTow Ongoing">
+                      <span
+                        style="
+                          background: var(--theme-color);
+                          padding-top: 10px;
+                        "
+                      >
+                        {{ service.status }} </span
+                      ><span class="payment-bg" style="padding-top: 10px">
+                        @if(service.statusPayment){
+                        {{
+                          "MyDashboard.MyServiceRequest.CashPayment" | translate
+                        }}
+                        } @if(!service.statusPayment) {
+                        {{
+                          "MyDashboard.MyServiceRequest.PointsPayment"
+                            | translate
+                        }}
+                        } @if(service.statusId==statusEnum.New){
+
+                        <span
+                        class="delete"
+                        style="background: red; z-index: 999;"
+                          [id]="'remove_address' + service.id"
+                          (click)="
+                            ConfirmationCancelModal.openModal('cancel', service)
+                          "
+                        >
+                          <i class="ri-delete-bin-line"></i>
+                          {{ "Cancel" | translate }}
+                        </span>
+                        }
+                      </span>
+                    </h4>
+                  </div>
                 </div>
-              </li>
-              }
-            
-              <!-- <li>
-                <div class="size-box">
-                  <h6 class="text-content Medium">
-                    {{ "MyDashboard.MyBundle.form.Points" | translate }} :
-                  </h6>
-                  <h5>
-                    <span class="bold theme-colorTwo">{{ bundle.points }} </span>
+                <p
+                [routerLink]="
+                service.statusId == 5
+                  ? null
+                  : [
+                      '/account/ServiceManagement/',
+                      service.orderServiceId,
+                      setPathDecodeURIComponent(service.name)
+                    ]
+              "
+                  class="text-content theme-color description"
+                  [innerHTML]="service.description | truncate: 3000"
+                ></p>
+                <ul class="product-size">
+                  <li>
+                    <div class="size-box detail">
+                      <h6 class="text-content theme-colorTow Regular">
+                        {{
+                          "MyDashboard.MyServiceRequest.Category" | translate
+                        }}
+                      </h6>
+                      <h5
+                        class="theme-colorTow Medium mx-2"
+                        [routerLink]="
+                      service.statusId == 5
+                        ? null
+                        : [
+                            '/account/ServiceManagement/',
+                            service.orderServiceId,
+                            setPathDecodeURIComponent(service.name)
+                          ]
+                    "
+                      >
+                        {{ service.categoryName }}
+                      </h5>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="size-box detail">
+                      <ng-container
+                        *ngIf="!service.isEditingQty; else editQtyTemplate"
+                      >
+                        <h6 class="text-content theme-colorTow Regular">
+                          {{ "MyDashboard.MyServiceRequest.Qty" | translate }}
+                        </h6>
+                        <h5 class="theme-colorTow bold mx-2">
+                          {{ service.qty }}
+                        </h5>
+                        @if(service.statusId==statusEnum.New){
+                        <span
+                          class="editInline"
+                          style="
+                            background-color: var(--theme-color);
+                            cursor: pointer;
+                          "
+                          (click)="
+                            service.isEditingQty = true;
+                            service.beforeQty = service.qty
+                          "
+                        >
+                          <i class="ri-edit-box-line"></i>
+                          {{ "edit" | translate }} </span
+                        >}
+                      </ng-container>
+
+                      <ng-template #editQtyTemplate>
+                        <br />
+
+                        <div class="quantity quantity-w">
+                          <div class="quantity-price">
+                            <div
+                              class="cart_qty d-flex justify-content-between"
+                            >
+                              <div
+                                class="input-group border align-items-center"
+                                style="padding-left: 5px; padding-right: 5px"
+                              >
+                                <app-button
+                                  [class]="'btn qty-left-minus'"
+                                  [id]="'minus_quantity'"
+                                  [spinner]="false"
+                                  [type]="'button'"
+                                  (click)="
+                                    service.qty > 1 ? updateQty(service) : null
+                                  "
+                                >
+                                  <i class="ri-subtract-fill ms-0"></i>
+                                </app-button>
+                                <input
+                                  style="margin-left: 0"
+                                  class="form-control input-number qty-input bold border-0 text-center"
+                                  type="text"
+                                  name="quantity"
+                                  value="{{ service.qty }}"
+                                  readonly
+                                />
+
+                                <app-button
+                                  [class]="
+                                    'btn qty-right-plus btn btn-success btn-sm'
+                                  "
+                                  [id]="'plus_quantity'"
+                                  [spinner]="false"
+                                  [type]="'button'"
+                                  (click)="
+                                    service.beforeQty > 1
+                                      ? UpdateCustomerOrderDetail(
+                                          service,
+                                          service.qty
+                                        )
+                                      : (service.qty = service.beforeQty);
+                                    service.isEditingQty = false
+                                  "
+                                >
+                                  {{ "Save" | translate }}
+                                </app-button>
+
+                                <app-button
+                                  [class]="
+                                    'btn qty-right-plus btn btn-success btn-sm'
+                                  "
+                                  [id]="'plus_quantity'"
+                                  [spinner]="false"
+                                  [type]="'button'"
+                                  (click)="
+                                    service.qty = service.beforeQty;
+                                    service.isEditingQty = false
+                                  "
+                                >
+                                  {{ "Cancel" | translate }}
+                                </app-button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </div>
+                  </li>
+
+               
                    
-                    <span id="sar"  class=" theme-colorTwo">  {{ "MyDashboard.MyBundle.form.Point" | translate }}</span>
-                  </h5>
-                </div>
-              </li> -->
-            </ul>
+                  @if(service.resultUrl){
+
+                    <li>
+                      <div class="size-box detail">
+                        <h6 class="text-content theme-colorTow Regular">
+                          {{ "Link" | translate }}
+                        </h6>
+                        <a
+                          target="_blank"
+                          [href]="service.resultUrl | customPipeForImages"
+                          class="theme-colorTow Medium mx-2"
+                        >
+                          {{ "clickToPreview" | translate }}
+                        </a>
+                      </div>
+                    </li>
+                    } 
+                     @if(service.statusComment){
+
+                  <li>
+                    <div class="size-box detail">
+                      <h6 class="text-content theme-colorTow Regular">
+                        {{
+                          "MyDashboard.MyServiceRequest.Category" | translate
+                        }}
+                      </h6>
+                      <h5 class="theme-colorTow Medium mx-2">
+                        {{ service.statusComment }}
+                      </h5>
+                    </div>
+                  </li>
+                  } @if(service.statusReason){
+
+                  <li>
+                    <div class="size-box detail">
+                      <h6 class="text-content theme-colorTow Regular">
+                        {{
+                          "MyDashboard.MyServiceRequest.Category" | translate
+                        }}
+                      </h6>
+                      <h5 class="theme-colorTow Medium mx-2">
+                        {{ service.statusReason }}
+                      </h5>
+                    </div>
+                  </li>
+                  }
+                </ul>
+              </div>
+            </div>
+        }
           </div>
         </div>
+        <br /><br />
+
+        } @if(CustomerOrderServiceRequest&& CustomerOrderServiceRequest.length){
+        <nav class="custome-pagination">
+          <app-pagination
+            [total]="totalCount || 0"
+            [currentPage]="filter['page']"
+            [pageSize]="filter['paginate']"
+            (setPage)="setPaginate($event)"
+          >
+          </app-pagination>
+        </nav>
+        }
       </div>
     </div>
-    }
-    <br /><br />
 
-    @if(CustomerOrderServiceRequest&& CustomerOrderServiceRequest.length){
-    <nav class="custome-pagination">
-      <app-pagination
-        [total]="totalCount || 0"
-        [currentPage]="filter['page']"
-        [pageSize]="filter['paginate']"
-        (setPage)="setPaginate($event)"
-      >
-      </app-pagination>
-    </nav>
-    }
     @if(!CustomerOrderServiceRequest){
-      <app-no-data
-        [class]="'no-data-added'"
-        [image]="'assets/svg/empty-items.svg'"
-        [text]="'no_CustomerServiceRequest_found'"
-        [description]="
-          'MyDashboard.MyServiceRequest.no_CustomerServiceRequest_have_yet'
-        "
-      >
-      </app-no-data>
-      }
+    <app-no-data
+      [class]="'no-data-added'"
+      [image]="'assets/svg/empty-items.svg'"
+      [text]="'no_CustomerServiceRequest_found'"
+      [description]="
+        'MyDashboard.MyServiceRequest.no_CustomerServiceRequest_have_yet'
+      "
+    >
+    </app-no-data>
+    }
   </div>
-
 </div>
 
 <app-confirmation-cancel

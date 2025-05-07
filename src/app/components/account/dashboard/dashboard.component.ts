@@ -40,32 +40,32 @@ export class DashboardComponent implements OnInit {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     if (this.isBrowser && this.AuthService.getToken()) {
-      this._dashboardService.subscription.add(
-        this._dashboardService
-          .get<IGetProfileLocalized>(API_ENDPOINTS.Customer.GetProfileLocalized)
-          .subscribe(
-            (data) => {
-              this.Customer = data;
-            },
-            (error) => {
-              console.error("Error fetching data", error);
-            }
-          )
-      );
-      this._dashboardService.subscription.add(
-        this._dashboardService
-          .get<ICustomerDashboardStatus>(
-            API_ENDPOINTS.Customer.CustomersPointBalance
-          )
-          .subscribe(
-            (data) => {
-              this.customerDashboardStatus = data;
-            },
-            (error) => {
-              console.error("Error fetching data", error);
-            }
-          )
-      );
+      // this._dashboardService.subscription.add(
+      //   this._dashboardService
+      //     .get<IGetProfileLocalized>(API_ENDPOINTS.Customer.GetProfileLocalized)
+      //     .subscribe(
+      //       (data) => {
+      //         this.Customer = data;
+      //       },
+      //       (error) => {
+      //         console.error("Error fetching data", error);
+      //       }
+      //     )
+      // );
+      // this._dashboardService.subscription.add(
+      //   this._dashboardService
+      //     .get<ICustomerDashboardStatus>(
+      //       API_ENDPOINTS.Customer.CustomersPointBalance
+      //     )
+      //     .subscribe(
+      //       (data) => {
+      //         this.customerDashboardStatus = data;
+      //       },
+      //       (error) => {
+      //         console.error("Error fetching data", error);
+      //       }
+      //     )
+      // );
     }
   }
   //start code ssr
