@@ -5,7 +5,7 @@ export const api ="https://dodgegymdev.runasp.net" //test
 
 //  export const baseURL= 'http://localhost:4200' //Devolpment
 // export const baseURL= 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net' // live
-export const baseURL= 'httpshttps://dodge-gym.vercel.app' //  Test 
+export const baseURL= 'https://dodge-gym.vercel.app' //  Test 
 
 
  
