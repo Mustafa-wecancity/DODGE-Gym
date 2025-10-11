@@ -54,12 +54,11 @@ export interface  IBundleForCustomer
 }
  
 export interface GetCustomerBundlePurchasesDto {
-  customerBundleId: number;
-  bundleName: string;
+  id: number;
   serial: string;
-  bundleId: number;
-  quantity: number;
-  purchasedDate: Date;
+  productCount: number; 
+  srviceCancel: number; 
+  creationDate: Date;
   price: number;
   priceAfterDiscount: number;
   totalPrice: number;

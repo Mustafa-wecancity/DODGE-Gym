@@ -9,7 +9,7 @@ export interface GetServiceRequest {
   categoryName: string;
   description: string;
   serviceRequestDate: string;
-  orderServiceId: number;
+  orderProductId: number;
   latestMessage: string;
   latestMessageDate: string;
   statusReason: string;
@@ -18,6 +18,8 @@ export interface GetServiceRequest {
   attachments: boolean;
   serviceRequestCode: string;
   isNew: boolean;
+  isCancel: boolean; 
+  canCancel: boolean; 
   isEditingQty: boolean;
   beforeQty: number;
   statusId: number;
@@ -33,8 +35,7 @@ export interface CustomerOrderServiceRequest {
   qty: number;
   date: string;
   voiceNoteUrl: string;
-  savingPackageTitle: string;
-  productRequestList: GetServiceRequest[];
+   productRequestList: GetServiceRequest[];
 }
 
 export interface ITopBarContent {

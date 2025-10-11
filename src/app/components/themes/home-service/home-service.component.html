@@ -1,6 +1,6 @@
 @if(browserOnlyService.isBrowser()&&isLoadingHomeData) {
 
-<div class="bg- effect" style="    background-color: #160303;">
+<div class="bg- effect" >
   <!-- Home Section Start -->
   @if(Ads){
   <section class="home-section pt -2 mb-5" id="ads">
@@ -58,9 +58,9 @@
             <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
               <div class="p-sticky">
                 <!-- Sidebar Category Vertical Style -->
-                <ng-container>
+                <!-- <ng-container>
                   <app-categories-home [style]="'vertical'"> </app-categories-home>
-                </ng-container>
+                </ng-container> -->
                 <!-- Sidebar Vertical Banner -->
     
                 @if(Ads[4]){
@@ -100,6 +100,11 @@
     >
           <!-- [description]="'Home.header.sup_Title_MostOrderedServices'" -->
        
+          <div>
+            <ng-container>
+              <app-categories-home [style]="'horizontal'" [sliderOption]="categorySlider"> </app-categories-home>
+            </ng-container>
+          </div>
           <div>
             <app-title [title]="'Home.header.Trending-Services'"> </app-title>
             <div
@@ -282,7 +287,7 @@
           <!-- Banner Section End -->
 
           <section
-            class="fresh-vegetable-section section- lg-space"
+            class="fresh-vegetable-section section- lg-space mt-3"
             id="values"
             appLazyLoadSection
             (sectionInView)="valuesParent = $event"
@@ -322,12 +327,12 @@
                   </div>
                 </div>
                 }
-                <div class="col-xl-6 col-12">
+                <div class="col-xl-6 col-12 mt-3">
                   <div class="fresh-contain p-center-left">
                     <div>
                       <div class="review-title">
                         <h4 class="bold  theme-colorTwo">
-                          {{ "values. DODGE-GymValues" | translate }}
+                          {{ "values. AG - TradeValues" | translate }}
                         </h4>
                         <h2
                           class="Empowering SemiBold theme-color"

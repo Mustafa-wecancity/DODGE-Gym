@@ -8,7 +8,6 @@ export const api ="https://dodgegymdev.runasp.net" //test
 export const baseURL= 'httpshttps://dodge-gym.vercel.app' //  Test 
 
 
-
  
 
 
@@ -16,6 +15,8 @@ export const baseURL= 'httpshttps://dodge-gym.vercel.app' //  Test
 // For Image form server
 // export const api_ ="https://localhost:44374" //test
  export const api_ ="https://dodgegymdev.runasp.net"  //live
+
+
 
 export const environment = {
   production: false,

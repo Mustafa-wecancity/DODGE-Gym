@@ -10,11 +10,16 @@ import { changeEnvProd } from '../../../../../../environments/environment';
 import { LocalizationLanguageService } from '../../../../Api-Services/localization-language.service';
 import { TranslationService } from '../../../../Api-Services/translation.service';
 import { PublicService } from '../../../../Api-Services/public.service';
+import { LangList } from '../../../../interface/Models/chat/chat.model';
+import { GenericService } from '../../../../Api-Services/generic.service';
+import { API_ENDPOINTS } from '../../../../Api-Services/API_ENDPOINTS';
+import { CustomPipeForImagesPipe } from '../../../../pipe/custom-pipe-for-images-pipe.pipe';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-language',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CustomPipeForImagesPipe,NgbDropdownModule],
   templateUrl: './language.component.html',
   styleUrl: './language.component.scss'
 })
@@ -50,7 +55,9 @@ export class LanguageComponent {
   public _layout: LayoutService,
   private _LocalizationLanguageService: LocalizationLanguageService,
   public translationService: TranslationService,
-  private publicService: PublicService) {
+  private publicService: PublicService, 
+  private ApiServices: GenericService,) {
+    this.getLang()
     // this.selectLanguage(this.selectedLanguage)
     // this.init();
   }
@@ -175,7 +182,30 @@ export class LanguageComponent {
     }
   
     chnageLanguage(lang: any): void {
+      console.log(lang)
       this._LocalizationLanguageService.updatePathAccordingLang(lang);
       this.translationService.changeLang(lang);
+      this.currentLanguage=lang
     }
+
+    
+    public langList!: LangList[];
+      getLang() {
+            this.ApiServices.subscription.add(
+      this.ApiServices
+        .getAll<LangList>(API_ENDPOINTS.Lang.Get)
+
+        .subscribe(
+          (response) => {
+            this.langList = response;
+            // response?.map(cn => {
+            //   return { label: cn?.name, value: cn?.id }
+            // });
+          },
+          (error) => {
+            console.error("Error fetching data", error);
+          }
+        )
+    );
+  }
 }

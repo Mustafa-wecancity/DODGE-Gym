@@ -93,23 +93,19 @@
               {{ "MyDashboard.MyOrder.orderNumber" | translate }}
               <i class="fa-solid fa-sort  "></i>
             </th>
-            <th scope="col"
-            (click)="sortBy('bundlename')">
-              {{ "MyDashboard.MyOrder.bundleName" | translate }}
-              <i class="fa-solid fa-sort  "></i>
-            </th>
+          
             <th scope="col" (click)="sortBy('qty')">
               {{ "MyDashboard.MyOrder.quantity" | translate }}
               <i class="fa-solid fa-sort  "></i>
             </th>
             <!-- <th  class="Medium theme-colorTwo ">{{ "MyDashboard.MyOrder.Tax" | translate }}</th> -->
 
-            <th scope="col"
+            <!-- <th scope="col"
             (click)="sortBy('subsotal')">
               {{ "MyDashboard.MyOrder.bundlePrice" | translate }}
               <i class="fa-solid fa-sort  "></i>
 
-            </th>
+            </th> -->
             <th scope="col" class="Medium theme-colorTwo"
             (click)="sortBy('creationdate')"
             >
@@ -126,7 +122,7 @@
             </th>
             <th
               scope="col"
-              class="Medium theme-colorTwo"
+              class="Medium theme-colorTwo d-none"
               (click)="sortBy('totalAmount')"
             >
               {{ "MyDashboard.MyOrder.totalAmount" | translate }}
@@ -157,31 +153,31 @@
           @if(Orders&&Orders.length){ @for(order of Orders; track order; let i =
           $index){
           <tr
-            [routerLink]="['/account/order/details/', order.customerBundleId]"
+            [routerLink]="['/account/order/details/', order.id]"
           >
             <td
-              [routerLink]="['/account/order/details/', order.customerBundleId]"
+              [routerLink]="['/account/order/details/', order.id]"
             >
               <span class="theme-colorTwo Medium">{{order.serial}}</span>
             </td>
-            <td class="theme-colorTwo Medium">{{ order?.bundleName }}</td>
             <td class="theme-colorTwo Medium">
               <label class="success theme-colorTwo"
-                >{{ order?.quantity }}
-                {{ "MyDashboard.MyOrder.bundles" | translate }}</label
-              >
-              <span  class="bold mx-1 d-block "> {{ "MyDashboard.MyOrder.Tax" | translate }}  <span  class="bold mx-1   theme-color">{{ order?.tax  }}</span>     <span id="sar"> {{ "SAR" | translate }}</span>
+                >{{ order?.productCount }}
+                {{ "MyDashboard.MyOrder.quantity" | translate }}</label
+              >            <span  class="bold mx-1 d-block "> {{ "Srvice Cancel" | translate }}  <span  class="bold mx-1   theme-color">{{ order?.srviceCancel  }}</span>    
             </span>
+              <!-- <span  class="bold mx-1 d-block "> {{ "MyDashboard.MyOrder.Tax" | translate }}  <span  class="bold mx-1   theme-color">{{ order?.tax  }}</span>     <span id="sar"> {{ "SAR" | translate }}</span>
+            </span> -->
 
             </td>
-            <!-- <td class="theme-color Regular d-block" [routerLink]="['/account/order/details/', order.customerBundleId]">
+            <!-- <td class="theme-color Regular d-block" [routerLink]="['/account/order/details/', order.id]">
               <span  class="bold mx-1 d-block"> {{ "MyDashboard.MyOrder.Tax" | translate }} {{ order?.tax  }}    <span id="sar"> {{ "SAR" | translate }}</span>
             </span>
             </td> -->
 
-            <td
+            <!-- <td
               class="theme-colorTwo Regular"
-              [routerLink]="['/account/order/details/', order.customerBundleId]"
+              [routerLink]="['/account/order/details/', order.id]"
             >
               <h5>
                 <span class="bold mx-1 "> {{ order?.priceAfterDiscount }} </span>
@@ -190,20 +186,21 @@
                   {{ order?.price }} {{ "SAR" | translate }}</del
                 >
               </h5>
-            </td>
+            </td> -->
 
             <td
               class="theme-colorTwo Medium"
-              [routerLink]="['/account/order/details/', order.customerBundleId]"
+              [routerLink]="['/account/order/details/', order.id]"
             >
-              {{ order?.purchasedDate | date : "dd/MM/yyyy" }}
+            {{ order?.creationDate | date : "dd/MM/yyyy" }}
+
             </td>
             <td>
-              <label class="success">Success</label>
+              <label class="success theme-colorTwo Medium">{{ order?.status  }}</label>
             </td>
             <td
-              class="theme-colorTwo Regular"
-              [routerLink]="['/account/order/details/', order.customerBundleId]"
+              class="theme-colorTwo Regular d-none"
+              [routerLink]="['/account/order/details/', order.id]"
             >
               <h5>
                 <span class="bold mx-1">
@@ -219,7 +216,7 @@
    
             <td
               class="theme-colorTwo Regular"
-              (click)="navigateWithEncryptedData(order.customerBundleId)"
+              (click)="navigateWithEncryptedData(order.id)"
             >
               <i class="fa-solid fa-file"></i> {{ "report" | translate }}
             </td>

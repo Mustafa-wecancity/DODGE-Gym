@@ -135,7 +135,7 @@
 //       this.updateDefaultSeo();
 //     }
 
-//     this.titleService.setTitle(' DODGE-Gym')
+//     this.titleService.setTitle(' AG - Trade')
 
 //   }
 
@@ -186,7 +186,7 @@
 //         ? `${this.themeOption?.general?.site_title} | ${this.themeOption?.general?.site_tagline}` : '')
 //     }
 
-//     this.titleService.setTitle(' DODGE-Gym')
+//     this.titleService.setTitle(' AG - Trade')
 //   }
  
 //   customSCO(){

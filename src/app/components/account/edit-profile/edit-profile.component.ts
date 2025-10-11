@@ -27,6 +27,7 @@ import { environment } from "../../../../environments/environment.development";
 import { BaseComponent } from "../../../shared/components/base/base.component";
 import { UserService } from "../../../shared/Api-Services/user.service";
 import { ErrorService } from "../../../shared/services/error.service";
+import { IServiceType } from "../../../shared/interface/Models/iads";
 
 @Component({
   selector: "app-edit-profile",
@@ -41,7 +42,7 @@ import { ErrorService } from "../../../shared/services/error.service";
   styleUrl: "./edit-profile.component.scss",
 })
 export class EditProfileComponent extends BaseComponent {
- 
+
   
   public form: FormGroup;
   public closeResult: string;
@@ -75,6 +76,8 @@ export class EditProfileComponent extends BaseComponent {
 
  
       this.getProfile();
+      this.getServiceType();
+
     }
     // console.log(this.sidebarComponent.customerData)
   }
@@ -95,13 +98,16 @@ export class EditProfileComponent extends BaseComponent {
     this.form = this.formBuilder.group({
       fullName: [Profile?.fullName || "", [Validators.required]],
       imagePath: [Profile?.image || ""],
+      regionId: [Profile?.regionId || "", [Validators.required]],
+      countryId: [Profile?.countryId || "", [Validators.required]],
       genderId: [Profile?.genderId || "", [Validators.required]],
+      serviceTypeId: [Profile?.serviceTypeId || "", [Validators.required]],
 
       email: [
         Profile?.email || "",
         [Validators.required, Validators.pattern(EmailPattern)],
       ],
-      birthDate: [Profile?.birthDate?.toString().slice(0, 10) || "", [Validators.required]],
+      birthDate: [Profile?.birthDate?.toString().slice(0, 10) || ""],
    
     });
   }
@@ -109,6 +115,49 @@ export class EditProfileComponent extends BaseComponent {
   get fc() {
     return this.form.controls;
   }
+  public ServiceTypes: IServiceType[] = [];
+  public countries: GetCityForList[] = [];
+  getServiceType(){
+    this._CustomerProfile.subscription.add(
+      this._CustomerProfile.getAll<IServiceType>(
+        API_ENDPOINTS.ServiceType.GetAllForList
+      ).subscribe((res) => {
+         this.ServiceTypes = res;
+      })
+    );
+
+    this._CustomerProfile.subscription.add(
+      this._CustomerProfile.getAll<GetCityForList>(
+        API_ENDPOINTS.Lookups.GetCountry
+      ).subscribe((res) => {
+         this.countries = res;
+      })
+    );
+    
+  }
+  region :GetCityForList[]=[]
+  ChangRegione() {
+    this.region=[]
+    this.fc['regionId'].setValue('');
+    if( this.fc['countryId'].value !=null|| this.fc['countryId'].value>0)
+      this.getRegion()
+  }
+   
+  getRegion(){
+    const params = {countryId :this.fc['countryId'].value}
+
+    this._CustomerProfile.subscription.add(
+      this._CustomerProfile.getAll<GetCityForList>(
+        API_ENDPOINTS.Region.GetAllForList,params
+      ).subscribe((res) => {
+         this.region = res;
+      })
+    );
+    
+  
+  }
+ 
+  
   private getProfile() {
     this._CustomerProfile.subscription.add(
       this._CustomerProfile
@@ -116,6 +165,7 @@ export class EditProfileComponent extends BaseComponent {
         .subscribe(
           (response) => {
             this.init(response);
+            this.getRegion()
             this.imageLogo =
               environment.serverFirstHalfOfImageUrl + response["image"];
            },

@@ -10,6 +10,7 @@ import { TranslationService } from './translation.service';
 })
 export class LocalizationLanguageService {
   private currentLanguage: string;
+  private readonly validSegments: string[] = ['ar', 'en','de'];
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -29,13 +30,13 @@ export class LocalizationLanguageService {
     const currentUrl = this.getCurrentUrl();
     const currentUrlSegments = currentUrl.startsWith('/') ? currentUrl.substring(1).split('/') : currentUrl.split('/');
     // if (lang) {
-    //   if (['ar', 'en'].includes(lang)) {
+    //   if (this.validSegments.includes(lang)) {
     //     currentUrlSegments[0] = lang;
     //   } else {
     //     currentUrlSegments.unshift(this.getCurrentLanguage());
     //   }
     // } else {
-    //   if (['ar', 'en'].includes(currentUrlSegments[0])) {
+    //   if (this.validSegments.includes(currentUrlSegments[0])) {
     //     this._TranslationService.changeLang(currentUrlSegments[0]);
     //   } else {
     //     currentUrlSegments.unshift(this.getCurrentLanguage());
@@ -51,13 +52,13 @@ export class LocalizationLanguageService {
     const currentUrlSegments = currentUrl.startsWith('/') ? currentUrl.substring(1).split('/') : currentUrl.split('/');
     console.log(currentUrl)
     if (lang) {
-      if (['ar', 'en'].includes(lang)) {
+      if (this.validSegments.includes(lang)) {
         currentUrlSegments[0] = lang;
       } else {
         currentUrlSegments.unshift(this.getCurrentLanguage());
       }
     } else {
-      if (['ar', 'en'].includes(currentUrlSegments[0])) {
+      if (this.validSegments.includes(currentUrlSegments[0])) {
         // currentUrlSegments[0] = this.getCurrentLanguage();
         this._TranslationService.changeLang(currentUrlSegments[0]);
       } else {

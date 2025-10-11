@@ -10,8 +10,8 @@
                      [ngClass]="{'is-focus': selectedCategory == category.id}"  (click)="selectCategory(category.id)"
                      >
                         <!-- [class.active]="selectedCategorySlug.length && selectedCategorySlug.includes(category.slug!)" -->
-                        <img [src]="image ? image : 'assets/images/shape.png'" class="background-image" [alt]="category?.title">
-                        <img [src]="category.imagePath|customPipeForImages" [alt]="category.title">
+                        <!-- <img [src]="image ? image : 'assets/images/shape.png'" class="background-image" [alt]="category?.title"> -->
+                        <img  [src]="category.imagePath ? (category.imagePath |customPipeForImages): 'assets/images/category.png'" [alt]="category.title">
                      
                         <h6 class="mt-4 Medium theme-colorTwo">{{ category.title }}</h6>
                      </a>

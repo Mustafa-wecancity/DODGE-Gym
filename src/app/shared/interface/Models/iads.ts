@@ -5,3 +5,10 @@ export interface IAds {
   adUrl: string
  
 }
+
+export interface IServiceType {
+  id: number,
+  title: string,
+ 
+ 
+}

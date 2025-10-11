@@ -97,13 +97,12 @@ export class CollectionCategoryFilterComponent {
 
     this.categoryService.subscription.add(
       this.categoryService
-        .create<GenericResponse<ICategoryAndServices[]>, any>(
-          API_ENDPOINTS.Category.GetAllCategoryParentAndChilde,
-          {}
+        .getAll<ICategoryAndServices>(
+          API_ENDPOINTS.Category.GetAllCategoryParentAndChilde
         )
-        .subscribe(
+      .subscribe(
           (data) => {
-            this.Categories = data.data;
+            this.Categories = data;
             // if( !this.selectedCategory && this.mainCategoryId  )
             //   this.selectedCategory= this.mainCategoryId;
           },

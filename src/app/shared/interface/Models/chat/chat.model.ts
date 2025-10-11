@@ -20,3 +20,11 @@ export interface IMessage {
   sendByProvider?: boolean;
   comment: string;
 }
+
+
+
+export interface LangList {
+  lang: string
+  flag: string
+  id: number
+}

@@ -31,27 +31,21 @@
             <span>  {{ 'my_account' | translate }}</span>
          </a>
       </li>
-      <li [class.active]="'/BundleList' === active">
-         <a   [routerLink]="['/BundleList']" (click)="opneCanvasMenu()">
-     
-            <i class="ri-bubble-chart-line me-2"></i>
-            <span>  {{ 'Nav.Bundles' | translate }}</span>
-         </a>
-      </li>
-      <!-- <li [class.active]="'wishlist' === active">
+ 
+       <li [class.active]="'wishlist' === active">
          <a   [routerLink]="['/wishlist']" (click)="activeMenu('/wishlist')">
             <i class="ri-heart-3-line deactivated"></i>
             <i class="ri-heart-3-fill activated"></i>
             <span>{{'Nav.wishlist' |translate}}</span>
          </a>
-      </li>
+      </li> 
       <li [class.active]="'cart' === active">
          <a   [routerLink]="['/cart']">
             <i class="fly-cate ri-shopping-bag-line deactivated"></i>
             <i class="fly-cate ri-shopping-bag-fill activated"></i>
             <span> {{'Nav.Cart' |translate}}</span>
          </a>
-      </li> -->
+      </li>
 
    </ul>
 </div>

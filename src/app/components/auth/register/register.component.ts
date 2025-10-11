@@ -25,6 +25,8 @@ import { GenericResponse } from "../../../shared/interface/Models/generic-respon
 import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { SeoV2Service } from "../../../shared/services/seo-v2.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { IServiceType } from "../../../shared/interface/Models/iads";
 
 @Component({
   selector: "app-register",
@@ -37,7 +39,7 @@ import { PublicService } from "../../../shared/Api-Services/public.service";
     RouterModule,
     ButtonComponent,
     OnlyNumbersDirective,
-    NgbTooltip,
+    NgbTooltip,NgSelectModule
   ],
   templateUrl: "./register.component.html",
   styleUrl: "./register.component.scss",
@@ -62,9 +64,16 @@ export class RegisterComponent {
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     this.seo();
-
+this.getServiceType();
     this.form = this.formBuilder.group(
       {
+        serviceTypeId: [
+          "",
+          [
+            Validators.required,
+           
+          ],
+        ],
         mobile: [
           "",
           [
@@ -145,6 +154,16 @@ export class RegisterComponent {
             this._registerervice.submit = true;
           }
         )
+    );
+  }
+  public ServiceTypes: IServiceType[] = [];
+  getServiceType(){
+    this._registerervice.subscription.add(
+      this._registerervice.getAll<IServiceType>(
+        API_ENDPOINTS.ServiceType.GetAllForList
+      ).subscribe((res) => {
+         this.ServiceTypes = res;
+      })
     );
   }
 

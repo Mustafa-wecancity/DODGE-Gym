@@ -47,6 +47,9 @@ import { BrowserOnlyService } from "../../../shared/Api-Services/browser-only.se
 import { AuthService } from "../../../shared/services/auth.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { CustomPipeForImagesPipe } from "../../../shared/pipe/custom-pipe-for-images-pipe.pipe";
+import { GetCityForList } from "../../../shared/interface/Models/City/CityModel";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { OnlyNumbersDirective } from "../../../shared/directive/only-numbers.directive";
 
 @Component({
   selector: "app-cart",
@@ -58,7 +61,7 @@ import { CustomPipeForImagesPipe } from "../../../shared/pipe/custom-pipe-for-im
     ReactiveFormsModule,
     FormsModule,
     CurrencySymbolPipe,
-
+    OnlyNumbersDirective,
     ButtonComponent,
     NoDataComponent,
 
@@ -67,7 +70,8 @@ import { CustomPipeForImagesPipe } from "../../../shared/pipe/custom-pipe-for-im
     // ,NgxMicRecorderModule
     NgbTooltip,
     DeleteModalComponent,
-    CustomPipeForImagesPipe
+    CustomPipeForImagesPipe, 
+    NgSelectModule
   ],
   providers: [
     { provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter },
@@ -166,6 +170,7 @@ export class CartComponent extends BaseComponent {
 
   GetAll(): void {
     this.GetCartDetailsDetail();
+    this.GetCountry();
   }
 
   get fc() {
@@ -200,6 +205,11 @@ export class CartComponent extends BaseComponent {
             voiceNote: this.CustomerCart?.voiceNote,
             couponId: this.CustomerCart?.couponId,
             comment: this.CustomerCart?.comment,
+            countryId: this.CustomerCart?.countryId,
+            regionId: this.CustomerCart?.regionId,
+            postalCode: this.CustomerCart?.postalCode,
+            address: this.CustomerCart?.address,
+            city: this.CustomerCart?.city,
           };
           this.coupon.set(this.CustomerCart?.couponCode ?? "");
           if (form) {
@@ -406,10 +416,12 @@ export class CartComponent extends BaseComponent {
           ? environment.serverFirstHalfOfImageUrl + row?.voiceNote
           : row?.voiceNote || "",
       ],
-      executionDate: [
-        row?.executionDate?.slice(0, 10) || "",
-        Validators.required,
-      ],
+ 
+      countryId: [row?.countryId || "", [Validators.required]],
+      regionId: [row?.regionId || "", [Validators.required]],
+      postalCode: [row?.postalCode || "", [Validators.required]],
+      address: [row?.address || "", [Validators.required]],
+      city: [row?.city || "", [Validators.required]],
     });
   }
 
@@ -470,16 +482,17 @@ export class CartComponent extends BaseComponent {
   browserOnlyService = inject(BrowserOnlyService);
 
   ConfirmCheckout() {
-    if (this.isBrowser) {
+    this.CartForm.markAllAsTouched();
+    if (this.isBrowser&& this.CartForm.valid) {
       this.publicService.isLoading.next(true);
-      const params = {
-        Comment:this.fc['comment'].value,
-      }
+      // const params = {
+      //   Comment:this.fc['comment'].value,
+      // }
 
       this.CartDetails.subscription.add(
         this.CartDetails.create<any, any>(
           API_ENDPOINTS.Cart.CreateOrder,
-          params
+          this.CartForm.getRawValue()
         ).subscribe(
           (res) => {
              const data =res.data
@@ -533,4 +546,40 @@ export class CartComponent extends BaseComponent {
      return path.replace(/[ .]/g, '-'); // Replace spaces with underscores
   
   }
+
+
+ 
+  public countries: GetCityForList[] = [];
+  GetCountry(){
+ 
+
+    this.CartDetails.subscription.add(
+      this.CartDetails.getAll<GetCityForList>(
+        API_ENDPOINTS.Lookups.GetCountry
+      ).subscribe((res) => {
+         this.countries = res;
+      })
+    );
+    
+  }
+  region :GetCityForList[]=[]
+  ChangRegione() {
+    this.region=[]
+    this.fc['regionId'].setValue('');
+    if( this.fc['countryId'].value !=null|| this.fc['countryId'].value>0)
+      this.getRegion()
+  }
+   
+  getRegion(){
+    const params = {countryId :this.fc['countryId'].value}
+    this.CartDetails.subscription.add(
+      this.CartDetails.getAll<GetCityForList>(
+        API_ENDPOINTS.Region.GetAllForList, params
+      ).subscribe((res) => {
+         this.region = res;
+      })
+    );
+  }
+  
+
 }

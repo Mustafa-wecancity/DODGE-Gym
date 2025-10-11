@@ -28,7 +28,6 @@ import { interval, takeWhile } from "rxjs";
 import { GenericResponse } from "../../../shared/interface/Models/generic-response";
 import { isPlatformBrowser } from "@angular/common";
 import { SeoV2Service } from "../../../shared/services/seo-v2.service";
-import { LayoutService } from "../../../shared/Layout/layout.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { NgOtpInputComponent, NgOtpInputConfig, NgOtpInputModule } from 'ng-otp-input';
 import { ErrorService } from "../../../shared/services/error.service";
@@ -126,10 +125,11 @@ export class OtpComponent {
           this.showSendOtp = false;
           if (res.success && res.data["otp"]) {
             this.showOtp = true;
-         
 
             this.otp = res.data["otp"];
             this.fc["otp"].setValue(res.data["otp"].toString());
+            this.ngOtpInput?.setValue(res.data["otp"].toString())
+
             this.time = res.data["secondsCount"];
             this.showSendOtp = false;
 

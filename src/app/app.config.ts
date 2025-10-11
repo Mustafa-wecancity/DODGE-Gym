@@ -61,7 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
     http,
     environment.langJson + "/",
-    "/Translations/GetTranslationFile/webdepoint"
+    "/Translations/GetTranslationFileWeb"
   );
 }
 

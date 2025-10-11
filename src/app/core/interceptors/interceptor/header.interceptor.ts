@@ -4,13 +4,18 @@ import { AuthService } from '../../../shared/services/auth.service';
 import {  environment as env } from '../../../../environments/environment';
 
 export const headerInterceptor:  HttpInterceptorFn = (req, next) => {
+
   // const authTokenx = localStorage.getItem('customerAuthorization');
   const authToken = 'YOUR_AUTH_TOKEN_HERE';
+  const  validSegments: string[] = ['ar', 'en','de'];
+
   const tokenService = inject(AuthService); 
+  const matchedSegment = validSegments.find(segment => req.url === `${env.baseURL}${segment}`);
+
   // console.log(req.url)
-  if (req.url == env.baseURL + 'ar' || req.url == env.baseURL + 'en') {
+  if (matchedSegment) {
     const redirectedReq = req.clone({
-      url: `${req.url}/Translations/GetTranslationFile/webdepoint`, // تعديل المسار
+      url: `${req.url}/Translations/GetTranslationFileWeb`, // تعديل المسار
     });
     return next(redirectedReq); // تمرير الطلب المعدل
   }

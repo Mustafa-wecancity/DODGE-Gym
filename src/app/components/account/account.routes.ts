@@ -16,7 +16,7 @@ export const accountRoutes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: OrdersComponent
       },
       {
         path: 'orders',

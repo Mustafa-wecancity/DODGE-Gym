@@ -8,7 +8,7 @@ import { TransferState } from '@angular/platform-browser';
 export class PublicService {
   updateUrl = new BehaviorSubject<boolean>(false);
   pushUrlData = new BehaviorSubject<boolean>(false);
-  private readonly validSegments: string[] = ['ar', 'en'];
+  private readonly validSegments: string[] = ['ar', 'en','de'];
   private readonly defaultLanguage = 'ar';
   private readonly LANGUAGE_KEY = makeStateKey<string>('CURRENT_LANGUAGE');
   private isBrowser: boolean;
@@ -25,7 +25,7 @@ export class PublicService {
   }
 
   getCurrentLanguage__(): string | null {
-    const validSegments: string[] = ['ar', 'en'];
+    const validSegments: string[] = this.validSegments
      
 
     if ( this.isBrowser ) {

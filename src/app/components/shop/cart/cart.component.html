@@ -389,6 +389,143 @@
 
           <form id="demoForm" [formGroup]="CartForm"  >
             <div class="summery-contain">
+                      <!-- start region  -->
+<div class="coupon-cart">
+
+        <div>
+          <label class="form-label" for="regionId">{{
+            "country" | translate
+          }}</label>
+          <ng-select
+            #region_
+            [selectOnTab]="true"
+            formControlName="countryId"
+            class="p-0 custom-select"
+            (change)="ChangRegione()"
+            dropdownPosition="auto"
+            labelForId="validation02"
+            [ngClass]="{
+              'invalid': fc['countryId'].invalid && (fc['countryId'].dirty || fc['countryId'].touched),
+              'valid': fc['countryId'].valid && (fc['countryId'].dirty || fc['countryId'].touched),
+            }"
+          >
+            @for (item of countries; track item) {
+            <ng-option [value]="item.id">{{ item.name }} </ng-option>
+            }
+          </ng-select>
+
+          @if(CartForm.controls['countryId'].touched &&
+          CartForm.controls['countryId'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ "country_is_required" | translate }}
+          </div>
+          }
+        </div>
+      </div> 
+      <!-- End region  -->
+      <!-- start City  -->
+
+      <div class="coupon-cart">
+        <div>
+          <label class="form-label" for="regionId">{{
+            "region" | translate
+          }}</label>
+          <ng-select
+            #city
+            [selectOnTab]="true"
+            formControlName="regionId"
+            class="p-0 custom-select"
+            dropdownPosition="auto"
+            labelForId="validation02"
+            [ngClass]="{
+              'invalid': fc['regionId'].invalid && (fc['regionId'].dirty || fc['regionId'].touched),
+              'valid': fc['regionId'].valid && (fc['regionId'].dirty || fc['regionId'].touched),
+            }"
+          >
+            @for (item of region; track item) { // Html template to repeat
+            <ng-option [value]="item.id">{{ item.name }} </ng-option>
+            }
+          </ng-select>
+
+          @if(CartForm.controls['regionId'].touched &&
+          CartForm.controls['regionId'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ "country_is_required" | translate }}
+          </div>
+          }
+        </div>
+      </div> 
+
+      <div class="coupon-cart">
+        <h6 class="text-content mb-2">
+          {{ "city" | translate }}
+        </h6>
+        <div class="mb-3 coupon-box input-group">
+          <!-- <input type="text" class="form-control" id="exampleFormControlInput1"
+                     placeholder="{{ 'Cart.WriteYourCommentHere' | translate }}" style="height: 75px;"> -->
+          <input
+            class="form-control"
+            id="exampleFormControlInput1"
+            formControlName="city"
+            [class.is-valid]="
+              fc['city'].valid && fc['city'].touched
+            "
+            [class.is-invalid]="
+              fc['city'].invalid && fc['city'].touched
+            "
+            placeholder="{{ 'city' | translate }}"
+          > 
+        </div>
+      </div>
+
+      <div class="coupon-cart">
+        <h6 class="text-content mb-2">
+          {{ "address" | translate }}
+        </h6>
+        <div class="mb-3 coupon-box input-group">
+          <!-- <input type="text" class="form-control" id="exampleFormControlInput1"
+                     placeholder="{{ 'Cart.WriteYourCommentHere' | translate }}" style="height: 75px;"> -->
+          <textarea
+            class="form-control"
+            id="exampleFormControlInput1"
+            formControlName="address"
+            [class.is-valid]="
+              fc['address'].valid && fc['address'].touched
+            "
+            [class.is-invalid]="
+              fc['address'].invalid && fc['address'].touched
+            "
+            placeholder="{{ 'address' | translate }}"
+            style="height: 75px"
+          ></textarea>
+        </div>
+      </div>
+      
+      <div class="coupon-cart">
+        <h6 class="text-content mb-2">
+          {{ "postalCode" | translate }}
+        </h6>
+        <div class="mb-3 coupon-box input-group">
+          <!-- <input type="text" class="form-control" id="exampleFormControlInput1"
+                     placeholder="{{ 'Cart.WriteYourCommentHere' | translate }}" style="height: 75px;"> -->
+          <input
+            class="form-control"
+            onlyNumbers
+            id="exampleFormControlInput1"
+            formControlName="postalCode"
+            [class.is-valid]="
+              fc['postalCode'].valid && fc['postalCode'].touched
+            "
+            [class.is-invalid]="
+              fc['postalCode'].invalid && fc['postalCode'].touched
+            "
+            placeholder="{{ 'postalCode' | translate }}"
+          > 
+        </div>
+      </div>
+
+
+      <!-- End City  -->
               <!-- <div class="coupon-cart">
                 <h6 class="text-content mb-2">
                   {{ "Cart.OrderExecutionDate" | translate }}
@@ -485,7 +622,7 @@
             </div>
           </form>
 
-          <div class="summery-header">
+          <div class="summery-header d-none">
             <h3 class="theme-colorTow bold">
               {{ "Cart.ShoppingCartTotal" | translate }}
             </h3>
@@ -493,7 +630,7 @@
 
        
 
-          <ul class="summery-total">
+          <ul class="summery-total d-none">
         
             <li class="list-total border-top-0">
               <h4 class="Medium">

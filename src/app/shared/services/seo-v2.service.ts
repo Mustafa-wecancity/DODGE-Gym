@@ -60,7 +60,7 @@ export class SeoV2Service {
   //  set Main address  for index
   public setTitle(title: string) {
     const lang = this.publicService.getCurrentLanguage();
-    const oldTitle = lang == "ar" ? "دودچ چيم" : " DODGE-Gym";
+    const oldTitle = lang == "ar" ? "AG - Trade" : " AG - Trade";
     this._Meta.updateTag({
       name: "title",
       property: "og:title",
@@ -70,7 +70,7 @@ export class SeoV2Service {
   }
 
   public setMetaImage(imge: string) {
-    // const url = "https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net"+imge
+    // const url = "https://ag-trade.vercel.app"+imge
     const url = environment.serverFirstHalfOfImageUrl + imge;
     this._Meta.updateTag({
       property: "og:image",
@@ -83,7 +83,7 @@ export class SeoV2Service {
   }
   public setMetaImageStatic(imge: string) {
     // const url = "https://saudiaservicesapidev.azurewebsites.net"+imge
-    const url = 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/' + imge;
+    const url = 'https://ag-trade.vercel.app/' + imge;
     // const url = environment.storageURL + imge;
     this._Meta.updateTag({
       property: "og:image",
@@ -193,7 +193,7 @@ export class SeoV2Service {
   updateDefaultSeo() {
     const lang = this.publicService.getCurrentLanguage();
 
-    const oldTitle = lang == "ar" ? "دودچ چيم" : " DODGE-Gym";
+    const oldTitle = lang == "ar" ? "AG - Trade" : " AG - Trade";
     this._Meta.addTags([
       // <!-- Search Engine Optimization -->
       { name: "viewport", content: "width=device-width,initial-scale=1.0" },
@@ -215,7 +215,7 @@ export class SeoV2Service {
       {
         name: "keywords",
         property: "schema:keywords",
-        content: `دودچ چيم, رؤية 2030, توظيف التقنية, تسهيل الحياة, الأفراد, القطاعات غير الحكومية, السعودية, تقنية المستقبل, تطوير الخدمات`,
+        content: `AG - Trade, رؤية 2030, توظيف التقنية, تسهيل الحياة, الأفراد, القطاعات غير الحكومية, السعودية, تقنية المستقبل, تطوير الخدمات`,
       },
       {
         name: "robots",
@@ -224,7 +224,7 @@ export class SeoV2Service {
       },
       {
         name: "original-source",
-        content: "https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net",
+        content: "https://ag-trade.vercel.app",
       },
       {
         name: "copyright",
@@ -250,7 +250,7 @@ export class SeoV2Service {
       },
       { name: "csrf-token", content: "" },
       { property: "og:type", content: "saudia.services" },
-      { property: "og:url", content: "https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/" },
+      { property: "og:url", content: "https://ag-trade.vercel.app/" },
       { property: "og:image", content: "Image" },
       { property: "og:image:secure_url", content: "Image" },
       // { property: "og:image:type", content: "image/*" },
@@ -264,10 +264,10 @@ export class SeoV2Service {
       { name: "application-name", content: oldTitle },
       // { name: 'msapplication-config', content: 'none' },
       // { name: 'msapplication-TileColor', content: '#ffffff' },
-      // { name: 'msapplication-square70x70logo', content: 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/assets/images/SehatyLogo/Sehaty_Logo_70x70.png' },
-      // { name: 'msapplication-square150x150logo', content: 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/assets/images/SehatyLogo/Sehaty_Logo_150x150.png' },
-      // { name: 'msapplication-wide310x150logo', content: 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/assets/images/SehatyLogo/Sehaty_Logo_310X150.png' },
-      // { name: 'msapplication-square310x310logo', content: 'https://alnada- DODGE-Gymwebsite-dev.azurewebsites.net/assets/images/SehatyLogo/Sehaty_Logo_310X310.png' }
+      // { name: 'msapplication-square70x70logo', content: 'https://ag-trade.vercel.app/assets/images/SehatyLogo/Sehaty_Logo_70x70.png' },
+      // { name: 'msapplication-square150x150logo', content: 'https://ag-trade.vercel.app/assets/images/SehatyLogo/Sehaty_Logo_150x150.png' },
+      // { name: 'msapplication-wide310x150logo', content: 'https://ag-trade.vercel.app/assets/images/SehatyLogo/Sehaty_Logo_310X150.png' },
+      // { name: 'msapplication-square310x310logo', content: 'https://ag-trade.vercel.app/assets/images/SehatyLogo/Sehaty_Logo_310X310.png' }
     ]);
   }
 }

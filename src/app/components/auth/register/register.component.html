@@ -87,6 +87,7 @@
  
                         </div>
                      </div>
+  
                      <div class="col-12">
                         <div class="form-floating log-in-form">
                            <input type="password" class="form-control" id="password_confirmation" formControlName="password_confirmation" placeholder="{{ 'password_confirmation' | translate }}">
@@ -96,6 +97,42 @@
                            <div *ngIf="passwordMatchError" class="invalid-feedback">{{ 'confirm_password_does_not_match' | translate }}</div>
                         </div>
                      </div>
+
+                                        
+        <div class=" col-12">
+
+
+         <div>
+           <label class="form-label" for="gender">{{
+             "Gender" | translate
+           }}</label>
+           <ng-select
+             #Gender_
+             [selectOnTab]="true"
+             formControlName="serviceTypeId"
+             class="p-0 custom-select"
+             dropdownPosition="auto"
+             labelForId="validation02"
+             [ngClass]="{
+               'invalid': fc['serviceTypeId'].invalid && (fc['serviceTypeId'].dirty || fc['serviceTypeId'].touched),
+               'valid': fc['serviceTypeId'].valid && (fc['serviceTypeId'].dirty || fc['serviceTypeId'].touched),
+             }"
+           >
+             @for (item of ServiceTypes; track item) {  
+             <ng-option [value]="item.id"
+               >{{ item.title | translate }}
+             </ng-option>
+             }
+           </ng-select>
+
+           @if(form.controls['serviceTypeId'].touched &&
+           form.controls['serviceTypeId'].errors?.['required']){
+           <div class="invalid-feedback">
+             {{ "gender_is_required" | translate }}
+           </div>
+           }
+         </div>
+       </div>
                      <div class="col-12">
                         <div class="forgot-box">
                            <div class="form-check ps-0 m-0 remember-box">

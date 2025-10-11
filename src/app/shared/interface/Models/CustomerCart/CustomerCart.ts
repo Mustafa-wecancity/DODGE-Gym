@@ -6,7 +6,11 @@ export interface IUpdateCustomercart {
   voiceNote: string;
   executionDate: string;
   couponId: number;
-
+  countryId: number;
+  regionId: number;
+  postalCode: string,
+  address: string,
+  city: string,
 
 
 }

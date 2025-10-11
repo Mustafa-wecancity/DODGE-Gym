@@ -113,7 +113,7 @@ export class ChatComponent {
 
   GetComments() {
     const parameters = {
-      Orderproductd: this.orderproductd,
+      OrderProductId: this.orderproductd,
     };
     this._chat
       .getAll<IMessage>(
@@ -136,7 +136,7 @@ export class ChatComponent {
     };
 
     const data = new FormData();
-    data.append("Orderproductd", this.orderproductd);
+    data.append("OrderProductId", this.orderproductd);
     data.append("comment", this.fc["comment"].value);
     // if (this.selectedFile && this.selectedFile.name != "dummy.txt") {
     //   data.append("File", this.selectedFile);

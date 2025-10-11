@@ -17,7 +17,7 @@ export const API_ENDPOINTS = {
         GetCustomerOrderServiceDetail:'Customer/GetCustomerOrderServiceDetail',
         GetCustomerOrderBundleDetail:'Customer/GetCustomerOrderBundleDetail',
         GetCustomerOrderSavingPackageDetail:'Customer/GetCustomerOrderSavingPackageDetail',
-        CustomerServiceRequest:'Customer/CustomerServiceRequest',
+        CustomerServiceRequest:'Customer/CustomerProductRequest',
         GetCustomerOrderServiceDetailByPoints:'Customer/GetCustomerOrderServiceDetailByPoints',
         GetNationalityForList:'Nationality/GetNationalityForList',
  
@@ -30,8 +30,8 @@ export const API_ENDPOINTS = {
         CreateServiceRequest:'CustomerServiceRequest/CreateServiceRequest',
         CalculateServiceTotalWithTax:'CustomerServiceRequest/CalculateServiceTotalWithTax',
                 //cancel
-                CancelOrder: 'CustomerServiceRequest/CancelOrder', 
-                CancelOrUpdateOrderService: 'CustomerServiceRequest/CancelOrUpdateOrderService', 
+                CancelOrder: 'Order/CancelOrder', 
+                CancelOrUpdateOrderService: 'Order/CancelOrUpdateOrderService', 
       },
       Home: {
         GetBundleListForHome: 'Home/GetBundleListForHome',
@@ -47,6 +47,9 @@ export const API_ENDPOINTS = {
         GetCustomerFeedbackForList: 'CustomerFeedback/GetCustomerFeedbackForList',
         DealTodayServices: 'Home/DealTodayServices',
         AddToNewsletter: 'Home/AddToNewsletter'
+      },
+      ServiceType: {
+        GetAllForList: 'ServiceType/Get',
       },
       Region: {
         GetAllForList: 'Region/GetAllForList',
@@ -64,7 +67,7 @@ export const API_ENDPOINTS = {
       },
       Category: {
         ParentCategoryAndServices: 'Category/ParentCategoryAndProducts',
-        GetAllCategoryParentAndChilde: 'Category/GetParentCategoryForList',
+        GetAllCategoryParentAndChilde: 'Home/GetAllHomeCategory',
       },
       Product: {
         GetProductByIdForHome: 'Product/GetProductByIdForHome',
@@ -82,17 +85,18 @@ export const API_ENDPOINTS = {
         RemoveFromWishList: 'CustomerWishlists/RemoveFromWishList',
       },
  
+
+      Lang: {
+        Get: 'Lang/GetLangList',
+      },
       Coupon: {
         ValidateCouponForCart: 'Coupon/ValidateCouponForCart',
         
       },
       Order: {
         GetCustomerOrderDetails: 'Order/GetCustomerOrderDetails',
-        CustomerOrderServiceManagement: 'Order/CustomerOrderServiceManagement',
+        CustomerOrderServiceManagement: 'Order/CustomerOrderProductIdManagement',
         CustomerSavingPackage: 'Order/CustomerSavingPackage',
-   
-        
-
 
         
       },
@@ -106,11 +110,13 @@ export const API_ENDPOINTS = {
         GetAttachmentType: 'CustomerServiceRequestAttachment/GetAttachmentType', 
       },
       CustomerServiceRequestMessage: {
-        GetComments: 'CustomerServiceRequestMessage/GetComments',
-        CustomerCreateComment: 'CustomerServiceRequestMessage/CustomerCreateComment',
+        GetComments: 'Category/GetComments',
+        // GetComments: 'ProductProviderOrderProductMessages/GetComments',
+        CustomerCreateComment: 'ProductProviderOrderProductMessages/CustomerCreateComment',
       },
       Lookups: {
         GetAllStatus: 'Lookups/GetAllStatus',
+        GetCountry: 'Country/Get',
         
       },
       Tickers: {
@@ -135,5 +141,18 @@ export const API_ENDPOINTS = {
         ConfirmCheckout: 'CustomerCarts/ConfirmCheckout',
  
         
+      },
+
+      ContactUS: {
+
+        Create:'ContactMessage/Create'
+    
+      },
+      SiteSetting: {
+        GetOneRow:'SiteSetting/GetSiteSettings',
+        GetContact:'SiteSetting/GetContact',
+        GetLogo:'SiteSetting/GetLogo',
+  
+  
       },
   };                                                    

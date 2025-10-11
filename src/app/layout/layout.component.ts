@@ -199,7 +199,7 @@ export class LayoutComponent {
         if(lang=='ar'){
           headerLogo ='assets/images/logo/Asset 6.svg';
           // headerLogo ='assets/images/data/logo.png';
-          footerLogo = 'assets/images/logo/Asset 6.svgg';
+          footerLogo = 'assets/images/logo/Asset 6.svg';
         }else{
 
         headerLogo ='assets/images/logo/Asset 6.svg';

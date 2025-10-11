@@ -17,7 +17,7 @@
 //     border-radius: 50%;
 //     width: 48px;
 //     height: 48px;
-//     color: #000;
+//     color: #C9A44B;
 //     overflow: hidden;
 
 //   }
@@ -119,41 +119,41 @@ animation: after6 2s infinite;
 @keyframes before8 {
 0% {
   width: 1em; /* مضاعفة الحجم */
-  box-shadow: 2em -1em #000000, -2em 1em #879A74; /* مضاعفة المسافات */
+  box-shadow: 2em -1em #C9A44B000, -2em 1em #879A74; /* مضاعفة المسافات */
 }
 
 35% {
   width: 5em; /* مضاعفة الحجم */
-  box-shadow: 0 -1em #000000, 0 1em #ffe2a6; /* مضاعفة المسافات */
+  box-shadow: 0 -1em #C9A44B000, 0 1em #ffe2a6; /* مضاعفة المسافات */
 }
 
 70% {
   width: 1em; /* مضاعفة الحجم */
-  box-shadow: -2em -1em #000000, 2em 1em #ffe2a6; /* مضاعفة المسافات */
+  box-shadow: -2em -1em #C9A44B000, 2em 1em #ffe2a6; /* مضاعفة المسافات */
 }
 
 100% {
-  box-shadow: 2em -1em #000000, -2em 1em #ffe2a6; /* مضاعفة المسافات */
+  box-shadow: 2em -1em #C9A44B000, -2em 1em #ffe2a6; /* مضاعفة المسافات */
 }
 }
 
 @keyframes after6 {
 0% {
   height: 1em; /* مضاعفة الحجم */
-  box-shadow: 1em 2em #FF0000, -1em -2em #000000 /* مضاعفة المسافات */
+  box-shadow: 1em 2em #FF0000, -1em -2em #C9A44B000 /* مضاعفة المسافات */
 }
 
 35% {
   height: 5em; /* مضاعفة الحجم */
-  box-shadow: 1em 0 #FF0000, -1em 0 #000000 /* مضاعفة المسافات */
+  box-shadow: 1em 0 #FF0000, -1em 0 #C9A44B000 /* مضاعفة المسافات */
 }
 
 70% {
   height: 1em; /* مضاعفة الحجم */
-  box-shadow: 1em -2em #879A74, -1em 2em #000000 /* مضاعفة المسافات */
+  box-shadow: 1em -2em #879A74, -1em 2em #C9A44B000 /* مضاعفة المسافات */
 }
 
 100% {
-  box-shadow: 1em 2em #879A74, -1em -2em #000000 /* مضاعفة المسافات */
+  box-shadow: 1em 2em #879A74, -1em -2em #C9A44B000 /* مضاعفة المسافات */
 }
 }

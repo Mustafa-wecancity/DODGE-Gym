@@ -138,23 +138,6 @@
                     :
 
                     {{ item?.creationDate | date : "dd/MM/yyyy" }} </span
-                  ><span
-                    style="
-                      background: linear-gradient(
-                        90.56deg,
-                        var(--theme-Subcolor) 8.46%,
-                        var(--theme-Subcolor) 62.97%
-                      );
-                      padding-top: 10px;
-                    "
-                  >
-                    {{
-                      "MyDashboard.MyServiceRequest.OrderExecutionDate"
-                        | translate
-                    }}
-                    :
-
-                    {{ item?.date | date : "dd/MM/yyyy" }}</span
                   >
                 </h4>
                 @if(item.voiceNoteUrl){
@@ -211,7 +194,7 @@
                         ? null
                         : [
                             '/account/ServiceManagement/',
-                            service.orderServiceId,
+                            service.orderProductId,
                             setPathDecodeURIComponent(service.name)
                           ]
                     "
@@ -253,18 +236,22 @@
                           padding-top: 10px;
                         "
                       >
-                        {{ service.status }} </span
-                      ><span class="payment-bg" style="padding-top: 10px">
-                        @if(service.statusPayment){
+                      {{ (service.canCancel ? 'Active' : 'Cancel') | translate }}
+                      </span
+                      >
+                      <span class="payment-bg" style="padding-top: 10px">
+                        <!-- @if(service.statusPayment){
                         {{
                           "MyDashboard.MyServiceRequest.CashPayment" | translate
                         }}
-                        } @if(!service.statusPayment) {
+                        } @if(!service.statusPayment) { -->
                         {{
-                          "MyDashboard.MyServiceRequest.PointsPayment"
+                          "MyDashboard.MyServiceRequest.Cache"
                             | translate
                         }}
-                        } @if(service.statusId==statusEnum.New){
+                        <!-- } -->
+                        @if(service.canCancel){
+
 
                         <span
                         class="delete"
@@ -284,11 +271,9 @@
                 </div>
                 <p
                 [routerLink]="
-                service.statusId == 5
-                  ? null
-                  : [
+              [
                       '/account/ServiceManagement/',
-                      service.orderServiceId,
+                      service.orderProductId,
                       setPathDecodeURIComponent(service.name)
                     ]
               "
@@ -306,11 +291,9 @@
                       <h5
                         class="theme-colorTow Medium mx-2"
                         [routerLink]="
-                      service.statusId == 5
-                        ? null
-                        : [
+                   [
                             '/account/ServiceManagement/',
-                            service.orderServiceId,
+                            service.orderProductId,
                             setPathDecodeURIComponent(service.name)
                           ]
                     "
@@ -330,8 +313,8 @@
                         <h5 class="theme-colorTow bold mx-2">
                           {{ service.qty }}
                         </h5>
-                        @if(service.statusId==statusEnum.New){
-                        <span
+                        @if(service.canCancel){
+                          <span
                           class="editInline"
                           style="
                             background-color: var(--theme-color);
@@ -360,12 +343,12 @@
                                 style="padding-left: 5px; padding-right: 5px"
                               >
                                 <app-button
-                                  [class]="'btn qty-left-minus'"
+                                  [class]="'btn qty-left-minus p-2'"
                                   [id]="'minus_quantity'"
                                   [spinner]="false"
                                   [type]="'button'"
                                   (click)="
-                                    service.qty > 1 ? updateQty(service) : null
+                                    service.qty > 1 ? updateQty(service, service.qty) : null
                                   "
                                 >
                                   <i class="ri-subtract-fill ms-0"></i>
@@ -378,10 +361,18 @@
                                   value="{{ service.qty }}"
                                   readonly
                                 />
-
+                                <app-button
+                                [class]="'btn qty-left-minus p-2'"
+                                [id]="'plus_quantity'"
+                                [spinner]="false"
+                                [type]="'button'"
+                                (click)="updateQty(service, service.qty + 1)"
+                              >
+                                <i class="ri-add-line ms-0"></i>
+                              </app-button>
                                 <app-button
                                   [class]="
-                                    'btn qty-right-plus btn btn-success btn-sm'
+                                    'btn qty-right-plus btn btn-success btn-sm px-2 text-white'
                                   "
                                   [id]="'plus_quantity'"
                                   [spinner]="false"
@@ -401,7 +392,7 @@
 
                                 <app-button
                                   [class]="
-                                    'btn qty-right-plus btn btn-success btn-sm'
+                                    'btn qty-right-plus btn btn-success btn-sm px-2 text-white'
                                   "
                                   [id]="'plus_quantity'"
                                   [spinner]="false"

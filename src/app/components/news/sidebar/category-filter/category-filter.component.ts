@@ -80,14 +80,13 @@ export class CategoryFilterComponent {
   GetAllData(): void {
     this.categoryService.subscription.add(
       this.categoryService
-        .create<GenericResponse<ICategoryAndServices[]>, any>(
-          API_ENDPOINTS.Category.GetAllCategoryParentAndChilde,
-          {}
-        )
+      .getAll<ICategoryAndServices>(
+        API_ENDPOINTS.Category.GetAllCategoryParentAndChilde
+      )
         .subscribe(
           (data) => {
             debugger
-            this.Categories = data.data;
+            this.Categories = data;
             // if( !this.selectedCategory && this.mainCategoryId  )
             //   this.selectedCategory= this.mainCategoryId;
           },

@@ -12,12 +12,12 @@ import { LayoutService } from "../../../shared/Layout/layout.service";
 import { isPlatformBrowser } from "@angular/common";
 import { API_ENDPOINTS } from "../../../shared/Api-Services/API_ENDPOINTS";
 import { CustomerOrderServiceManagement } from "../../../shared/interface/Models/Attachment/attachment";
-import { TranslateModule } from "@ngx-translate/core";
 import { ChatComponent } from "./chat/chat.component";
 import { CustomPipeForImagesPipe } from "../../../shared/pipe/custom-pipe-for-images-pipe.pipe";
 import { AttachmentForOrderServiceComponent } from "./attachment-for-order-service/attachment-for-order-service.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { PublicService } from "../../../shared/Api-Services/public.service";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: "app-service-management",
@@ -61,12 +61,12 @@ export class ServiceManagementComponent {
 
   CustomerOrderServiceDetails: CustomerOrderServiceManagement;
   GetServicDetailsDetail(id: string) {
-    const params = { id: id };
+    const params = { orderProductId: id };
 
     this.orderserveicesDetails.subscription.add(
       this.orderserveicesDetails
         .get<CustomerOrderServiceManagement>(
-          API_ENDPOINTS.CustomerServiceRequest.GetCustomerRequestDetail
+          API_ENDPOINTS.Order.CustomerOrderServiceManagement
 ,
           params
         )
@@ -106,7 +106,7 @@ export class ServiceManagementComponent {
   }
 
   // public active = 'Chat';
-  public active = "Attachment";
+  public active = "Chat";
   public showMore: boolean;
   public height: number;
   public width: number;

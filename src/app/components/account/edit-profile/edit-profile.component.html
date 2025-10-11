@@ -148,18 +148,51 @@
 
    
         <!-- start region  -->
-          <!-- <div class="col-md-6">
+       <div class="col-md-6">
 
+          <div>
+            <label class="form-label" for="regionId">{{
+              "country" | translate
+            }}</label>
+            <ng-select
+              #region_
+              [selectOnTab]="true"
+              formControlName="countryId"
+              class="p-0 custom-select"
+              (change)="ChangRegione()"
+              dropdownPosition="auto"
+              labelForId="validation02"
+              [ngClass]="{
+                'invalid': fc['countryId'].invalid && (fc['countryId'].dirty || fc['countryId'].touched),
+                'valid': fc['countryId'].valid && (fc['countryId'].dirty || fc['countryId'].touched),
+              }"
+            >
+              @for (item of countries; track item) {
+              <ng-option [value]="item.id">{{ item.name }} </ng-option>
+              }
+            </ng-select>
+
+            @if(form.controls['countryId'].touched &&
+            form.controls['countryId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "country_is_required" | translate }}
+            </div>
+            }
+          </div>
+        </div> 
+        <!-- End region  -->
+        <!-- start City  -->
+
+        <div class="col-md-6">
           <div>
             <label class="form-label" for="regionId">{{
               "region" | translate
             }}</label>
             <ng-select
-              #region_
+              #city
               [selectOnTab]="true"
               formControlName="regionId"
               class="p-0 custom-select"
-              (change)="ChangRegione()"
               dropdownPosition="auto"
               labelForId="validation02"
               [ngClass]="{
@@ -167,7 +200,7 @@
                 'valid': fc['regionId'].valid && (fc['regionId'].dirty || fc['regionId'].touched),
               }"
             >
-              @for (item of region; track item) {
+              @for (item of region; track item) { // Html template to repeat
               <ng-option [value]="item.id">{{ item.name }} </ng-option>
               }
             </ng-select>
@@ -179,43 +212,10 @@
             </div>
             }
           </div>
-        </div> -->
-        <!-- End region  -->
-        <!-- start City  -->
-
-        <!-- <div class="col-md-6">
-          <div>
-            <label class="form-label" for="cityId">{{
-              "City" | translate
-            }}</label>
-            <ng-select
-              #city
-              [selectOnTab]="true"
-              formControlName="cityId"
-              class="p-0 custom-select"
-              dropdownPosition="auto"
-              labelForId="validation02"
-              [ngClass]="{
-                'invalid': fc['cityId'].invalid && (fc['cityId'].dirty || fc['cityId'].touched),
-                'valid': fc['cityId'].valid && (fc['cityId'].dirty || fc['cityId'].touched),
-              }"
-            >
-              @for (item of cityList; track item) { // Html template to repeat
-              <ng-option [value]="item.id">{{ item.name }} </ng-option>
-              }
-            </ng-select>
-
-            @if(form.controls['cityId'].touched &&
-            form.controls['cityId'].errors?.['required']){
-            <div class="invalid-feedback">
-              {{ "country_is_required" | translate }}
-            </div>
-            }
-          </div>
-        </div> -->
+        </div> 
 
         <!-- End City  -->
-        <div class="col-md-6 col-12">
+        <!-- <div class="col-md-6 col-12">
 
           <div class="">
             <label class="form-label" for="birthDate">{{
@@ -243,6 +243,40 @@
             form.controls['birthDate'].errors?.['birthDate']){
             <div class="invalid-feedback">
               {{ "please_enter_valid_birthDate" | translate }}
+            </div>
+            }
+          </div>
+        </div> -->
+
+        <div class="col-md-6">
+ 
+
+          <div>
+            <label class="form-label" for="gender">{{
+              "serviceType" | translate
+            }}</label>
+            <ng-select
+              [selectOnTab]="true"
+              formControlName="serviceTypeId"
+              class="p-0 custom-select"
+              dropdownPosition="auto"
+              labelForId="validation02"
+              [ngClass]="{
+                'invalid': fc['serviceTypeId'].invalid && (fc['serviceTypeId'].dirty || fc['serviceTypeId'].touched),
+                'valid': fc['serviceTypeId'].valid && (fc['serviceTypeId'].dirty || fc['serviceTypeId'].touched),
+              }"
+            >
+              @for (item of ServiceTypes; track item) {  
+              <ng-option [value]="item.id"
+                >{{ item.title | translate }}
+              </ng-option>
+              }
+            </ng-select>
+ 
+            @if(form.controls['serviceTypeId'].touched &&
+            form.controls['serviceTypeId'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "gender_is_required" | translate }}
             </div>
             }
           </div>

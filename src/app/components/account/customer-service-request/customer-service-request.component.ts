@@ -206,8 +206,9 @@ export class CustomerServiceRequestComponent extends BaseComponent {
   }
 
   UpdateCustomerOrderDetail(item: GetServiceRequest, qty: number): void {
+    debugger
     const params: any = {
-      Orderproductd: item?.id,
+      OrderServiceId: item?.orderProductId,
       ...(qty !== undefined && { qty }), // Include 'qty' only if defined
     };
 
@@ -250,7 +251,7 @@ export class CustomerServiceRequestComponent extends BaseComponent {
     this._CustomerServiceRequest.submit = false;
 
     // Prepare the API call
-    const params = { Orderproductd: data?.id };
+    const params = { OrderServiceId: data?.orderProductId };
 
     this._CustomerServiceRequest
       .get<GenericResponse<any>>(
@@ -284,14 +285,14 @@ export class CustomerServiceRequestComponent extends BaseComponent {
       });
   }
 
-  updateQty(service: any) {
+  updateQty(service: any, qty:number) {
     if (service.qty > 0) {
       // Perform logic to update the quantity in the backend or service.
       console.log(
-        `Updated quantity for service ID ${service.id}: ${service.qty}`
+        `Updated quantity for service ID ${service.orderProductId}: ${service.qty}`
       );
 
-      service.qty = service.qty - 1;
+      service.qty = qty ;
       // Trigger UI updates
       this.cdr.detectChanges();
     } else {

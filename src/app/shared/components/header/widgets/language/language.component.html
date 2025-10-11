@@ -1,4 +1,4 @@
- 
+<!--  
 
 <div class="flex items-center">
    <div
@@ -9,22 +9,38 @@
        *ngIf="currentLanguage == 'en'"
        (click)="chnageLanguage('ar')"
      >
-     <!-- <div class="iti-flag {{ 'sa'}}"></div> -->
      <img [src]="'assets/images/Saudi Flag.svg'" alt="flag" >
 
-       <!-- Arabic -->
        </span
      >
      <span
        *ngIf="currentLanguage == 'ar'"
        (click)="chnageLanguage('en')"
      >
-     <!-- <div class="iti-flag {{ 'us'}}"></div> -->
      <img [src]="'assets/images/America Flag.svg'"  alt="flag">
 
 
-       <!-- English -->
        </span
      >
    </div>
+ </div> -->
+
+ <div class="d-flex align-items-center">
+  <!-- Language switcher-->
+  <div class=" dropdown" ngbDropdown>
+    <a class="nav-link nav-link-light dropdown-toggle text-white fs-sm align-items-center p-0 fw-normal" href="javascript:void(0);" id="langSwitcher" data-bs-toggle="dropdown" role="button" aria-expanded="false" ngbDropdownToggle>
+      <i class="fi-globe mt-n1 me-2 align-middle text-primary mx-2"></i>{{currentLanguage}}
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark my-1" aria-labelledby="langSwitcher" ngbDropdownMenu>
+
+      @for (item of langList; track $index) {
+      <li><a class="dropdown-item text-nowrap py-1  cursor text-white"   (click)="chnageLanguage(item.lang.toLowerCase())">
+        <!-- <img class="me-2" [src]="item.flag |customPipeForImages" width="20" [alt]="item.flag"> -->
+        {{item.lang}}</a></li>
+
+      }
+
+    </ul>
+  </div>
+
  </div>
