@@ -10,6 +10,6 @@ export interface PostRegister {
 
 
 export interface SendOTP {
-    mobile :string,
+    email :string,
  
 }

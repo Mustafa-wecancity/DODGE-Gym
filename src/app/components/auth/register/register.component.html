@@ -17,8 +17,10 @@
                </div>
                <div class="input-box">
                   <form class="row g-4" [formGroup]="form" (ngSubmit)="submit()">
-                     <div class="col-12 phone-field">
-                        <div class="form-floating log-in-form">
+                     <div class="col-12 phone -field">
+                        <!-- <div class="form-floating log-in-form"> -->
+                           <label for="mobile" class=""mb-2>{{ 'mobile_number' | translate }}</label>
+
                            <input type="text" class="form-control" id="mobile_" maxlength="11" minlength="11" onlyNumbers formControlName="mobile" 
                            placeholder="{{ 'phone_number' | translate }}"
                            [ngbTooltip]="
@@ -31,7 +33,6 @@
                                       'invalid': fc['mobile'].invalid && (fc['mobile'].dirty || fc['mobile'].touched),
                                       'valid': fc['mobile'].valid && (fc['mobile'].dirty || fc['mobile'].touched),
                                     }">
-                           <label for="mobile">{{ 'mobile_number' | translate }}</label>
 
                            @if(form.controls['mobile'].touched && form.controls['mobile'].errors?.['required']){
                               <div class="invalid-feedback">{{ 'phone_number_is_required' | translate }}</div>
@@ -39,13 +40,14 @@
                       
                            @if(form.controls['mobile'].touched && form.controls['mobile'].errors?.['minlength']){
                               <div class="invalid-feedback">
-                                 {{ 'mobile Number should be more than' | translate }}  {{form.controls['mobile'].value.length}} == 9 {{ 'characters' | translate }}
+                                 {{ 'mobile Number should be more than' | translate }}  {{form.controls['mobile'].value.length}} == 11 {{ 'characters' | translate }}
                               </div>
                            }
+                          
               
 
                            <div *ngIf="form.controls['mobile'].touched && form.controls['mobile'].errors?.['required']" class="invalid-feedback">{{ 'phone_number_is_required' | translate }}</div>
-                           <select2 class="custom-select intl-tel-input" [data]="codes" [templates]="template" formControlName="country_code">
+                           <!-- <select2 class="custom-select intl-tel-input" [data]="codes" [templates]="template" formControlName="country_code">
                               <ng-template #template let-data="data">
                                  <div class="country">
                                     <div class="flag-box">
@@ -54,9 +56,37 @@
                                     <span class="dial-code">{{data.code}}</span>
                                  </div>
                               </ng-template>
-                           </select2>
-                        </div>
+                           </select2> -->
+                        <!-- </div> -->
                      </div>
+                          <div class="col-12" >
+            <label class="form-label" for="email">{{
+              "email_address" | translate
+            }}</label>
+            <input
+              class="form-control"
+              id="email"
+              type="text"
+              placeholder="{{ 'enter_email_address' | translate }}"
+              formControlName="email"
+              [ngClass]="{
+                'invalid': fc['email'].invalid && (fc['email'].dirty || fc['email'].touched),
+                'valid': fc['email'].valid && (fc['email'].dirty || fc['email'].touched),
+              }"
+            />
+
+            @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ "email_address_is_required" | translate }}
+            </div>
+            } @if(form.controls['email'].touched &&
+            form.controls['email'].errors?.['pattern']){
+            <div class="invalid-feedback">
+              {{ "please_enter_valid_email" | translate }}
+            </div>
+            }
+          </div>
                      <div class="col-12">
                         <div class="form-floating log-in-form">
                            <input type="password" class="form-control" id="password" formControlName="passwordHash" placeholder="{{ 'password' | translate }}"

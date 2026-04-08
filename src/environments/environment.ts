@@ -1,5 +1,5 @@
-// export const api ="https://alnada-depointapi.azurewebsites.net" //live
-export const api ="https://dodgegymdev.runasp.net" //test
+export const api ="https://alnada-depointapi.azurewebsites.net" //live
+// export const api ="https://dodgegymdev.runasp.net" //test
 // export const api ="https://localhost:44374" //Devolpment
 
 

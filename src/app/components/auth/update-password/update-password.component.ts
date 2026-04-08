@@ -71,7 +71,7 @@ export class UpdatePasswordComponent {
           otp: new FormControl(dataCustomer ? dataCustomer.otp : "", [
             Validators.required,
           ]),
-          mobile: new FormControl(dataCustomer ? dataCustomer.mobile : "", [
+          email: new FormControl(dataCustomer ? dataCustomer.email : "", [
             Validators.required,
           ]),
           newPassword: new FormControl("", [

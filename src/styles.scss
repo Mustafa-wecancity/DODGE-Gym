@@ -37,7 +37,7 @@ body ::selection {
 
 body {
   font-family: "LamaSansRegular", sans-serif;
-  color: #C9A44B;
+  color: #f2a541;
 }
 header .navbar.navbar-expand-xl .navbar-nav .nav-link {
   font-weight: normal !important;
@@ -53,7 +53,9 @@ header .navbar.navbar-expand-xl .navbar-nav .nav-link {
   font-family: "LamaSemiBold" !important;
 }
 .Medium {
-  font-family: "LamaSansMedium" !important;
+  // font-family: "LamaSansMedium" !important;
+  font-family: "LamaSansRegular" !important;
+
 }
 .Regular {
   font-family: "LamaSansRegular" !important;
@@ -77,7 +79,8 @@ header .navbar.navbar-expand-xl .navbar-nav .nav-link {
   // opacity: .3;
   padding: 6px 12px !important;
   i {
-    color: var(--theme-color) !important;
+    color: #fff !important;
+    // color: var(--theme-colorTwo) !important;
 
     opacity: 1 !important;
   }
@@ -379,6 +382,20 @@ header .navbar-toggler-icon {
 }
 
 .rtl{
+
+  .bold {
+  font-family: "LamaSansBoldAr" !important;
+}
+
+.Medium {
+  // font-family: "LamaSansMedium" !important;
+  font-family: "LamaSansRegularAr" !important;
+
+}
+.Regular {
+  font-family: "LamaSansRegularAr" !important;
+}
+
   
   .whatsapp{
   

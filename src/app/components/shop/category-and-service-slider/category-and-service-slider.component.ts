@@ -118,7 +118,7 @@ export class CategoryAndServiceSliderComponent extends BaseComponent {
               this.IParentCategoryAndServices?.productList?.totalCount ?? 0;
             if (this.IParentCategoryAndServices.mainCategoryId ) {
 
-               this.seoV2Service.setMetaImageStatic("assets/images/pageList/Services.jpg");
+               this.seoV2Service.setMetaImageStatic("assets/images/pageList/Desktop-2.png");
 
               this.seoV2Service.setTitle(
                 this.IParentCategoryAndServices.mainCategoryName
@@ -149,7 +149,7 @@ export class CategoryAndServiceSliderComponent extends BaseComponent {
     this.seoV2Service.loadTranslations(lang).subscribe(translations => {
       this.seoV2Service.setTitle(translations.Home.header.MostOrderedServices);
       this.seoV2Service.setHostUrlIndex();
-      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Services.jpg");
+      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Desktop-2.png");
 
 
       // this.seoV2Service.setMetaDescription(translations.Bundle.header.meta_description)

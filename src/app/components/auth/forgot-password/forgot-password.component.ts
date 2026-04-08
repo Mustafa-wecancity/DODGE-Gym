@@ -23,12 +23,13 @@ import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { OnlyNumbersDirective } from "../../../shared/directive/only-numbers.directive";
 import { SeoV2Service } from "../../../shared/services/seo-v2.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
+import { EmailPattern } from "../../../shared/interface/Models/appSetting";
  
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
   imports: [CommonModule, TranslateModule, ReactiveFormsModule,
-               ButtonComponent,Select2Module,NgbTooltip,NgClass,OnlyNumbersDirective
+               ButtonComponent,Select2Module,NgClass
   ],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss'
@@ -54,10 +55,13 @@ export class ForgotPasswordComponent {
     public authService: AuthService, 
     public formBuilder: FormBuilder ) {
     this.form = this.formBuilder.group({
-      mobile: ['', [Validators.required,        Validators.minLength(11),
-        Validators.maxLength(11),]],
-        country_code: new FormControl('+20' ),
-
+      // mobile: ['', [Validators.required,        Validators.minLength(11),
+      //   Validators.maxLength(11),]],
+      //   country_code: new FormControl('+20' ),
+   email: [
+       "",
+        [Validators.required, Validators.pattern(EmailPattern)],
+      ],
 
       recaptcha: [true, [Validators.required]]
     },{validator : CustomValidators.MatchValidator('newPassword', 'password_confirmation')});
@@ -90,7 +94,7 @@ this.seo()
   public SendOTP() {
     let form = this.form.value
     // form.mobile= 966 + this.fc['mobile'].value
-   this._forgotService.subscription.add( this._forgotService.create<GenericResponse<ResponseRegister>,SendOTP>(API_ENDPOINTS.Customer.SendOTP, { mobile:form.mobile}).subscribe((res) => {
+   this._forgotService.subscription.add( this._forgotService.create<GenericResponse<ResponseRegister>,SendOTP>(API_ENDPOINTS.Customer.SendOTP, { email:form.email}).subscribe((res) => {
       if (res.success &&res.data['otp']) {
       this.navigateWithEncryptedData(form);
       }
@@ -100,7 +104,7 @@ this.seo()
   navigateWithEncryptedData(form: any) {
     if(this.isBrowser){
       
-      const encryptedData = this.cryptoService.encrypt(JSON.stringify(form.mobile));
+      const encryptedData = this.cryptoService.encrypt(JSON.stringify(form.email));
       const encodedData = encodeURIComponent(encryptedData);
       if(encodedData)
         this.router.navigateByUrl('/auth/otp/forgot/'+encodedData);

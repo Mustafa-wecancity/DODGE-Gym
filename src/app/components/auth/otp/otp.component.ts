@@ -44,7 +44,7 @@ export class OtpComponent {
   public otpType: any;
   public number: AuthNumberLoginState;
 
-  mobile: string;
+  // email: string;
   type: string;
   isBrowser: boolean;
 
@@ -75,12 +75,12 @@ export class OtpComponent {
       const encryptedData = this.Route.snapshot.paramMap.get("encryptedData");
       this.type = this.Route.snapshot.paramMap.get("type") ?? "";
       if (encryptedData) {
-        this.mobile= JSON.parse(
+        this.email= JSON.parse(
           this.cryptoService.decrypt(encryptedData)
         );
       }
 
-      if (this.mobile) this.SendOTP();
+      if (this.email) this.SendOTP();
     }
   }
 
@@ -118,7 +118,7 @@ export class OtpComponent {
         .create<GenericResponse<ResponseRegister>, SendOTP>(
           API_ENDPOINTS.Customer.SendOTP,
           {
-            mobile: this.mobile,
+            email: this.email,
           }
         )
         .subscribe((res) => {
@@ -127,8 +127,8 @@ export class OtpComponent {
             this.showOtp = true;
 
             this.otp = res.data["otp"];
-            this.fc["otp"].setValue(res.data["otp"].toString());
-            this.ngOtpInput?.setValue(res.data["otp"].toString())
+            // this.fc["otp"].setValue(res.data["otp"].toString());
+            // this.ngOtpInput?.setValue(res.data["otp"].toString())
 
             this.time = res.data["secondsCount"];
             this.showSendOtp = false;
@@ -154,7 +154,7 @@ export class OtpComponent {
         this._VerificationService
           .create<GenericResponse<GetVefiryUser>, PostVefiryUser>(
             API_ENDPOINTS.Customer.VefiryUser,
-            { mobile: this.mobile, otp: this.otp}
+            { email: this.email, otp: this.otp}
           )
           .subscribe(
             (response) => {
@@ -198,7 +198,7 @@ export class OtpComponent {
         this._VerificationService
           .create<GenericResponse<any>, PostVefiryUser>(
             API_ENDPOINTS.Customer.VerifyOTP,
-            { mobile: this.mobile, otp: this.otp }
+            { email: this.email, otp: this.otp }
           )
           .subscribe(
             (response) => {
@@ -251,7 +251,7 @@ export class OtpComponent {
       } else {
         const encryptedData = this.cryptoService.encrypt(
           JSON.stringify({
-            mobile: this.mobile,
+            email: this.email,
             otp: this.otp,
           })
         );

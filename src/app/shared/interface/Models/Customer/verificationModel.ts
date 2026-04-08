@@ -2,7 +2,7 @@
 export interface PostVefiryUser
 {
     otp: number,
-    mobile: string
+    email: string
 }
 export interface GetVefiryUser
 {
@@ -16,11 +16,11 @@ export interface GetVefiryUser
 export interface PostVerifyOTP
 {
     otp: string,
-    mobile: string
+    email: string
 }
 export interface PostSendOTP
 {
-    mobile: string
+    email: string
 
 }export interface GetSendOTP{
     otp: number,

@@ -61,7 +61,7 @@ export class ThemesComponent implements OnDestroy {
     this.seoV2Service.loadTranslations(lang).subscribe((translations) => {
       this.seoV2Service.setTitle(translations.Home.header.Title);
       this.seoV2Service.setHostUrlIndex();
-      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Home.jpg");
+      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Desktop-2.png");
 
       this.seoV2Service.setMetaDescription(
         translations.Home.header.meta_description

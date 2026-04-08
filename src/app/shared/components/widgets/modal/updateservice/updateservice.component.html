@@ -1,0 +1,98 @@
+ <ng-template #confirmationModal let-modal>
+    <div class="modal-body discount-box">
+  
+
+@if(ServiceGetById){
+  <div  >
+    <div class=" px-2"  >
+        <h4 class="Medium text-white" >{{ 'update_service_requests_count' | translate }} </h4>
+        <p class="theme-Sub color text-white">{{ 'update_service_requests_description' | translate }}</p>
+    
+
+        <div class="note-box product-package">
+          <div class="cart_qty qty-box product-qty bg-white " style="min-width: 100% !important;">
+            <div class="input-group w-100">
+              <app-button
+                [class]="'btn qty-left-minus bold'"
+                [id]="'add-to-cart' + ServiceGetById.id"
+                [spinner]="false"
+                (click)="updateQuantity(-1)"
+              >
+                <i class="ri-subtract-fill"></i>
+              </app-button>
+              <input
+                class="form-control input-number qty-input"
+                type="text"
+                name="quantity"
+                value="{{ productQty }}"
+                readonly
+              />
+              <app-button
+                [class]="'btn qty-left-minus disabled'"
+                [id]="'qty-left-minus' + ServiceGetById.id"
+                [spinner]="false"
+                (click)=" updateQuantity(1) "
+              >
+                <i class="ri-add-line"></i>
+                <!-- (click)="productQty >= ServiceGetById.qty?null:updateQuantity(1) " -->
+                <!-- [disabled]="productQty >= ServiceGetById.qty" -->
+
+              </app-button>
+            </div>
+          </div>
+
+    
+          <div class="dynamic-checkout w-100 scroll-button">
+            @if(ServiceGetById){
+                     <app-button 
+             [class]="'btn btn-md fw-bold btn-theme-outline'" 
+             [spinner]="false" 
+             [id]="'confirm_no_btn'" 
+             (click)="modal.dismiss('Cancel')">
+             {{ 'cancel' | translate }}
+          </app-button>
+        
+            <app-button
+              [id]="'addcartbtnVariation' + ServiceGetById.id"
+              [class]="'btn btn-md bg-theme scroll-button  Regular nogap '"
+               (click)="this.ServiceGetById.qty == productQty ?modal.dismiss('Cancel'): confirm()"
+            
+            >
+              <i class="ri-shopping-cart-line me-1 "></i> 
+              <span class="bold me-1"> 
+                <!-- {{ ServiceData.serviceBalance  }} -->
+             </span>{{'save' |translate}}
+            </app-button>
+        
+            }
+          </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+}
+
+       <!-- <div class="button-box">
+          <app-button 
+             [class]="'btn btn-md fw-bold btn-theme-outline'" 
+             [spinner]="false" 
+             [id]="'confirm_no_btn'" 
+             (click)="modal.dismiss('Cancel')">
+             {{ 'cancel' | translate }}
+          </app-button>
+ 
+       <app-button
+              [id]="'addcartbtnVariation' + ServiceGetById.id"
+              [class]="'btn btn-md bg-theme scroll-button w-100 Regular  '"
+            
+            >
+              <i class="ri-shopping-cart-line me-1 "></i> 
+              [ <span class="bold me-1"> 
+             </span>{{'save' |translate}}]
+            </app-button>
+          
+       </div> -->
+    </div>
+ </ng-template>

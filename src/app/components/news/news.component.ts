@@ -137,7 +137,7 @@ export class NewsListComponent extends BaseComponent {
       this.seoV2Service.setMetaDescription(
         translations.NewsList.header.meta_description
       );
-      this.seoV2Service.setMetaImageStatic("assets/images/pageList/News.jpg");
+      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Desktop-2.png");
 
       this.seoV2Service.setMetaKeywords(
         this.seoV2Service.generateKeywords(

@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import { Params, pager } from "../../../shared/interface/core.interface";
 import { CommonModule, isPlatformBrowser } from "@angular/common";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { RouterModule } from "@angular/router";
 import { PaginationComponent } from "../../../shared/components/widgets/pagination/pagination.component";
 import { NoDataComponent } from "../../../shared/components/widgets/no-data/no-data.component";
@@ -40,6 +40,7 @@ import Swal from "sweetalert2";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { ErrorService } from "../../../shared/services/error.service";
 import { TruncatePipe } from "../../../shared/pipe/truncate.pipe";
+import { UpdateserviceComponent } from "../../../shared/components/widgets/modal/updateservice/updateservice.component";
 @Component({
   selector: "app-customer-service-request",
   standalone: true,
@@ -50,7 +51,7 @@ import { TruncatePipe } from "../../../shared/pipe/truncate.pipe";
 
     PaginationComponent,
     NoDataComponent,
-
+UpdateserviceComponent,
     ButtonComponent,
     FormsModule,
     ReactiveFormsModule,
@@ -65,15 +66,19 @@ export class CustomerServiceRequestComponent extends BaseComponent {
   @ViewChild("audioPlayer") audioPlayer: ElementRef<HTMLAudioElement>;
   @ViewChild("confirmationCancelModal")
   ConfirmationCancelModal: ConfirmationCancelComponent;
+    @ViewChild("confirmationUpdateModal")
+  ConfirmationUpdateModal: UpdateserviceComponent;
   statusEnum = StatusEnum;
-  qty: number;
+    qty: number;
+    lang: string = "ar";
+    relode = false;
   clearFilter() {
     this.form.reset();
     this.pager = {
       maxResultCount: this.pager.maxResultCount,
       skipCount: this.pager.skipCount,
     };
-
+    this.lang = this.publicService.getCurrentLanguage() ?? "ar";
     this.GetCustomerServiceRequest();
   }
   applyFilter() {
@@ -110,7 +115,7 @@ export class CustomerServiceRequestComponent extends BaseComponent {
     private _ErrorService: ErrorService,
 
     private seoV2Service: SeoV2Service,
-    private publicService: PublicService,
+    private publicService: PublicService,private translate: TranslateService,
     private cdr: ChangeDetectorRef,
     private ngZone: NgZone,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -204,8 +209,50 @@ export class CustomerServiceRequestComponent extends BaseComponent {
   playAudio() {
     if (this.isBrowser) this.audioPlayer.nativeElement.play();
   }
+    UpdateCustomerOrderDetail(item: GetServiceRequest, qty: number): void {
 
-  UpdateCustomerOrderDetail(item: GetServiceRequest, qty: number): void {
+    
+    const params: any = {
+      OrderServiceId: item?.orderProductId,
+      ...(qty !== undefined && { qty }), // Include 'qty' only if defined
+    };
+
+    this._CustomerServiceRequest.subscription.add(
+      this._CustomerServiceRequest
+        .get<GenericResponse<any>>(
+          API_ENDPOINTS.CustomerServiceRequest.CancelOrUpdateOrderService,
+          params
+        )
+        .subscribe({
+          next: (response) => {
+            // if (response.success) {
+            this.ngZone.run(() => {
+              // Update item qty
+              // item.qty = qty;
+        this._ErrorService.setNotification({
+  message: this.translate.instant('update_qty_success', { qty: qty })
+});
+
+              this.GetCustomerServiceRequest();
+              this.relode = true;
+
+              if(this.isBrowser){
+                setTimeout(() => {
+  this.relode = false;
+});}
+              // Trigger UI updates
+              this.cdr.detectChanges();
+            });
+            // }
+          },
+          error: (error) => {
+            console.error("Error updating order:", error);
+          },
+        })
+    );
+  }
+
+  UpdateCustomerOrderDetail__(item: GetServiceRequest, qty: number): void {
     debugger
     const params: any = {
       OrderServiceId: item?.orderProductId,

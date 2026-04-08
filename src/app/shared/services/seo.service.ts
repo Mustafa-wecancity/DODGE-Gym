@@ -135,7 +135,7 @@
 //       this.updateDefaultSeo();
 //     }
 
-//     this.titleService.setTitle(' AG - Trade')
+//     this.titleService.setTitle(' King Food ')
 
 //   }
 
@@ -186,7 +186,7 @@
 //         ? `${this.themeOption?.general?.site_title} | ${this.themeOption?.general?.site_tagline}` : '')
 //     }
 
-//     this.titleService.setTitle(' AG - Trade')
+//     this.titleService.setTitle(' King Food ')
 //   }
  
 //   customSCO(){

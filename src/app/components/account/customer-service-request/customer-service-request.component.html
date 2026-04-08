@@ -303,113 +303,60 @@
                     </div>
                   </li>
                   <li>
-                    <div class="size-box detail">
-                      <ng-container
-                        *ngIf="!service.isEditingQty; else editQtyTemplate"
-                      >
-                        <h6 class="text-content theme-colorTow Regular">
-                          {{ "MyDashboard.MyServiceRequest.Qty" | translate }}
-                        </h6>
-                        <h5 class="theme-colorTow bold mx-2">
+                            <div class="dashboard-home" style="margin: 0; padding: 0">
+            <div class="total-box"  style="margin: 0; padding: 0">
+              <div
+                class="row row-cols-xxl-1 g-sm-1 "
+              >
+                <div>
+                  <div class="totle-contain">
+                    <div class="wallet-point-box ">
+                      <img
+                        src="assets/images/svg/order.svg"
+                        class="img-1"
+                        alt="order"
+                      />
+                      <img src="assets/images/svg/order.svg" alt="order" />
+                      <div class="totle-detail">
+                               @if(service.statusId==statusEnum.New){
+                        <h5 class="Regular cursor"
+                              (click)="
+                            confirmationUpdateModal.openModal('update', service)
+                          ">
+                          {{ "MyDashboard.MyServiceRequest.Qty" | translate }} :
                           {{ service.qty }}
                         </h5>
-                        @if(service.canCancel){
-                          <span
-                          class="editInline"
-                          style="
-                            background-color: var(--theme-color);
-                            cursor: pointer;
-                          "
+
+                        <h3
+                          class="Medium"
+                          [id]="'remove_address' + service.id"
                           (click)="
-                            service.isEditingQty = true;
-                            service.beforeQty = service.qty
+                            confirmationUpdateModal.openModal('update', service)
                           "
                         >
-                          <i class="ri-edit-box-line"></i>
-                          {{ "edit" | translate }} </span
-                        >}
-                      </ng-container>
+                          {{ "edit" | translate }}
+                          <!-- myorders  cursor-->
+                        </h3>
+                      }
+                      @else {
+                          <h5 class="Regular">
+                          {{ "MyDashboard.MyServiceRequest.Qty" | translate }} :
+                          {{ service.qty }}
+                        </h5>
 
-                      <ng-template #editQtyTemplate>
-                        <br />
-
-                        <div class="quantity quantity-w">
-                          <div class="quantity-price">
-                            <div
-                              class="cart_qty d-flex justify-content-between"
-                            >
-                              <div
-                                class="input-group border align-items-center"
-                                style="padding-left: 5px; padding-right: 5px"
-                              >
-                                <app-button
-                                  [class]="'btn qty-left-minus p-2'"
-                                  [id]="'minus_quantity'"
-                                  [spinner]="false"
-                                  [type]="'button'"
-                                  (click)="
-                                    service.qty > 1 ? updateQty(service, service.qty) : null
-                                  "
-                                >
-                                  <i class="ri-subtract-fill ms-0"></i>
-                                </app-button>
-                                <input
-                                  style="margin-left: 0"
-                                  class="form-control input-number qty-input bold border-0 text-center"
-                                  type="text"
-                                  name="quantity"
-                                  value="{{ service.qty }}"
-                                  readonly
-                                />
-                                <app-button
-                                [class]="'btn qty-left-minus p-2'"
-                                [id]="'plus_quantity'"
-                                [spinner]="false"
-                                [type]="'button'"
-                                (click)="updateQty(service, service.qty + 1)"
-                              >
-                                <i class="ri-add-line ms-0"></i>
-                              </app-button>
-                                <app-button
-                                  [class]="
-                                    'btn qty-right-plus btn btn-success btn-sm px-2 text-white'
-                                  "
-                                  [id]="'plus_quantity'"
-                                  [spinner]="false"
-                                  [type]="'button'"
-                                  (click)="
-                                    service.beforeQty > 1
-                                      ? UpdateCustomerOrderDetail(
-                                          service,
-                                          service.qty
-                                        )
-                                      : (service.qty = service.beforeQty);
-                                    service.isEditingQty = false
-                                  "
-                                >
-                                  {{ "Save" | translate }}
-                                </app-button>
-
-                                <app-button
-                                  [class]="
-                                    'btn qty-right-plus btn btn-success btn-sm px-2 text-white'
-                                  "
-                                  [id]="'plus_quantity'"
-                                  [spinner]="false"
-                                  [type]="'button'"
-                                  (click)="
-                                    service.qty = service.beforeQty;
-                                    service.isEditingQty = false
-                                  "
-                                >
-                                  {{ "Cancel" | translate }}
-                                </app-button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </ng-template>
+                      }
+                      </div>
                     </div>
+                  </div>
+                </div>
+          
+                <div>
+              
+                </div>
+              </div>
+            </div>
+      </div>
+             
                   </li>
 
                
@@ -463,6 +410,7 @@
                 </ul>
               </div>
             </div>
+     
         }
           </div>
         </div>
@@ -500,4 +448,10 @@
   #confirmationCancelModal
   (deleteItem)="delete($event.actionToPerform, $event.data)"
 ></app-confirmation-cancel>
+
+
+<app-updateservice
+  #confirmationUpdateModal
+  (updateItem)="UpdateCustomerOrderDetail($event, $event.qty)"
+></app-updateservice>
 }

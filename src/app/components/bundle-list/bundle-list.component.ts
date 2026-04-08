@@ -114,7 +114,7 @@ export class BundleListComponent extends BaseComponent {
     this.seoV2Service.loadTranslations(lang).subscribe(translations => {
       this.seoV2Service.setTitle(translations.Bundle.header.Title);
       this.seoV2Service.setHostUrlIndex();
-      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Bundles.jpg");
+      this.seoV2Service.setMetaImageStatic("assets/images/pageList/Desktop-2.png");
 
       this.seoV2Service.setMetaDescription(translations.Bundle.header.meta_description)
       this.seoV2Service.setMetaKeywords(this.seoV2Service.generateKeywords(translations.Bundle.header.meta_keywords))

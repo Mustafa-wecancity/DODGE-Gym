@@ -27,6 +27,7 @@ import { SeoV2Service } from "../../../shared/services/seo-v2.service";
 import { PublicService } from "../../../shared/Api-Services/public.service";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { IServiceType } from "../../../shared/interface/Models/iads";
+import { EmailPattern } from "../../../shared/interface/Models/appSetting";
 
 @Component({
   selector: "app-register",
@@ -90,8 +91,12 @@ this.getServiceType();
             Validators.maxLength(40),
           ],
         ],
+           email: [
+               "",
+                [Validators.required, Validators.pattern(EmailPattern)],
+              ],
 
-        country_code: new FormControl('+20' ),
+        // country_code: new FormControl('+20' ),
 
         password_confirmation: new FormControl("", [Validators.required]),
         recaptcha: new FormControl(false, Validators.required),
@@ -170,7 +175,7 @@ this.getServiceType();
   navigateWithEncryptedData(form: any) {
     if (this.isBrowser) {
       const encryptedData = this.cryptoService.encrypt(
-        JSON.stringify(form.mobile)
+        JSON.stringify(form.email)
       );
       const encodedData = encodeURIComponent(encryptedData);
 
